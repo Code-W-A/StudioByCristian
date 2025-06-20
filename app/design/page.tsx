@@ -1,4 +1,4 @@
-import DesignCard from "@/components/DesignCard"
+import DesignCard from "@/components/design-card"
 
 const designProjects = [
   {
