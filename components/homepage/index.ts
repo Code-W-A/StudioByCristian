@@ -1,0 +1,6 @@
+export { default as HeroSectionHomepage } from './hero-section-homepage'
+export { default as AboutUsSection } from './about-us-section'
+export { default as OurWorkSection } from './our-work-section'
+export { default as FeaturedProjectsSection } from './featured-projects-section'
+export { default as ShapesCollectionSection } from './shapes-collection-section'
+export { default as ContactSection } from './contact-section' 

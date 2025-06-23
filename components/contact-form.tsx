@@ -39,14 +39,14 @@ export default function ContactForm() {
     toast({
       title: "Message Sent!",
       description: "Thank you for your inquiry. We'll be in touch shortly.",
-      variant: "default", // or 'success' if you have one
+      variant: "default",
     })
     form.reset()
   }
 
   const inputStyles =
-    "bg-white border-gray-300 text-gray-800 placeholder-gray-400 focus:border-black focus:ring-1 focus:ring-black transition-all duration-300 rounded-md shadow-sm"
-  const labelColor = "text-gray-700 font-medium mb-1 block"
+    "bg-white/10 border-white/30 text-white placeholder-white focus:border-white/60 focus:ring-1 focus:ring-white/60 transition-all duration-300 rounded-lg shadow-sm backdrop-blur-sm hover:bg-white/15"
+  const labelColor = "text-white font-medium mb-2 block"
 
   return (
     <Form {...form}>
@@ -56,11 +56,11 @@ export default function ContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className={labelColor}>Your Name</FormLabel>
+              <FormLabel className={labelColor}>Your name</FormLabel>
               <FormControl>
                 <Input placeholder="e.g. Jane Doe" {...field} className={inputStyles} />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-red-400" />
             </FormItem>
           )}
         />
@@ -69,11 +69,11 @@ export default function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className={labelColor}>Your Email</FormLabel>
+              <FormLabel className={labelColor}>Your email</FormLabel>
               <FormControl>
                 <Input type="email" placeholder="e.g. jane.doe@example.com" {...field} className={inputStyles} />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-red-400" />
             </FormItem>
           )}
         />
@@ -86,7 +86,7 @@ export default function ContactForm() {
               <FormControl>
                 <Input placeholder="e.g. Project Inquiry" {...field} className={inputStyles} />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-red-400" />
             </FormItem>
           )}
         />
@@ -95,29 +95,32 @@ export default function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className={labelColor}>Your Message</FormLabel>
+              <FormLabel className={labelColor}>Your message</FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="Tell us about your project or inquiry..."
                   rows={5}
                   {...field}
-                  className={`${inputStyles} min-h-[120px]`}
+                  className={`${inputStyles} min-h-[120px] resize-none`}
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-red-400" />
             </FormItem>
           )}
         />
         <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
           <Button
             type="submit"
-            className="w-full bg-black text-white hover:bg-gray-800 transition-all duration-300 py-3 text-base font-semibold rounded-md shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+            className="w-full bg-white text-black hover:bg-gray-100 transition-all duration-300 py-4 text-base font-semibold rounded-lg shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white relative overflow-hidden group"
             disabled={form.formState.isSubmitting}
           >
+            {/* Geometric accent */}
+            <div className="absolute top-2 right-2 w-2 h-2 border border-black/20 rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
             {form.formState.isSubmitting ? (
               <div className="flex items-center justify-center">
                 <svg
-                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-black"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"

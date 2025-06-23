@@ -5,38 +5,139 @@ import AnimatedElement from "@/components/animated-element"
 import ParallaxSection from "@/components/parallax-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowLeft, Download, Share2 } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState } from "react"
 
 const projectDetails = {
   title: "Susan and Cyril Apartment",
   category: "Furniture Production",
-  heroImageQuery: "modern kitchen Susan and Cyril Apartment with marble backsplash",
-  description:
-    "Stylish and classy Amsterdam apartment, made with care and high quality details. The kitchen is the main focus of the apartment, featuring a large island with a marble countertop and a custom-made dining table. The contrast between classic and modern is used here as a statement, creating a unique and sophisticated atmosphere. The custom-made furniture, lighting, and accessories all contribute to the overall design and interest.",
-  status: "Finished",
-  sectors: "Interior Architecture & Furniture Production",
-  location: "Amsterdam, The Netherlands",
-  client: "Susan and Cyril",
-  gallery: [
-    { srcQuery: "Susan and Cyril Apartment kitchen detail", alt: "Kitchen detail with sink and faucet" },
-    { srcQuery: "Susan and Cyril Apartment dining area", alt: "Dining area adjacent to kitchen" },
-    { srcQuery: "Susan and Cyril Apartment living room seating", alt: "Living room seating area" },
-    { srcQuery: "Susan and Cyril Apartment kitchen island front", alt: "Front view of kitchen island" },
-    { srcQuery: "Susan and Cyril Apartment kitchen overview", alt: "Overview of kitchen space" },
-    { srcQuery: "Susan and Cyril Apartment bathroom detail marble", alt: "Bathroom detail with marble and fixtures" },
-    { srcQuery: "Susan and Cyril Apartment hallway perspective", alt: "Hallway perspective with wooden floor" },
-    { srcQuery: "Susan and Cyril Apartment living area bright", alt: "Bright living area with large windows" },
-    { srcQuery: "Susan and Cyril Apartment door handle detail", alt: "Close-up of a door handle" },
-    { srcQuery: "Susan and Cyril Apartment exterior entrance", alt: "Exterior view of apartment entrance" },
+  heroImage: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-Banner-scaled.jpg.jpeg",
+  description: [
+    // Main description text
+    "Stylish and classy Amsterdam apartment, made with care and high quality furniture materials. We had the challenge to integrate modern materials such as Fenix and HPL with natural marble and painted MDF. The mixture between classic and modern is used here on a professional level. We went for natural marble for the kitchen and bathroom pieces. In terms of accessories, we chose BLUM and HAFELE.",
   ],
+  projectInfo: {
+    location: "Amsterdam",
+    status: "Finished", 
+    service: "Furniture Production",
+    sectors: "Private",
+    area: "180 square meters",
+    client: "Susan and Cyril"
+  },
+  // First 6 images for dynamic layout
+  gallery: [
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-1-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 1" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-2-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 2" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-3-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 3" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-4-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 4" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-5-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 5" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-6-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 6" },
+  ],
+  // Remaining images for masonry and slider
+  sliderImages: [
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-8.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 8" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-9.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 9" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-10.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 10" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-11.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 11" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-15.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 15" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-18-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 18" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-19-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 19" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-20-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 20" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-27.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 27" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-31-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 31" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-33.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 33" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-34.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 34" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-36-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 36" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-37-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 37" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-38-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 38" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-39-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 39" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-40-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 40" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-43.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 43" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-45-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 45" },
+  ]
+}
+
+function ImageSlider({ images }: { images: { src: string; alt: string }[] }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index)
+  }
+
+  return (
+    <div className="relative w-full max-w-6xl mx-auto">
+      {/* Main slider */}
+      <div className="relative aspect-[16/10] overflow-hidden rounded-xl shadow-2xl">
+        <Image
+          src={images[currentIndex].src}
+          alt={images[currentIndex].alt}
+          fill
+          className="object-cover transition-all duration-500 ease-in-out"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+        />
+        
+        {/* Navigation arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 group"
+        >
+          <ChevronLeft className="h-6 w-6 text-white group-hover:scale-110 transition-transform" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 group"
+        >
+          <ChevronRight className="h-6 w-6 text-white group-hover:scale-110 transition-transform" />
+        </button>
+
+        {/* Slide counter */}
+        <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
+          <span className="text-white text-sm font-medium">
+            {currentIndex + 1} / {images.length}
+          </span>
+        </div>
+      </div>
+
+      {/* Thumbnail navigation */}
+      <div className="flex gap-2 mt-6 overflow-x-auto pb-2">
+        {images.map((image, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`relative flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden transition-all duration-300 ${
+              index === currentIndex 
+                ? 'ring-2 ring-black scale-105' 
+                : 'opacity-70 hover:opacity-100 hover:scale-105'
+            }`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              sizes="80px"
+            />
+          </button>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default function SusanAndCyrilApartmentPage() {
   return (
     <div className="bg-white text-black">
+      {/* Hero Section */}
       <ParallaxSection
-        imageUrl={`/placeholder.svg?width=1600&height=900&query=${encodeURIComponent(projectDetails.heroImageQuery)}`}
+        imageUrl={projectDetails.heroImage}
         imageAlt={projectDetails.title + " Hero Image"}
         minHeight="70vh"
         strength={0.3}
@@ -48,73 +149,145 @@ export default function SusanAndCyrilApartmentPage() {
         </AnimatedElement>
       </ParallaxSection>
 
+      {/* Back Button */}
       <section className="py-12 lg:py-16 bg-white text-black">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-            <div className="lg:col-span-2">
-              <AnimatedElement animationType="fadeInUp">
-                <h2 className="text-2xl font-semibold tracking-tight text-black sm:text-3xl mb-6">
-                  Project Description
-                </h2>
-                <p className="text-lg text-gray-700 leading-relaxed">{projectDetails.description}</p>
-              </AnimatedElement>
-            </div>
-            <div className="lg:col-span-1">
-              <AnimatedElement animationType="fadeInUp" delay={0.1}>
-                <Card className="bg-gray-50 border-gray-200 shadow-sm">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-black">Project Details</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3 text-sm text-gray-700">
-                    <p>
-                      <strong>Status:</strong> {projectDetails.status}
-                    </p>
-                    <p>
-                      <strong>Sectors:</strong> {projectDetails.sectors}
-                    </p>
-                    <p>
-                      <strong>Location:</strong> {projectDetails.location}
-                    </p>
-                    <p>
-                      <strong>Client:</strong> {projectDetails.client}
-                    </p>
-                    <div className="mt-4 flex space-x-2">
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="bg-white text-black border-gray-300 hover:bg-gray-100"
-                      >
-                        <Share2 className="h-4 w-4" />
-                        <span className="sr-only">Share</span>
-                      </Button>
-                      <Button variant="outline" className="bg-white text-black border-gray-300 hover:bg-gray-100">
-                        <Download className="mr-2 h-4 w-4" />
-                        Info
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </AnimatedElement>
-            </div>
-          </div>
+          <AnimatedElement animationType="fadeInUp" className="mb-12">
+            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+              <Link href="/furniture-production">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back To Furniture Production
+              </Link>
+            </Button>
+          </AnimatedElement>
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-gray-50 text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp" className="mb-10 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">Gallery</h2>
+      {/* Dynamic Content Layout */}
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-16">
+          
+          {/* 1. Image Left, Text and Project Info Right */}
+          <AnimatedElement animationType="fadeInUp">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.gallery[0].src}
+                  alt={projectDetails.gallery[0].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  style={{ display: 'block' }}
+                />
+              </div>
+              <div className="space-y-8">
+                <div className="space-y-6">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    {projectDetails.description[0]}
+                  </p>
+                </div>
+                
+                {/* Project Info */}
+                <div className="bg-gray-50 rounded-xl p-6 space-y-4">
+                  <h3 className="text-xl font-semibold text-black mb-4">Project Details</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    <p><strong className="text-black">Location:</strong> <span className="text-gray-700">{projectDetails.projectInfo.location}</span></p>
+                    <p><strong className="text-black">Status:</strong> <span className="text-gray-700">{projectDetails.projectInfo.status}</span></p>
+                    <p><strong className="text-black">Service:</strong> <span className="text-gray-700">{projectDetails.projectInfo.service}</span></p>
+                    <p><strong className="text-black">Sectors:</strong> <span className="text-gray-700">{projectDetails.projectInfo.sectors}</span></p>
+                    <p><strong className="text-black">Area:</strong> <span className="text-gray-700">{projectDetails.projectInfo.area}</span></p>
+                    <p><strong className="text-black">Client:</strong> <span className="text-gray-700">{projectDetails.projectInfo.client}</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </AnimatedElement>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {projectDetails.gallery.map((image, index) => (
-              <AnimatedElement key={index} animationType="scaleIn" delay={index * 0.05}>
-                <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
+
+          {/* 2. Row with 2 images */}
+          <AnimatedElement animationType="fadeInUp" delay={0.1}>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.gallery[1].src}
+                  alt={projectDetails.gallery[1].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  style={{ display: 'block' }}
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.gallery[2].src}
+                  alt={projectDetails.gallery[2].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  style={{ display: 'block' }}
+                />
+              </div>
+            </div>
+          </AnimatedElement>
+
+          {/* 3. Row with 3 images */}
+          <AnimatedElement animationType="fadeInUp" delay={0.2}>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.gallery[3].src}
+                  alt={projectDetails.gallery[3].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  style={{ display: 'block' }}
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.gallery[4].src}
+                  alt={projectDetails.gallery[4].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  style={{ display: 'block' }}
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.gallery[5].src}
+                  alt={projectDetails.gallery[5].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  style={{ display: 'block' }}
+                />
+              </div>
+            </div>
+          </AnimatedElement>
+
+        </div>
+      </section>
+
+      {/* Large Dynamic Images Grid - Fewer per row, larger size */}
+      <section className="py-12 lg:py-16 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="columns-1 lg:columns-2 gap-8 space-y-8">
+            {projectDetails.sliderImages.slice(0, 10).map((image, index) => (
+              <AnimatedElement
+                key={index}
+                animationType="scaleIn"
+                delay={index * 0.1}
+                className="break-inside-avoid"
+              >
+                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 mb-8">
                   <Image
-                    src={`/placeholder.svg?width=800&height=600&query=${encodeURIComponent(image.srcQuery)}`}
+                    src={image.src}
                     alt={image.alt}
-                    width={800}
-                    height={600}
-                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                    width={1200}
+                    height={900}
+                    className="w-full h-auto object-contain transition-transform duration-300 hover:scale-105"
+                    style={{ display: 'block' }}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
               </AnimatedElement>
@@ -123,17 +296,31 @@ export default function SusanAndCyrilApartmentPage() {
         </div>
       </section>
 
+      {/* Image Slider Section for remaining images */}
       <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp" className="mb-12 text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl mb-4">
+              More Project Details
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore additional views and details of the Susan and Cyril Apartment
+            </p>
+          </AnimatedElement>
+          
+          <AnimatedElement animationType="fadeInUp" delay={0.2}>
+            <ImageSlider images={projectDetails.sliderImages.slice(10)} />
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Back Button Bottom */}
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-white text-black border-gray-300 hover:bg-gray-100"
-            >
+            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
               <Link href="/furniture-production">
-                <ArrowLeft className="mr-2 h-5 w-5" />
+                <ArrowLeft className="mr-2 h-4 w-4" />
                 Back To Furniture Production
               </Link>
             </Button>

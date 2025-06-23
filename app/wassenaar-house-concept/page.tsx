@@ -5,35 +5,134 @@ import AnimatedElement from "@/components/animated-element"
 import ParallaxSection from "@/components/parallax-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowLeft, Download, Share2 } from "lucide-react"
+import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState } from "react"
 
 const projectDetails = {
   title: "Wassenaar House Concept",
-  category: "Concept Design",
-  year: "2023", // Placeholder
-  location: "Wassenaar, The Netherlands", // Placeholder
-  description:
-    "The Wassenaar House Concept is a visionary project that redefines modern living in a classic Dutch setting. This design emphasizes open spaces, natural light, and a seamless integration with the surrounding landscape. Key features include sustainable materials, smart home technology, and bespoke interior elements that reflect a sophisticated yet comfortable lifestyle. The concept aims to create a sanctuary that is both aesthetically stunning and highly functional for its inhabitants.",
-  longDescription:
-    "Our approach to the Wassenaar House Concept began with a deep analysis of the site's unique characteristics and the client's aspirations for a contemporary family home. We envisioned a structure that respects traditional Dutch architectural forms while embracing modern design principles. The expansive use of glass blurs the lines between indoor and outdoor spaces, inviting nature in. \n\nInterior layouts are designed for flexibility and flow, accommodating both intimate family moments and larger social gatherings. Custom-designed furniture and lighting fixtures add unique character to each room. Sustainability was a core consideration, with passive design strategies, energy-efficient systems, and locally sourced materials playing a crucial role in the project's development.",
-  images: [
-    { srcQuery: "Wassenaar House Concept exterior front view", alt: "Front exterior view of Wassenaar House Concept" },
-    {
-      srcQuery: "Wassenaar House Concept living room interior",
-      alt: "Spacious living room in Wassenaar House Concept",
-    },
-    { srcQuery: "Wassenaar House Concept kitchen and dining area", alt: "Modern kitchen and dining area" },
-    { srcQuery: "Wassenaar House Concept master bedroom", alt: "Elegant master bedroom with large windows" },
-    { srcQuery: "Wassenaar House Concept garden and patio", alt: "View of the garden and patio area" },
-    { srcQuery: "Wassenaar House Concept architectural detail", alt: "Close-up of an architectural detail" },
+  category: "Design Projects",
+  heroImage: "/wasenaar-house-concept-page/Wassenaar-House-Category.jpg.jpeg",
+  description: [
+    "The flipping of this lovely property was a challenge we loved to undertake. Trimming down the old and bringing in the new Scandinavian high-quality finishes and fixtures gave this private residence a revitalising new life.\n\nWe found the house picturing the melancholic nuances of her younger times. The patina of the classical approach was not fit anymore for a residence in the flourishing Hague.\n\nEnvisioning the highest potential for this home, we studied every aspect, every functional and aesthetic detail. We've put up a mood board to inspire the future residents to see the potential their home can reach.",
+    
+    "Designing the interior had a focus on elegance and the visual symphony of neutral tones, black accents and the warmth of natural wood, all resting on the background of the invigorating outdoor greenery.\n\nThe main intervention at the ground floor was opening up the passage from the living room to the dining area and kitchen by mounting a large glass door, which created a light filled open space surrounded by nature and benefiting from the warm sunlight at all times. The living room was fitted with warm lights, minimal built-in furniture and a cozy, elegant feel through the suggested finishes.\n\nThe first floor contains 1 spacious master bedroom and 1 guest bedroom, both equipped with en-suite bathrooms. The bathrooms' design maintains the elegant key, playing with large marble slabs alongside dark accents of mosaics, minimal furniture volumes and accessories.",
+    
+    "The second floor, which initially only hosted 2 rooms, now provides 2 bedrooms, 1 shared bathroom and 1 toilet.\n\nThe attic can turn into a playroom, hobby room or an extra bedroom depending on the family needs and there is also a laundry room set up.",
+    
+    "Intervention on the outdoors aimed at inviting the owner to make use of the available space, hence we created different setups so spending as much time outside can be at hand. Dining in the garden, reading, relaxing on the bench or lounging with friends around a pit fire is all accessible.\n\nThe canvas of the home still held sufficient space for the new owners to place their unique signature.\n\nAll the actions were set in motion to create the perfect scenery for the future owners. The interventions were restorations, repairs and optimisations of the unseen aspects of the home, all which were covered by the modern light grey paint and warm natural wood floor. Outdoor landscaping, the kitchen, the bathrooms and built-in wardrobes were all provided for the comfort of the new owners, but the canvas of the home had enough space for them to also place their own unique signature."
   ],
+  // First 8 images for dynamic gallery
+  gallery: [
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-1.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 1" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-2.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 2" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-3-1.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 3" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-4-scaled.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 4" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-5-scaled.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 5" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-6-scaled.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 6" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-07.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 7" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-08.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 8" },
+  ],
+  // Remaining images for slider
+  sliderImages: [
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-09.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 9" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-10.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 10" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-11-scaled.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 11" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-12.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 12" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-13.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 13" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-14-scaled.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 14" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-15-scaled.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 15" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-16-scaled.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 16" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-17.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 17" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-18.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 18" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-19-scaled.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 19" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-20.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 20" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-21.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 21" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-22-scaled.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 22" },
+    { src: "/wasenaar-house-concept-page/Wassenaar-House-Concept-23-scaled.jpg.jpeg", alt: "Wassenaar House Concept - Interior view 23" },
+  ]
+}
+
+function ImageSlider({ images }: { images: { src: string; alt: string }[] }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index)
+  }
+
+  return (
+    <div className="relative w-full max-w-6xl mx-auto">
+      {/* Main slider */}
+      <div className="relative aspect-[16/10] overflow-hidden rounded-xl shadow-2xl">
+        <Image
+          src={images[currentIndex].src}
+          alt={images[currentIndex].alt}
+          fill
+          className="object-cover transition-all duration-500 ease-in-out"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+        />
+        
+        {/* Navigation arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 group"
+        >
+          <ChevronLeft className="h-6 w-6 text-white group-hover:scale-110 transition-transform" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 group"
+        >
+          <ChevronRight className="h-6 w-6 text-white group-hover:scale-110 transition-transform" />
+        </button>
+
+        {/* Slide counter */}
+        <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
+          <span className="text-white text-sm font-medium">
+            {currentIndex + 1} / {images.length}
+          </span>
+        </div>
+      </div>
+
+      {/* Thumbnail navigation */}
+      <div className="flex gap-2 mt-6 overflow-x-auto pb-2">
+        {images.map((image, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`relative flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden transition-all duration-300 ${
+              index === currentIndex 
+                ? 'ring-2 ring-black scale-105' 
+                : 'opacity-70 hover:opacity-100 hover:scale-105'
+            }`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              sizes="80px"
+            />
+          </button>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default function WassenaarHouseConceptPage() {
   return (
     <div className="bg-white text-black">
+      {/* Hero Section */}
       <ParallaxSection
-        imageUrl={`/placeholder.svg?width=1600&height=900&query=${encodeURIComponent(projectDetails.images[0].srcQuery)}`}
+        imageUrl={projectDetails.heroImage}
         imageAlt={projectDetails.title + " Hero Image"}
         minHeight="70vh"
         strength={0.3}
@@ -45,48 +144,157 @@ export default function WassenaarHouseConceptPage() {
         </AnimatedElement>
       </ParallaxSection>
 
+      {/* Back Button */}
       <section className="py-12 lg:py-16 bg-white text-black">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-              <div>
-                <h2 className="text-2xl font-semibold tracking-tight text-black sm:text-3xl">Project Overview</h2>
-                <p className="mt-2 text-gray-600">
-                  {projectDetails.location} &bull; {projectDetails.year}
-                </p>
-              </div>
-              <div className="mt-4 md:mt-0 flex space-x-2">
-                <Button variant="outline" size="icon" className="bg-white text-black border-gray-300 hover:bg-gray-100">
-                  <Share2 className="h-5 w-5" />
-                  <span className="sr-only">Share</span>
-                </Button>
-                <Button variant="outline" className="bg-white text-black border-gray-300 hover:bg-gray-100">
-                  <Download className="mr-2 h-5 w-5" />
-                  Brochure
-                </Button>
-              </div>
-            </div>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">{projectDetails.description}</p>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line">{projectDetails.longDescription}</p>
+          <AnimatedElement animationType="fadeInUp" className="mb-12">
+            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+              <Link href="/design">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back To Design Projects
+              </Link>
+            </Button>
           </AnimatedElement>
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-gray-50 text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp" className="mb-10 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">Project Gallery</h2>
+      {/* Dynamic Content Layout */}
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-16">
+          
+          {/* 1. Image Left, Text Right */}
+          <AnimatedElement animationType="fadeInUp">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.gallery[0].src}
+                  alt={projectDetails.gallery[0].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  style={{ display: 'block' }}
+                />
+              </div>
+              <div className="space-y-6">
+                <p className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
+                  {projectDetails.description[0]}
+                </p>
+              </div>
+            </div>
           </AnimatedElement>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {projectDetails.images.map((image, index) => (
-              <AnimatedElement key={index} animationType="scaleIn" delay={index * 0.05}>
-                <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
+
+          {/* 2. Row with 2 images */}
+          <AnimatedElement animationType="fadeInUp" delay={0.1}>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.gallery[1].src}
+                  alt={projectDetails.gallery[1].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  style={{ display: 'block' }}
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.gallery[2].src}
+                  alt={projectDetails.gallery[2].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  style={{ display: 'block' }}
+                />
+              </div>
+            </div>
+          </AnimatedElement>
+
+          {/* 3. Text Left, Image Right */}
+          <AnimatedElement animationType="fadeInUp" delay={0.2}>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6 lg:order-1">
+                <p className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
+                  {projectDetails.description[1]}
+                </p>
+              </div>
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 lg:order-2">
+                <Image
+                  src={projectDetails.gallery[3].src}
+                  alt={projectDetails.gallery[3].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  style={{ display: 'block' }}
+                />
+              </div>
+            </div>
+          </AnimatedElement>
+
+          {/* 4. First row: Image Left, Text Right */}
+          <AnimatedElement animationType="fadeInUp" delay={0.3}>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.gallery[4].src}
+                  alt={projectDetails.gallery[4].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  style={{ display: 'block' }}
+                />
+              </div>
+              <div className="space-y-6">
+                <p className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
+                  {projectDetails.description[2]}
+                </p>
+              </div>
+            </div>
+          </AnimatedElement>
+
+          {/* 5. Second row: Image Left, Text Right */}
+          <AnimatedElement animationType="fadeInUp" delay={0.4}>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.gallery[5].src}
+                  alt={projectDetails.gallery[5].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  style={{ display: 'block' }}
+                />
+              </div>
+              <div className="space-y-6">
+                <p className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
+                  {projectDetails.description[3]}
+                </p>
+              </div>
+            </div>
+          </AnimatedElement>
+
+        </div>
+      </section>
+
+      {/* Large Dynamic Images Grid - Fewer per row, larger size */}
+      <section className="py-12 lg:py-16 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="columns-1 lg:columns-2 gap-8 space-y-8">
+            {projectDetails.gallery.slice(6).concat(projectDetails.sliderImages.slice(0, 8)).map((image, index) => (
+              <AnimatedElement
+                key={index}
+                animationType="scaleIn"
+                delay={index * 0.1}
+                className="break-inside-avoid"
+              >
+                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 mb-8">
                   <Image
-                    src={`/placeholder.svg?width=800&height=600&query=${encodeURIComponent(image.srcQuery)}`}
+                    src={image.src}
                     alt={image.alt}
-                    width={800}
-                    height={600}
-                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                    width={1200}
+                    height={900}
+                    className="w-full h-auto object-contain transition-transform duration-300 hover:scale-105"
+                    style={{ display: 'block' }}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
               </AnimatedElement>
@@ -95,18 +303,32 @@ export default function WassenaarHouseConceptPage() {
         </div>
       </section>
 
+      {/* Image Slider Section for remaining images */}
       <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp" className="mb-12 text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl mb-4">
+              More Project Details
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore additional views and details of the Wassenaar House Concept
+            </p>
+          </AnimatedElement>
+          
+          <AnimatedElement animationType="fadeInUp" delay={0.2}>
+            <ImageSlider images={projectDetails.sliderImages.slice(8)} />
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Back Button Bottom */}
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-white text-black border-gray-300 hover:bg-gray-100"
-            >
+            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
               <Link href="/design">
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Back to Design Projects
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back To Design Projects
               </Link>
             </Button>
           </AnimatedElement>
