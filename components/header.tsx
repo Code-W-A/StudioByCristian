@@ -76,9 +76,7 @@ export default function Header() {
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 />
                 
-                {/* Corner accents */}
-                <div className="absolute top-2 right-2 w-1 h-1 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-2 left-2 w-1 h-1 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75" />
+
               </Link>
             </motion.div>
           ))}

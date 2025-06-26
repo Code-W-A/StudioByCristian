@@ -6,30 +6,91 @@ import ParallaxSection from "@/components/parallax-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import ContactForm from "@/components/contact-form"
+import { motion } from "framer-motion"
 
 const projectDetails = {
   title: "Day Care Concept",
   category: "Design Projects",
-  heroImageQuery: "modern and playful day care center interior with colorful furniture",
-  description: [
-    "The purpose was creating a visually stimulating environment in which children can feel safe and comfortable, while also being able to learn and play. The design concept is based on an interior crafted with natural oak and soft pastel colors.",
-    "This is a concept created for potential clients in The Netherlands, who were looking to start a visually stimulating, modern, yet very functional day care center.",
-    "The oak wood furniture and accessories can be found as miniature items in various shapes and sizes. The furniture pieces are not only accessories, as well as crafted on the walls and continuing up to the ceiling, but also as a functional part of the space. The design is enhanced by a natural and warm lighting system that emerges from the furniture and the ceiling, creating a cozy and inviting atmosphere.",
+  heroImage: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-Banner-scaled.jpg.jpeg",
+  description: "This is a concept created for potential clients in The Netherlands, who were looking to start a visually stimulating, modern, yet very functional and safe space for children aged 0-4 that acts as a daycare service.",
+  images: [
+    {
+      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-07-1-scaled.jpg.jpeg",
+      alt: "Day Care Concept - Play area with natural oak furniture"
+    },
+    {
+      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-07-scaled.jpg.jpeg",
+      alt: "Day Care Concept - Play space design"
+    },
+    {
+      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-08-1-scaled.jpg.jpeg",
+      alt: "Day Care Concept - Oak furniture with animal-shaped chairs"
+    },
+    {
+      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-08-scaled.jpg.jpeg",
+      alt: "Day Care Concept - Furniture arrangement"
+    },
+    {
+      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-09-1-scaled.jpg.jpeg",
+      alt: "Day Care Concept - Lighting system with cloud shapes"
+    },
+    {
+      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-10-1-scaled.jpg.jpeg",
+      alt: "Day Care Concept - Play zones and activity areas"
+    },
+    {
+      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-10-scaled.jpg.jpeg",
+      alt: "Day Care Concept - Activity zone design"
+    },
+    {
+      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-11-1-scaled.jpg.jpeg",
+      alt: "Day Care Concept - Interior design overview"
+    },
+    {
+      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-11-scaled.jpg.jpeg",
+      alt: "Day Care Concept - Interior design view"
+    },
+    {
+      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-12-scaled.jpg.jpeg",
+      alt: "Day Care Concept - Design showcase"
+    }
   ],
-  gallery: [
-    { srcQuery: "day care concept play area with slide", alt: "Play area with slide and climbing structures" },
-    { srcQuery: "day care concept reading nook", alt: "Cozy reading nook with soft seating" },
-    { srcQuery: "day care concept custom shelving units", alt: "Custom shelving units for toys and books" },
-    { srcQuery: "day care concept wide view of play area", alt: "Wide view of the main play area" },
-    { srcQuery: "day care concept tables and chairs for children", alt: "Small tables and chairs for children" },
-  ],
+  sections: [
+    {
+      content: "The purpose was creating a visually stimulating environment in which children can joyously go through the daily activities offered by a day care service. Playing and learning go better in an interior crafted with natural oak and soft pastel colors.",
+      mainImage: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-07-1-scaled.jpg.jpeg",
+      galleryImages: [
+        "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-07-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-08-1-scaled.jpg.jpeg"
+      ]
+    },
+    {
+      content: "The oak wood furniture and accessories can be found as miniature tables, animal shaped chairs, dressing cupboards, slides, and gym accessories, as well as crafted on the walls and continuing up to the ceiling, offering the space a very in-sync geometry and a pleasant aesthetic, with the occasional uplifting colour accent.",
+      mainImage: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-08-scaled.jpg.jpeg",
+      galleryImages: [
+        "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-09-1-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-10-1-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-10-scaled.jpg.jpeg"
+      ]
+    },
+    {
+      content: "These features are enhanced by a natural and warm lighting system that emerges from cloud shapes, ceiling parts or hanging light bulbs.",
+      mainImage: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-11-1-scaled.jpg.jpeg",
+      galleryImages: [
+        "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-11-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-12-scaled.jpg.jpeg"
+      ]
+    }
+  ]
 }
 
-export default function DayCareConceptPage() {
+export default function DayCarePage() {
   return (
     <div className="bg-white text-black">
+      {/* Hero Section */}
       <ParallaxSection
-        imageUrl={`/placeholder.svg?width=1600&height=900&query=${encodeURIComponent(projectDetails.heroImageQuery)}`}
+        imageUrl={projectDetails.heroImage}
         imageAlt={projectDetails.title + " Hero Image"}
         minHeight="70vh"
         strength={0.3}
@@ -41,89 +102,289 @@ export default function DayCareConceptPage() {
         </AnimatedElement>
       </ParallaxSection>
 
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp" className="mb-12">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
-              <Link href="/design">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back To Design Projects
-              </Link>
-            </Button>
-          </AnimatedElement>
-
-          <div className="space-y-12">
-            <AnimatedElement animationType="fadeInUp">
-              <div className="grid lg:grid-cols-2 gap-8 items-center">
-                <p className="text-lg text-gray-700 leading-relaxed">{projectDetails.description[0]}</p>
-                <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
-                  <Image
-                    src={`/placeholder.svg?width=800&height=600&query=day+care+play+area+with+natural+light`}
-                    alt="Day care play area"
-                    width={800}
-                    height={600}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              </div>
-            </AnimatedElement>
-            <AnimatedElement animationType="fadeInUp">
-              <div className="grid lg:grid-cols-2 gap-8 items-center">
-                <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg lg:order-first">
-                  <Image
-                    src={`/placeholder.svg?width=800&height=600&query=day+care+concept+with+yellow+and+purple+accents`}
-                    alt="Day care concept with colorful accents"
-                    width={800}
-                    height={600}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <p className="text-lg text-gray-700 leading-relaxed">{projectDetails.description[1]}</p>
-              </div>
-            </AnimatedElement>
-            <AnimatedElement animationType="fadeInUp">
-              <div className="aspect-[16/7] w-full overflow-hidden rounded-lg shadow-lg mb-6">
-                <Image
-                  src={`/placeholder.svg?width=1200&height=525&query=day+care+long+wall+with+storage+cubbies`}
-                  alt="Wall with storage cubbies"
-                  width={1200}
-                  height={525}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto text-center">
-                {projectDetails.description[2]}
-              </p>
-            </AnimatedElement>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 lg:py-16 bg-gray-50 text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-4">
-            {projectDetails.gallery.map((image, index) => (
-              <AnimatedElement key={index} animationType="scaleIn" delay={index * 0.05}>
-                <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
-                  <Image
-                    src={`/placeholder.svg?width=1200&height=675&query=${encodeURIComponent(image.srcQuery)}`}
-                    alt={image.alt}
-                    width={1200}
-                    height={675}
-                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
-                  />
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 lg:py-16 bg-white text-black">
+      {/* Back Button */}
+      <section className="pt-12 pb-6 bg-white text-black">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
             <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
-              <Link href="/design">
+              <Link href="/concept-design">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Design Projects
+              </Link>
+            </Button>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Project Description Section */}
+      <section className="pt-6 pb-12 lg:pt-8 lg:pb-16 bg-white text-black">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp" className="text-center mb-16">
+            <div className="max-w-4xl mx-auto">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                {projectDetails.description}
+              </p>
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Section 1: Text Left, Image Right */}
+      <section className="py-16 lg:py-20 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+              
+              {/* Text Content */}
+              <div className="space-y-6">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {projectDetails.sections[0].content}
+                </p>
+                
+                {/* Decorative Element */}
+                <div className="pt-6">
+                  <div className="w-20 h-1 bg-gradient-to-r from-black to-gray-300 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Main Image */}
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative"
+                >
+                  <Image
+                    src={projectDetails.sections[0].mainImage}
+                    alt="Day Care Concept main image"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    style={{ aspectRatio: '4/3' }}
+                  />
+                </motion.div>
+              </div>
+
+            </div>
+
+            {/* Gallery Images */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.sections[0].galleryImages.map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image}
+                      alt={`Day Care Concept gallery image ${index + 1}`}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Section 2: Text Right, Image Left */}
+      <section className="py-16 lg:py-20 bg-white text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 lg:grid-flow-col-dense">
+              
+              {/* Text Content */}
+              <div className="space-y-6 lg:col-start-2">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {projectDetails.sections[1].content}
+                </p>
+                
+                {/* Decorative Element */}
+                <div className="pt-6">
+                  <div className="w-20 h-1 bg-gradient-to-r from-black to-gray-300 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Main Image */}
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 lg:col-start-1">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative"
+                >
+                  <Image
+                    src={projectDetails.sections[1].mainImage}
+                    alt="Day Care Concept main image"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    style={{ aspectRatio: '4/3' }}
+                  />
+                </motion.div>
+              </div>
+
+            </div>
+
+            {/* Gallery Images - Featured + Grid */}
+            <div className="space-y-8">
+              {/* Single large featured image */}
+              <AnimatedElement animationType="fadeInUp" delay={0.2}>
+                <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
+                  <Image
+                    src={projectDetails.sections[1].galleryImages[0]}
+                    alt="Day Care Concept featured gallery image"
+                    width={1400}
+                    height={800}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
+              </AnimatedElement>
+
+              {/* Two images in a row */}
+              <div className="grid md:grid-cols-2 gap-8">
+                {projectDetails.sections[1].galleryImages.slice(1).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image}
+                        alt={`Day Care Concept gallery image ${index + 2}`}
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '4/3' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Section 3: Text Left, Image Right */}
+      <section className="py-16 lg:py-20 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+              
+              {/* Text Content */}
+              <div className="space-y-6">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {projectDetails.sections[2].content}
+                </p>
+                
+                {/* Decorative Element */}
+                <div className="pt-6">
+                  <div className="w-20 h-1 bg-gradient-to-r from-black to-gray-300 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Main Image */}
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative"
+                >
+                  <Image
+                    src={projectDetails.sections[2].mainImage}
+                    alt="Day Care Concept main image"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    style={{ aspectRatio: '4/3' }}
+                  />
+                </motion.div>
+              </div>
+
+            </div>
+
+            {/* Gallery Images - Two images side by side */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.sections[2].galleryImages.map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image}
+                      alt={`Day Care Concept gallery image ${index + 1}`}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+            <AnimatedElement animationType="fadeInLeft" className="space-y-8">
+              <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                Contact
+              </h2>
+              <div className="space-y-4 text-gray-700">
+                <div className="space-y-4">
+                  <p className="text-gray-700">
+                    <strong>Headquarters:</strong> The Netherlands & Romania<br />
+                    <strong>Working Point:</strong> Austria
+                  </p>
+                  <div className="flex space-x-4">
+                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
+                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
+                  </div>
+                  <Link 
+                    href="mailto:office@studiobycristian.com" 
+                    className="block text-gray-700 hover:text-black transition-colors"
+                  >
+                    office@studiobycristian.com
+                  </Link>
+                </div>
+              </div>
+            </AnimatedElement>
+
+            <AnimatedElement animationType="fadeInRight">
+              <motion.div
+                className="bg-black text-white p-8 sm:p-10 lg:p-12 rounded-xl shadow-2xl border border-black/20 relative"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/40" />
+                <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-white/40" />
+                <ContactForm />
+              </motion.div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
+      {/* Back Button Bottom */}
+      <section className="pt-6 pb-12 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp">
+            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+              <Link href="/concept-design">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back To Design Projects
               </Link>

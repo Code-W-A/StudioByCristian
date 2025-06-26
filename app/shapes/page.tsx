@@ -1,152 +1,216 @@
 "use client"
 
-import Image from "next/image"
-import AnimatedElement from "@/components/animated-element"
-import ParallaxSection from "@/components/parallax-section"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { ArrowLeft } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import ParallaxSection from '@/components/parallax-section'
+import AnimatedElement from '@/components/animated-element'
 
-const shapesProducts = [
+const products = [
   {
-    name: "Lady Chair",
-    description:
-      "The Lady Chair found its way thanks to its inventive body-inspired shape, smooth finishings and unique details. Made out of solid walnut wood with dark rims, this piece is more than just a seating object - it is a statement. Suitable any place around any home, regardless of the interior design or the space. 'This chair is so good looking that I can hang it up a wall' - chair.",
+    id: 'lady-chair',
+    name: 'Lady Chair',
+    slug: 'shapes-lady-chair',
+    description: 'The Lady Chair is entitled this way thanks to its feminine body-inspired shape, smooth finishings and round edges. Crafted in light natural walnut wood with dark rims, this piece is more than just a beautiful chair – it is a piece of art that finds its place around any home, regardless of the interior design of the house. The "so good looking that I can hang it up a wall" chair.',
     images: [
-      { srcQuery: "Lady Chair elegant wooden chair front view", alt: "Lady Chair front view" },
-      { srcQuery: "Lady Chair wooden chair dark rim detail", alt: "Lady Chair dark rim detail" },
-    ],
-    link: "/shapes-lady-chair",
+      '/STUDIO BY CRISTIAN/shapes/LadyChair-3.jpg.jpeg',
+      '/STUDIO BY CRISTIAN/shapes/LadyChair-4.jpg.jpeg'
+    ]
   },
   {
-    name: "Out Table",
-    description:
-      "The Out Table is our most famous and requested table design to date. Its oval-rounded shape is supported by a three-legged structure with a slight twist, giving it an organic, yet modern look. Solid wood with a beautiful matte finish, and it stands for quality and durability. Available in many different wood nuances and shades. 'This table is so beautiful I don't want to put anything on it' dinner table.",
+    id: 'out-table',
+    name: 'Out Table',
+    slug: 'shapes-out-table',
+    description: 'The Out Table is our most famous and requested table design to date. Its oval-rounded shape is supported by long, sleek legs and features a slight dent in the middle on top. It is made of walnut wood with a beautiful matte finish, and it stands out by its elegant and unique mixture of polished wood nuances and shades. The "I love it so much that I don\'t want to put anything on it" dinner table.',
     images: [
-      { srcQuery: "Out Table oval wooden dining table", alt: "Out Table oval wooden dining table" },
-      { srcQuery: "Out Table wooden dining table top view", alt: "Out Table top view" },
-    ],
-    link: "/shapes-out-table",
+      '/STUDIO BY CRISTIAN/shapes/OutTable-1.jpg.jpeg',
+      '/STUDIO BY CRISTIAN/shapes/OutTable-4.jpg.jpeg'
+    ]
   },
   {
-    name: "UFO Chair",
-    description:
-      "The UFO Chair is part of the same collection of unique and custom-made furniture pieces designed in our atelier. It features a thick, solid round shape, and it is made out of solid oak wood. The UFO Chair is a statement piece, that gives this chair a marvelous aesthetic and elegance. The 'Where did you get this' -chair.",
+    id: 'ufo-chair',
+    name: 'UFO Chair',
+    slug: 'shapes-ufo-chair',
+    description: 'The UFO Chair is part of the same collection of walnut wood designs that are uniquely crafted in our atelier. It features a thick, solid round shape held up by three rounded legs that support it. The playful shades of walnut render this chair a marvellous aesthetic and elegance. The "where did you get this" chair.',
     images: [
-      { srcQuery: "UFO Chair round wooden stool", alt: "UFO Chair round wooden stool" },
-      { srcQuery: "UFO Chair wooden stool side view", alt: "UFO Chair side view" },
-    ],
-    link: "/shapes-ufo-chair",
+      '/STUDIO BY CRISTIAN/shapes/UFOchair-1.jpg.jpeg',
+      '/STUDIO BY CRISTIAN/shapes/UFOchair-2.jpg.jpeg'
+    ]
   },
   {
-    name: "SPIDERkit",
-    description: "The 'uber cool and in the same time stylish and incredibly comfortable' table and chairs.",
+    id: 'spiderkit',
+    name: 'SPIDERkit',
+    slug: '#',
+    description: 'The "uber cool and in the same time stylish and incredibly comfortable" table and chairs.',
     images: [
-      { srcQuery: "SPIDERkit wooden table and chairs set", alt: "SPIDERkit table and chairs set" },
-      { srcQuery: "SPIDERkit wooden chair detail", alt: "SPIDERkit chair detail" },
-    ],
-    link: "/shapes-spider-kit",
+      '/STUDIO BY CRISTIAN/shapes/Spiderkit-08.jpg.jpeg',
+      '/STUDIO BY CRISTIAN/shapes/Spiderkit-10.jpg.jpeg'
+    ]
   },
   {
-    name: "THINKtable",
-    description: "The 'It made me fall in love with my work again' table.",
+    id: 'thinktable',
+    name: 'THINKtable',
+    slug: '#',
+    description: 'The "It made me fall in love with my work again" table.',
     images: [
-      { srcQuery: "THINKable wooden desk with yellow accent", alt: "THINKable desk front view" },
-      { srcQuery: "THINKable wooden desk yellow drawer detail", alt: "THINKable desk drawer detail" },
-    ],
-    link: "/shapes-think-table",
+      '/STUDIO BY CRISTIAN/shapes/Thinktable-3.jpg.jpeg',
+      '/STUDIO BY CRISTIAN/shapes/Thinktable-4.jpg.jpeg'
+    ]
   },
   {
-    name: "FISHchair",
-    description: "The 'Way to classy to hang your clothes on it' chair.",
+    id: 'fishchair',
+    name: 'FISHchair',
+    slug: '#',
+    description: 'The "Way to classy to hang your clothes on it" chair.',
     images: [
-      { srcQuery: "FISHchair unique wooden chair design side", alt: "FISHchair side view" },
-      { srcQuery: "FISHchair wooden chair wood grain detail", alt: "FISHchair wood grain detail" },
-    ],
-    link: "/shapes-fish-chair",
-  },
+      '/STUDIO BY CRISTIAN/shapes/Fishchair-3.jpg.jpeg',
+      '/STUDIO BY CRISTIAN/shapes/Fishchair-4.jpg.jpeg'
+    ]
+  }
 ]
 
 export default function ShapesPage() {
   return (
     <div className="bg-white text-black">
+      
       <ParallaxSection
-        imageUrl="/placeholder.svg?width=1600&height=700"
-        imageAlt="Shapes Collection Hero"
-        minHeight="50vh"
-        strength={0.2}
-        overlayClassName="bg-black/30"
+        imageUrl="/STUDIO BY CRISTIAN/shapes/LadyChair-3.jpg.jpeg"
+        imageAlt="Shapes Collection Hero Image"
+        minHeight="70vh"
+        strength={0.3}
+        overlayClassName="bg-black/40"
       >
         <AnimatedElement animationType="fadeInUp">
-          <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl">Shapes</h1>
-        </AnimatedElement>
-        <AnimatedElement animationType="fadeInUp" delay={0.2}>
-          <p className="mt-4 max-w-2xl text-lg text-gray-200 sm:text-xl">
-            Our signature furniture pieces, custom-made and designed exclusively for our selective clients and later
-            added to our portfolio.
-          </p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">FURNITURE PRODUCTION</p>
+          <h1 className="mt-2 text-4xl font-bold text-white sm:text-5xl md:text-6xl">SHAPES</h1>
         </AnimatedElement>
       </ParallaxSection>
 
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp" className="mb-12">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+      {/* Back Button */}
+      <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
               <Link href="/furniture-production">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-5 w-5" />
                 Back To Furniture Production
               </Link>
             </Button>
           </AnimatedElement>
-
-          <div className="space-y-16">
-            {shapesProducts.map((product, index) => (
-              <AnimatedElement key={product.name} animationType="fadeInUp" delay={index * 0.1}>
-                <div className="grid lg:grid-cols-2 gap-8 items-start">
-                  <div>
-                    <h2 className="text-2xl font-semibold tracking-tight text-black sm:text-3xl mb-3">
-                      {product.name}
-                    </h2>
-                    <p className="text-gray-700 leading-relaxed mb-4">{product.description}</p>
-                    {product.link !== "#" && (
-                      <Button
-                        asChild
-                        variant="outline"
-                        className="bg-white text-black border-gray-300 hover:bg-gray-100"
-                      >
-                        <Link href={product.link}>View Product</Link>
-                      </Button>
-                    )}
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    {product.images.map((image, imgIndex) => (
-                      <div
-                        key={imgIndex}
-                        className={`aspect-square w-full overflow-hidden rounded-lg shadow-lg ${product.images.length === 1 && imgIndex === 0 ? "col-span-2" : ""}`}
-                      >
-                        <Image
-                          src={`/placeholder.svg?width=400&height=400&query=${encodeURIComponent(image.srcQuery)}`}
-                          alt={image.alt}
-                          width={400}
-                          height={400}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      {/* Introduction */}
+      <section className="py-16 lg:py-20 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedElement animationType="fadeInUp">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Our three signature pieces were custom-made and designed exclusively for our selective clients and later added to our portfolio.
+            </p>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Products Sections - Alternating Layout */}
+      {products.map((product, index) => {
+        const isEven = index % 2 === 0
+        const bgColor = isEven ? "bg-white" : "bg-gray-50"
+        
+        return (
+          <section key={product.id} className={`py-16 lg:py-20 ${bgColor} text-black`}>
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <AnimatedElement animationType="fadeInUp">
+                <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+                  
+                  {/* Text Content */}
+                  <div className={`space-y-6 ${!isEven ? 'lg:col-start-2' : ''}`}>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-black mb-6">
+                      {product.slug !== '#' ? (
+                        <Link 
+                          href={`/${product.slug}`}
+                          className="hover:text-gray-600 transition-colors duration-300"
+                        >
+                          {product.name}
+                        </Link>
+                      ) : (
+                        product.name
+                      )}
+                    </h2>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      {product.description}
+                    </p>
+                    
+                    {/* View More Button for linked products */}
+                    {product.slug !== '#' && (
+                      <div className="pt-4">
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="bg-transparent text-black border-black hover:bg-black hover:text-white"
+                        >
+                          <Link href={`/${product.slug}`}>
+                            View Gallery
+                          </Link>
+                        </Button>
+                      </div>
+                    )}
+                    
+                    {/* Decorative Element */}
+                    <div className="pt-6">
+                      <div className="w-20 h-1 bg-gradient-to-r from-black to-gray-300 rounded-full"></div>
+                    </div>
+                  </div>
+
+                  {/* Images */}
+                  <div className={`${!isEven ? 'lg:col-start-1' : ''}`}>
+                    <div className="grid grid-cols-2 gap-4">
+                      {product.images.map((image, imgIndex) => (
+                        <motion.div
+                          key={imgIndex}
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.4, ease: "easeOut" }}
+                          className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100"
+                        >
+                          <Image
+                            src={image}
+                            alt={`${product.name} ${imgIndex + 1}`}
+                            width={400}
+                            height={400}
+                            className="w-full h-auto object-cover"
+                            style={{ aspectRatio: '1/1' }}
+                          />
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
+              </AnimatedElement>
+            </div>
+          </section>
+        )
+      })}
+
+      {/* Back Button */}
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
               <Link href="/furniture-production">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-5 w-5" />
                 Back To Furniture Production
               </Link>
             </Button>
@@ -154,5 +218,5 @@ export default function ShapesPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

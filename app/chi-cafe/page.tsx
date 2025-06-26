@@ -5,36 +5,43 @@ import AnimatedElement from "@/components/animated-element"
 import ParallaxSection from "@/components/parallax-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react"
-import { useState } from "react"
+import { ArrowLeft } from "lucide-react"
+import ContactForm from "@/components/contact-form"
+import { motion } from "framer-motion"
 
 const projectDetails = {
   title: "Chi Cafe",
   category: "Furniture Production",
-  heroImageQuery: "interior of Chi Cafe with orange chairs and industrial lighting",
-  description:
-    "Chi Cafe was a very fun project for us to undertake due to the custom made furniture pieces that were designed to be both functional and aesthetically pleasing, with painted MDF and modern colors, combined with steel and wood ceilings that create a warm and inviting atmosphere. The lighting is a mix of old and new, with a few pieces that are more than a century old. The result is a stunning display of modern touch that can be observed in the interior design as well. Our team of designers and carpenters are always challenged by the complexity of our projects and designs.",
-  galleryImages: [
-    { srcQuery: "Chi Cafe seating area with large windows", alt: "Cafe seating area with large windows" },
-    { srcQuery: "Chi Cafe counter area with menu board", alt: "Cafe counter area" },
-    { srcQuery: "Chi Cafe coffee machine and pastry display", alt: "Coffee machine and pastry display" },
-    { srcQuery: "Chi Cafe interior detail with wooden slats", alt: "Interior detail with wooden slats" },
-    { srcQuery: "Chi Cafe overview from different angle", alt: "Cafe overview from different angle" },
-  ],
-  carouselImageQuery: "Chi Cafe interior wide shot with bar stools",
+  heroImage: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-Banner-scaled.jpg.jpeg",
+  description: "Chi Cafe was a very fun project for us to undertake due to the custom made furniture we have produced for the space. The mix between massive wood with painted MDF and modern colors, combined with steel and wood ceilings decorations was a nice process for our talented carpenters.",
+  additionalText: "We are happy to work and combine different materials - from classic to modern, from real wood to veneer, HPL, or steel. Our carpenters are always challenged by the complexity of our projects and designs.",
+  images: [
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-01-1-scaled.jpg.jpeg", alt: "Chi Cafe - Interior design view 1" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-02-1-scaled.jpg.jpeg", alt: "Chi Cafe - Interior design view 2" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-03-1-scaled.jpg.jpeg", alt: "Chi Cafe - Interior design view 3" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-04-1-scaled.jpg.jpeg", alt: "Chi Cafe - Interior design view 4" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-05-scaled.jpg.jpeg", alt: "Chi Cafe - Seating area" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-06-scaled.jpg.jpeg", alt: "Chi Cafe - Custom furniture details" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-07-scaled.jpg.jpeg", alt: "Chi Cafe - Wood and steel combination" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-08-scaled.jpg.jpeg", alt: "Chi Cafe - Modern design elements" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-09-scaled.jpg.jpeg", alt: "Chi Cafe - Overall space design" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-10-scaled.jpg.jpeg", alt: "Chi Cafe - Lighting and atmosphere" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-11-scaled.jpg.jpeg", alt: "Chi Cafe - Custom carpentry work" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-12-1-scaled.jpg.jpeg", alt: "Chi Cafe - Material combinations" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-13-scaled.jpg.jpeg", alt: "Chi Cafe - Detailed view" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-14-1-scaled.jpg.jpeg", alt: "Chi Cafe - Final design" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-15-scaled.jpg.jpeg", alt: "Chi Cafe - Furniture finish" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-16-1-scaled.jpg.jpeg", alt: "Chi Cafe - Complete space" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-17-1-scaled.jpg.jpeg", alt: "Chi Cafe - Final result" },
+  ]
 }
 
 export default function ChiCafePage() {
-  const [currentImage, setCurrentImage] = useState(0)
-  const carouselImages = [projectDetails.carouselImageQuery] // Simplified
-
-  const nextImage = () => setCurrentImage((prev) => (prev + 1) % carouselImages.length)
-  const prevImage = () => setCurrentImage((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)
-
   return (
     <div className="bg-white text-black">
+      {/* Hero Section */}
       <ParallaxSection
-        imageUrl={`/placeholder.svg?width=1600&height=900&query=${encodeURIComponent(projectDetails.heroImageQuery)}`}
+        imageUrl={projectDetails.heroImage}
         imageAlt={projectDetails.title + " Hero Image"}
         minHeight="70vh"
         strength={0.3}
@@ -46,46 +53,214 @@ export default function ChiCafePage() {
         </AnimatedElement>
       </ParallaxSection>
 
-      <section className="py-12 lg:py-16 bg-white text-black">
+      {/* Back Button */}
+      <section className="pt-12 pb-6 bg-white text-black">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp" className="mb-12">
+          <AnimatedElement animationType="fadeInUp">
             <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
               <Link href="/furniture-production">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Back To Furniture Production
+                Back to Furniture Production
               </Link>
             </Button>
           </AnimatedElement>
+        </div>
+      </section>
 
-          <AnimatedElement animationType="fadeInUp">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <p className="text-lg text-gray-700 leading-relaxed">{projectDetails.description}</p>
-              <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
-                <Image
-                  src={`/placeholder.svg?width=800&height=600&query=${encodeURIComponent(projectDetails.galleryImages[0].srcQuery)}`}
-                  alt={projectDetails.galleryImages[0].alt}
-                  width={800}
-                  height={600}
-                  className="object-cover w-full h-full"
-                />
-              </div>
+      {/* Project Description Section */}
+      <section className="pt-6 pb-12 lg:pt-8 lg:pb-16 bg-white text-black">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp" className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl mb-8">
+              Custom Furniture Production
+            </h2>
+            <div className="max-w-4xl mx-auto space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                {projectDetails.description}
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                {projectDetails.additionalText}
+              </p>
             </div>
           </AnimatedElement>
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-gray-50 text-black">
+      {/* Featured Image */}
+      <section className="py-8 bg-gray-50">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {projectDetails.galleryImages.slice(1).map((image, index) => (
-              <AnimatedElement key={index} animationType="scaleIn" delay={index * 0.05}>
-                <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
+          <AnimatedElement animationType="fadeInUp">
+            <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
+              <Image
+                src={projectDetails.images[0].src}
+                alt={projectDetails.images[0].alt}
+                width={1400}
+                height={800}
+                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                style={{ aspectRatio: '16/9' }}
+              />
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Image Gallery Section */}
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="space-y-16">
+            {/* Two large images side by side */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.images.slice(1, 3).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Single large featured image */}
+            <AnimatedElement animationType="fadeInUp" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
+                <Image
+                  src={projectDetails.images[3].src}
+                  alt={projectDetails.images[3].alt}
+                  width={1400}
+                  height={800}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '16/9' }}
+                />
+              </div>
+            </AnimatedElement>
+
+            {/* Three images in a row */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {projectDetails.images.slice(4, 7).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={600}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '1/1' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Two large images side by side */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.images.slice(7, 9).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Single wide image */}
+            <AnimatedElement animationType="fadeInUp" delay={0.3}>
+              <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
+                <Image
+                  src={projectDetails.images[9].src}
+                  alt={projectDetails.images[9].alt}
+                  width={1400}
+                  height={700}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '16/9' }}
+                />
+              </div>
+            </AnimatedElement>
+
+            {/* Three more square images */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {projectDetails.images.slice(10, 13).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={600}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '1/1' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Final images */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.images.slice(13, 15).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Last two images */}
+            {projectDetails.images.slice(15).map((image, index) => (
+              <AnimatedElement
+                key={index}
+                animationType="fadeInUp"
+                delay={index * 0.1}
+              >
+                <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
                   <Image
-                    src={`/placeholder.svg?width=800&height=600&query=${encodeURIComponent(image.srcQuery)}`}
+                    src={image.src}
                     alt={image.alt}
-                    width={800}
-                    height={600}
-                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                    width={1400}
+                    height={800}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
                   />
                 </div>
               </AnimatedElement>
@@ -94,42 +269,59 @@ export default function ChiCafePage() {
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg shadow-xl">
-              <Image
-                src={`/placeholder.svg?width=1200&height=675&query=${encodeURIComponent(carouselImages[currentImage])}`}
-                alt="Cafe interior carousel image"
-                fill
-                className="object-cover"
-              />
-              {carouselImages.length > 1 && (
-                <>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-black border-none"
-                    onClick={prevImage}
+
+
+      {/* Contact Section */}
+      <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+            <AnimatedElement animationType="fadeInLeft" className="space-y-8">
+              <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                Contact Us
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                We're passionate about bringing unique visions to life. Whether you have a clear concept or are just
+                starting to dream, we'd love to hear from you. Reach out to discuss your project, and let's explore the
+                possibilities together.
+              </p>
+              <div className="space-y-4 text-gray-700">
+                <div className="space-y-4">
+                  <p className="text-gray-700">
+                    <strong>Headquarters:</strong> The Netherlands & Romania<br />
+                    <strong>Working Point:</strong> Austria
+                  </p>
+                  <div className="flex space-x-4">
+                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
+                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
+                  </div>
+                  <Link 
+                    href="mailto:office@studiobycristian.com" 
+                    className="block text-gray-700 hover:text-black transition-colors"
                   >
-                    <ChevronLeft className="h-6 w-6" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 text-black border-none"
-                    onClick={nextImage}
-                  >
-                    <ChevronRight className="h-6 w-6" />
-                  </Button>
-                </>
-              )}
-            </div>
-          </AnimatedElement>
+                    office@studiobycristian.com
+                  </Link>
+                </div>
+              </div>
+            </AnimatedElement>
+
+            <AnimatedElement animationType="fadeInRight">
+              <motion.div
+                className="bg-black text-white p-8 sm:p-10 lg:p-12 rounded-xl shadow-2xl border border-black/20 relative"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/40" />
+                <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-white/40" />
+                <ContactForm />
+              </motion.div>
+            </AnimatedElement>
+          </div>
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-white text-black">
+      {/* Back Button Bottom */}
+      <section className="pt-6 pb-12 bg-white text-black">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
             <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">

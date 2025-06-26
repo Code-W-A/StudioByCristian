@@ -9,37 +9,59 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowLeft, Download, Share2 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import ContactForm from "@/components/contact-form"
+import { motion } from "framer-motion"
 
 const projectDetails = {
   title: "Harmonie in Holz Showroom Concept",
-  category: "Design Projects", // Inferred from "Back to Design Projects" link
-  heroImageQuery: "Harmonie in Holz showroom interior reception",
-  description: [
-    "An old barn from Kufstein took on a new exciting mission. It now hosts beautiful furniture pieces and unique interior concepts in a carefully designed and constructed space. Our mission for this project was to turn an old barn from Kufstein into a modern showroom for furniture and interior concepts. The challenge was to preserve the barn's original character while creating a contemporary and functional space. The design process involved extensive research and planning, including 3D renderings. After the design phase, the entire space has been remodeled to its new function, creating a unique and inviting atmosphere.",
-    "The exterior of the barn is now a combination between a typical Bavarian building featuring balconies and wooden touches, and a modern one. The interior of the barn is now a combination between a typical Bavarian building featuring balconies and wooden touches, and a modern one, creating a unique and inviting atmosphere. The result is a stunning display of modern touch that can be observed in the interior design as well.",
-    "The space now acts as a furniture showroom, and includes a living space, kitchen area, office area, storage and dining area, as well as meeting room and parking space.",
-  ],
-  location: "Munich, Germany",
-  status: "Concept",
-  sectors: "Concept, Interior Design, Furniture design & production",
-  client: "Confidential",
-  gallery: [
-    { srcQuery: "Harmonie in Holz kitchen concept in showroom", alt: "Kitchen concept display in showroom" },
-    { srcQuery: "Harmonie in Holz wood samples display", alt: "Display of various wood samples" },
-    { srcQuery: "Harmonie in Holz showroom seating area", alt: "Seating area within the showroom" },
+  category: "Design Projects",
+  heroImage: "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-Banner-scaled.jpg.jpeg",
+  description: "An old barn from Austria took on a new exciting mission. It now hosts beautiful furniture pieces and offers furniture design & production services inside a newly constructed space.",
+  sections: [
     {
-      srcQuery: "Harmonie in Holz exterior rendering modern barn",
-      alt: "Exterior rendering of the modern barn showroom",
+      content: "Our mission for this project was to turn an old barn from nearby Munich into a new, modern, welcoming and fresh space that acts as a showroom and living spot for our clients. Starting from an old wooden barn, we have first created the design project backed-up by indoor and outdoor 3D renderings.",
+      mainImage: "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-1-1-scaled.jpg.jpeg",
+      galleryImages: [
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-1-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-2-1-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-2-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-3-1-scaled.jpg.jpeg"
+      ]
     },
-    { srcQuery: "Harmonie in Holz showroom kitchen detail", alt: "Detailed view of kitchen display" },
-  ],
+    {
+      content: "After the design phase, the entire space has been remodelled to its core, so as to host furniture designed and produced at our studio. The exterior of the barn is now a combination between a typical Bavarian building featuring balconies and wooden touches, and a modern one with a minimalist facade contouring the main entrance.",
+      mainImage: "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-3-scaled.jpg.jpeg",
+      galleryImages: [
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-4-1-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-4-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-5-1-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-6-1-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-6-scaled.jpg.jpeg"
+      ]
+    },
+    {
+      content: "A floor-to-ceiling glass window that ends in big double entrance doors gives the space a modern touch that can be observed in the interior design as well. The space now acts as a furniture showroom, and includes a living space, meeting room, reception, kitchen and dining area, private meeting room and parking space.",
+      mainImage: "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-7-1-scaled.jpg.jpeg",
+      galleryImages: [
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-7-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-8-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-10-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-11-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-12-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-13-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-14-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-15-1-scaled.jpg.jpeg",
+        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-15-scaled.jpg.jpeg"
+      ]
+    }
+  ]
 }
 
 export default function HarmonieInHolzPage() {
   return (
     <div className="bg-white text-black">
       <ParallaxSection
-        imageUrl={`/placeholder.svg?width=1600&height=900&query=${encodeURIComponent(projectDetails.heroImageQuery)}`}
+        imageUrl={projectDetails.heroImage}
         imageAlt={projectDetails.title + " Hero Image"}
         minHeight="70vh"
         strength={0.3}
@@ -51,81 +73,336 @@ export default function HarmonieInHolzPage() {
         </AnimatedElement>
       </ParallaxSection>
 
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-            <div className="lg:col-span-2">
-              <AnimatedElement animationType="fadeInUp">
-                <h2 className="text-2xl font-semibold tracking-tight text-black sm:text-3xl mb-6">
-                  Project Description
-                </h2>
-                <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
-                  {projectDetails.description.map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
+
+
+      <section className="py-16 lg:py-20 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+              
+              {/* Text Content */}
+              <div className="space-y-6">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  An old barn from Austria took on a new exciting mission. It now hosts beautiful furniture pieces and offers furniture design & production services inside a newly constructed space. {projectDetails.sections[0].content}
+                </p>
+                
+                {/* Decorative Element */}
+                <div className="pt-6">
+                  <div className="w-20 h-1 bg-gradient-to-r from-black to-gray-300 rounded-full"></div>
                 </div>
-              </AnimatedElement>
+              </div>
+
+              {/* Main Image */}
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative"
+                >
+                  <Image
+                    src={projectDetails.sections[0].mainImage}
+                    alt="Harmonie in Holz main image"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    style={{ aspectRatio: '4/3' }}
+                  />
+                </motion.div>
+              </div>
+
             </div>
-            <div className="lg:col-span-1">
-              <AnimatedElement animationType="fadeInUp" delay={0.1}>
-                <Card className="bg-gray-50 border-gray-200 shadow-sm">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-black">Project Details</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3 text-sm text-gray-700">
-                    <p>
-                      <strong>Location:</strong> {projectDetails.location}
-                    </p>
-                    <p>
-                      <strong>Status:</strong> {projectDetails.status}
-                    </p>
-                    <p>
-                      <strong>Sectors:</strong> {projectDetails.sectors}
-                    </p>
-                    <p>
-                      <strong>Client:</strong> {projectDetails.client}
-                    </p>
-                    <div className="mt-4 flex space-x-2">
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="bg-white text-black border-gray-300 hover:bg-gray-100"
-                      >
-                        <Share2 className="h-4 w-4" />
-                        <span className="sr-only">Share</span>
-                      </Button>
-                      <Button variant="outline" className="bg-white text-black border-gray-300 hover:bg-gray-100">
-                        <Download className="mr-2 h-4 w-4" />
-                        Concept
-                      </Button>
+
+            {/* Gallery Images - Two large + Two small */}
+            <div className="space-y-8">
+              {/* Two large images side by side */}
+              <div className="grid md:grid-cols-2 gap-8">
+                {projectDetails.sections[0].galleryImages.slice(0, 2).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image}
+                        alt={`Harmonie in Holz gallery image ${index + 1}`}
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '4/3' }}
+                      />
                     </div>
-                  </CardContent>
-                </Card>
-              </AnimatedElement>
+                  </AnimatedElement>
+                ))}
+              </div>
+
+              {/* Two smaller images side by side */}
+              <div className="grid md:grid-cols-2 gap-8">
+                {projectDetails.sections[0].galleryImages.slice(2, 4).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image}
+                        alt={`Harmonie in Holz gallery image ${index + 3}`}
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '1/1' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
             </div>
-          </div>
+          </AnimatedElement>
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-gray-50 text-black">
+      <section className="py-16 lg:py-20 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp" className="mb-10 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">Gallery</h2>
-          </AnimatedElement>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {projectDetails.gallery.map((image, index) => (
-              <AnimatedElement key={index} animationType="scaleIn" delay={index * 0.05}>
-                <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
+          <AnimatedElement animationType="fadeInUp">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 lg:grid-flow-col-dense">
+              
+              {/* Text Content */}
+              <div className="space-y-6 lg:col-start-2">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {projectDetails.sections[1].content}
+                </p>
+                
+                {/* Decorative Element */}
+                <div className="pt-6">
+                  <div className="w-20 h-1 bg-gradient-to-r from-black to-gray-300 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Main Image */}
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 lg:col-start-1">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative"
+                >
                   <Image
-                    src={`/placeholder.svg?width=800&height=600&query=${encodeURIComponent(image.srcQuery)}`}
-                    alt={image.alt}
+                    src={projectDetails.sections[1].mainImage}
+                    alt="Harmonie in Holz main image"
                     width={800}
                     height={600}
-                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                    className="w-full h-auto object-cover"
+                    style={{ aspectRatio: '4/3' }}
+                  />
+                </motion.div>
+              </div>
+
+            </div>
+
+            {/* Gallery Images - Featured + Grid */}
+            <div className="space-y-8">
+              {/* Single large featured image */}
+              <AnimatedElement animationType="fadeInUp" delay={0.2}>
+                <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
+                  <Image
+                    src={projectDetails.sections[1].galleryImages[0]}
+                    alt="Harmonie in Holz featured gallery image"
+                    width={1400}
+                    height={800}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
                   />
                 </div>
               </AnimatedElement>
-            ))}
+
+              {/* Four images in a 2x2 grid */}
+              <div className="grid md:grid-cols-2 gap-8">
+                {projectDetails.sections[1].galleryImages.slice(1, 5).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image}
+                        alt={`Harmonie in Holz gallery image ${index + 2}`}
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '4/3' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-20 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+              
+              {/* Text Content */}
+              <div className="space-y-6">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {projectDetails.sections[2].content}
+                </p>
+                
+                {/* Decorative Element */}
+                <div className="pt-6">
+                  <div className="w-20 h-1 bg-gradient-to-r from-black to-gray-300 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Main Image */}
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative"
+                >
+                  <Image
+                    src={projectDetails.sections[2].mainImage}
+                    alt="Harmonie in Holz main image"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    style={{ aspectRatio: '4/3' }}
+                  />
+                </motion.div>
+              </div>
+
+            </div>
+
+            {/* Gallery Images - Complex dynamic layout */}
+            <div className="space-y-8">
+              {/* Three images in a row */}
+              <div className="grid md:grid-cols-3 gap-6">
+                {projectDetails.sections[2].galleryImages.slice(0, 3).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image}
+                        alt={`Harmonie in Holz gallery image ${index + 1}`}
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '1/1' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+
+              {/* Single wide image */}
+              <AnimatedElement animationType="fadeInUp" delay={0.3}>
+                <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
+                  <Image
+                    src={projectDetails.sections[2].galleryImages[3]}
+                    alt="Harmonie in Holz wide gallery image"
+                    width={1400}
+                    height={700}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
+              </AnimatedElement>
+
+              {/* Two large images side by side */}
+              <div className="grid md:grid-cols-2 gap-8">
+                {projectDetails.sections[2].galleryImages.slice(4, 6).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image}
+                        alt={`Harmonie in Holz gallery image ${index + 5}`}
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '4/3' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+
+              {/* Final three images in a row */}
+              <div className="grid md:grid-cols-3 gap-6">
+                {projectDetails.sections[2].galleryImages.slice(6, 9).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image}
+                        alt={`Harmonie in Holz gallery image ${index + 7}`}
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '1/1' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+            <AnimatedElement animationType="fadeInLeft" className="space-y-8">
+              <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                Contact
+              </h2>
+              <div className="space-y-4 text-gray-700">
+                <div className="space-y-4">
+                  <p className="text-gray-700">
+                    <strong>Headquarters:</strong> The Netherlands & Romania<br />
+                    <strong>Working Point:</strong> Austria
+                  </p>
+                  <div className="flex space-x-4">
+                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
+                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
+                  </div>
+                  <Link 
+                    href="mailto:office@studiobycristian.com" 
+                    className="block text-gray-700 hover:text-black transition-colors"
+                  >
+                    office@studiobycristian.com
+                  </Link>
+                </div>
+              </div>
+            </AnimatedElement>
+
+            <AnimatedElement animationType="fadeInRight">
+              <motion.div
+                className="bg-black text-white p-8 sm:p-10 lg:p-12 rounded-xl shadow-2xl border border-black/20 relative"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/40" />
+                <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-white/40" />
+                <ContactForm />
+              </motion.div>
+            </AnimatedElement>
           </div>
         </div>
       </section>

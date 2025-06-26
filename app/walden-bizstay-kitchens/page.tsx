@@ -1,132 +1,183 @@
 "use client"
 
-import Image from "next/image"
-import AnimatedElement from "@/components/animated-element"
-import ParallaxSection from "@/components/parallax-section"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { ArrowLeft } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import ParallaxSection from '@/components/parallax-section'
+import AnimatedElement from '@/components/animated-element'
 
-const projectDetails = {
-  title: "Walden BizStay Kitchens",
-  category: "Furniture Production",
-  heroImageQuery: "modern kitchen in Walden BizStay with grey cabinets and wood dining table",
-  description:
-    "For this space, we had the challenge to produce 30 brand new custom made kitchens for the Walden BizStay Hotel in The Hague. Each compact kitchen is made of high quality materials, such as FENIX countertops, that are fully functional, connected and equipped and with LED lights for a better visibility and design effect. The custom-made furniture pieces and the carefully chosen details give the space a very modern and chic touch. Another happy customer.",
-  location: "The Hague",
-  status: "Finished",
-  service: "Furniture Production",
-  area: "30 Kitchens",
-  client: "Walden BizStay BV",
-  galleryImages: [
-    { srcQuery: "Walden BizStay kitchen dining area", alt: "Kitchen and dining area" },
-    { srcQuery: "Walden BizStay kitchen close up with appliances", alt: "Kitchen close up with appliances" },
-    { srcQuery: "Walden BizStay kitchen from another angle", alt: "Kitchen from another angle" },
-  ],
-  carouselImageQuery: "Walden BizStay kitchen with oven and hob detail",
-}
+const images = [
+  '/STUDIO BY CRISTIAN/walden-bizstay-kitchens/Walden-BizStay-Kitchens-Banner-scaled.jpg.jpeg',
+  '/STUDIO BY CRISTIAN/walden-bizstay-kitchens/Walden-BizStay-Kitchens-1-scaled.jpg.jpeg',
+  '/STUDIO BY CRISTIAN/walden-bizstay-kitchens/Walden-BizStay-Kitchens-2-scaled.jpg.jpeg',
+  '/STUDIO BY CRISTIAN/walden-bizstay-kitchens/Walden-BizStay-Kitchens-3-scaled.jpg.jpeg',
+  '/STUDIO BY CRISTIAN/walden-bizstay-kitchens/Walden-BizStay-Kitchens-4-scaled.jpg.jpeg',
+  '/STUDIO BY CRISTIAN/walden-bizstay-kitchens/Walden-BizStay-Kitchens-5-scaled.jpg.jpeg',
+];
 
-export default function WaldenBizstayKitchensPage() {
+export default function WaldenBizStayKitchensPage() {
   return (
     <div className="bg-white text-black">
+      
       <ParallaxSection
-        imageUrl={`/placeholder.svg?width=1600&height=900&query=${encodeURIComponent(projectDetails.heroImageQuery)}`}
-        imageAlt={projectDetails.title + " Hero Image"}
+        imageUrl={images[0]}
+        imageAlt="Walden BizStay Kitchens Hero Image"
         minHeight="70vh"
         strength={0.3}
         overlayClassName="bg-black/40"
       >
         <AnimatedElement animationType="fadeInUp">
-          <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">{projectDetails.category}</p>
-          <h1 className="mt-2 text-4xl font-bold text-white sm:text-5xl md:text-6xl">{projectDetails.title}</h1>
+          <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">FURNITURE PRODUCTION</p>
+          <h1 className="mt-2 text-4xl font-bold text-white sm:text-5xl md:text-6xl">WALDEN BIZSTAY KITCHENS</h1>
         </AnimatedElement>
       </ParallaxSection>
 
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp" className="mb-12">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+      {/* Back Button */}
+      <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
               <Link href="/furniture-production">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-5 w-5" />
                 Back To Furniture Production
               </Link>
             </Button>
           </AnimatedElement>
-
-          <div className="space-y-12">
-            <AnimatedElement animationType="fadeInUp">
-              <p className="text-lg text-gray-700 leading-relaxed mb-8">{projectDetails.description}</p>
-              <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg mb-8">
-                <Image
-                  src={`/placeholder.svg?width=1000&height=750&query=${encodeURIComponent(projectDetails.galleryImages[0].srcQuery)}`}
-                  alt={projectDetails.galleryImages[0].alt}
-                  width={1000}
-                  height={750}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
-                <Image
-                  src={`/placeholder.svg?width=1000&height=750&query=${encodeURIComponent(projectDetails.galleryImages[1].srcQuery)}`}
-                  alt={projectDetails.galleryImages[1].alt}
-                  width={1000}
-                  height={750}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            </AnimatedElement>
-
-            <AnimatedElement animationType="fadeInUp">
-              <Card className="bg-gray-50 border-gray-200 shadow-sm">
-                <CardHeader>
-                  <CardTitle className="text-xl text-black">Project Details</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2 text-sm text-gray-700">
-                  <p>
-                    <strong>Location:</strong> {projectDetails.location}
-                  </p>
-                  <p>
-                    <strong>Status:</strong> {projectDetails.status}
-                  </p>
-                  <p>
-                    <strong>Service:</strong> {projectDetails.service}
-                  </p>
-                  <p>
-                    <strong>Area:</strong> {projectDetails.area}
-                  </p>
-                  <p>
-                    <strong>Client:</strong> {projectDetails.client}
-                  </p>
-                </CardContent>
-              </Card>
-            </AnimatedElement>
-          </div>
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-gray-50 text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp">
-            <div className="aspect-[16/9] w-full overflow-hidden rounded-lg shadow-xl">
+      {/* Main Content Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <p className="text-lg leading-relaxed text-gray-700">
+                For this space, we had the challenge to produce 30 brand new custom furniture pieces with main materials such as MDF with HPL and Compact HPL. We created simple and modern custom kitchens together with our carpenters, that are fully functional, connected and equipped and with LED light. The main focus and differentiating touch were the wall tiles that were delivered from Italy- their look and design give the space a very modern and chic touch. Another happy customer.
+              </p>
+              
+              <div className="space-y-4 text-sm text-gray-600">
+                <div>
+                  <span className="font-semibold">Location:</span> The Hague
+                </div>
+                <div>
+                  <span className="font-semibold">Status:</span> Finished
+                </div>
+                <div>
+                  <span className="font-semibold">Service:</span> Furniture Production
+                </div>
+                <div>
+                  <span className="font-semibold">Sectors:</span> Private Residential
+                </div>
+                <div>
+                  <span className="font-semibold">Area:</span> 30 Kitchens
+                </div>
+                <div>
+                  <span className="font-semibold">Client:</span> BizStay BV
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative aspect-[4/3]"
+            >
               <Image
-                src={`/placeholder.svg?width=1200&height=675&query=${encodeURIComponent(projectDetails.carouselImageQuery)}`}
-                alt="Kitchen detail view"
-                width={1200}
-                height={675}
-                className="object-cover w-full h-full"
+                src={images[1]}
+                alt="Walden BizStay Kitchen 1"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </motion.div>
+          </div>
+
+          {/* Kitchen Gallery */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            <div className="relative aspect-[4/3]">
+              <Image
+                src={images[2]}
+                alt="Walden BizStay Kitchen 2"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             </div>
-          </AnimatedElement>
+            <div className="relative aspect-[4/3]">
+              <Image
+                src={images[3]}
+                alt="Walden BizStay Kitchen 3"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] md:col-span-2 lg:col-span-1">
+              <Image
+                src={images[4]}
+                alt="Walden BizStay Kitchen 4"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+            </div>
+          </motion.div>
+
+          {/* Additional Featured Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-12"
+          >
+            <div className="relative aspect-[16/9] w-full">
+              <Image
+                src={images[5]}
+                alt="Walden BizStay Kitchen 5"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+                sizes="100vw"
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 
+      {/* Back Button */}
       <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedElement animationType="fadeInUp">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
               <Link href="/furniture-production">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-5 w-5" />
                 Back To Furniture Production
               </Link>
             </Button>
@@ -134,5 +185,5 @@ export default function WaldenBizstayKitchensPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

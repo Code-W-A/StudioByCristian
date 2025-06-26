@@ -296,18 +296,7 @@ export default function HeroSectionHomepage() {
         </div>
       </div>
 
-      {/* Auto-transition indicator */}
-      {autoTransition && !isTransitioning && (
-        <motion.div
-          className="absolute top-4 right-4 z-30 flex items-center space-x-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse" />
-          <span className="text-white/60 text-xs font-medium">AUTO</span>
-        </motion.div>
-      )}
+  
 
       {/* Loading Indicator */}
       {isTransitioning && (

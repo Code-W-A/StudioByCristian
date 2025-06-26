@@ -222,20 +222,7 @@ export default function HeroSection({
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-8 z-20"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 3 }}
-      >
-        <motion.div
-          className="w-px h-16 bg-white/50"
-          animate={{ scaleY: [1, 1.5, 1] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <p className="text-xs text-white/70 mt-2 tracking-widest">SCROLL</p>
-      </motion.div>
+ 
     </section>
   )
 } 
