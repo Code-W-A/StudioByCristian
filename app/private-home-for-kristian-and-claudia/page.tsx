@@ -6,38 +6,45 @@ import ParallaxSection from "@/components/parallax-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import ContactForm from "@/components/contact-form"
+import { motion } from "framer-motion"
 
 const projectDetails = {
   title: "Private Home for Kristian & Claudia",
   category: "Furniture Production",
-  heroImageQuery: "bright living and dining area in Private Home for Kristian & Claudia",
-  description: [
-    "This private home is a great example of how a functional and modern space can also be warm and cozy. The use of natural light is a key element in the design, as it creates a bright and airy atmosphere. The custom-made furniture pieces are designed to be both functional and aesthetically pleasing, with a focus on clean lines and simple forms. The use of storage space and display shelves also act as room dividers.",
-    "Each room was put to best use according to the owners' wishes, passions and needs. The living room is a great example of how a functional and modern space can also be warm and cozy. The custom-made furniture pieces are designed to be both functional and aesthetically pleasing, with a focus on clean lines and simple forms. The kitchen is made to perfectly fit each tiny, small or hidden space, and to act as a connection between the living room and the dining room. The bedroom is a cozy and relaxing space, with a focus on comfort and simplicity.",
-  ],
-  location: "Amsterdam",
+  heroImage: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-Banner-scaled.jpg.jpeg",
+  description: "Our customers of this project wished for a cozy home filled with a lot of natural light and a little splash of color here and there, while still keeping the design as clean and minimal as possible. Hence, they were very pleased with the uplifting pastel tones which settled in each room alongside playful furniture pieces that were designed for maximum usage of storage space and display but also as room dividers.",
+  additionalText: "Each room was put to best use according to the owners' wishes, passions and needs- from two office rooms that act as working, reading, relaxing, hobby, sleep and storage rooms, to the living area that opens up into the dining space separated through a TV – scene, to the two bedrooms with private bathrooms. Every detail of furniture was custom – made to perfectly fit each big, small or hidden space, and to act as a beautiful piece of interior design that matches the overall Scandinavian aesthetic and vibe of the apartment.",
+  location: "Bucharest",
   status: "Finished",
-  service: "Interior Architecture, Furniture Production, Turn Key",
-  area: "120 sqm",
+  service: "Interior Architecture, Furniture Production, Turn Key Management",
+  sectors: "Residential",
+  area: "185 m²",
   client: "Kristian & Claudia Pedersen",
-  galleryImages: [
-    { srcQuery: "Private Home for Kristian & Claudia living room detail", alt: "Living room detail" },
-    { srcQuery: "Private Home for Kristian & Claudia dining area with plant", alt: "Dining area with plant" },
-    { srcQuery: "Private Home for Kristian & Claudia bedroom", alt: "Bedroom view" },
-    { srcQuery: "Private Home for Kristian & Claudia wooden chair detail", alt: "Wooden chair detail" },
-    { srcQuery: "Private Home for Kristian & Claudia dining table lighting", alt: "Dining table and lighting" },
-  ],
-  carouselImageQuery: "Private Home for Kristian & Claudia dining area full view",
+  images: [
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-1-1-scaled.jpg.jpeg", alt: "Private Home - Living area overview" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-2-1-scaled.jpg.jpeg", alt: "Private Home - Dining area" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-3-1-scaled.jpg.jpeg", alt: "Private Home - Custom furniture" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-4-1-scaled.jpg.jpeg", alt: "Private Home - Kitchen design" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-5-1.jpg.jpeg", alt: "Private Home - Bedroom design" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-6-1.jpg.jpeg", alt: "Private Home - Storage solutions" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-7.jpg.jpeg", alt: "Private Home - Office space" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-8-1.jpg.jpeg", alt: "Private Home - TV area" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-9-1.jpg.jpeg", alt: "Private Home - Room dividers" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-10-scaled.jpg.jpeg", alt: "Private Home - Natural light" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-11.jpg.jpeg", alt: "Private Home - Scandinavian style" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-13-scaled.jpg.jpeg", alt: "Private Home - Pastel tones" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-14-scaled.jpg.jpeg", alt: "Private Home - Bathroom design" },
+    { src: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-15.jpg.jpeg", alt: "Private Home - Complete design" },
+  ]
 }
 
 export default function PrivateHomeKristianClaudiaPage() {
-  // For simplicity, the bottom "carousel" is represented as a single full-width image here.
-  // A more complex carousel could be implemented if needed.
   return (
     <div className="bg-white text-black">
+      {/* Hero Section */}
       <ParallaxSection
-        imageUrl={`/placeholder.svg?width=1600&height=900&query=${encodeURIComponent(projectDetails.heroImageQuery)}`}
+        imageUrl={projectDetails.heroImage}
         imageAlt={projectDetails.title + " Hero Image"}
         minHeight="70vh"
         strength={0.3}
@@ -49,117 +56,271 @@ export default function PrivateHomeKristianClaudiaPage() {
         </AnimatedElement>
       </ParallaxSection>
 
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp" className="mb-12">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+      {/* Back Button */}
+      <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
               <Link href="/furniture-production">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back To Furniture Production
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back to Furniture Production
               </Link>
             </Button>
           </AnimatedElement>
-
-          <div className="space-y-12">
-            <AnimatedElement animationType="fadeInUp">
-              <div className="grid lg:grid-cols-2 gap-8 items-center">
-                <p className="text-lg text-gray-700 leading-relaxed">{projectDetails.description[0]}</p>
-                <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
-                  <Image
-                    src={`/placeholder.svg?width=800&height=600&query=${encodeURIComponent(projectDetails.galleryImages[0].srcQuery)}`}
-                    alt={projectDetails.galleryImages[0].alt}
-                    width={800}
-                    height={600}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              </div>
-            </AnimatedElement>
-            <AnimatedElement animationType="fadeInUp">
-              <div className="grid lg:grid-cols-2 gap-8 items-center">
-                <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg lg:order-first">
-                  <Image
-                    src={`/placeholder.svg?width=800&height=600&query=${encodeURIComponent(projectDetails.galleryImages[1].srcQuery)}`}
-                    alt={projectDetails.galleryImages[1].alt}
-                    width={800}
-                    height={600}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <p className="text-lg text-gray-700 leading-relaxed">{projectDetails.description[1]}</p>
-              </div>
-            </AnimatedElement>
-
-            <AnimatedElement animationType="fadeInUp">
-              <Card className="bg-gray-50 border-gray-200 shadow-sm">
-                <CardHeader>
-                  <CardTitle className="text-xl text-black">Project Details</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2 text-sm text-gray-700">
-                  <p>
-                    <strong>Location:</strong> {projectDetails.location}
-                  </p>
-                  <p>
-                    <strong>Status:</strong> {projectDetails.status}
-                  </p>
-                  <p>
-                    <strong>Service:</strong> {projectDetails.service}
-                  </p>
-                  <p>
-                    <strong>Area:</strong> {projectDetails.area}
-                  </p>
-                  <p>
-                    <strong>Client:</strong> {projectDetails.client}
-                  </p>
-                </CardContent>
-              </Card>
-            </AnimatedElement>
-          </div>
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-gray-50 text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {projectDetails.galleryImages.slice(2).map((image, index) => (
-              <AnimatedElement key={index} animationType="scaleIn" delay={index * 0.05}>
-                <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
-                  <Image
-                    src={`/placeholder.svg?width=800&height=600&query=${encodeURIComponent(image.srcQuery)}`}
-                    alt={image.alt}
-                    width={800}
-                    height={600}
-                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
-                  />
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 lg:py-16 bg-white text-black">
+      {/* Section 1: Text Left, Image Right */}
+      <section className="py-16 lg:py-20 bg-gray-50 text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
-            <div className="aspect-[16/9] w-full overflow-hidden rounded-lg shadow-xl">
-              <Image
-                src={`/placeholder.svg?width=1200&height=675&query=${encodeURIComponent(projectDetails.carouselImageQuery)}`}
-                alt="Dining area full view"
-                width={1200}
-                height={675}
-                className="object-cover w-full h-full"
-              />
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+              
+              {/* Text Content */}
+              <div className="space-y-6">
+                <h3 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
+                  Private Home for Kristian & Claudia
+                </h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {projectDetails.description}
+                </p>
+                
+                {/* Decorative Element */}
+                <div className="pt-6">
+                  <div className="w-20 h-1 bg-gradient-to-r from-black to-gray-300 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Main Image */}
+              <div className="relative overflow-hidden rounded-2xl shadow-md bg-gray-100">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative"
+                >
+                  <Image
+                    src={projectDetails.images[0].src}
+                    alt={projectDetails.images[0].alt}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    style={{ aspectRatio: '4/3' }}
+                  />
+                </motion.div>
+              </div>
+
+            </div>
+
+            {/* Gallery Images */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.images.slice(1, 3).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
             </div>
           </AnimatedElement>
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      {/* Section 2: Text Right, Image Left */}
+      <section className="py-16 lg:py-20 bg-white text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 lg:grid-flow-col-dense">
+              
+              {/* Text Content */}
+              <div className="space-y-6 lg:col-start-2">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {projectDetails.additionalText}
+                </p>
+                
+                {/* Decorative Element */}
+                <div className="pt-6">
+                  <div className="w-20 h-1 bg-gradient-to-r from-black to-gray-300 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Main Image */}
+              <div className="relative overflow-hidden rounded-2xl shadow-md bg-gray-100 lg:col-start-1">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative"
+                >
+                  <Image
+                    src={projectDetails.images[3].src}
+                    alt={projectDetails.images[3].alt}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    style={{ aspectRatio: '4/3' }}
+                  />
+                </motion.div>
+              </div>
+
+            </div>
+
+            {/* Gallery Images - Featured + Grid */}
+            <div className="space-y-8">
+              {/* Single large featured image */}
+              <AnimatedElement animationType="fadeInUp" delay={0.2}>
+                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                  <Image
+                    src={projectDetails.images[4].src}
+                    alt={projectDetails.images[4].alt}
+                    width={1400}
+                    height={800}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
+              </AnimatedElement>
+
+              {/* Three images in a row */}
+              <div className="grid md:grid-cols-3 gap-6">
+                {projectDetails.images.slice(5, 8).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '1/1' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+
+              {/* Two large images side by side */}
+              <div className="grid md:grid-cols-2 gap-8">
+                {projectDetails.images.slice(8, 10).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '4/3' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+
+              {/* Four images in a grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {projectDetails.images.slice(10, 14).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={400}
+                        height={400}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '1/1' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Project Info */}
+      <section className="py-8 bg-gray-50">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp" className="text-center">
+            <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 text-left">
+              <div>
+                <h4 className="font-semibold text-black mb-1">Location:</h4>
+                <p className="text-sm text-gray-600">{projectDetails.location}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-black mb-1">Status:</h4>
+                <p className="text-sm text-gray-600">{projectDetails.status}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-black mb-1">Service:</h4>
+                <p className="text-sm text-gray-600">{projectDetails.service}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-black mb-1">Sectors:</h4>
+                <p className="text-sm text-gray-600">{projectDetails.sectors}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-black mb-1">Area:</h4>
+                <p className="text-sm text-gray-600">{projectDetails.area}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-black mb-1">Client:</h4>
+                <p className="text-sm text-gray-600">{projectDetails.client}</p>
+              </div>
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp" className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">Contact</h2>
+          </AnimatedElement>
+          <ContactForm />
+        </div>
+      </section>
+
+      {/* Back Button Bottom */}
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
               <Link href="/furniture-production">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-5 w-5" />
                 Back To Furniture Production
               </Link>
             </Button>

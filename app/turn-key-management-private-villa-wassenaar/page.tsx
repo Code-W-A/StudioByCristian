@@ -96,12 +96,17 @@ export default function PrivateVillaWassenaarPage() {
       </ParallaxSection>
 
       {/* Back Button */}
-      <section className="pt-12 pb-6 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedElement animationType="fadeInUp">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
               <Link href="/turn-key-management">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-5 w-5" />
                 Back to Turn Key Management
               </Link>
             </Button>
@@ -192,6 +197,35 @@ export default function PrivateVillaWassenaarPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-12 lg:py-16 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp" className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl mb-4">
+              Project Walkthrough
+            </h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Take a virtual tour through the transformed Private Villa Wassenaar and see the complete renovation process.
+            </p>
+          </AnimatedElement>
+          
+          <AnimatedElement animationType="fadeInUp" delay={0.2}>
+            <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+              <div className="aspect-video w-full">
+                <iframe
+                  src="https://www.youtube.com/embed/S7YIkF9o3k8?rel=0&modestbranding=1&showinfo=0"
+                  title="Private Villa Wassenaar - Project Walkthrough"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full rounded-xl"
+                ></iframe>
+              </div>
+            </div>
+          </AnimatedElement>
         </div>
       </section>
 
@@ -338,12 +372,17 @@ export default function PrivateVillaWassenaarPage() {
       </section>
 
       {/* Back Button Bottom */}
-      <section className="pt-6 pb-12 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedElement animationType="fadeInUp">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
               <Link href="/turn-key-management">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-5 w-5" />
                 Back To Turn Key Management
               </Link>
             </Button>

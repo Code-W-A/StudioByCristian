@@ -9,25 +9,25 @@ const turnKeyProjects = [
     name: "Private Villa Wassenaar",
     description: "The flipping of this lovely property was a challenge we loved to undertake. Trimming down the old and bringing in the new Scandinavian high-quality finishes and fixtures gave this private residence a revitalizing new life.",
     imageUrl: "/turn-key-management-page/Private-Villa-Wassenaar-Category-1-768x511.jpg.jpeg",
-    link: "/private-villa-wassenaar",
+    link: "/turn-key-management-private-villa-wassenaar",
   },
   {
     name: "Amsterdam Apartment 1",
     description: "Brightness, peace of mind and comfort envelop our experience when stepping into this space.",
     imageUrl: "/turn-key-management-page/Amsterdam-1-Category-768x512.jpg.jpeg",
-    link: "/amsterdam-apartment-1",
+    link: "/turn-key-management-amsterdam-apartment-1",
   },
   {
     name: "Amsterdam Apartment 2",
     description: "This Amsterdam Apartment greets us with Scandinavian simplicity and elegance. The built-in furnishings are designed and carefully manufactured by our team of designers and carpenters.",
     imageUrl: "/turn-key-management-page/Amsterdam-Duplex-Category-768x511.jpg.jpeg",
-    link: "/amsterdam-apartment-2",
+    link: "/turn-key-management-amsterdam-apartment-2",
   },
   {
     name: "Voorburg Apartment",
     description: "The house renovation implied peeling off all the preexisting layers, updating installations, adding new lights making a full renovation and optimizing the space.",
     imageUrl: "/turn-key-management-page/Voorburg-Category-768x512.jpg.jpeg",
-    link: "/voorburg-apartment",
+    link: "/turn-key-management-voorburg-apartment",
   },
 ]
 

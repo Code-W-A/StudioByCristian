@@ -56,8 +56,8 @@ const designProjects = [
   },
   {
     name: "Gradinaru Family Private Douplex House",
-    imageUrl: "/design-page/Gradinaru-Family-Private-Duplex-House-Category-1-1-768x432.jpg.jpeg",
-    link: "/design/grodnoaru-family-private-duplex-house",
+    imageUrl: "/STUDIO BY CRISTIAN/Gradinaru-Family-Private-Douplex-House/Gradinaru-Family-Private-Douplex-House-Banner-scaled.jpg.jpeg",
+    link: "/gradinaru-family-private-duplex-house",
   },
 ]
 

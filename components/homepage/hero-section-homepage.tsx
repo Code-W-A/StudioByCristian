@@ -98,7 +98,7 @@ export default function HeroSectionHomepage() {
   }
 
   return (
-    <section ref={heroRef} className="relative h-screen min-h-[600px] flex flex-col overflow-hidden">
+    <section ref={heroRef} className="relative h-[calc(100vh-5rem)] min-h-[500px] flex flex-col overflow-hidden">
       {/* Background Images with Enhanced Transitions */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">

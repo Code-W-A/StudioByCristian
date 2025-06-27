@@ -1,12 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Libre_Baskerville } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
 
-const inter = Inter({ subsets: ["latin"] })
+// Using Libre Baskerville as a similar serif font to GFS Didot available on Google Fonts
+const gfsDidotAlternative = Libre_Baskerville({ 
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"]
+})
 
 export const metadata: Metadata = {
   title: "Studio by Cristian - Interior Design",
@@ -43,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-background text-foreground`}>
+      <body className={`${gfsDidotAlternative.className} bg-background text-foreground`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

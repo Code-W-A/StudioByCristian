@@ -15,7 +15,7 @@ const projects = [
   {
     name: "Mauritskade Apartments",
     image: "/furniture-production-page/www.studiobycristian.com-1750525148492/Mauritskade-Appartments-Category-1-768x511.jpg.jpeg",
-    link: "/mauritskade-apartments",
+    link: "/mauritskade",
   },
   {
     name: "Suriname Apartments Residential 1",
@@ -24,7 +24,7 @@ const projects = [
   },
   {
     name: "Suriname Apartments Residential 2",
-    image: "/furniture-production-page/www.studiobycristian.com-1750525148492/Suriname-Apartments-Residential-2.jpg.jpeg",
+    image: "/suriname-apartments-residential-2-furniture/Suriname-Apartments-2-scaled.jpg.jpeg",
     link: "/suriname-apartments-residential-2-furniture",
   },
   {
@@ -34,12 +34,12 @@ const projects = [
   },
   {
     name: "DERODELOPER Luxury Store",
-    image: "/furniture-production-page/www.studiobycristian.com-1750525148492/DERODELOPER-Luxury-Store-Category-768x512.jpg.jpeg",
+    image: "/derodeloper-luxury-store-furniture/DERODELOPER-Luxury-Store-Banner-scaled.jpg.jpeg",
     link: "/derodeloper-luxury-store-furniture",
   },
   {
     name: "Private Home for Kristian & Claudia",
-    image: "/furniture-production-page/www.studiobycristian.com-1750525148492/Furniture-Production-Category-Image-scaled.jpg.jpeg",
+    image: "/private-home-for-kristian-and-claudia/Private-Home-for-Kristian-and-Claudia-Banner-scaled.jpg.jpeg",
     link: "/private-home-for-kristian-and-claudia",
   },
   {

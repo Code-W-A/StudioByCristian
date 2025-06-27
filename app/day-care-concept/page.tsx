@@ -103,12 +103,17 @@ export default function DayCarePage() {
       </ParallaxSection>
 
       {/* Back Button */}
-      <section className="pt-12 pb-6 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedElement animationType="fadeInUp">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
               <Link href="/concept-design">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-5 w-5" />
                 Back to Design Projects
               </Link>
             </Button>
@@ -380,12 +385,17 @@ export default function DayCarePage() {
       </section>
 
       {/* Back Button Bottom */}
-      <section className="pt-6 pb-12 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedElement animationType="fadeInUp">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
               <Link href="/concept-design">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-5 w-5" />
                 Back To Design Projects
               </Link>
             </Button>
