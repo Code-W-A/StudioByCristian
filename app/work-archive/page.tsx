@@ -60,7 +60,7 @@ export default function WorkArchivePage() {
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
             <p className="text-lg md:text-xl text-gray-700 text-left">
-              These are some of our best projects from our work archive, built over the last 17 years together with our colleagues and our partners from Austria, Vinzenz Patschg. We are mostly specialized in Hotels, Shops and Residential Properties, and we work with both private and corporate clients. Over the course of the past 17 years we were happy to serve them and go through some of the nicest and most challenging jobs together by realizing their dreams and making projection into reality. Whether it's about Design, Furniture Production or Project Management, we have always tried to do our best and deliver our best work. Thank you all for the fun and for all the opportunities along the way, and let's keep going and deliver the same for everything that is coming!
+              These are some of our past projects, built over more than 17 years of experience, collaboration, and dedication. This archive showcases work developed together with our trusted partners, particularly Vinzenz Patschg in Austria. Over the years, we've contributed to a wide range of projects in the hospitality, retail, and residential sectors, working with both private and corporate clients. Whether through design, custom furniture production, or full project management, we've always focused on delivering thoughtful, high-quality solutions tailored to each space. Thank you to everyone who has been part of this journey — for the trust, the challenges, and the shared accomplishments. We look forward to continuing this work and shaping the spaces of tomorrow.
             </p>
           </AnimatedElement>
         </div>
@@ -88,7 +88,7 @@ export default function WorkArchivePage() {
                 >
                   <Link
                     href={category.link}
-                    className="group block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500"
+                    className="group block relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500"
                   >
                     {/* Background Image */}
                     <div className="aspect-video w-full overflow-hidden">

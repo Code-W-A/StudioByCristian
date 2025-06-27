@@ -11,9 +11,9 @@ export default function AboutUsSection() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <AnimatedElement animationType="fadeInLeft" className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-wider text-gray-500">About Us</p>
-            <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">WHO WE ARE</h2>
+            <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Studio byCristian</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Studio by Cristian is a modern design studio with a team of experienced interior designers & architects, international production specialists, furniture manufactures and talented craftsmen based around Europe. We are an international team bounded by passion and creativity and a common purpose: bringing innovative and outstanding ideas to life.
+              Studio byCristian is a design & build studio specialized in custom furniture, interior design, and turn-key interior renovations. We help our clients bring their spaces to life — with tailored solutions that combine thoughtful design, functional detail, and premium craftsmanship. From cozy homes to boutique hotels, lively restaurants to stylish offices, our work adapts to every need — always with a clear, personal vision at the core.
             </p>
             <Button asChild variant="link" className="mt-4 px-0 text-lg text-gray-900 hover:text-gray-700 group">
               <Link href="/about">
@@ -24,7 +24,7 @@ export default function AboutUsSection() {
           </AnimatedElement>
           <AnimatedElement
             animationType="fadeInRight"
-            className="aspect-w-4 aspect-h-3 w-full overflow-hidden rounded-xl shadow-2xl"
+                            className="aspect-w-4 aspect-h-3 w-full overflow-hidden rounded-xl shadow-md"
           >
             <Image
               src="/home-page/Who-we-are-1.jpg.jpeg"

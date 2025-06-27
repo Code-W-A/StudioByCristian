@@ -5,8 +5,7 @@ import AnimatedElement from "@/components/animated-element"
 import ParallaxSection from "@/components/parallax-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react"
-import { useState } from "react"
+import { ArrowLeft } from "lucide-react"
 
 const projectDetails = {
   title: "Susan and Cyril Apartment",
@@ -57,81 +56,6 @@ const projectDetails = {
   ]
 }
 
-function ImageSlider({ images }: { images: { src: string; alt: string }[] }) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-  }
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-  }
-
-  return (
-    <div className="relative w-full max-w-6xl mx-auto">
-      {/* Main slider */}
-      <div className="relative aspect-[16/10] overflow-hidden rounded-xl shadow-2xl">
-        <Image
-          src={images[currentIndex].src}
-          alt={images[currentIndex].alt}
-          fill
-          className="object-cover transition-all duration-500 ease-in-out"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-        />
-        
-        {/* Navigation arrows */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 group"
-        >
-          <ChevronLeft className="h-6 w-6 text-white group-hover:scale-110 transition-transform" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 group"
-        >
-          <ChevronRight className="h-6 w-6 text-white group-hover:scale-110 transition-transform" />
-        </button>
-
-        {/* Slide counter */}
-        <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
-          <span className="text-white text-sm font-medium">
-            {currentIndex + 1} / {images.length}
-          </span>
-        </div>
-      </div>
-
-      {/* Thumbnail navigation */}
-      <div className="flex gap-2 mt-6 overflow-x-auto pb-2">
-        {images.map((image, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`relative flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden transition-all duration-300 ${
-              index === currentIndex 
-                ? 'ring-2 ring-black scale-105' 
-                : 'opacity-70 hover:opacity-100 hover:scale-105'
-            }`}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover"
-              sizes="80px"
-            />
-          </button>
-        ))}
-      </div>
-    </div>
-  )
-}
-
 export default function SusanAndCyrilApartmentPage() {
   return (
     <div className="bg-white text-black">
@@ -170,7 +94,7 @@ export default function SusanAndCyrilApartmentPage() {
           {/* 1. Image Left, Text and Project Info Right */}
           <AnimatedElement animationType="fadeInUp">
             <div className="grid lg:grid-cols-2 gap-12 items-start">
-              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
                 <Image
                   src={projectDetails.gallery[0].src}
                   alt={projectDetails.gallery[0].alt}
@@ -206,7 +130,7 @@ export default function SusanAndCyrilApartmentPage() {
           {/* 2. Row with 2 images */}
           <AnimatedElement animationType="fadeInUp" delay={0.1}>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
                 <Image
                   src={projectDetails.gallery[1].src}
                   alt={projectDetails.gallery[1].alt}
@@ -216,7 +140,7 @@ export default function SusanAndCyrilApartmentPage() {
                   style={{ display: 'block' }}
                 />
               </div>
-              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
                 <Image
                   src={projectDetails.gallery[2].src}
                   alt={projectDetails.gallery[2].alt}
@@ -232,7 +156,7 @@ export default function SusanAndCyrilApartmentPage() {
           {/* 3. Row with 3 images */}
           <AnimatedElement animationType="fadeInUp" delay={0.2}>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
                 <Image
                   src={projectDetails.gallery[3].src}
                   alt={projectDetails.gallery[3].alt}
@@ -242,7 +166,7 @@ export default function SusanAndCyrilApartmentPage() {
                   style={{ display: 'block' }}
                 />
               </div>
-              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
                 <Image
                   src={projectDetails.gallery[4].src}
                   alt={projectDetails.gallery[4].alt}
@@ -252,7 +176,7 @@ export default function SusanAndCyrilApartmentPage() {
                   style={{ display: 'block' }}
                 />
               </div>
-              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
                 <Image
                   src={projectDetails.gallery[5].src}
                   alt={projectDetails.gallery[5].alt}
@@ -272,14 +196,14 @@ export default function SusanAndCyrilApartmentPage() {
       <section className="py-12 lg:py-16 bg-gray-50 text-black">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="columns-1 lg:columns-2 gap-8 space-y-8">
-            {projectDetails.sliderImages.slice(0, 10).map((image, index) => (
+            {projectDetails.sliderImages.map((image, index) => (
               <AnimatedElement
                 key={index}
                 animationType="scaleIn"
                 delay={index * 0.1}
                 className="break-inside-avoid"
               >
-                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 mb-8">
+                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 mb-8">
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -296,37 +220,7 @@ export default function SusanAndCyrilApartmentPage() {
         </div>
       </section>
 
-      {/* Image Slider Section for remaining images */}
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp" className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl mb-4">
-              More Project Details
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Explore additional views and details of the Susan and Cyril Apartment
-            </p>
-          </AnimatedElement>
-          
-          <AnimatedElement animationType="fadeInUp" delay={0.2}>
-            <ImageSlider images={projectDetails.sliderImages.slice(10)} />
-          </AnimatedElement>
-        </div>
-      </section>
 
-      {/* Back Button Bottom */}
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
-              <Link href="/furniture-production">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back To Furniture Production
-              </Link>
-            </Button>
-          </AnimatedElement>
-        </div>
-      </section>
     </div>
   )
 }

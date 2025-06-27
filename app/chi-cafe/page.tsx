@@ -90,7 +90,7 @@ export default function ChiCafePage() {
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
-            <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
+            <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
               <Image
                 src={projectDetails.images[0].src}
                 alt={projectDetails.images[0].alt}
@@ -132,7 +132,7 @@ export default function ChiCafePage() {
 
             {/* Single large featured image */}
             <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
                 <Image
                   src={projectDetails.images[3].src}
                   alt={projectDetails.images[3].alt}
@@ -190,7 +190,7 @@ export default function ChiCafePage() {
 
             {/* Single wide image */}
             <AnimatedElement animationType="fadeInUp" delay={0.3}>
-              <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
                 <Image
                   src={projectDetails.images[9].src}
                   alt={projectDetails.images[9].alt}
@@ -253,7 +253,7 @@ export default function ChiCafePage() {
                 animationType="fadeInUp"
                 delay={index * 0.1}
               >
-                <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
+                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
                   <Image
                     src={image.src}
                     alt={image.alt}

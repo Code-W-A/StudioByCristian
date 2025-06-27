@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Linkedin, Instagram, Mail, MapPin } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -46,14 +47,14 @@ export default function Footer() {
             className="lg:col-span-2"
           >
             {/* Logo */}
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="relative">
-                <div className="w-8 h-8 border-2 border-white/60 rotate-45" />
-                <div className="absolute inset-0 w-8 h-8 border border-white/30 rotate-45" />
-              </div>
-              <h3 className="text-2xl font-bold text-white">
-                Studio <span className="font-light text-gray-300">by Cristian</span>
-              </h3>
+            <div className="mb-6">
+              <Image
+                src="/sigla/StudiobyCristian-sigla.png"
+                alt="Studio byCristian"
+                width={300}
+                height={80}
+                className="h-12 w-auto"
+              />
             </div>
 
             {/* Philosophy */}
@@ -205,7 +206,7 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-500">
-              Copyright {currentYear} © Studio by Cristian. All rights reserved.
+              Copyright {currentYear} © Studio byCristian. All rights reserved.
             </p>
             
             {/* Geometric accent */}

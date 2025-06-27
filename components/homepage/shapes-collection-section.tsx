@@ -49,7 +49,7 @@ export default function ShapesCollectionSection() {
                 viewport={{ once: true, amount: 0.3 }}
               >
                 <Link href={product.link || "#"} className="group block h-full">
-                  <Card className="overflow-hidden text-center bg-white/10 backdrop-blur-md text-white border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 h-full flex flex-col rounded-xl">
+                  <Card className="overflow-hidden text-center bg-white/10 backdrop-blur-md text-white border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col rounded-xl">
                     <CardHeader className="p-0 flex-shrink-0">
                       <div className="aspect-square w-full overflow-hidden bg-white/5 flex items-center justify-center p-8">
                         <Image

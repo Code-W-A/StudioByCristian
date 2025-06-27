@@ -91,7 +91,7 @@ export default function ProjectsGridSectionFurnitureProduction() {
               <motion.div variants={cardVariants} initial="hidden" animate="visible" whileHover="hover">
                 <Link
                   href={project.link}
-                  className="group block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500"
+                  className="group block relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500"
                 >
                   {/* Background Image */}
                   <div className="aspect-video w-full overflow-hidden">

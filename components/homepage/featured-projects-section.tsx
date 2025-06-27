@@ -40,7 +40,7 @@ export default function FeaturedProjectsSection() {
         <AnimatedElement animationType="fadeInUp" className="mb-16 text-center">
           <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Featured Projects</h2>
           <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-            A selection of our standout creations, showcasing innovation and attention to detail.
+            Complete, high-quality interior solutions for residential, hospitality, and commercial spaces — locally and internationally.
           </p>
         </AnimatedElement>
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -54,7 +54,7 @@ export default function FeaturedProjectsSection() {
                 viewport={{ once: true, amount: 0.3 }}
               >
                 <Link href={project.link || "#"} className="group block h-full">
-                  <Card className="overflow-hidden bg-white text-black border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col rounded-xl">
+                  <Card className="overflow-hidden bg-white text-black border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col rounded-xl">
                     <CardHeader className="p-0 flex-shrink-0">
                       <div className="aspect-square w-full overflow-hidden">
                         <Image

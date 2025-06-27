@@ -9,22 +9,22 @@ import { motion, type Variants } from "framer-motion"
 // --- Our Work Section Data ---
 const ourWorkItems = [
   {
-    title: "Furniture Production",
+    title: "Custom Furniture",
     imageUrl: "/home-page/Our-Portfolio-Furniture-Production-1-700x466.jpg.jpeg",
     link: "/furniture-production",
-    description: "Exquisite, custom-made furniture that defines your space.",
+    description: "We create custom-made furniture that blends aesthetics, comfort, and function — every piece made to order.",
   },
   {
-    title: "Concept Design",
+    title: "Interior Design",
     imageUrl: "/home-page/Our-Portfolio-Concept-Design-1-700x466.jpg.jpeg",
     link: "/concept-design",
-    description: "Innovative concepts that push the boundaries of design.",
+    description: "We craft interior concepts that balance beauty and purpose — design that feels good too.",
   },
   {
-    title: "Furniture Design",
+    title: "Interior Renovation",
     imageUrl: "/home-page/Furniture-Design-Banner-1-scaled.jpg.jpeg",
     link: "/furniture-design",
-    description: "Bespoke furniture pieces crafted with precision and style.",
+    description: "Well-managed, end-to-end renovation services — from the first sketch to the final detail.",
   },
 ]
 
@@ -46,7 +46,8 @@ export default function OurWorkSection() {
     >
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white">
         <AnimatedElement animationType="fadeInUp" className="mb-16 text-center">
-          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">OUR WORK</h2>
+          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">What We Do</h2>
+          <p className="mt-6 text-xl text-gray-200 max-w-3xl mx-auto">Furnish. Design. Renovate. Anywhere.</p>
         </AnimatedElement>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {ourWorkItems.map((item, index) => (
@@ -59,7 +60,7 @@ export default function OurWorkSection() {
                 viewport={{ once: true, amount: 0.3 }}
               >
                 <Link href={item.link} className="group block h-full">
-                  <Card className="overflow-hidden h-full flex flex-col bg-white/10 backdrop-blur-md text-white border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300">
+                  <Card className="overflow-hidden h-full flex flex-col bg-white/10 backdrop-blur-md text-white border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardHeader className="p-0 flex-shrink-0">
                       <div className="aspect-video w-full overflow-hidden">
                         <Image

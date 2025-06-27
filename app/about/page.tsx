@@ -6,31 +6,32 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "@/components/icons/arrow-right"
 import AnimatedElement from "@/components/animated-element"
 import HeroSection from "@/components/hero-section"
-
+import { Star, Quote } from "lucide-react"
+import { motion } from "framer-motion"
 
 const sections = [
   {
-    title: "Good design is obvious. Great design is transparent.",
+    title: "Good design is obvious — great design feels effortless.",
     content:
-      "First, we establish the optimal functions for the space and decide upon the desired look and feel alongside our clients. We provide computer generated visualizations to support us in reaching the best outcome for every project.",
+      "We begin by understanding the function and purpose of each space, aligning it with the desired mood, lifestyle, or brand identity. Together with our clients, we define the look and feel, ensuring every element supports the experience they envision. To bring ideas to life clearly and collaboratively, we provide detailed visualizations and 3D renderings, helping us explore possibilities and ensure the final result is as intentional as it is beautiful.",
     imageSrc: "/about-us/good-design-is-obvious.jpg",
     linkText: "Learn More",
     linkHref: "#",
   },
   {
-    title: "Design is where science and art break even.",
+    title: "Design is where science meets art — and both serve function.",
     content: [
-      "We carefully analyze particular aspects of the available solutions and propose suitable custom furniture, represented through technical drawings.",
-      "At the end of the design phase our clients possess all the information required to implement the project independently If they choose so, or they can continue our collaboration throughout the next stages, up to the project completion."
+      "We approach each renovation with careful analysis and technical precision. After evaluating the space and its possibilities, we propose tailored solutions, including custom furniture, all represented through clear technical drawings and documentation.",
+      "By the end of the design phase, our clients have everything they need to execute the project independently — or, if they prefer, we can continue supporting the project through full coordination, implementation, and turn-key delivery."
     ],
     imageSrc: "/about-us/Design-where-science-art-break.jpg",
     linkText: "Learn More",
     linkHref: "#",
   },
   {
-    title: "Furniture Production",
+    title: "Where ideas take shape — with precision, creativity, and craftsmanship.",
     content:
-      "Upon choosing to collaborate with our Furniture Production department, our master carpenters take on the final and most rewarding stage of our mission, shaping ideas into reality. We work with any type of materials, our machineries are ready to take on any challenge and any type of work such as wood, veneer, HPL, MDF, professional paint, steel, glass, marble, quartz and the sky is the limit. Moreover, we also produce any type of materials as well, including diverse fabrics. All of this is only possible through the team work of our engineers, project managers and partners. Anything you can imagine is real!",
+      "When you choose to work with us on custom furniture, you're entering the final and most tangible stage of the design process: transforming vision into reality. We collaborate with skilled makers and advanced production facilities capable of working with an extensive range of materials — including solid wood, veneer, HPL, MDF, professional lacquers, steel, glass, marble, quartz, and more. We also handle upholstery and fabric production, allowing for full flexibility in both function and style. Every piece is the result of close collaboration between our engineers, project managers, and production partners — all working together to deliver tailored solutions, no matter how ambitious the idea. If you can imagine it, we can make it real.",
     imageSrc: "/about-us/furniture-production-section.jpg",
     linkText: "Learn More",
     linkHref: "#",
@@ -39,6 +40,38 @@ const sections = [
 
 // Dynamic words for typing animation
 const dynamicWords = ["relaxing", "living", "working", "creating"]
+
+// Testimonials data
+const testimonialsData = [
+  {
+    name: "John Doe",
+    company: "Apple Inc.",
+    role: "Professional & Talent",
+    quote: "People who build their own home tend to be very courageous. These people are curious about life. They're thinking about what it means to live in a house, rather than just buying a commodity and making it work.",
+    type: "Stunning Design"
+  },
+  {
+    name: "Jessica Smith", 
+    company: "Amazon co.",
+    role: "Design Director",
+    quote: "People who build their own home tend to be very courageous. These people are curious about life. They're thinking about what it means to live in a house, rather than just buying a commodity and making it work.",
+    type: "Timeless Design"
+  },
+  {
+    name: "Nathan Gordon",
+    company: "Microsoft corp.",
+    role: "Senior Architect",
+    quote: "People who build their own home tend to be very courageous. These people are curious about life. They're thinking about what it means to live in a house, rather than just buying a commodity and making it work.",
+    type: "Best Customer Experience"
+  },
+  {
+    name: "Rebecca Smith",
+    company: "Salesforce Inc.",
+    role: "VP of Design",
+    quote: "People who build their own home tend to be very courageous. These people are curious about life. They're thinking about what it means to live in a house, rather than just buying a commodity and making it work.",
+    type: "Innovation Excellence"
+  }
+]
 
 export default function AboutUsPage() {
   return (
@@ -52,7 +85,7 @@ export default function AboutUsPage() {
         dynamicWords={dynamicWords}
       />
 
-      {/* Architecture Epoch Section - White Theme */}
+      {/* What We Do Section - White Theme */}
       <section className="py-16 lg:py-24 bg-white text-black">
         <AnimatedElement
           animationType="fadeInUp"
@@ -62,7 +95,7 @@ export default function AboutUsPage() {
           amount={0.3}
         >
           <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
-            Architecture is the will of an epoch translated into space.
+            Furnish. Design. Renovate. Anywhere.
           </h2>
         </AnimatedElement>
         <AnimatedElement
@@ -73,7 +106,7 @@ export default function AboutUsPage() {
           amount={0.3}
         >
           <p className="mt-6 text-lg text-gray-700">
-            We offer services ranging from Interior Architecture & Design, innovative Custom Furniture Design & Production to Turn Key Management. Whether it be a residential project or a public space you need to work on, we come up with the right solution for you.
+            At Studio byCristian, we offer complete, high-quality interior solutions for residential, hospitality, and commercial spaces — locally and internationally. Whether you need a custom piece, an entire home furnished, or a business space redesigned, we manage every detail with care and precision.
           </p>
         </AnimatedElement>
       </section>
@@ -150,6 +183,58 @@ export default function AboutUsPage() {
           </div>
         </section>
       ))}
+
+      {/* Testimonials Section */}
+      <section className="py-16 lg:py-24 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp" className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl mb-4">
+              Client Testimonials
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              What our clients say about working with Studio by Cristian
+            </p>
+          </AnimatedElement>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonialsData.map((testimonial, index) => (
+              <AnimatedElement
+                key={index}
+                animationType="fadeInUp"
+                delay={index * 0.1}
+              >
+                <motion.div
+                  className="bg-white p-8 rounded-xl shadow-lg relative"
+                  whileHover={{ y: -5, transition: { duration: 0.3 } }}
+                >
+                  <div className="absolute top-4 right-4 text-gray-300">
+                    <Quote className="w-8 h-8" />
+                  </div>
+                  
+                  <div className="mb-6">
+                    <div className="flex items-center mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    <div className="text-sm font-semibold text-black mb-1">{testimonial.type}</div>
+                  </div>
+
+                  <blockquote className="text-gray-700 text-lg leading-relaxed mb-6 italic">
+                    "{testimonial.quote}"
+                  </blockquote>
+
+                  <div className="border-t border-gray-200 pt-4">
+                    <div className="font-semibold text-black text-lg">{testimonial.name}</div>
+                    <div className="text-gray-600">{testimonial.role}</div>
+                    <div className="text-sm text-gray-500 font-medium">{testimonial.company}</div>
+                  </div>
+                </motion.div>
+              </AnimatedElement>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Picasso Quote Section - Enhanced with staggered animations */}
       <section className="py-16 lg:py-24 bg-white text-black">

@@ -88,7 +88,7 @@ export default function AmsterdamAmsteldijkDoubleApartmentsPage() {
               </div>
 
               {/* Main Image */}
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100">
+              <div className="relative overflow-hidden rounded-2xl shadow-md bg-gray-100">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
@@ -176,7 +176,7 @@ export default function AmsterdamAmsteldijkDoubleApartmentsPage() {
               </div>
 
               {/* Main Image */}
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 lg:col-start-1">
+              <div className="relative overflow-hidden rounded-2xl shadow-md bg-gray-100 lg:col-start-1">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}

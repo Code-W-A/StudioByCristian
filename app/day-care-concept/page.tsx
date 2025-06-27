@@ -148,7 +148,7 @@ export default function DayCarePage() {
               </div>
 
               {/* Main Image */}
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100">
+              <div className="relative overflow-hidden rounded-2xl shadow-md bg-gray-100">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
@@ -211,7 +211,7 @@ export default function DayCarePage() {
               </div>
 
               {/* Main Image */}
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 lg:col-start-1">
+              <div className="relative overflow-hidden rounded-2xl shadow-md bg-gray-100 lg:col-start-1">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
@@ -234,7 +234,7 @@ export default function DayCarePage() {
             <div className="space-y-8">
               {/* Single large featured image */}
               <AnimatedElement animationType="fadeInUp" delay={0.2}>
-                <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
+                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
                   <Image
                     src={projectDetails.sections[1].galleryImages[0]}
                     alt="Day Care Concept featured gallery image"
@@ -291,7 +291,7 @@ export default function DayCarePage() {
               </div>
 
               {/* Main Image */}
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100">
+              <div className="relative overflow-hidden rounded-2xl shadow-md bg-gray-100">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}

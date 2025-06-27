@@ -25,7 +25,7 @@ export default function DesignCard({ project }: DesignCardProps) {
   const { title = "Untitled project", imageUrl = "/placeholder.svg", shortDescription = "", link = "#" } = project ?? {}
 
   return (
-    <Card className="overflow-hidden flex flex-col bg-white text-black border-gray-200 transition-shadow duration-300 hover:shadow-xl">
+    <Card className="overflow-hidden flex flex-col bg-white text-black border-gray-200 transition-shadow duration-300 hover:shadow-md">
       <CardHeader className="p-0">
         <div className="aspect-video w-full overflow-hidden">
           <Image

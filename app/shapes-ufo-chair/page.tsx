@@ -59,7 +59,7 @@ export default function ShapesUfoChairPage() {
           {/* Featured Large Image */}
           <AnimatedElement animationType="fadeInUp">
             <div className="mb-16">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100">
+              <div className="relative overflow-hidden rounded-2xl shadow-md bg-gray-100">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}

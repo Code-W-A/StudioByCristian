@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -28,14 +29,18 @@ export default function Header() {
       
       <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Enhanced Logo */}
-        <Link href="/" className="text-2xl font-bold text-white group flex items-center space-x-3">
-          {/* Geometric Logo Element */}
+        <Link href="/" className="flex items-center space-x-3 group relative z-10">
           <div className="relative">
-            <div className="w-8 h-8 border-2 border-white/60 rotate-45 group-hover:rotate-90 transition-transform duration-500 ease-out" />
-            <div className="absolute inset-0 w-8 h-8 border border-white/30 rotate-45 group-hover:scale-110 transition-all duration-300" />
-          </div>
-          <div>
-            Studio <span className="font-light text-gray-300 group-hover:text-white transition-colors duration-300">by Cristian</span>
+            <Image
+              src="/sigla/StudiobyCristian-sigla.png"
+              alt="Studio by Cristian"
+              width={400}
+              height={100}
+              className="h-20 w-auto group-hover:scale-105 transition-transform duration-300 absolute top-1/2 left-0 transform -translate-y-1/2"
+              priority
+            />
+            {/* Invisible spacer to maintain layout */}
+            <div className="h-10 w-64"></div>
           </div>
         </Link>
 

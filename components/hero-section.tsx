@@ -207,7 +207,7 @@ export default function HeroSection({
              animate={{ opacity: 1, scale: 1 }}
              transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
            >
-            <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg">
               <Image
                 src={imageUrl}
                 alt={imageAlt}

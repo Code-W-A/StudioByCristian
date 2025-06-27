@@ -66,7 +66,7 @@ export default function GallerySectionSuriname() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryImages.map((image, index) => (
             <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-200 hover:shadow-2xl transition-all duration-500">
+              <div className="group relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-200 hover:shadow-lg transition-all duration-500">
                 <Image
                   src={image.src}
                   alt={image.alt}

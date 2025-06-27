@@ -13,7 +13,7 @@ const credentialsData = {
   title: "Credentials",
   category: "Professional & Talent",
   heroImage: "/STUDIO BY CRISTIAN/credentials/Credentials-Header-2.jpg.jpeg",
-  tagline: "Good design is a universal language.",
+  tagline: "Good design is obvious — great design feels effortless.",
   testimonials: [
     {
       name: "John Doe",
@@ -88,9 +88,9 @@ export default function CredentialsPage() {
             </h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-lg text-gray-700 leading-relaxed">
-                Our work speaks through the voices of satisfied clients and industry professionals who have experienced 
-                the Studio by Cristian difference. From concept to completion, we deliver exceptional design solutions 
-                that exceed expectations and create lasting value.
+                Studio byCristian is a design & build studio specialized in custom furniture, interior design, and turn-key interior renovations. 
+                We help our clients bring their spaces to life — with tailored solutions that combine thoughtful design, functional detail, and premium craftsmanship. 
+                From concept to completion, we deliver exceptional design solutions that exceed expectations and create lasting value.
               </p>
             </div>
           </AnimatedElement>
@@ -102,7 +102,7 @@ export default function CredentialsPage() {
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gray-100">
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
                 <Image
                   src={credentialsData.profileImage}
                   alt="Studio by Cristian Professional Profile"
@@ -210,9 +210,9 @@ export default function CredentialsPage() {
                   <div className="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-800 transition-colors">
                     <div className="w-8 h-8 bg-white rounded"></div>
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-4">Design Projects</h3>
+                  <h3 className="text-xl font-bold text-black mb-4">Interior Design</h3>
                   <p className="text-gray-600 mb-4">
-                    Innovative concepts that push the boundaries of design and create inspiring spaces.
+                    Creative direction that elevates your space — and how you experience it.
                   </p>
                   <div className="text-black font-medium group-hover:text-gray-700 transition-colors">
                     Learn More →
@@ -227,9 +227,9 @@ export default function CredentialsPage() {
                   <div className="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-800 transition-colors">
                     <div className="w-8 h-8 bg-white rounded"></div>
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-4">Furniture Production</h3>
+                  <h3 className="text-xl font-bold text-black mb-4">Custom Furniture</h3>
                   <p className="text-gray-600 mb-4">
-                    Custom-made furniture that defines your space with precision and artistry.
+                    Tailored pieces, built for your life and your space — every piece made to order.
                   </p>
                   <div className="text-black font-medium group-hover:text-gray-700 transition-colors">
                     Learn More →
@@ -244,9 +244,9 @@ export default function CredentialsPage() {
                   <div className="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-800 transition-colors">
                     <div className="w-8 h-8 bg-white rounded"></div>
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-4">Turn Key Management</h3>
+                  <h3 className="text-xl font-bold text-black mb-4">Interior Renovation</h3>
                   <p className="text-gray-600 mb-4">
-                    Complete project management from concept to completion with exceptional results.
+                    Turn-key transformations, managed with precision — from the first sketch to the final detail.
                   </p>
                   <div className="text-black font-medium group-hover:text-gray-700 transition-colors">
                     Learn More →

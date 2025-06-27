@@ -57,7 +57,7 @@ export default function TestimonialsSection() {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Good design is a universal language. Here's what industry professionals and satisfied clients 
-            say about working with Studio by Cristian.
+            say about working with Studio byCristian.
           </p>
         </AnimatedElement>
 
@@ -69,7 +69,7 @@ export default function TestimonialsSection() {
               delay={index * 0.1}
             >
               <motion.div
-                className="bg-white p-8 lg:p-10 rounded-2xl shadow-lg relative group"
+                className="bg-white p-8 lg:p-10 rounded-2xl shadow-sm relative group"
                 whileHover={{ 
                   y: -8, 
                   boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
