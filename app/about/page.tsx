@@ -119,7 +119,7 @@ export default function AboutUsPage() {
         >
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div
-              className={`grid items-center gap-8 lg:grid-cols-2 lg:gap-16 ${index % 2 === 1 ? "lg:grid-flow-row-dense" : ""}`}
+              className={`grid items-center gap-8 lg:grid-cols-2 lg:gap-12 ${index % 2 === 1 ? "lg:grid-flow-row-dense" : ""}`}
             >
               <AnimatedElement
                 animationType={index % 2 === 1 ? "fadeInLeft" : "fadeInRight"}
@@ -135,7 +135,7 @@ export default function AboutUsPage() {
                     width={800}
                     height={600}
                     className="rounded-lg shadow-xl transform transition-transform duration-500 hover:scale-105"
-                    style={{ height: 'auto', maxWidth: '400px', width: '100%' }}
+                    style={{ height: 'auto', maxWidth: index === 0 || index === 2 ? '550px' : '500px', width: '100%' }}
                   />
                 </div>
               </AnimatedElement>

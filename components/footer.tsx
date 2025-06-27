@@ -51,9 +51,9 @@ export default function Footer() {
               <Image
                 src="/sigla/StudiobyCristian-sigla.png"
                 alt="Studio byCristian"
-                width={300}
-                height={80}
-                className="h-12 w-auto"
+                width={400}
+                height={100}
+                className="h-16 w-auto"
               />
             </div>
 

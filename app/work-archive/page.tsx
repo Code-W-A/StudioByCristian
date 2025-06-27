@@ -91,13 +91,13 @@ export default function WorkArchivePage() {
                     className="group block relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500"
                   >
                     {/* Background Image */}
-                    <div className="aspect-video w-full overflow-hidden">
+                    <div className="w-full overflow-hidden">
                       <Image
                         src={category.image}
                         alt={category.title}
                         width={600}
                         height={400}
-                        className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                        className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
                       />
                     </div>
                     {/* Gradient Overlay */}

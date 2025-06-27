@@ -142,7 +142,7 @@ export default function HeroSection({
                 
                 {/* Visible animated title */}
                 <span aria-hidden="true">
-                  {title.split(" ").slice(0, -1).map((word, index) => (
+                  {(dynamicWords.length > 0 ? title.split(" ") : title.split(" ").slice(0, -1)).map((word, index) => (
                     <motion.span
                       key={index}
                       className="inline-block mr-4"

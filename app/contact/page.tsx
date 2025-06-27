@@ -24,9 +24,7 @@ export default function ContactPage() {
         <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center relative">
           <AnimatedElement animationType="fadeInUp">
             <div className="flex items-center justify-center mb-6">
-              <div className="w-8 h-8 border-2 border-black/60 rotate-45 mr-4" />
               <h1 className="text-5xl md:text-7xl font-bold text-black">Contact</h1>
-              <div className="w-8 h-8 border-2 border-black/60 rotate-45 ml-4" />
             </div>
           </AnimatedElement>
           <AnimatedElement animationType="fadeInUp" delay={0.2}>
