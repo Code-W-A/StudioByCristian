@@ -1,0 +1,6 @@
+export { default as HeroSectionSuriname } from './hero-section-suriname'
+export { default as IntroSectionSuriname } from './intro-section-suriname'
+export { default as ProductionDetailsSection } from './production-details-section'
+export { default as ProjectInfoSection } from './project-info-section'
+export { default as GallerySectionSuriname } from './gallery-section-suriname'
+export { default as FooterCTASection } from './footer-cta-section' 

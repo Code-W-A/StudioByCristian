@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio by Cristian - Sitemap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .sitemap {
+            padding: 2rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .page-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .page-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+            border-color: #667eea;
+        }
+        
+        .page-item a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            display: block;
+        }
+        
+        .page-item a:hover {
+            color: #667eea;
+        }
+        
+        .sub-pages {
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e2e8f0;
+        }
+        
+        .sub-page {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        
+        .stats {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item p {
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .pages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Studio by Cristian</h1>
+            <p>Complete Sitemap - Architecture & Interior Design Studio</p>
+        </div>
+        
+        <div class="sitemap">
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>40+</h3>
+                    <p>Total Pages</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5</h3>
+                    <p>Main Sections</p>
+                </div>
+                <div class="stat-item">
+                    <h3>20+</h3>
+                    <p>Project Pages</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Main Pages</h2>
+                <div class="pages-grid">
+                    <div class="page-item">
+                        <a href="/">Homepage</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/about">About Us</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/contact">Contact</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/credentials">Credentials</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Services</h2>
+                <div class="pages-grid">
+                    <div class="page-item">
+                        <a href="/design">Design</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/concept-design">Concept Design</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/furniture-production">Furniture Production</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/turn-key-management">Turn Key Management</a>
+                        <div class="sub-pages">
+                            <div class="sub-page"><a href="/turn-key-management/amsterdam-apartment-1">Amsterdam Apartment 1</a></div>
+                            <div class="sub-page"><a href="/turn-key-management/amsterdam-apartment-2">Amsterdam Apartment 2</a></div>
+                            <div class="sub-page"><a href="/turn-key-management/voorburg-apartment">Voorburg Apartment</a></div>
+                            <div class="sub-page"><a href="/turn-key-management/private-villa-wassenaar">Private Villa Wassenaar</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Work Archive</h2>
+                <div class="pages-grid">
+                    <div class="page-item">
+                        <a href="/work-archive">Work Archive</a>
+                        <div class="sub-pages">
+                            <div class="sub-page"><a href="/work-archive/private-homes">Private Homes</a></div>
+                            <div class="sub-page"><a href="/work-archive/luxury-stores">Luxury Stores</a></div>
+                            <div class="sub-page"><a href="/work-archive/restaurants-hotels">Restaurants & Hotels</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Shapes Collection</h2>
+                <div class="pages-grid">
+                    <div class="page-item">
+                        <a href="/shapes">Shapes Collection</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/shapes-lady-chair">Lady Chair</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/shapes-out-table">Out Table</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/shapes-ufo-chair">UFO Chair</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/shapes-spider-kit">Spider Kit</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Residential Projects</h2>
+                <div class="pages-grid">
+                    <div class="page-item">
+                        <a href="/amsterdam-amsteldijk-double-apartments">Amsterdam Amsteldijk Double Apartments</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/mauritskade">Mauritskade</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/mauritskade-apartments">Mauritskade Apartments</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/private-house-wassenaar">Private House Wassenaar</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/private-home-for-dennis-mabel">Private Home for Dennis & Mabel</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/private-home-for-kristian-and-claudia">Private Home for Kristian & Claudia</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/private-penthouse">Private Penthouse</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/susan-and-cyril-apartment">Susan and Cyril Apartment</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/chic-parisien-apartment">Chic Parisien Apartment</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/harmonie-in-holz-house">Harmonie in Holz House</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Concept Projects</h2>
+                <div class="pages-grid">
+                    <div class="page-item">
+                        <a href="/dutch-village-concept">Dutch Village Concept</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/laren-house-concept">Laren House Concept</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/wassenaar-house-concept">Wassenaar House Concept</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/walden-appartments-concept">Walden Appartments Concept</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/walden-bizstay-kitchens">Walden Bizstay Kitchens</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/day-care-concept">Day Care Concept</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/hub-modular-office-concept">Hub Modular Office Concept</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Commercial Projects</h2>
+                <div class="pages-grid">
+                    <div class="page-item">
+                        <a href="/chi-cafe">Chi Cafe</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/derodeloper-luxury-store-furniture">Derodeloper Luxury Store Furniture</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/oba-amsterdam-library">OBA Amsterdam Library</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/noritech-working-house">Noritech Working House</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Furniture Projects</h2>
+                <div class="pages-grid">
+                    <div class="page-item">
+                        <a href="/suriname-apartments-residential-1-furniture">Suriname Apartments Residential 1 Furniture</a>
+                    </div>
+                    <div class="page-item">
+                        <a href="/suriname-apartments-residential-2-furniture">Suriname Apartments Residential 2 Furniture</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
