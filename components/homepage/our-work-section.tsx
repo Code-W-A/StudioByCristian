@@ -17,12 +17,12 @@ const ourWorkItems = [
   {
     title: "Interior Design",
     imageUrl: "/home-page/Our-Portfolio-Concept-Design-1-700x466.jpg.jpeg",
-    link: "/wasenaar-house-concept",
+    link: "/design",
     description: " interior concepts that balance beauty and purpose — design that feels good too.",
   },
   {
     title: "Interior Renovation",
-    imageUrl: "/home-page/Furniture-Design-Banner-1-scaled.jpg.jpeg",
+    imageUrl: "/turn-key-management-page/Turn-Key-Management-Header-scaled.jpg.jpeg",
     link: "/turn-key-management",
     description: "Well-managed, end-to-end renovation services — from the first sketch to the final detail.",
   },

@@ -1,40 +1,11 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import AnimatedElement from "@/components/animated-element"
 import { Star, Quote } from "lucide-react"
 import { motion } from "framer-motion"
-
-const testimonials = [
-  {
-    name: "Thijs Mantel",
-    company: "Private Client",
-    role: "Homeowner",
-    quote: "Cristian and his team were hired in 2023 to build the interior of our living room as part of a reconstruction. The design was made by architect Martijn Elzinga. They built and created the kitchen, a door, cupboards and other largely wooden decorations. Even though it was a challenging assignment, also in terms of planning, the end result is magnificent, very beautiful craftsmanship. We are really happy and enjoying it everyday!",
-    type: "Beautiful Craftsmanship"
-  },
-  {
-    name: "Cassandra Van den Berg", 
-    company: "Private Client",
-    role: "Homeowner",
-    quote: "ByCristian designed and delivered amazing results for us. Our kitchen is an eye catcher and defines the home. The balance of colors, functionality, lighting and Cristian's eye for detail make us really happy with our choice. Aftercare is also very well-appreciated and done without any hassle. Aside from our designer kitchen, Cristian also designed our walk-in closet wardrobes, built-in bathroom cabinets and a large office bookshelf/cabinet. We highly recommend ByCristian for anyone who is looking for quality and attention to detail.",
-    type: "Quality & Attention to Detail"
-  },
-  {
-    name: "Olaf Lawerman",
-    company: "Project Partner",
-    role: "Collaborator",
-    quote: "After successfully completing an important and challenging project together with Studio byCristian, I can fairly say both I was pleased with the ways in which we have been collaborating with the company Through many months of working together, I saw that Studio byCristian will not let you down when the project will reach both highs and lows in terms of issues and site management. The team will always be there, flexible, and willing to surpass any difficult moment, ensuring that the good quality of the products that they are delivering remains the same. I would gladly recommend them further.",
-    type: "Reliable Partnership"
-  },
-  {
-    name: "Wanise",
-    company: "Private Client",
-    role: "Homeowner",
-    quote: "I have custom made cabinets on my entire house done by 'Studio by Cristian' and I am very happy with the overall result. The cabinets are beautiful, Cristian and the team were very polite, professional and attentive to every detail and wish. Every day they cleaned and tidied up the entire space, treating my home as their own. The price was fair and they delivered everything on the agreed time. I would hire them again with no doubt.",
-    type: "Professional Excellence"
-  }
-]
+import { featuredTestimonials } from "@/lib/testimonials-data"
 
 export default function TestimonialsSection() {
   return (
@@ -62,7 +33,7 @@ export default function TestimonialsSection() {
         </AnimatedElement>
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          {testimonials.map((testimonial, index) => (
+          {featuredTestimonials.map((testimonial, index) => (
             <AnimatedElement
               key={index}
               animationType="fadeInUp"
@@ -105,6 +76,23 @@ export default function TestimonialsSection() {
                       <div className="font-bold text-black text-lg">{testimonial.name}</div>
                       <div className="text-gray-600 text-sm">{testimonial.role}</div>
                       <div className="text-gray-500 text-sm font-medium">{testimonial.company}</div>
+                      {testimonial.projectLink && (
+                        <div className="mt-3">
+                          <Link 
+                            href={testimonial.projectLink}
+                            className="inline-flex items-center text-sm font-medium text-black hover:text-white bg-transparent hover:bg-black px-3 py-2 rounded-md transition-all duration-300 group border border-gray-300 hover:border-black"
+                          >
+                            View Project
+                            <motion.span 
+                              className="ml-2 inline-block"
+                              whileHover={{ x: 4 }}
+                              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                            >
+                              →
+                            </motion.span>
+                          </Link>
+                        </div>
+                      )}
                     </div>
                     <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
                       <div className="w-6 h-6 bg-black rounded-full"></div>
@@ -125,7 +113,7 @@ export default function TestimonialsSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <a 
+            <Link 
               href="/credentials" 
               className="inline-flex items-center bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-medium"
             >
@@ -133,7 +121,7 @@ export default function TestimonialsSection() {
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </Link>
           </motion.div>
         </AnimatedElement>
       </div>

@@ -167,6 +167,23 @@ export default function HeroSectionHomepage() {
         </AnimatePresence>
       </div>
 
+      {/* Logo in Top-Left Corner */}
+      <motion.div
+        className="absolute top-6 left-6 z-30"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+      >
+        <Image
+          src="/sigla/Studio-By-Cristian-White@2x.png"
+          alt="Studio By Cristian Logo"
+          width={180}
+          height={48}
+          className="drop-shadow-lg hover:scale-105 transition-transform duration-300 ease-out"
+          priority
+        />
+      </motion.div>
+
       {/* Content with Enhanced Animations */}
       <div className="relative z-20 container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-start h-full pt-16 pb-8">
         <AnimatePresence mode="wait">

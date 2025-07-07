@@ -5,23 +5,23 @@ import { motion, type Variants } from "framer-motion"
 
 const featuredProjectItems = [
   {
-    name: "Dutch Village Concept",
-    imageUrl: "/home-page/Village-Concept-Design-1-700x466.jpg.jpeg",
-    link: "/dutch-village-concept",
+    name: "BizzStay Delft Project",
+    imageUrl: "/featured-projects-extra/BizzSaty_Delft-Project.png",
+    link: "/bizzstay-delft-foto",
   },
   {
-    name: "Suriname Residential Apartments",
-    imageUrl: "/home-page/Luxury-Apartment-Design-1-700x466.jpg.jpeg",
-    link: "/suriname-apartments-residential-1-furniture",
+    name: "Residential Thijs Overveen",
+    imageUrl: "/featured-projects-extra/Residential-Thijs_Overveen.png",
+    link: "/thijs-overveen",
   },
   {
-    name: "Showroom Concept Design",
-    imageUrl: "/home-page/Showroom-Design-1-700x466.jpg.jpeg",
-    link: "/harmonie-in-holz-house",
+    name: "Hotel Concept Design",
+    imageUrl: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-one.jpg",
+    link: "/ravi-roy-spa-retreat-hotel",
   },
   {
     name: "Mauritskade Residential Apartments",
-    imageUrl: "/home-page/Elements-Design-Design-1-700x466.jpg.jpeg",
+    imageUrl: "/STUDIO BY CRISTIAN/mauritskade/Mauritskade-Banner-scaled.jpg.jpeg",
     link: "/mauritskade",
   },
 ]

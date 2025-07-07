@@ -27,7 +27,7 @@ export default function AboutUsSection() {
                             className="aspect-w-4 aspect-h-3 w-full overflow-hidden rounded-xl shadow-md"
           >
             <Image
-              src="/home-page/Who-we-are-1.jpg.jpeg"
+              src="/home-page/about-us-section.png"
               alt="Studio by Cristian team or office"
               width={800}
               height={600}

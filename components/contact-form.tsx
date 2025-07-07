@@ -58,7 +58,7 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel className={labelColor}>Your name</FormLabel>
               <FormControl>
-                <Input placeholder="e.g. Jane Doe" {...field} className={inputStyles} />
+                <Input placeholder="e.g. Jane Doe" {...field} className={inputStyles} required />
               </FormControl>
               <FormMessage className="text-red-400" />
             </FormItem>
@@ -71,7 +71,7 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel className={labelColor}>Your email</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="e.g. jane.doe@example.com" {...field} className={inputStyles} />
+                <Input type="email" placeholder="e.g. jane.doe@example.com" {...field} className={inputStyles} required />
               </FormControl>
               <FormMessage className="text-red-400" />
             </FormItem>
@@ -84,7 +84,7 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel className={labelColor}>Subject</FormLabel>
               <FormControl>
-                <Input placeholder="e.g. Project Inquiry" {...field} className={inputStyles} />
+                <Input placeholder="e.g. Project Inquiry" {...field} className={inputStyles} required />
               </FormControl>
               <FormMessage className="text-red-400" />
             </FormItem>
@@ -102,6 +102,7 @@ export default function ContactForm() {
                   rows={5}
                   {...field}
                   className={`${inputStyles} min-h-[120px] resize-none`}
+                  required
                 />
               </FormControl>
               <FormMessage className="text-red-400" />
