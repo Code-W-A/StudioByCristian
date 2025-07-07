@@ -4,8 +4,8 @@ import ParallaxSection from "@/components/parallax-section"
 export default function HeroSectionFurnitureProduction() {
   return (
     <ParallaxSection
-      imageUrl="/furniture-production-page/www.studiobycristian.com-1750525148492/Furniture-Production-Category-Image-scaled.jpg.jpeg"
-      imageAlt="Furniture Production Hero"
+      imageUrl="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5992.jpg"
+      imageAlt="Cassandra Aerdenhout Custom Furniture"
       strength={0.25}
       minHeight="100vh"
       overlayClassName="bg-black/40"

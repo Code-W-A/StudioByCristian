@@ -21,11 +21,11 @@ const testimonials = [
     type: "Quality & Attention to Detail"
   },
   {
-    name: "Teun Aarden",
-    company: "Private Client",
-    role: "Homeowner",
-    quote: "I recently hired Cristian from Studio by Cristian to supply my kitchen, built-in closet, and sink, and I couldn't be happier with the results. His professionalism, attention to detail, and quality workmanship transformed my home beautifully. I highly recommend Cristian for anyone seeking exceptional home improvements.",
-    type: "Exceptional Home Improvements"
+    name: "Olaf Lawerman",
+    company: "Project Partner",
+    role: "Collaborator",
+    quote: "After successfully completing an important and challenging project together with Studio byCristian, I can fairly say both I was pleased with the ways in which we have been collaborating with the company Through many months of working together, I saw that Studio byCristian will not let you down when the project will reach both highs and lows in terms of issues and site management. The team will always be there, flexible, and willing to surpass any difficult moment, ensuring that the good quality of the products that they are delivering remains the same. I would gladly recommend them further.",
+    type: "Reliable Partnership"
   },
   {
     name: "Wanise",

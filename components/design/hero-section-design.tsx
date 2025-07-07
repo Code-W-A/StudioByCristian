@@ -4,7 +4,7 @@ import ParallaxSection from "@/components/parallax-section"
 export default function HeroSectionDesign() {
   return (
     <ParallaxSection
-      imageUrl="/design-page/Design-Main-Banner.jpg.jpeg"
+      imageUrl="/extra design/hero-design.png"
       imageAlt="Modern Interior Design"
       strength={0.3}
       minHeight="100vh"

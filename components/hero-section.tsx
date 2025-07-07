@@ -17,7 +17,7 @@ interface HeroSectionProps {
 
 // Technical images from extra-from-wapp folders combined with about hero image
 const technicalImages = [
-  "/about-us/about-us-hero-section-image.jpg",
+  "/extra-from-wapp/Lage&Roy Institute_Phase2_Technical Detailing/Lage&Roy Institute_Phase2_Technical Detailing_page-0049.jpg",
   "/extra-from-wapp/Lage&Roy Institute_Phase2_Technical Detailing/Lage&Roy Institute_Phase2_Technical Detailing_page-0001.jpg",
   "/extra-from-wapp/A1. 02  Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 2/A1. 02  Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 2_page-0001.jpg",
   "/extra-from-wapp/A1. 01 Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 1/A1. 01 Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 1_page-0001.jpg",
@@ -97,20 +97,20 @@ export default function HeroSection({
 
     return (
       <div 
-        className="lg:hidden relative w-full rounded-lg overflow-hidden shadow-lg mb-8 bg-gray-900"
+        className="lg:hidden relative w-full rounded-xl overflow-hidden shadow-2xl mb-8 bg-gray-900"
         style={{ 
-          height: '256px', // Fixed height to prevent layout shifts
-          minHeight: '256px'
+          height: '320px', // Increased from 256px
+          minHeight: '320px'
         }}
       >
-        {/* All images preloaded with smooth transitions */}
+        {/* All images preloaded with smooth transitions and zoom effects */}
         {slideshowImages.map((imageSrc, index) => (
           <div
             key={index}
-            className="absolute inset-0 transition-all duration-1000 ease-in-out"
+            className="absolute inset-0 transition-all duration-1500 ease-in-out"
             style={{
               opacity: index === currentImageIndex ? 1 : 0,
-              transform: index === currentImageIndex ? 'scale(1)' : 'scale(1.05)',
+              transform: index === currentImageIndex ? 'scale(1)' : 'scale(1.1)',
               zIndex: index === currentImageIndex ? 2 : 1
             }}
           >
@@ -118,11 +118,12 @@ export default function HeroSection({
               src={imageSrc}
               alt={`Technical drawing ${index + 1}`}
               fill
-              className="object-cover transition-transform duration-1000 ease-in-out"
+              className="object-cover transition-transform duration-[6000ms] ease-out hover:scale-105"
               priority={index <= 1}
               onLoad={(e) => handleImageLoad(index, e)}
               style={{
-                filter: index === currentImageIndex ? 'brightness(1)' : 'brightness(0.9)'
+                filter: index === currentImageIndex ? 'brightness(1.05) contrast(1.1)' : 'brightness(0.9)',
+                transform: index === currentImageIndex ? 'scale(1.02)' : 'scale(1)'
               }}
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
@@ -130,17 +131,17 @@ export default function HeroSection({
         ))}
         
         {/* Enhanced indicators with animation */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10">
           {slideshowImages.map((_, index) => (
             <div key={index} className="relative">
               <div
-                className="h-1 rounded-full bg-white/30 transition-all duration-500"
-                style={{ width: '24px' }}
+                className="h-1.5 rounded-full bg-white/20 transition-all duration-500"
+                style={{ width: '32px' }}
               />
               <div
-                className="absolute top-0 left-0 h-1 rounded-full bg-white transition-all duration-500 ease-out"
+                className="absolute top-0 left-0 h-1.5 rounded-full bg-white shadow-lg transition-all duration-500 ease-out"
                 style={{
-                  width: index === currentImageIndex ? '24px' : '0px',
+                  width: index === currentImageIndex ? '32px' : '0px',
                   opacity: index === currentImageIndex ? 1 : 0
                 }}
               />
@@ -148,8 +149,9 @@ export default function HeroSection({
           ))}
         </div>
         
-        {/* Subtle overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+        {/* Enhanced overlay for depth and style */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10 pointer-events-none" />
         
         {/* Loading indicator for first load */}
         {!imageLoaded[currentImageIndex] && (
@@ -218,7 +220,7 @@ export default function HeroSection({
       </svg>
 
       {/* Main Content Container */}
-      <div className="relative z-20 flex lg:flex-row flex-col" style={{ height: slideshow ? '100vh' : '92vh' }}>
+      <div className="relative z-20 flex lg:flex-row flex-col ml-4 lg:ml-8" style={{ height: slideshow ? '100vh' : '92vh' }}>
         {/* Mobile Layout: Slideshow first, then text */}
         {slideshow && (
           <div className="lg:hidden w-full px-6 pt-8 flex flex-col">
@@ -308,7 +310,7 @@ export default function HeroSection({
         )}
 
         {/* Desktop Layout (or mobile for non-slideshow) */}
-        <div className={`${slideshow ? 'hidden lg:flex' : 'flex'} w-full lg:w-1/2 items-center justify-center px-8 lg:px-16`}>
+        <div className={`${slideshow ? 'hidden lg:flex' : 'flex'} w-full lg:w-1/3 items-center justify-center px-8 lg:px-16 lg:pl-8`}>
           <div className="max-w-2xl text-left">
             <motion.p 
               className="text-sm font-light uppercase tracking-[0.3em] text-gray-400 mb-8"
@@ -391,17 +393,17 @@ export default function HeroSection({
         </div>
 
         {/* Desktop Right Side - Image or Slideshow */}
-        <div className="hidden lg:block lg:w-1/2 relative">
+        <div className="hidden lg:block lg:w-2/3 relative">
           <motion.div
-            className="absolute inset-0 m-20"
+            className="absolute inset-0 m-16" // Reduced margins from m-20 to m-16 for larger size
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg">
+            <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl">
               {slideshow ? (
-                // Slideshow for technical images
-                <div className="relative w-full h-full">
+                // Enhanced slideshow for technical images
+                <div className="relative w-full h-full group">
                   {slideshowImages.map((imageSrc, index) => (
                     <motion.div
                       key={index}
@@ -409,10 +411,10 @@ export default function HeroSection({
                       initial={{ opacity: 0 }}
                       animate={{ 
                         opacity: index === currentImageIndex ? 1 : 0,
-                        scale: index === currentImageIndex ? 1 : 1.05
+                        scale: index === currentImageIndex ? 1 : 1.08
                       }}
                       transition={{ 
-                        duration: 0.8,
+                        duration: 1.2,
                         ease: "easeInOut"
                       }}
                     >
@@ -420,56 +422,70 @@ export default function HeroSection({
                         src={imageSrc}
                         alt={`Technical drawing ${index + 1}`}
                         fill
-                        className="object-contain"
+                        className="object-contain transition-transform duration-[8000ms] ease-out"
                         priority={index === 0}
+                        style={{
+                          filter: index === currentImageIndex ? 'brightness(1.05) contrast(1.1) saturate(1.1)' : 'brightness(0.9)',
+                          transform: index === currentImageIndex ? 'scale(1.03)' : 'scale(1)'
+                        }}
                       />
                     </motion.div>
                   ))}
                   
-                  {/* Modern slideshow indicators */}
-                  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+                  {/* Modern slideshow indicators with enhanced styling */}
+                  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10">
                     {slideshowImages.map((_, index) => (
                       <motion.div
                         key={index}
-                        className={`h-0.5 rounded-full transition-all duration-500 ${
+                        className={`h-1 rounded-full transition-all duration-700 cursor-pointer ${
                           index === currentImageIndex 
-                            ? 'bg-white w-12' 
-                            : 'bg-white/40 w-6 hover:bg-white/60'
+                            ? 'bg-white shadow-lg' 
+                            : 'bg-white/30 hover:bg-white/60'
                         }`}
-                        initial={{ width: 24, opacity: 0.4 }}
+                        initial={{ width: 32, opacity: 0.3 }}
                         animate={{ 
-                          width: index === currentImageIndex ? 48 : 24,
-                          opacity: index === currentImageIndex ? 1 : 0.4,
-                          backgroundColor: index === currentImageIndex ? '#ffffff' : 'rgba(255, 255, 255, 0.4)'
+                          width: index === currentImageIndex ? 64 : 32,
+                          opacity: index === currentImageIndex ? 1 : 0.3,
+                          backgroundColor: index === currentImageIndex ? '#ffffff' : 'rgba(255, 255, 255, 0.3)'
                         }}
                         transition={{ 
-                          duration: 0.5,
+                          duration: 0.7,
                           ease: "easeInOut"
                         }}
                         whileHover={{
                           opacity: 0.8,
+                          scale: 1.1,
                           transition: { duration: 0.2 }
                         }}
+                        onClick={() => setCurrentImageIndex(index)}
                       />
                     ))}
                   </div>
                   
-                  {/* Subtle overlay for better integration */}
-                  <div className="absolute inset-0 bg-black/20" />
+                  {/* Enhanced overlays for better styling and depth */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10" />
+                  
+                  {/* Subtle animated border effect */}
+                  <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/20 transition-colors duration-500" />
                 </div>
               ) : (
-                // Single image (original behavior)
-                <>
+                // Enhanced single image (original behavior)
+                <div className="relative w-full h-full group">
                   <Image
                     src={imageUrl}
                     alt={imageAlt}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-[6000ms] ease-out group-hover:scale-105"
                     priority
+                    style={{
+                      filter: 'brightness(1.05) contrast(1.1)'
+                    }}
                   />
-                  {/* Subtle overlay for better integration */}
-                  <div className="absolute inset-0 bg-black/10" />
-                </>
+                  {/* Enhanced overlay for better integration */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5" />
+                  <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/20 transition-colors duration-500" />
+                </div>
               )}
             </div>
           </motion.div>

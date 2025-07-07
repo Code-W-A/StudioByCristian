@@ -11,8 +11,8 @@ import { motion, AnimatePresence } from "framer-motion"
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/design", label: "Design" },
-  { href: "/furniture-production", label: "Furniture Production" },
-  { href: "/turn-key-management", label: "Turn Key Management" },
+  { href: "/furniture-production", label: "Furnish" },
+  { href: "/turn-key-management", label: "Renovate" },
   { href: "/work-archive", label: "Work Archive" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
