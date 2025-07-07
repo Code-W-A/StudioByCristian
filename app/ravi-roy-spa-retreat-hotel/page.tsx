@@ -54,15 +54,7 @@ const projectDetails = {
         { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-five.jpg", alt: "Restaurant seating area" },
         { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-six.jpg", alt: "Restaurant lounge additional view" },
         { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-seven.jpg", alt: "Restaurant dining area" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-eight.jpg", alt: "Restaurant seating arrangement" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-lauge-nine.jpg", alt: "Restaurant interior design" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-ten.jpg", alt: "Restaurant ambiance" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-eleven.jpg", alt: "Restaurant lighting details" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-twelve.jpg", alt: "Restaurant ceiling design" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-thirtheen.jpg", alt: "Restaurant table setting" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-fourteen.jpg", alt: "Restaurant overall view" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-lauge-seven.jpg", alt: "Restaurant bar section" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-lauge-six.jpg", alt: "Restaurant traditional elements" }
+        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-eight.jpg", alt: "Restaurant seating arrangement" }
       ]
     },
     seminar: {
@@ -345,7 +337,11 @@ export default function RaviRoySpaRetreatHotelPage() {
               </div>
               <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
                 <Image src={projectDetails.spaces.restaurant.images[0].src} alt={projectDetails.spaces.restaurant.images[0].alt} width={600} height={450}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} 
+                      priority
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                      loading="eager" />
               </div>
             </div>
             {/* Additional images gallery */}
@@ -358,7 +354,10 @@ export default function RaviRoySpaRetreatHotelPage() {
                       <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100" style={{ aspectRatio: '4/3' }}>
                         <Image src={image.src} alt={image.alt} fill
                           className="object-cover hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 768px) 100vw, 50vw" />
+                          sizes="(max-width: 768px) 100vw, 50vw" 
+                          loading="lazy"
+                          placeholder="blur"
+                          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==" />
                       </div>
                     </AnimatedElement>
                   ))}
@@ -369,71 +368,41 @@ export default function RaviRoySpaRetreatHotelPage() {
                   <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100" style={{ aspectRatio: '16/9' }}>
                     <Image src={projectDetails.spaces.restaurant.images[3].src} alt={projectDetails.spaces.restaurant.images[3].alt} fill
                       className="object-cover hover:scale-105 transition-transform duration-500"
-                      sizes="100vw" />
+                      sizes="100vw" 
+                      loading="lazy"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==" />
                   </div>
                 </AnimatedElement>
 
                 {/* Three images in a row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                   {projectDetails.spaces.restaurant.images.slice(4, 7).map((image, index) => (
-                    <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
+                    <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.2}>
                       <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 aspect-square">
                         <Image src={image.src} alt={image.alt} fill
                           className="object-cover hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw" />
-                      </div>
-                    </AnimatedElement>
-                  ))}
-                </div>
-
-                {/* Two large images side by side */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {projectDetails.spaces.restaurant.images.slice(7, 9).map((image, index) => (
-                    <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                      <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100" style={{ aspectRatio: '4/3' }}>
-                        <Image src={image.src} alt={image.alt} fill
-                          className="object-cover hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 768px) 100vw, 50vw" />
-                      </div>
-                    </AnimatedElement>
-                  ))}
-                </div>
-
-                {/* Three images in a grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                  {projectDetails.spaces.restaurant.images.slice(9, 12).map((image, index) => (
-                    <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                      <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 aspect-square">
-                        <Image src={image.src} alt={image.alt} fill
-                          className="object-cover hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw" />
-                      </div>
-                    </AnimatedElement>
-                  ))}
-                </div>
-
-                {/* Two additional images */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {projectDetails.spaces.restaurant.images.slice(12, 14).map((image, index) => (
-                    <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                      <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100" style={{ aspectRatio: '4/3' }}>
-                        <Image src={image.src} alt={image.alt} fill
-                          className="object-cover hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 768px) 100vw, 50vw" />
+                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw" 
+                          loading="lazy"
+                          placeholder="blur"
+                          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==" />
                       </div>
                     </AnimatedElement>
                   ))}
                 </div>
 
                 {/* Final row - remaining images */}
-                {projectDetails.spaces.restaurant.images.length > 13 && (
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {projectDetails.spaces.restaurant.images.slice(13).map((image, index) => (
-                      <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
+                {projectDetails.spaces.restaurant.images.length > 7 && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {projectDetails.spaces.restaurant.images.slice(7).map((image, index) => (
+                      <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.3}>
                         <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100" style={{ aspectRatio: '4/3' }}>
                           <Image src={image.src} alt={image.alt} fill
                             className="object-cover hover:scale-105 transition-transform duration-500"
-                            sizes="(max-width: 768px) 100vw, 33vw" />
+                            sizes="(max-width: 768px) 100vw, 50vw" 
+                            loading="lazy"
+                            placeholder="blur"
+                            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==" />
                   </div>
                 </AnimatedElement>
               ))}

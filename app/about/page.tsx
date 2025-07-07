@@ -94,7 +94,7 @@ export default function AboutUsPage() {
           
           <div className="space-y-24">
             {/* Custom Furniture - Text Left, Image Right */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <AnimatedElement animationType="fadeInLeft" delay={0.2}>
                 <div className="space-y-8">
                   <div className="flex items-center space-x-4 mb-6">
@@ -142,15 +142,15 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.3}>
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group"
+                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
                     src="/home-page/Furniture-Production-1-scaled.jpg.jpeg"
                     alt="Custom Furniture"
                     width={800}
-                    height={600}
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                    height={800}
+                    className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
@@ -158,7 +158,7 @@ export default function AboutUsPage() {
             </div>
 
             {/* Interior Design - Text Right, Image Left */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <AnimatedElement animationType="fadeInLeft" delay={0.4} className="lg:order-2">
                 <div className="space-y-8">
                   <div className="flex items-center space-x-4 mb-6">
@@ -207,15 +207,15 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.5} className="lg:order-1">
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group"
+                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/home-page/Design.jpg.jpeg"
+                    src="/extra design/hero-design.png"
                     alt="Interior Design"
                     width={800}
-                    height={600}
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                    height={800}
+                    className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
@@ -223,7 +223,7 @@ export default function AboutUsPage() {
             </div>
 
             {/* Interior Renovation - Text Left, Image Right */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <AnimatedElement animationType="fadeInLeft" delay={0.6}>
                 <div className="space-y-8">
                   <div className="flex items-center space-x-4 mb-6">
@@ -272,15 +272,15 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.7}>
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group"
+                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/home-page/Turn-Key-Management-2-scaled.jpg.jpeg"
+                    src="/turn-key-management-page/Turn-Key-Management-Header-scaled.jpg.jpeg"
                     alt="Interior Renovation"
                     width={800}
                     height={600}
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
@@ -526,7 +526,7 @@ export default function AboutUsPage() {
           
           <div className="space-y-24">
             {/* Essentials Bundle - Text Left, Image Right */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <AnimatedElement animationType="fadeInLeft" delay={0.2}>
                 <div className="space-y-8">
                                      <div className="flex items-center space-x-4 mb-6">
@@ -574,15 +574,15 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.3}>
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group"
+                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/STUDIO BY CRISTIAN PAGINI RAMASE/work-archive-private-homes/Private-Homes-02.jpg.jpeg"
+                    src="/work-archive-page/Private-Homes-18-768x576.jpg.jpeg"
                     alt="Essentials Bundle - Apartment Design"
                     width={800}
-                    height={600}
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                    height={800}
+                    className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
@@ -590,7 +590,7 @@ export default function AboutUsPage() {
             </div>
 
             {/* Design+Furniture Bundle - Text Right, Image Left */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <AnimatedElement animationType="fadeInLeft" delay={0.4} className="lg:order-2">
                 <div className="space-y-8">
                                      <div className="flex items-center space-x-4 mb-6">
@@ -639,15 +639,15 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.5} className="lg:order-1">
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group"
+                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/STUDIO BY CRISTIAN PAGINI RAMASE/work-archive-restaurants-hotels/Restaurants-Hotels-02.jpg.jpeg"
-                    alt="Design+Furniture Bundle - Restaurant Design"
+                    src="/home-page/Furniture-Production-1-scaled.jpg.jpeg"
+                    alt="Design+Furniture Bundle - Custom Furniture Production"
                     width={800}
-                    height={600}
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                    height={800}
+                    className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
@@ -655,7 +655,7 @@ export default function AboutUsPage() {
             </div>
 
             {/* Turn-key Bundle - Text Left, Image Right */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <AnimatedElement animationType="fadeInLeft" delay={0.6}>
                 <div className="space-y-8">
                                      <div className="flex items-center space-x-4 mb-6">
@@ -704,15 +704,15 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.7}>
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group"
+                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/turn-key-management-amsterdam-apartment-1/IMG_7134.jpeg"
+                    src="/turn-key-management-page/Turn-Key-Header-Right-Image.jpg.jpeg"
                     alt="Turn-key Bundle - Complete Renovation"
                     width={800}
                     height={600}
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
@@ -720,7 +720,7 @@ export default function AboutUsPage() {
             </div>
 
             {/* Relocation Bundle - Text Right, Image Left */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <AnimatedElement animationType="fadeInLeft" delay={0.8} className="lg:order-2">
                 <div className="space-y-8">
                                      <div className="flex items-center space-x-4 mb-6">
@@ -769,7 +769,7 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.9} className="lg:order-1">
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group"
+                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
@@ -777,7 +777,7 @@ export default function AboutUsPage() {
                     alt="Relocation Bundle - Luxury Home Setup"
                     width={800}
                     height={600}
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
@@ -806,7 +806,7 @@ export default function AboutUsPage() {
         >
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div
-              className={`grid items-center gap-8 lg:grid-cols-2 lg:gap-12 ${index % 2 === 1 ? "lg:grid-flow-row-dense" : ""}`}
+              className={`grid items-start gap-8 lg:grid-cols-2 lg:gap-12 ${index % 2 === 1 ? "lg:grid-flow-row-dense" : ""}`}
             >
               <AnimatedElement
                 animationType={index % 2 === 1 ? "fadeInLeft" : "fadeInRight"}
@@ -1031,249 +1031,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Behind the Scenes Section */}
-      <section className="py-16 lg:py-20 bg-black text-white">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement
-            animationType="fadeInUp"
-            className="text-center mb-12"
-            delay={0.1}
-            duration={0.7}
-            amount={0.3}
-          >
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
-              Behind the Scenes
-            </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              The real work happens behind the scenes — from concept to installation, here's how we bring your vision to life.
-            </p>
-          </AnimatedElement>
-          
-          {/* Process Gallery */}
-          <div className="space-y-12">
-            {/* Workshop & Production */}
-            <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-white mb-3">Workshop & Production</h3>
-                <p className="text-gray-300">Custom furniture crafted in our workshop</p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-                  viewport={{ once: true }}
-                  className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
-                >
-                  <Image
-                    src="/extra Custom Furniture/Sudip_Den Haag/_EWP2236.jpg"
-                    alt="Workshop production process"
-                    width={600}
-                    height={400}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-white font-semibold">Wood crafting</span>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 } }}
-                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-                  viewport={{ once: true }}
-                  className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
-                >
-                  <Image
-                    src="/extra Custom Furniture/Sudip_Den Haag/_EWP2242.jpg"
-                    alt="Custom furniture assembly"
-                    width={600}
-                    height={400}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-white font-semibold">Precision assembly</span>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } }}
-                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-                  viewport={{ once: true }}
-                  className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
-                >
-                  <Image
-                    src="/extra Custom Furniture/Sudip_Den Haag/_EWP2279.jpg"
-                    alt="Quality control process"
-                    width={600}
-                    height={400}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-white font-semibold">Quality control</span>
-                  </div>
-                </motion.div>
-              </div>
-            </AnimatedElement>
-
-            {/* Installation Process */}
-            <AnimatedElement animationType="fadeInUp" delay={0.3}>
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-white mb-3">Installation Process</h3>
-                <p className="text-gray-300">Professional installation at client locations</p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
-                  whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
-                  viewport={{ once: true }}
-                  className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
-                >
-                  <Image
-                    src="/extra Custom Furniture/BizzStay_Delft Foto/_EWP9017.jpg"
-                    alt="On-site installation"
-                    width={800}
-                    height={500}
-                    className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h4 className="text-white font-bold text-lg">On-site installation</h4>
-                    <p className="text-gray-200">Professional team at work</p>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
-                  whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
-                  viewport={{ once: true }}
-                  className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
-                >
-                  <Image
-                    src="/extra Custom Furniture/BizzStay_Delft Foto/_EWP9125.jpg"
-                    alt="Detailed installation work"
-                    width={800}
-                    height={500}
-                    className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h4 className="text-white font-bold text-lg">Detailed work</h4>
-                    <p className="text-gray-200">Attention to every detail</p>
-                  </div>
-                </motion.div>
-              </div>
-            </AnimatedElement>
-
-            {/* Kitchen & Living Spaces */}
-            <AnimatedElement animationType="fadeInUp" delay={0.4}>
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-white mb-3">Kitchen & Living Spaces</h3>
-                <p className="text-gray-300">Complete room transformations in progress</p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-                  viewport={{ once: true }}
-                  className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
-                >
-                  <Image
-                    src="/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00001.jpeg"
-                    alt="Kitchen installation process"
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 } }}
-                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-                  viewport={{ once: true }}
-                  className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
-                >
-                  <Image
-                    src="/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00005.jpeg"
-                    alt="Living space transformation"
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } }}
-                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-                  viewport={{ once: true }}
-                  className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
-                >
-                  <Image
-                    src="/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00008.jpeg"
-                    alt="Custom cabinetry work"
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.3 } }}
-                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-                  viewport={{ once: true }}
-                  className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer"
-                >
-                  <Image
-                    src="/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00012.jpeg"
-                    alt="Final installation touches"
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.div>
-              </div>
-            </AnimatedElement>
-
-            {/* Final Featured Image */}
-            <AnimatedElement animationType="fadeInUp" delay={0.5}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
-                whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-                viewport={{ once: true }}
-                className="relative overflow-hidden rounded-xl shadow-xl group cursor-pointer"
-              >
-                <Image
-                  src="/extra Custom Furniture/Thijs_Overveen/_EWP6217.jpg"
-                  alt="Complete project transformation"
-                  width={1200}
-                  height={600}
-                  className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-                <div className="absolute bottom-8 left-8 right-8 text-center">
-                  <h4 className="text-white font-bold text-2xl mb-2">From Vision to Reality</h4>
-                  <p className="text-gray-200 text-lg">Every project is a journey of craftsmanship and dedication</p>
-                </div>
-              </motion.div>
-            </AnimatedElement>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Work Archive Section */}
       <section className="py-16 lg:py-20 bg-gray-50 text-black">
@@ -1477,7 +1235,7 @@ export default function AboutUsPage() {
       {/* Picasso Quote Section - Enhanced with staggered animations */}
       <section className="py-16 lg:py-24 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
+          <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="text-center lg:text-left">
               <AnimatedElement 
                 animationType="fadeInLeft" 

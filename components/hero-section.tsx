@@ -310,8 +310,8 @@ export default function HeroSection({
         )}
 
         {/* Desktop Layout (or mobile for non-slideshow) */}
-        <div className={`${slideshow ? 'hidden lg:flex' : 'flex'} w-full lg:w-1/3 items-center justify-center px-8 lg:px-16 lg:pl-8`}>
-          <div className="max-w-2xl text-left">
+        <div className={`${slideshow ? 'hidden lg:flex' : 'flex'} w-full lg:w-1/2 items-center justify-start px-8 lg:pl-16`}>
+          <div className="max-w-4xl text-left w-full">
             <motion.p 
               className="text-sm font-light uppercase tracking-[0.3em] text-gray-400 mb-8"
               initial={{ opacity: 0, letterSpacing: "0.1em" }}
@@ -324,11 +324,11 @@ export default function HeroSection({
             <div className="relative">
               {/* Main title with dynamic typing */}
               <motion.h1 
-                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extralight text-white leading-tight"
+                className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-extralight text-white leading-tight"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1 }}
-                style={{ minHeight: '150px' }}
+                style={{ minHeight: '120px' }}
               >
                 {/* SEO-friendly hidden text */}
                 <span className="sr-only">We design your space for living, working, relaxing, and creating</span>
@@ -338,7 +338,7 @@ export default function HeroSection({
                   {(dynamicWords.length > 0 ? title.split(" ") : title.split(" ").slice(0, -1)).map((word, index) => (
                     <motion.span
                       key={index}
-                      className="inline-block mr-4"
+                      className="inline-block mr-3"
                       initial={{ opacity: 0, y: 100 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ 
@@ -385,7 +385,7 @@ export default function HeroSection({
               <motion.div
                 className="h-px bg-white mt-8"
                 initial={{ width: 0 }}
-                animate={{ width: "150px" }}
+                animate={{ width: "200px" }}
                 transition={{ duration: 1.5, delay: 2, ease: "easeOut" }}
               />
             </div>
@@ -393,9 +393,9 @@ export default function HeroSection({
         </div>
 
         {/* Desktop Right Side - Image or Slideshow */}
-        <div className="hidden lg:block lg:w-2/3 relative">
+        <div className="hidden lg:block lg:w-1/2 relative">
           <motion.div
-            className="absolute inset-0 m-16" // Reduced margins from m-20 to m-16 for larger size
+            className="absolute inset-0 m-12" // Reduced margins from m-16 to m-12 for more dynamic layout
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
@@ -465,9 +465,6 @@ export default function HeroSection({
                   {/* Enhanced overlays for better styling and depth */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10" />
-                  
-                  {/* Subtle animated border effect */}
-                  <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/20 transition-colors duration-500" />
                 </div>
               ) : (
                 // Enhanced single image (original behavior)
@@ -484,7 +481,6 @@ export default function HeroSection({
                   />
                   {/* Enhanced overlay for better integration */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5" />
-                  <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/20 transition-colors duration-500" />
                 </div>
               )}
             </div>
