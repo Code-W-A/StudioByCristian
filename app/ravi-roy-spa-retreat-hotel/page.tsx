@@ -129,15 +129,7 @@ const projectDetails = {
         ]
       }
     },
-    yoga: {
-      title: "Yoga & Meditation Studio",
-      description: "The yoga room is the sacred heart of the retreat:\nDraped ceiling fabric creates softness and flow\nNatural light floods through full-height windows\nThe mandala wall, hand-painted in violet hues, becomes a focal point for centering energy\nOrganized yoga props and low seating areas enable a seamless transition from active practice to meditative stillness",
-  images: [
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/yoga-room-one.jpg", alt: "Yoga studio with mandala wall" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/yoga-room-two.jpg", alt: "Yoga room draped ceiling" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/yoga-room-three.jpg", alt: "Meditation area with natural light" }
-      ]
-    }
+ 
   },
   conclusion: "The Ravy Roy Homeopathy Retreat is a living dialogue between cultures, materials, and the human spirit. It is a carefully crafted atmosphere where every corner, texture, and light source contributes to the process of healing, learning, and self-reconnection.\nThis is not just a project—it is a philosophy in physical form. A place where architecture becomes therapy, and design becomes ritual."
 }
@@ -715,43 +707,7 @@ export default function RaviRoySpaRetreatHotelPage() {
         </div>
       </section>
 
-      {/* Yoga & Meditation Studio Section */}
-      <section className="py-16 lg:py-20 bg-gray-50 text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-12">
-              <div className="space-y-6">
-                <h3 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
-                  {projectDetails.spaces.yoga.title}
-                </h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  {projectDetails.spaces.yoga.description}
-                </p>
-                <div className="pt-6">
-                  <div className="w-20 h-1 bg-gradient-to-r from-black to-gray-300 rounded-full"></div>
-                </div>
-              </div>
-              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                <Image src={projectDetails.spaces.yoga.images[0].src} alt={projectDetails.spaces.yoga.images[0].alt} width={800} height={600}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
-              </div>
-            </div>
-            {/* Additional images gallery */}
-            {projectDetails.spaces.yoga.images.length > 1 && (
-              <div className="grid md:grid-cols-2 gap-8">
-                {projectDetails.spaces.yoga.images.slice(1).map((image, index) => (
-                  <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                      <Image src={image.src} alt={image.alt} width={600} height={450}
-                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
-                    </div>
-                  </AnimatedElement>
-                ))}
-              </div>
-            )}
-          </AnimatedElement>
-        </div>
-      </section>
+  
 
       {/* Conclusion Section */}
       <section className="py-16 lg:py-20 bg-white text-black">

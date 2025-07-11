@@ -104,84 +104,7 @@ export default function HeroSection({
     return () => clearInterval(interval)
   }, [slideshow, slideshowImageConfigs.length])
 
-  // Simple Mobile slideshow component
-  const MobileSlideshow = () => {
-    const [imageLoaded, setImageLoaded] = useState<boolean[]>(new Array(slideshowImageConfigs.length).fill(false))
 
-    const handleImageLoad = (index: number, event: any) => {
-      const newLoaded = [...imageLoaded]
-      newLoaded[index] = true
-      setImageLoaded(newLoaded)
-    }
-
-    return (
-      <div 
-        className="lg:hidden relative w-full rounded-xl overflow-hidden shadow-2xl mb-8 bg-gray-100"
-        style={{ 
-          maxWidth: '100%'      // Allow full width, completely dynamic height
-        }}
-      >
-        {/* All images preloaded with smooth transitions and zoom effects */}
-        {slideshowImageConfigs.map((config, index) => (
-          <div
-            key={index}
-            className={`${index === currentImageIndex ? 'block' : 'hidden'} transition-all duration-1500 ease-in-out`}
-            style={{
-              opacity: index === currentImageIndex ? 1 : 0,
-              transform: index === currentImageIndex ? 'scale(1)' : 'scale(1.1)',
-              zIndex: index === currentImageIndex ? 2 : 1
-            }}
-          >
-            <Image
-              src={config.src}
-              alt={config.alt || `Technical drawing ${index + 1}`}
-              width={800}
-              height={600}
-              className="w-full h-auto object-contain transition-transform duration-[6000ms] ease-out hover:scale-105"
-              priority={index <= 1}
-              onLoad={(e) => handleImageLoad(index, e)}
-              style={{
-                filter: index === currentImageIndex ? 'brightness(1.05) contrast(1.1)' : 'brightness(0.9)',
-                transform: `scale(${config.zoom || 1})`,
-                transformOrigin: 'center center'
-              }}
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-        ))}
-        
-        {/* Enhanced indicators with animation */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10">
-          {slideshowImageConfigs.map((_, index) => (
-            <div key={index} className="relative">
-              <div
-                className="h-1.5 rounded-full bg-white/20 transition-all duration-500"
-                style={{ width: '32px' }}
-              />
-              <div
-                className="absolute top-0 left-0 h-1.5 rounded-full bg-white shadow-lg transition-all duration-500 ease-out"
-                style={{
-                  width: index === currentImageIndex ? '32px' : '0px',
-                  opacity: index === currentImageIndex ? 1 : 0
-                }}
-              />
-            </div>
-          ))}
-        </div>
-        
-        {/* Enhanced overlay for depth and style */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10 pointer-events-none" />
-        
-        {/* Loading indicator for first load */}
-        {!imageLoaded[currentImageIndex] && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
-            <div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin" />
-          </div>
-        )}
-      </div>
-    )
-  }
 
   return (
     <section 
@@ -240,16 +163,43 @@ export default function HeroSection({
       </svg>
 
       {/* Main Content Container */}
-      <div className="relative z-20 flex lg:flex-row flex-col ml-4 lg:ml-8" style={{ height: slideshow ? '100vh' : '92vh' }}>
+      <div className="relative z-20 flex lg:flex-row flex-col lg:ml-8" style={{ height: slideshow ? '100vh' : '92vh' }}>
         {/* Mobile Layout: Slideshow first, then text */}
         {slideshow && (
           <div className="lg:hidden w-full px-6 pt-8 flex flex-col">
-            <MobileSlideshow />
+            {/* Direct Mobile Slideshow */}
+            <div className="relative w-full rounded-xl overflow-hidden shadow-lg mb-8">
+              <div className="relative w-full" style={{ aspectRatio: '3/2' }}>
+                {slideshowImageConfigs.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-all duration-700 ease-out ${
+                      index === currentImageIndex 
+                        ? 'opacity-100 scale-100' 
+                        : 'opacity-0 scale-105'
+                    }`}
+                    style={{
+                      filter: index === currentImageIndex ? 'blur(0px)' : 'blur(2px)',
+                    }}
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt || `Slide ${index + 1}`}
+                      fill
+                      className="object-cover transition-all duration-700 ease-out"
+                      priority={index === 0}
+                      sizes="(max-width: 1024px) 100vw"
+                    />
+                  </div>
+                ))}
+              </div>
+
+            </div>
             
             {/* Mobile Text Content */}
             <div className="flex-1 flex flex-col justify-center">
               <motion.p 
-                className="text-xs font-light uppercase tracking-[0.3em] text-gray-400 mb-4"
+                className="text-sm font-light uppercase tracking-[0.3em] text-gray-400 mb-6"
                 initial={{ opacity: 0, letterSpacing: "0.1em" }}
                 animate={{ opacity: 1, letterSpacing: "0.3em" }}
                 transition={{ duration: 1.5, delay: 0.8 }}
@@ -260,11 +210,11 @@ export default function HeroSection({
               <div className="relative">
                 {/* Mobile title with dynamic typing */}
                 <motion.h1 
-                  className="text-2xl md:text-3xl font-extralight text-white leading-tight"
+                  className="text-3xl md:text-4xl font-extralight text-white leading-tight"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1, delay: 1 }}
-                  style={{ minHeight: '80px' }}
+                  style={{ minHeight: '120px' }}
                 >
                   {/* SEO-friendly hidden text */}
                   <span className="sr-only">We design your space for living, working, relaxing, and creating</span>
@@ -319,9 +269,9 @@ export default function HeroSection({
                 
                 {/* Mobile accent line */}
                 <motion.div
-                  className="h-px bg-white mt-4"
+                  className="h-px bg-white mt-6"
                   initial={{ width: 0 }}
-                  animate={{ width: "100px" }}
+                  animate={{ width: "120px" }}
                   transition={{ duration: 1.5, delay: 2, ease: "easeOut" }}
                 />
               </div>
@@ -483,38 +433,6 @@ export default function HeroSection({
                 )}
               </div>
             </motion.div>
-            
-            {/* Slideshow indicators positioned below the image */}
-            {slideshow && (
-              <div className="flex space-x-4 mt-4">
-                {slideshowImageConfigs.map((_, index) => (
-                  <motion.div
-                    key={index}
-                    className={`h-1 rounded-full transition-all duration-700 cursor-pointer ${
-                      index === currentImageIndex 
-                        ? 'bg-white shadow-lg' 
-                        : 'bg-white/30 hover:bg-white/60'
-                    }`}
-                    initial={{ width: 32, opacity: 0.3 }}
-                    animate={{ 
-                      width: index === currentImageIndex ? 64 : 32,
-                      opacity: index === currentImageIndex ? 1 : 0.3,
-                      backgroundColor: index === currentImageIndex ? '#ffffff' : 'rgba(255, 255, 255, 0.3)'
-                    }}
-                    transition={{ 
-                      duration: 0.7,
-                      ease: "easeInOut"
-                    }}
-                    whileHover={{
-                      opacity: 0.8,
-                      scale: 1.1,
-                      transition: { duration: 0.2 }
-                    }}
-                    onClick={() => setCurrentImageIndex(index)}
-                  />
-                ))}
-              </div>
-            )}
           </div>
         </div>
       </div>
