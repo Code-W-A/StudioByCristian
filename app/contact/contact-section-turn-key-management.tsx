@@ -22,14 +22,14 @@ export default function ContactSectionTurnKeyManagement() {
           
           <AnimatedElement animationType="fadeInUp" delay={0.2} className="flex flex-col items-center">
             <Linkedin className="h-10 w-10 text-black mb-3" />
-            <a href="#" className="text-sm font-medium text-black hover:text-gray-700 transition-colors">
+            <a href="https://ro.linkedin.com/company/studiobycristian" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-black hover:text-gray-700 transition-colors">
               LinkedIn
             </a>
           </AnimatedElement>
           
           <AnimatedElement animationType="fadeInUp" delay={0.3} className="flex flex-col items-center">
             <Instagram className="h-10 w-10 text-black mb-3" />
-            <a href="#" className="text-sm font-medium text-black hover:text-gray-700 transition-colors">
+            <a href="https://www.instagram.com/studiobycristian/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-black hover:text-gray-700 transition-colors">
               Instagram
             </a>
           </AnimatedElement>

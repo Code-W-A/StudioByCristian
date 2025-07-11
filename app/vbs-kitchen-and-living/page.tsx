@@ -59,7 +59,7 @@ export default function VBSKitchenAndLivingPage() {
               size="lg"
               className="bg-white text-black border-gray-300 hover:bg-gray-100"
             >
-              <Link href="/custom-furniture">
+              <Link href="/furniture-production">
                 <ArrowLeft className="mr-2 h-5 w-5" />
                 Back to Custom Furniture
               </Link>
@@ -126,9 +126,9 @@ export default function VBSKitchenAndLivingPage() {
               </div>
             </AnimatedElement>
 
-            {/* Three images in a row */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {projectDetails.images.slice(4, 7).map((image, index) => (
+            {/* Two images in a row */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {projectDetails.images.slice(4, 6).map((image, index) => (
                 <AnimatedElement
                   key={index}
                   animationType="fadeInUp"
@@ -147,6 +147,20 @@ export default function VBSKitchenAndLivingPage() {
                 </AnimatedElement>
               ))}
             </div>
+
+            {/* Additional single image */}
+            <AnimatedElement animationType="fadeInUp" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                <Image
+                  src={projectDetails.images[6].src}
+                  alt={projectDetails.images[6].alt}
+                  width={1400}
+                  height={800}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '16/9' }}
+                />
+              </div>
+            </AnimatedElement>
 
             {/* Two large images side by side */}
             <div className="grid md:grid-cols-2 gap-8">
@@ -207,6 +221,25 @@ export default function VBSKitchenAndLivingPage() {
         </div>
       </section>
 
+      {/* Back Button Bottom */}
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/furniture-production">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back to Custom Furniture
+              </Link>
+            </Button>
+          </AnimatedElement>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -227,8 +260,8 @@ export default function VBSKitchenAndLivingPage() {
                     
                   </p>
                   <div className="flex space-x-4">
-                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
-                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
+                    <Link href="https://ro.linkedin.com/company/studiobycristian" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
+                    <Link href="https://www.instagram.com/studiobycristian/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
                   </div>
                   <Link 
                     href="mailto:office@studiobycristian.com" 

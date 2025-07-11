@@ -149,9 +149,9 @@ export default function ChiCafePage() {
               </div>
             </AnimatedElement>
 
-            {/* Three images in a row */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {projectDetails.images.slice(4, 7).map((image, index) => (
+            {/* Two images in a row */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {projectDetails.images.slice(4, 6).map((image, index) => (
                 <AnimatedElement
                   key={index}
                   animationType="fadeInUp"
@@ -170,6 +170,20 @@ export default function ChiCafePage() {
                 </AnimatedElement>
               ))}
             </div>
+
+            {/* Additional single image */}
+            <AnimatedElement animationType="fadeInUp" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.images[6].src}
+                  alt={projectDetails.images[6].alt}
+                  width={1400}
+                  height={800}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '16/9' }}
+                />
+              </div>
+            </AnimatedElement>
 
             {/* Two large images side by side */}
             <div className="grid md:grid-cols-2 gap-8">
@@ -207,9 +221,9 @@ export default function ChiCafePage() {
               </div>
             </AnimatedElement>
 
-            {/* Three more square images */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {projectDetails.images.slice(10, 13).map((image, index) => (
+            {/* Two more square images */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {projectDetails.images.slice(10, 12).map((image, index) => (
                 <AnimatedElement
                   key={index}
                   animationType="fadeInUp"
@@ -228,6 +242,20 @@ export default function ChiCafePage() {
                 </AnimatedElement>
               ))}
             </div>
+
+            {/* Additional single image */}
+            <AnimatedElement animationType="fadeInUp" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                <Image
+                  src={projectDetails.images[12].src}
+                  alt={projectDetails.images[12].alt}
+                  width={1400}
+                  height={800}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '16/9' }}
+                />
+              </div>
+            </AnimatedElement>
 
             {/* Final images */}
             <div className="grid md:grid-cols-2 gap-8">
@@ -296,8 +324,8 @@ export default function ChiCafePage() {
                     
                   </p>
                   <div className="flex space-x-4">
-                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
-                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
+                    <Link href="https://ro.linkedin.com/company/studiobycristian" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
+                    <Link href="https://www.instagram.com/studiobycristian/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
                   </div>
                   <Link 
                     href="mailto:office@studiobycristian.com" 

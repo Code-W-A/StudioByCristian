@@ -230,7 +230,7 @@ export default function CredentialsPage() {
             </AnimatedElement>
 
             <AnimatedElement animationType="fadeInUp" delay={0.3}>
-              <Link href="/turn-key-management" className="group block">
+              <Link href="/interior-renovation" className="group block">
                 <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-800 transition-colors">
                     <div className="w-8 h-8 bg-white rounded"></div>
@@ -269,8 +269,8 @@ export default function CredentialsPage() {
                     
                   </p>
                   <div className="flex space-x-4">
-                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
-                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
+                    <Link href="https://ro.linkedin.com/company/studiobycristian" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
+                    <Link href="https://www.instagram.com/studiobycristian/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
                   </div>
                   <Link 
                     href="mailto:office@studiobycristian.com" 

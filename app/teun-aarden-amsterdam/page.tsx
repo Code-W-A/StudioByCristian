@@ -87,7 +87,7 @@ export default function TeunAardenAmsterdamPage() {
               size="lg"
               className="bg-white text-black border-gray-300 hover:bg-gray-100"
             >
-              <Link href="/custom-furniture">
+              <Link href="/furniture-production">
                 <ArrowLeft className="mr-2 h-5 w-5" />
                 Back to Custom Furniture
               </Link>
@@ -299,8 +299,8 @@ export default function TeunAardenAmsterdamPage() {
                     
                   </p>
                   <div className="flex space-x-4">
-                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
-                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
+                    <Link href="https://ro.linkedin.com/company/studiobycristian" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
+                    <Link href="https://www.instagram.com/studiobycristian/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
                   </div>
                   <Link 
                     href="mailto:office@studiobycristian.com" 

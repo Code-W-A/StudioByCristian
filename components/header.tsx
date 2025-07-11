@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/design", label: "Design" },
   { href: "/furniture-production", label: "Furnish" },
-  { href: "/turn-key-management", label: "Renovate" },
+  { href: "/interior-renovation", label: "Renovate" },
   { href: "/work-archive", label: "Work Archive" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
@@ -27,7 +27,7 @@ export default function Header() {
       {/* Subtle geometric accent line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       
-      <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex h-20 max-w-7xl xl:max-w-none items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Enhanced Logo */}
         <Link href="/" className="flex items-center space-x-3 group relative z-10">
           <div className="relative flex items-center">
@@ -132,7 +132,7 @@ export default function Header() {
             className="md:hidden border-t border-gray-700/30 bg-black/98 backdrop-blur-lg overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
-            <nav className="container mx-auto flex flex-col px-4 py-6 sm:px-6 lg:px-8 relative">
+            <nav className="container mx-auto flex flex-col px-4 py-6 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.href}

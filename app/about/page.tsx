@@ -44,6 +44,40 @@ const dynamicWords = ["relaxing", "living", "working", "creating"]
 
 import { allTestimonials } from "@/lib/testimonials-data"
 
+// About page specific image configurations - Using cropped and slider images
+const aboutImageConfigs = [
+  { 
+    src: "/extra-from-wapp/Lage&Roy Institute Presentation 2022 Nov/lage-roy-cropped.jpg", 
+    zoom: 1,       // No zoom - natural size
+    offsetX: 0,    // No offset for equal containers
+    offsetY: 0     // No offset for equal containers
+  },
+  { 
+    src: "/extra-from-wapp/Lage&Roy Institute_Phase2_Technical Detailing/institute-phase-slider-cropp.jpg", 
+    zoom: 1,       // No zoom - natural size
+    offsetX: 0,    // No offset for equal containers
+    offsetY: 0     // No offset for equal containers
+  },
+  { 
+    src: "/extra-from-wapp/A1. 01 Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 1/A1. 01 Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 1_page-0001-cropp-slide.jpg", 
+    zoom: 1,       // No zoom - natural size
+    offsetX: 0,    // No offset for equal containers
+    offsetY: 0     // No offset for equal containers
+  },
+  { 
+    src: "/extra-from-wapp/A1. 00 Lage&Roy Institute_Plan Mobilare cu cote_ Parter/A1. 00 Lage&Roy Institute_Plan Mobilare cu cote_ Parter_page-0001-cropp-slider.jpg", 
+    zoom: 1,       // No zoom - natural size
+    offsetX: 0,    // No offset for equal containers
+    offsetY: 0     // No offset for equal containers
+  },
+  { 
+    src: "/extra-from-wapp/A1. 02  Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 2/A1. 02  Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 2_page-0001-cropp-slider.jpg", 
+    zoom: 1,       // No zoom - natural size
+    offsetX: 0,    // No offset for equal containers
+    offsetY: 0     // No offset for equal containers
+  }
+]
+
 export default function AboutUsPage() {
   return (
     <div className="bg-white text-black" style={{ margin: 0, padding: 0 }}>
@@ -53,6 +87,7 @@ export default function AboutUsPage() {
         subtitle="About Us"
         dynamicWords={dynamicWords}
         slideshow={true}
+        slideshowImageConfigs={aboutImageConfigs}
       />
 
       {/* About Us Introduction */}
@@ -146,10 +181,10 @@ export default function AboutUsPage() {
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/home-page/Furniture-Production-1-scaled.jpg.jpeg"
+                    src="/extra Custom Furniture/Thijs_Overveen/_EWP6104.jpg"
                     alt="Custom Furniture"
                     width={800}
-                    height={800}
+                    height={600}
                     className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -276,10 +311,10 @@ export default function AboutUsPage() {
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/turn-key-management-page/Turn-Key-Management-Header-scaled.jpg.jpeg"
+                    src="/turn-key-management-amsterdam-apartment-2/Amsteldijk-Duplex-Appartments-1-1-scaled.jpg.jpeg"
                     alt="Interior Renovation"
                     width={800}
-                    height={600}
+                    height={800}
                     className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -320,9 +355,9 @@ export default function AboutUsPage() {
             </motion.div>
           </AnimatedElement>
           
-          {/* Premium Grid Layout - 3 columns on desktop */}
+          {/* Premium Grid Layout - 2 columns on desktop */}
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Turn-key process */}
               <AnimatedElement animationType="fadeInUp" delay={0.2}>
                 <motion.div
@@ -578,7 +613,7 @@ export default function AboutUsPage() {
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/work-archive-page/Private-Homes-18-768x576.jpg.jpeg"
+                    src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5992.jpg"
                     alt="Essentials Bundle - Apartment Design"
                     width={800}
                     height={800}
@@ -643,10 +678,10 @@ export default function AboutUsPage() {
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/home-page/Furniture-Production-1-scaled.jpg.jpeg"
+                    src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5886.jpg"
                     alt="Design+Furniture Bundle - Custom Furniture Production"
                     width={800}
-                    height={800}
+                    height={450}
                     className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -871,6 +906,7 @@ export default function AboutUsPage() {
         </section>
       ))}
 
+ 
       {/* Testimonials Section */}
       <section className="py-16 lg:py-24 bg-gray-50 text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1165,61 +1201,6 @@ export default function AboutUsPage() {
                 </Link>
               </motion.div>
             </AnimatedElement>
-
-            {/* Restaurants & Hotels */}
-            <AnimatedElement animationType="scaleIn" delay={0.3}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-                whileHover={{
-                  scale: 1.03,
-                  boxShadow: "0px 10px 30px -5px rgba(0, 0, 0, 0.1)",
-                  transition: { duration: 0.3 },
-                }}
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                <Link
-                  href="/work-archive/restaurants-hotels"
-                  className="group block relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500"
-                >
-                  <div className="w-full overflow-hidden">
-                    <Image
-                      src="/work-archive-page/Restaurants-Hotels-01-768x576.jpg.jpeg"
-                      alt="Restaurants & Hotels"
-                      width={600}
-                      height={400}
-                      className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="relative">
-                      <div className="absolute inset-0 border-2 border-white/30 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:border-white/60" />
-                      <div className="relative backdrop-blur-sm bg-white/10 rounded-lg p-4 border border-white/20 group-hover:bg-white/20 group-hover:border-white/40 transition-all duration-500">
-                        <h3 className="text-xl font-semibold text-white mb-2">
-                          Restaurants & Hotels
-                        </h3>
-                        <div className="h-0.5 w-0 bg-white/60 group-hover:w-full transition-all duration-700 ease-out" />
-                        <div className="mt-3 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
-                          <span className="text-white/80 text-sm font-medium flex items-center">
-                            Explore Collection
-                            <motion.span
-                              className="ml-2 inline-block"
-                              initial={{ x: 0 }}
-                              whileHover={{ x: 5 }}
-                              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                            >
-                              →
-                            </motion.span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/40 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100" />
-                </Link>
-              </motion.div>
-            </AnimatedElement>
           </div>
           
           <AnimatedElement animationType="fadeInUp" delay={0.4} className="text-center mt-12">
@@ -1279,6 +1260,9 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
+      
+      {/* Vimeo Script */}
+      <script src="https://player.vimeo.com/api/player.js"></script>
     </div>
   )
 }

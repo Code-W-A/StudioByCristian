@@ -18,12 +18,12 @@ const ourWorkItems = [
     title: "Interior Design",
     imageUrl: "/home-page/Our-Portfolio-Concept-Design-1-700x466.jpg.jpeg",
     link: "/design",
-    description: " interior concepts that balance beauty and purpose — design that feels good too.",
+    description: " Interior concepts that balance beauty and purpose — design that feels good too.",
   },
   {
     title: "Interior Renovation",
     imageUrl: "/turn-key-management-page/Turn-Key-Management-Header-scaled.jpg.jpeg",
-    link: "/turn-key-management",
+    link: "/interior-renovation",
     description: "Well-managed, end-to-end renovation services — from the first sketch to the final detail.",
   },
 ]
@@ -76,7 +76,7 @@ export default function OurWorkSection() {
                       <div>
                         <CardTitle className="text-3xl font-semibold">{item.title}</CardTitle>
                         {item.description && (
-                          <p className="mt-3 text-gray-300 text-md leading-relaxed">{item.description}</p>
+                          <p className="mt-3 text-gray-300 text-md leading-relaxed text-justify">{item.description}</p>
                         )}
                       </div>
                       <div className="mt-6 text-gray-200 group-hover:text-white flex items-center font-medium">

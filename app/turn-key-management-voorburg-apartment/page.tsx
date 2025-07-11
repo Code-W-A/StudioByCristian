@@ -12,7 +12,7 @@ import { useState, useRef } from "react"
 
 const projectDetails = {
   title: "Voorburg Apartment",
-  category: "Turn Key Management",
+  category: "Interior Renovation",
   heroImage: "/turn-key-management-voorburg-apartment/Voorburg-Banner-scaled.jpg.jpeg",
   beforeAfterComparisons: [
     {
@@ -171,9 +171,9 @@ export default function VoorburgApartmentPage() {
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
             <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
-              <Link href="/turn-key-management">
+              <Link href="/interior-renovation">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Turn Key Management
+                Back to Interior Renovation
               </Link>
             </Button>
           </AnimatedElement>
@@ -488,8 +488,8 @@ export default function VoorburgApartmentPage() {
                     
                   </p>
                   <div className="flex space-x-4">
-                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
-                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
+                    <Link href="https://ro.linkedin.com/company/studiobycristian" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
+                    <Link href="https://www.instagram.com/studiobycristian/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
                   </div>
                   <Link 
                     href="mailto:office@studiobycristian.com" 
@@ -531,9 +531,9 @@ export default function VoorburgApartmentPage() {
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
             <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
-              <Link href="/turn-key-management">
+              <Link href="/interior-renovation">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Back To Turn Key Management
+                Back To Interior Renovation
               </Link>
             </Button>
           </AnimatedElement>

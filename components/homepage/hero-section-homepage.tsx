@@ -20,7 +20,7 @@ const heroNavItems = [
     id: "furniture",
     title: "Custom Furniture",
     subtitle: "Tailored pieces, built for your life and your space.",
-    imageUrl: "/home-page/Furniture-Production-1-scaled.jpg.jpeg",
+    imageUrl: "/extra Custom Furniture/Thijs_Overveen/hero-home-section-slider.jpg",
     link: "/furniture-production",
     cta: "Discover Craftsmanship",
   },
@@ -64,7 +64,7 @@ export default function HeroSectionHomepage() {
           const nextIndex = (currentIndex + 1) % heroNavItems.length
           return heroNavItems[nextIndex]
         })
-      }, 5000) // Change every 5 seconds
+      }, 4000) // Change every 4 seconds
     }
 
     startAutoTransition()
@@ -92,9 +92,9 @@ export default function HeroSectionHomepage() {
     // Reset transition state and resume auto transition after delay
     setTimeout(() => {
       setIsTransitioning(false)
-      // Resume auto transition after 10 seconds of inactivity
-      setTimeout(() => setAutoTransition(true), 10000)
-    }, 1000)
+      // Resume auto transition after 8 seconds of inactivity
+      setTimeout(() => setAutoTransition(true), 8000)
+    }, 600)
   }
 
   return (
@@ -107,8 +107,8 @@ export default function HeroSectionHomepage() {
             className="absolute inset-0"
             initial={{ 
               opacity: 0,
-              scale: 1.05,
-              filter: "blur(8px) brightness(0.8)"
+              scale: 1.02,
+              filter: "blur(2px) brightness(0.9)"
             }}
             animate={{ 
               opacity: 1,
@@ -117,15 +117,15 @@ export default function HeroSectionHomepage() {
             }}
             exit={{ 
               opacity: 0,
-              scale: 1.02,
-              filter: "blur(4px) brightness(0.7)"
+              scale: 1.01,
+              filter: "blur(1px) brightness(0.8)"
             }}
             transition={{ 
-              duration: 1.0,
+              duration: 0.6,
               ease: [0.4, 0.0, 0.2, 1.0], // Smoother easing
-              opacity: { duration: 0.7, ease: "easeInOut" },
-              scale: { duration: 1.0, ease: "easeOut" },
-              filter: { duration: 0.8, ease: "easeInOut" }
+              opacity: { duration: 0.4, ease: "easeInOut" },
+              scale: { duration: 0.6, ease: "easeOut" },
+              filter: { duration: 0.3, ease: "easeInOut" }
             }}
           >
             {/* Image Container with Parallax */}
@@ -149,7 +149,7 @@ export default function HeroSectionHomepage() {
                 className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/45 to-black/25"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                transition={{ duration: 0.3, delay: 0.05, ease: "easeOut" }}
               />
               
               {/* Subtle Animated Geometric Elements */}
@@ -167,22 +167,7 @@ export default function HeroSectionHomepage() {
         </AnimatePresence>
       </div>
 
-      {/* Logo in Top-Left Corner */}
-      <motion.div
-        className="absolute top-6 left-6 z-30"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-      >
-        <Image
-          src="/sigla/Studio-By-Cristian-White@2x.png"
-          alt="Studio By Cristian Logo"
-          width={180}
-          height={48}
-          className="drop-shadow-lg hover:scale-105 transition-transform duration-300 ease-out"
-          priority
-        />
-      </motion.div>
+
 
       {/* Content with Enhanced Animations */}
       <div className="relative z-20 container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-start h-full pt-16 pb-8">
@@ -191,8 +176,8 @@ export default function HeroSectionHomepage() {
             key={activeHero.id + "-content"}
             initial={{ 
               opacity: 0, 
-              y: 40,
-              filter: "blur(8px)"
+              y: 30,
+              filter: "blur(2px)"
             }}
             animate={{ 
               opacity: 1, 
@@ -201,12 +186,12 @@ export default function HeroSectionHomepage() {
             }}
             exit={{ 
               opacity: 0, 
-              y: -20,
-              filter: "blur(4px)"
+              y: -15,
+              filter: "blur(1px)"
             }}
             transition={{ 
-              duration: 0.8, 
-              delay: 0.3,
+              duration: 0.5, 
+              delay: 0.1,
               ease: [0.25, 0.1, 0.25, 1.0]
             }}
             className="max-w-3xl text-white"
@@ -216,7 +201,7 @@ export default function HeroSectionHomepage() {
               className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               {activeHero.title}
             </motion.h1>
@@ -226,7 +211,7 @@ export default function HeroSectionHomepage() {
               className="mt-6 text-lg sm:text-xl text-gray-200 max-w-2xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
               {activeHero.subtitle}
             </motion.p>
@@ -235,7 +220,7 @@ export default function HeroSectionHomepage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
               <Button
                 asChild

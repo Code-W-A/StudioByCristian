@@ -11,12 +11,12 @@ const featuredProjectItems = [
   },
   {
     name: "Residential Thijs Overveen",
-    imageUrl: "/featured-projects-extra/Residential-Thijs_Overveen.png",
+    imageUrl: "/extra Custom Furniture/Thijs_Overveen/Featured Projects overvee.jpg",
     link: "/thijs-overveen",
   },
   {
     name: "Hotel Concept Design",
-    imageUrl: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-one.jpg",
+    imageUrl: "/ravy-roy-new-pics/Reception/Reception_01.jpg",
     link: "/ravi-roy-spa-retreat-hotel",
   },
   {

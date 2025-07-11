@@ -45,7 +45,7 @@ export default function AmsterdamAmsteldijkDoubleApartmentsPage() {
         overlayClassName="bg-black/40"
       >
         <AnimatedElement animationType="fadeInUp">
-          <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">Furniture Production</p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">Interior Renovation</p>
           <h1 className="mt-2 text-4xl font-bold text-white sm:text-5xl md:text-6xl">Amsterdam Amsteldijk Double Apartments</h1>
         </AnimatedElement>
       </ParallaxSection>
@@ -60,9 +60,9 @@ export default function AmsterdamAmsteldijkDoubleApartmentsPage() {
               size="lg"
               className="bg-white text-black border-gray-300 hover:bg-gray-100"
             >
-              <Link href="/furniture-production">
+              <Link href="/interior-renovation">
                 <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Furniture Production
+                Back To Interior Renovation
               </Link>
             </Button>
           </AnimatedElement>
@@ -211,9 +211,9 @@ export default function AmsterdamAmsteldijkDoubleApartmentsPage() {
                 </div>
               </AnimatedElement>
 
-              {/* Three images in a row */}
-              <div className="grid md:grid-cols-3 gap-6">
-                {projectDetails.sections[1].galleryImages.slice(1, 4).map((image, index) => (
+              {/* Two images in a row */}
+              <div className="grid md:grid-cols-2 gap-6">
+                {projectDetails.sections[1].galleryImages.slice(1, 3).map((image, index) => (
                   <AnimatedElement
                     key={index}
                     animationType="fadeInUp"
@@ -232,6 +232,20 @@ export default function AmsterdamAmsteldijkDoubleApartmentsPage() {
                   </AnimatedElement>
                 ))}
               </div>
+
+              {/* Additional single image */}
+              <AnimatedElement animationType="fadeInUp" delay={0.2}>
+                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                  <Image
+                    src={projectDetails.sections[1].galleryImages[3]}
+                    alt="Amsterdam Amsteldijk Double Apartments final gallery image"
+                    width={1400}
+                    height={800}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
+              </AnimatedElement>
             </div>
           </AnimatedElement>
         </div>
@@ -247,9 +261,9 @@ export default function AmsterdamAmsteldijkDoubleApartmentsPage() {
               size="lg"
               className="bg-white text-black border-gray-300 hover:bg-gray-100"
             >
-              <Link href="/furniture-production">
+              <Link href="/interior-renovation">
                 <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Furniture Production
+                Back To Interior Renovation
               </Link>
             </Button>
           </AnimatedElement>

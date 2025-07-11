@@ -4,6 +4,38 @@ import { motion } from "framer-motion"
 import AnimatedElement from "@/components/animated-element"
 
 const furnitureProjects = [
+  // Last 6 projects moved to the beginning
+  {
+    name: "VBS Kitchen and Living",
+    imageUrl: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00001.jpeg",
+    link: "/vbs-kitchen-and-living",
+  },
+  {
+    name: "Thijs Overveen",
+    imageUrl: "/extra Custom Furniture/Thijs_Overveen/_EWP6066.jpg",
+    link: "/thijs-overveen",
+  },
+  {
+    name: "BizzStay Delft Foto",
+    imageUrl: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9002.jpg",
+    link: "/bizzstay-delft-foto",
+  },
+  {
+    name: "Cassandra Aerdenhout",
+    imageUrl: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5858.jpg",
+    link: "/cassandra-aerdenhout",
+  },
+  {
+    name: "Yoga and Office Claudia Pedersen Grigore Manolescu",
+    imageUrl: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4334.jpg",
+    link: "/yoga-and-office-claudia-pedersen-grigore-manolescu",
+  },
+  {
+    name: "Sudip Den Haag",
+    imageUrl: "/extra Custom Furniture/Sudip_Den Haag/_EWP2334.jpg",
+    link: "/sudip-den-haag",
+  },
+  // Original projects continue here
   {
     name: "Mauritskade Apartments",
     imageUrl: "/furniture-production-page/www.studiobycristian.com-1750525148492/Mauritskade-Appartments-Category-1-768x511.jpg.jpeg",
@@ -44,16 +76,12 @@ const furnitureProjects = [
     imageUrl: "/furniture-production-page/www.studiobycristian.com-1750525148492/Private-Home-for-Dennis-Mabel-Category-1-768x511.jpg.jpeg",
     link: "/private-home-for-dennis-mabel",
   },
-  {
-    name: "Amsterdam Amsteldijk Double Apartments",
-    imageUrl: "/furniture-production-page/www.studiobycristian.com-1750525148492/Amsteldijk-Duplex-Appartments-Category-768x511.jpg.jpeg",
-    link: "/amsterdam-amsteldijk-double-apartments",
-  },
-  {
-    name: "Private House Wassenaar",
-    imageUrl: "/furniture-production-page/www.studiobycristian.com-1750525148492/Private-House-Wassenaar-Category-1-768x512.jpg.jpeg",
-    link: "/private-house-wassenaar",
-  },
+
+  // {
+  //   name: "Private House Wassenaar",
+  //   imageUrl: "/furniture-production-page/www.studiobycristian.com-1750525148492/Private-House-Wassenaar-Category-1-768x512.jpg.jpeg",
+  //   link: "/private-house-wassenaar",
+  // },
   {
     name: "Chi Cafe",
     imageUrl: "/furniture-production-page/www.studiobycristian.com-1750525148492/Chi-Cafe-Category-768x513.jpg.jpeg",
@@ -70,11 +98,6 @@ const furnitureProjects = [
     link: "/shapes",
   },
   {
-    name: "Dutch Village Concept",
-    imageUrl: "/dutch-village-concept/Dutch-Village-Concept-Banner-scaled.jpg.jpeg",
-    link: "/dutch-village-concept",
-  },
-  {
     name: "Wassenaar House Concept",
     imageUrl: "/wasenaar-house-concept-page/Wassenaar-House-Category.jpg.jpeg",
     link: "/wassenaar-house-concept",
@@ -83,36 +106,6 @@ const furnitureProjects = [
     name: "Teun Aarden Amsterdam",
     imageUrl: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01382.jpg",
     link: "/teun-aarden-amsterdam",
-  },
-  {
-    name: "VBS Kitchen and Living",
-    imageUrl: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00001.jpeg",
-    link: "/vbs-kitchen-and-living",
-  },
-  {
-    name: "Thijs Overveen",
-    imageUrl: "/extra Custom Furniture/Thijs_Overveen/_EWP6066.jpg",
-    link: "/thijs-overveen",
-  },
-  {
-    name: "BizzStay Delft Foto",
-    imageUrl: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9002.jpg",
-    link: "/bizzstay-delft-foto",
-  },
-  {
-    name: "Cassandra Aerdenhout",
-    imageUrl: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5858.jpg",
-    link: "/cassandra-aerdenhout",
-  },
-  {
-    name: "Yoga and Office Claudia Pedersen Grigore Manolescu",
-    imageUrl: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4334.jpg",
-    link: "/yoga-and-office-claudia-pedersen-grigore-manolescu",
-  },
-  {
-    name: "Sudip Den Haag",
-    imageUrl: "/extra Custom Furniture/Sudip_Den Haag/_EWP2236.jpg",
-    link: "/sudip-den-haag",
   },
 ]
 

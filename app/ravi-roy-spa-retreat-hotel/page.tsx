@@ -12,88 +12,90 @@ import { motion } from "framer-motion"
 const projectDetails = {
   title: "Ravy Roy Homeopathy Retreat",
   category: "Interior Design",
-  heroImage: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-one.jpg",
+  heroImage: "/ravy-roy-new-pics/Lounge/Lounge _ 01.jpg",
   description: "The Ravy Roy Homeopathy Retreat is a living dialogue between cultures, materials, and the human spirit. It is a carefully crafted atmosphere where every corner, texture, and light source contributes to the process of healing, learning, and self-reconnection.",
   spaces: {
     spatialComposition: {
       title: "Spatial Composition",
       description: "",
       images: [
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/reception-one.jpg", alt: "Spatial composition overview" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/reception-two.jpg", alt: "Interior spatial flow" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/1751373250125-0e1c2657-278e-4407-a896-8db0506a2b32_30.jpg", alt: "Architectural detail view" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/1751373250125-0e1c2657-278e-4407-a896-8db0506a2b32_48.jpg", alt: "Interior design element" }
+        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 01.jpg", alt: "Spatial composition overview" },
+        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 02.jpg", alt: "Interior spatial flow" },
+        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 03.jpg", alt: "Architectural detail view" },
+        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 04.jpg", alt: "Interior design element" }
       ]
     },
     reception: {
       title: "Reception & Entry Experience",
       description: "Guests are welcomed into a space that sets the tone with organic lines, suspended greenery, golden lighting fixtures, and calming hues. Custom signage, flowing plant elements, and layered surfaces reflect a balance between elegance and nature.",
       images: [
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/reception-three.jpg", alt: "Reception area with organic design" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/reception-four.jpg", alt: "Entry experience with greenery" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/reception-five.jpg", alt: "Reception entrance details" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/1751373250125-0e1c2657-278e-4407-a896-8db0506a2b32_42.jpg", alt: "Reception design detail" }
+        { src: "/ravy-roy-new-pics/Reception/Reception_01.jpg", alt: "Reception area with organic design" },
+        { src: "/ravy-roy-new-pics/Reception/Reception_02.jpg", alt: "Entry experience with greenery" },
+        { src: "/ravy-roy-new-pics/Reception/Reception_03.jpg", alt: "Reception entrance details" },
+        { src: "/ravy-roy-new-pics/Reception/Reception_04.jpg", alt: "Reception design detail" },
+        { src: "/ravy-roy-new-pics/Reception/Reception_05.jpg", alt: "Reception additional view" }
       ]
     },
     shop: {
-      title: "Shop",
+      title: "Gift Shop",
       description: "The boutique offers a minimalist yet tactile retail experience, using open wooden shelving, neutral colors, and carefully placed lighting to highlight the homeopathy product lines.",
       images: [
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/shop-one.jpg", alt: "Boutique shop area" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/shop-two.jpg", alt: "Shop retail display" }
+        { src: "/ravy-roy-new-pics/Reception/Gift Shop_01.jpg", alt: "Gift shop boutique area" },
+        { src: "/ravy-roy-new-pics/Reception/Gift Shop_02.jpg", alt: "Gift shop retail display" }
       ]
     },
     restaurant: {
       title: "Restaurant & Lounge",
       description: "This central hub is designed as a social retreat within a retreat, divided into:\nLounge zones with sculptural wooden columns, plush armchairs, and earthy colors\nBar area with curved forms, pastel hues, and a natural flow of movement\nTraditional dining space that celebrates Bavarian design with heart-carved chairs and countryside charm\nBuffet/breakfast area featuring elegant plate displays and green dividers to soften visual boundaries",
       images: [
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-one.jpg", alt: "Restaurant lounge area" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-two.jpg", alt: "Bar area with curved forms" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-three.jpg", alt: "Traditional dining space" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-four.jpg", alt: "Buffet breakfast area" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-five.jpg", alt: "Restaurant seating area" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-six.jpg", alt: "Restaurant lounge additional view" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-seven.jpg", alt: "Restaurant dining area" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-eight.jpg", alt: "Restaurant seating arrangement" }
+        { src: "/ravy-roy-new-pics/Lounge/Lounge _ 01.jpg", alt: "Restaurant lounge area" },
+        { src: "/ravy-roy-new-pics/Lounge/Lounge _ 02.jpg", alt: "Lounge seating area" },
+        { src: "/ravy-roy-new-pics/Lounge/Lounge _ 03.jpg", alt: "Lounge with wooden columns" },
+        { src: "/ravy-roy-new-pics/Lounge/Lounge _ 04.jpg", alt: "Lounge ambient lighting" },
+        { src: "/ravy-roy-new-pics/Lounge/Lounge _ 05.jpg", alt: "Lounge relaxation area" },
+        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 01.jpg", alt: "Restaurant dining area" },
+        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 02.jpg", alt: "Restaurant seating arrangement" },
+        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 03.jpg", alt: "Restaurant traditional dining" },
+        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 04.jpg", alt: "Restaurant bar area" },
+        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 05.jpg", alt: "Restaurant buffet area" },
+        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 06.jpg", alt: "Restaurant additional view" }
       ]
     },
     seminar: {
-      title: "Seminar Room",
+      title: "Seminary Room",
       description: "A multipurpose space designed for education, wellness lectures, and seminars. The design incorporates warm lighting, arched architectural elements, and ceiling murals reminiscent of open skies and calm mindsets.",
       images: [
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/seminary-one.jpg", alt: "Seminar room with arched elements" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/seminary-two.jpg", alt: "Seminar room ceiling murals" }
+        { src: "/ravy-roy-new-pics/Seminary/Seminary_01.jpg", alt: "Seminary room with arched elements" },
+        { src: "/ravy-roy-new-pics/Seminary/Seminary_02.jpg", alt: "Seminary room ceiling murals" }
       ]
     },
     offices: {
       title: "Consultation & Office Areas",
       description: "Main Office: An elegant sanctuary with arched niches, a statement live-edge desk, natural materials, and calming murals.\nSecondary Office: A more intimate, botanical-inspired setting with hand-painted cabinetry and soft natural lighting—perfect for client consultations and wellness sessions.",
       images: [
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/main-consultation-office.jpg", alt: "Main office with live-edge desk" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/maine-consultation-office-two.jpg", alt: "Main office arched niches" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/secondary-consultation-office.jpg", alt: "Secondary office botanical setting" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/secondary-consultation-office-two.jpg", alt: "Secondary office hand-painted cabinetry" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/maine-consultation-office-three.jpg", alt: "Main consultation office additional view" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/secondary-consultation-office-three.jpg", alt: "Secondary consultation office additional view" }
+        { src: "/ravy-roy-new-pics/Therapy/Consultation _ 01.jpg", alt: "Main consultation office" },
+        { src: "/ravy-roy-new-pics/Therapy/Consultation _ 02.jpg", alt: "Consultation office arched niches" },
+        { src: "/ravy-roy-new-pics/Therapy/Consultation _ 03.jpg", alt: "Consultation botanical setting" },
+        { src: "/ravy-roy-new-pics/Therapy/Consultation _ 04.jpg", alt: "Consultation office hand-painted cabinetry" }
       ]
     },
     therapy: {
       title: "Therapy Rooms",
       description: "Each treatment room tells a different story:\nOne is blush-toned and feminine, with warm lighting and minimalist elegance.\nAnother is immersed in greenery, with a living wall, botanical wallpaper, and rustic detailing.\nBoth rooms provide sensory grounding and are designed for relaxation, detox, and rejuvenation.",
       images: [
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/therapy-room-one.jpg", alt: "Blush-toned therapy room" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/therapy-room-two.jpg", alt: "Green therapy room with living wall" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/therapy-room-four.jpg", alt: "Therapy room botanical detailing" }
+        { src: "/ravy-roy-new-pics/Therapy/Therapy _ 01.jpg", alt: "Blush-toned therapy room" },
+        { src: "/ravy-roy-new-pics/Therapy/Therapy _ 02.jpg", alt: "Green therapy room with living wall" },
+        { src: "/ravy-roy-new-pics/Therapy/Therapy _ 03.jpg", alt: "Therapy room botanical detailing" }
       ]
     },
     bathrooms: {
       title: "Bathrooms",
-      description: "A floral concept in pinks and brass, both playful and elegant.\nA forest-themed design with deep greens, organic contours, and earthy materials.",
+      description: "A floral concept in pinks and brass, both playful and elegant.\nA forest-themed design with deep greens, organic contours, and earthy materials.\nSpecially designed accessibility bathrooms ensure comfort for all guests.",
       images: [
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/bathrooms.jpg", alt: "Floral bathroom in pinks and brass" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/bathrooms-two.jpg", alt: "Forest-themed bathroom" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/bathrooms-three.jpg", alt: "Bathroom organic contours" },
-        { src: "/extra design/Ravi Roy Spa Retreat Hotel/bathrooms-four.jpg", alt: "Bathroom earthy materials" }
+        { src: "/ravy-roy-new-pics/Bathrooms/Women's Bathroom _ 01.jpg", alt: "Women's bathroom floral design" },
+        { src: "/ravy-roy-new-pics/Bathrooms/Women's Bathroom _ 02.jpg", alt: "Women's bathroom elegant details" },
+        { src: "/ravy-roy-new-pics/Bathrooms/Men's Bathroom _ 01.jpg", alt: "Men's bathroom forest theme" },
+        { src: "/ravy-roy-new-pics/Bathrooms/Disability Bathroom _ 01.jpg", alt: "Accessible bathroom design" }
       ]
     },
     guestRooms: {
@@ -102,32 +104,28 @@ const projectDetails = {
         title: "Room Type I – Botanical Serenity",
         description: "This room emphasizes freshness and light, with watercolor floral murals, soft textiles, and blue-and-yellow accents. The bathroom features dual vanities, natural wood, and violet detail lines, creating a soothing, refined experience.",
         images: [
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-one.jpg", alt: "Botanical serenity room" },
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-one-two.jpg", alt: "Botanical room watercolor murals" },
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-one-three.jpg", alt: "Botanical room bathroom" },
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-one-four.jpg", alt: "Botanical room violet details" }
+          { src: "/ravy-roy-new-pics/Room Type 2/Room Type 01 _ 01.jpg", alt: "Botanical serenity room" },
+          { src: "/ravy-roy-new-pics/Room Type 2/Room Type 01 _ 02.jpg", alt: "Botanical room watercolor murals" },
+          { src: "/ravy-roy-new-pics/Room Type 2/Room Type 01 _ 03.jpg", alt: "Botanical room bathroom" },
+          { src: "/ravy-roy-new-pics/Room Type 2/Room Type 01 _ 04.jpg", alt: "Botanical room violet details" }
         ]
       },
       typeII: {
         title: "Room Type II – Forest Immersion",
         description: "A rich visual immersion into the pinewood forest, with a full-height mural and golden birds in flight. The bathroom surprises with sunshine yellow tiles, painted floral panels, and contrasting natural stone.",
         images: [
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-two-one.jpg", alt: "Forest immersion room" },
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-two-two.jpg", alt: "Forest room full-height mural" },
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-two-three.jpg", alt: "Forest room golden birds" },
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-two-four.jpg", alt: "Forest room bathroom yellow tiles" },
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-two-five.jpg", alt: "Forest room bathroom details" }
+          { src: "/ravy-roy-new-pics/Room Type 2/Room Type 02 _ 01.jpg", alt: "Forest immersion room" },
+          { src: "/ravy-roy-new-pics/Room Type 2/Room Type 02 _ 02.jpg", alt: "Forest room full-height mural" },
+          { src: "/ravy-roy-new-pics/Room Type 2/Room Type 02 _ 03.jpg", alt: "Forest room golden birds" },
+          { src: "/ravy-roy-new-pics/Room Type 2/Room Type 02 _ 04.jpg", alt: "Forest room bathroom yellow tiles" },
+          { src: "/ravy-roy-new-pics/Room Type 2/Room Type 02 _ 05.jpg", alt: "Forest room bathroom details" }
         ]
       },
       typeIII: {
-        title: "Room Type III – Cultural Calm",
-        description: "A minimalist fusion of Indian and Nordic aesthetics, defined by:\nScalloped mirror frames\nMint green and ivory palette\nCane-inlaid vanity and terrazzo flooring\nThis room is elegant, soft, and spiritually grounded.",
+        title: "Room Type III – Bathroom Design",
+        description: "A special focus on the bathroom design that complements the room types with elegant fixtures, natural materials, and thoughtful lighting that creates a spa-like atmosphere for guests.",
         images: [
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-three-one.jpg", alt: "Cultural calm room" },
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-three-two.jpg", alt: "Cultural room scalloped mirrors" },
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-three-three.jpg", alt: "Cultural room mint green palette" },
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-three-four.jpg", alt: "Cultural room cane-inlaid vanity" },
-          { src: "/extra design/Ravi Roy Spa Retreat Hotel/room-type-three-five.jpg", alt: "Cultural room terrazzo flooring" }
+          { src: "/ravy-roy-new-pics/Room Type 2/Bathroom  _ 01.jpg", alt: "Room bathroom design" }
         ]
       }
     },
@@ -391,7 +389,7 @@ export default function RaviRoySpaRetreatHotelPage() {
                   ))}
                 </div>
 
-                {/* Final row - remaining images */}
+                {/* Final row - remaining images in 2 columns */}
                 {projectDetails.spaces.restaurant.images.length > 7 && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {projectDetails.spaces.restaurant.images.slice(7).map((image, index) => (
@@ -786,8 +784,8 @@ export default function RaviRoySpaRetreatHotelPage() {
               <div className="space-y-4 text-gray-700">
                 <p><strong>Headquarters:</strong> The Netherlands</p>
                 <div className="flex space-x-4">
-                  <Link href="#" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
-                  <Link href="#" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
+                                      <Link href="https://ro.linkedin.com/company/studiobycristian" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
+                    <Link href="https://www.instagram.com/studiobycristian/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
                 </div>
                 <Link href="mailto:office@studiobycristian.com" className="block text-gray-700 hover:text-black transition-colors">office@studiobycristian.com</Link>
               </div>

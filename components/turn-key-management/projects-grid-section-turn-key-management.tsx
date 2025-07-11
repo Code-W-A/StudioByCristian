@@ -29,6 +29,12 @@ const turnKeyProjects = [
     imageUrl: "/turn-key-management-page/Voorburg-Category-768x512.jpg.jpeg",
     link: "/turn-key-management-voorburg-apartment",
   },
+  {
+    name: "Amsterdam Amsteldijk Double Apartments",
+    description: "Complete renovation and interior design of modern duplex apartments featuring contemporary Scandinavian aesthetics and custom furniture solutions.",
+    imageUrl: "/furniture-production-page/www.studiobycristian.com-1750525148492/Amsteldijk-Duplex-Appartments-Category-768x511.jpg.jpeg",
+    link: "/amsterdam-amsteldijk-double-apartments",
+  },
 ]
 
 const cardVariants = {

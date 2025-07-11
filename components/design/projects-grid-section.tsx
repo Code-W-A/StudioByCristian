@@ -6,13 +6,13 @@ import AnimatedElement from "@/components/animated-element"
 const designProjects = [
   {
     name: "Ravy Roy Spa Retreat Hotel",
-    imageUrl: "/extra design/Ravi Roy Spa Retreat Hotel/restaurant-launge-one.jpg",
+    imageUrl: "/extra design/hero-design.png",
     link: "/ravi-roy-spa-retreat-hotel",
   },
   {
-    name: "Horezu Holiday House",
+    name: "Private Residential Holiday House",
     imageUrl: "/extra design/Horezu Holiday House/2_Conceptul 3D/02.Sabina&Viorel Leganaru _ Living u2.jpg",
-    link: "/horezu-holiday-house",
+    link: "/private-residential-holiday-house",
   },
   {
     name: "Laren House Concept",
@@ -64,11 +64,7 @@ const designProjects = [
     imageUrl: "/design-page/Private-Penthouse-Category-1-1-1-768x432.jpg.jpeg",
     link: "/private-penthouse",
   },
-  {
-    name: "Gradinaru Family Private Douplex House",
-    imageUrl: "/STUDIO BY CRISTIAN/Gradinaru-Family-Private-Douplex-House/Gradinaru-Family-Private-Douplex-House-Banner-scaled.jpg.jpeg",
-    link: "/gradinaru-family-private-duplex-house",
-  },
+
 ]
 
 const cardVariants = {

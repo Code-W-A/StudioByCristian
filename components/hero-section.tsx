@@ -4,6 +4,14 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 
+interface ImageConfig {
+  src: string
+  alt?: string
+  zoom?: number // Scale factor (e.g., 1.2 for 20% zoom)
+  offsetX?: number // Horizontal offset in pixels
+  offsetY?: number // Vertical offset in pixels
+}
+
 interface HeroSectionProps {
   imageUrl?: string
   imageAlt?: string
@@ -13,15 +21,25 @@ interface HeroSectionProps {
   className?: string
   slideshow?: boolean
   slideshowImages?: string[]
+  slideshowImageConfigs?: ImageConfig[] // New prop for individual image configs
 }
 
-// Technical images from extra-from-wapp folders combined with about hero image
+// Cropped and slider images from extra-from-wapp folders
 const technicalImages = [
-  "/extra-from-wapp/Lage&Roy Institute_Phase2_Technical Detailing/Lage&Roy Institute_Phase2_Technical Detailing_page-0049.jpg",
-  "/extra-from-wapp/Lage&Roy Institute_Phase2_Technical Detailing/Lage&Roy Institute_Phase2_Technical Detailing_page-0001.jpg",
-  "/extra-from-wapp/A1. 02  Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 2/A1. 02  Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 2_page-0001.jpg",
-  "/extra-from-wapp/A1. 01 Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 1/A1. 01 Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 1_page-0001.jpg",
-  "/extra-from-wapp/A1. 00 Lage&Roy Institute_Plan Mobilare cu cote_ Parter/A1. 00 Lage&Roy Institute_Plan Mobilare cu cote_ Parter_page-0001.jpg"
+  "/extra-from-wapp/Lage&Roy Institute Presentation 2022 Nov/lage-roy-cropped.jpg",
+  "/extra-from-wapp/Lage&Roy Institute_Phase2_Technical Detailing/institute-phase-slider-cropp.jpg",
+  "/extra-from-wapp/A1. 01 Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 1/A1. 01 Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 1_page-0001-cropp-slide.jpg",
+  "/extra-from-wapp/A1. 00 Lage&Roy Institute_Plan Mobilare cu cote_ Parter/A1. 00 Lage&Roy Institute_Plan Mobilare cu cote_ Parter_page-0001-cropp-slider.jpg",
+  "/extra-from-wapp/A1. 02  Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 2/A1. 02  Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 2_page-0001.jpg"
+]
+
+// Natural image configurations without zoom or transform effects
+const defaultImageConfigs: ImageConfig[] = [
+  { src: technicalImages[0], zoom: 1, offsetX: 0, offsetY: 0 },
+  { src: technicalImages[1], zoom: 1, offsetX: 0, offsetY: 0 },
+  { src: technicalImages[2], zoom: 1, offsetX: 0, offsetY: 0 },
+  { src: technicalImages[3], zoom: 1, offsetX: 0, offsetY: 0 },
+  { src: technicalImages[4], zoom: 1, offsetX: 0, offsetY: 0 }
 ]
 
 export default function HeroSection({
@@ -32,7 +50,8 @@ export default function HeroSection({
   dynamicWords = [],
   className = "",
   slideshow = false,
-  slideshowImages = technicalImages
+  slideshowImages = technicalImages,
+  slideshowImageConfigs = defaultImageConfigs
 }: HeroSectionProps) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
   const [currentText, setCurrentText] = useState("")
@@ -76,18 +95,18 @@ export default function HeroSection({
 
   // Slideshow logic - simple approach
   useEffect(() => {
-    if (!slideshow || slideshowImages.length === 0) return
+    if (!slideshow || slideshowImageConfigs.length === 0) return
 
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % slideshowImages.length)
+      setCurrentImageIndex((prev) => (prev + 1) % slideshowImageConfigs.length)
     }, 4000)
 
     return () => clearInterval(interval)
-  }, [slideshow, slideshowImages.length])
+  }, [slideshow, slideshowImageConfigs.length])
 
   // Simple Mobile slideshow component
   const MobileSlideshow = () => {
-    const [imageLoaded, setImageLoaded] = useState<boolean[]>(new Array(slideshowImages.length).fill(false))
+    const [imageLoaded, setImageLoaded] = useState<boolean[]>(new Array(slideshowImageConfigs.length).fill(false))
 
     const handleImageLoad = (index: number, event: any) => {
       const newLoaded = [...imageLoaded]
@@ -97,17 +116,16 @@ export default function HeroSection({
 
     return (
       <div 
-        className="lg:hidden relative w-full rounded-xl overflow-hidden shadow-2xl mb-8 bg-gray-900"
+        className="lg:hidden relative w-full rounded-xl overflow-hidden shadow-2xl mb-8 bg-gray-100"
         style={{ 
-          height: '320px', // Increased from 256px
-          minHeight: '320px'
+          maxWidth: '100%'      // Allow full width, completely dynamic height
         }}
       >
         {/* All images preloaded with smooth transitions and zoom effects */}
-        {slideshowImages.map((imageSrc, index) => (
+        {slideshowImageConfigs.map((config, index) => (
           <div
             key={index}
-            className="absolute inset-0 transition-all duration-1500 ease-in-out"
+            className={`${index === currentImageIndex ? 'block' : 'hidden'} transition-all duration-1500 ease-in-out`}
             style={{
               opacity: index === currentImageIndex ? 1 : 0,
               transform: index === currentImageIndex ? 'scale(1)' : 'scale(1.1)',
@@ -115,15 +133,17 @@ export default function HeroSection({
             }}
           >
             <Image
-              src={imageSrc}
-              alt={`Technical drawing ${index + 1}`}
-              fill
-              className="object-cover transition-transform duration-[6000ms] ease-out hover:scale-105"
+              src={config.src}
+              alt={config.alt || `Technical drawing ${index + 1}`}
+              width={800}
+              height={600}
+              className="w-full h-auto object-contain transition-transform duration-[6000ms] ease-out hover:scale-105"
               priority={index <= 1}
               onLoad={(e) => handleImageLoad(index, e)}
               style={{
                 filter: index === currentImageIndex ? 'brightness(1.05) contrast(1.1)' : 'brightness(0.9)',
-                transform: index === currentImageIndex ? 'scale(1.02)' : 'scale(1)'
+                transform: `scale(${config.zoom || 1})`,
+                transformOrigin: 'center center'
               }}
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
@@ -132,7 +152,7 @@ export default function HeroSection({
         
         {/* Enhanced indicators with animation */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10">
-          {slideshowImages.map((_, index) => (
+          {slideshowImageConfigs.map((_, index) => (
             <div key={index} className="relative">
               <div
                 className="h-1.5 rounded-full bg-white/20 transition-all duration-500"
@@ -393,98 +413,109 @@ export default function HeroSection({
         </div>
 
         {/* Desktop Right Side - Image or Slideshow */}
-        <div className="hidden lg:block lg:w-1/2 relative">
-          <motion.div
-            className="absolute inset-0 m-12" // Reduced margins from m-16 to m-12 for more dynamic layout
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-          >
-            <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl">
-              {slideshow ? (
-                // Enhanced slideshow for technical images
-                <div className="relative w-full h-full group">
-                  {slideshowImages.map((imageSrc, index) => (
-                    <motion.div
-                      key={index}
-                      className="absolute inset-0"
-                      initial={{ opacity: 0 }}
-                      animate={{ 
-                        opacity: index === currentImageIndex ? 1 : 0,
-                        scale: index === currentImageIndex ? 1 : 1.08
-                      }}
-                      transition={{ 
-                        duration: 1.2,
-                        ease: "easeInOut"
-                      }}
-                    >
-                      <Image
-                        src={imageSrc}
-                        alt={`Technical drawing ${index + 1}`}
-                        fill
-                        className="object-contain transition-transform duration-[8000ms] ease-out"
-                        priority={index === 0}
-                        style={{
-                          filter: index === currentImageIndex ? 'brightness(1.05) contrast(1.1) saturate(1.1)' : 'brightness(0.9)',
-                          transform: index === currentImageIndex ? 'scale(1.03)' : 'scale(1)'
-                        }}
-                      />
-                    </motion.div>
-                  ))}
-                  
-                  {/* Modern slideshow indicators with enhanced styling */}
-                  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10">
-                    {slideshowImages.map((_, index) => (
+        <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center">
+          <div className="flex flex-col items-center space-y-6">
+            <motion.div
+              className="relative w-full max-w-4xl" // Dynamic size container
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
+              style={{
+                maxWidth: '90%',     // Responsive max width
+                maxHeight: '80vh'    // Increased responsive max height
+              }}
+            >
+              <div className="relative w-full rounded-xl overflow-hidden shadow-2xl bg-gray-100">
+                {slideshow ? (
+                  // Enhanced slideshow for technical images
+                  <div className="relative w-full group">
+                    {slideshowImageConfigs.map((config, index) => (
                       <motion.div
                         key={index}
-                        className={`h-1 rounded-full transition-all duration-700 cursor-pointer ${
-                          index === currentImageIndex 
-                            ? 'bg-white shadow-lg' 
-                            : 'bg-white/30 hover:bg-white/60'
-                        }`}
-                        initial={{ width: 32, opacity: 0.3 }}
+                        className={`${index === currentImageIndex ? 'block' : 'hidden'} w-full`}
+                        initial={{ opacity: 0 }}
                         animate={{ 
-                          width: index === currentImageIndex ? 64 : 32,
-                          opacity: index === currentImageIndex ? 1 : 0.3,
-                          backgroundColor: index === currentImageIndex ? '#ffffff' : 'rgba(255, 255, 255, 0.3)'
+                          opacity: index === currentImageIndex ? 1 : 0,
+                          scale: index === currentImageIndex ? 1 : 1.08
                         }}
                         transition={{ 
-                          duration: 0.7,
+                          duration: 1.2,
                           ease: "easeInOut"
                         }}
-                        whileHover={{
-                          opacity: 0.8,
-                          scale: 1.1,
-                          transition: { duration: 0.2 }
-                        }}
-                        onClick={() => setCurrentImageIndex(index)}
-                      />
+                      >
+                        <Image
+                          src={config.src}
+                          alt={config.alt || `Technical drawing ${index + 1}`}
+                          width={800}
+                          height={600}
+                          className="w-full h-auto object-contain transition-transform duration-[8000ms] ease-out"
+                          priority={index === 0}
+                          style={{
+                            filter: index === currentImageIndex ? 'brightness(1.05) contrast(1.1) saturate(1.1)' : 'brightness(0.9)',
+                            transform: `scale(${config.zoom || 1})`,
+                            transformOrigin: 'center center'
+                          }}
+                        />
+                      </motion.div>
                     ))}
+                    
+                    {/* Enhanced overlays for better styling and depth */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10 pointer-events-none" />
                   </div>
-                  
-                  {/* Enhanced overlays for better styling and depth */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10" />
-                </div>
-              ) : (
-                // Enhanced single image (original behavior)
-                <div className="relative w-full h-full group">
-                  <Image
-                    src={imageUrl}
-                    alt={imageAlt}
-                    fill
-                    className="object-cover transition-transform duration-[6000ms] ease-out group-hover:scale-105"
-                    priority
-                    style={{
-                      filter: 'brightness(1.05) contrast(1.1)'
+                ) : (
+                  // Enhanced single image (original behavior)
+                  <div className="relative w-full group">
+                    <Image
+                      src={imageUrl}
+                      alt={imageAlt}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-contain transition-transform duration-[6000ms] ease-out group-hover:scale-105"
+                      priority
+                      style={{
+                        filter: 'brightness(1.05) contrast(1.1)'
+                      }}
+                    />
+                    {/* Enhanced overlay for better integration */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5 pointer-events-none" />
+                  </div>
+                )}
+              </div>
+            </motion.div>
+            
+            {/* Slideshow indicators positioned below the image */}
+            {slideshow && (
+              <div className="flex space-x-4 mt-4">
+                {slideshowImageConfigs.map((_, index) => (
+                  <motion.div
+                    key={index}
+                    className={`h-1 rounded-full transition-all duration-700 cursor-pointer ${
+                      index === currentImageIndex 
+                        ? 'bg-white shadow-lg' 
+                        : 'bg-white/30 hover:bg-white/60'
+                    }`}
+                    initial={{ width: 32, opacity: 0.3 }}
+                    animate={{ 
+                      width: index === currentImageIndex ? 64 : 32,
+                      opacity: index === currentImageIndex ? 1 : 0.3,
+                      backgroundColor: index === currentImageIndex ? '#ffffff' : 'rgba(255, 255, 255, 0.3)'
                     }}
+                    transition={{ 
+                      duration: 0.7,
+                      ease: "easeInOut"
+                    }}
+                    whileHover={{
+                      opacity: 0.8,
+                      scale: 1.1,
+                      transition: { duration: 0.2 }
+                    }}
+                    onClick={() => setCurrentImageIndex(index)}
                   />
-                  {/* Enhanced overlay for better integration */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5" />
-                </div>
-              )}
-            </div>
-          </motion.div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

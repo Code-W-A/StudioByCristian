@@ -5,17 +5,18 @@ import AnimatedElement from "@/components/animated-element"
 import ParallaxSection from "@/components/parallax-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, X } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
 
 const projectDetails = {
   title: "Private Villa Wassenaar",
-  category: "Turn Key Management",
+  category: "Interior Renovation",
   heroImage: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Banner-After-scaled.jpg.jpeg",
   location: "Wassenaar, The Netherlands",
   status: "Finished",
-  service: "Turn Key Management, Design, Before & After",
+  service: "Interior Renovation, Design, Before & After",
   sectors: "Private Residential",
   area: "Villa - Multiple Levels",
   client: "Private",
@@ -79,6 +80,37 @@ const projectDetails = {
 }
 
 export default function PrivateVillaWassenaarPage() {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
+
+  // Handle escape key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsVideoModalOpen(false)
+      }
+    }
+
+    if (isVideoModalOpen) {
+      document.addEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'unset'
+    }
+  }, [isVideoModalOpen])
+
+  const openVideoModal = () => {
+    setIsVideoModalOpen(true)
+  }
+
+  const closeVideoModal = () => {
+    setIsVideoModalOpen(false)
+  }
+
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
@@ -105,9 +137,9 @@ export default function PrivateVillaWassenaarPage() {
               size="lg"
               className="bg-white text-black border-gray-300 hover:bg-gray-100"
             >
-              <Link href="/turn-key-management">
+              <Link href="/interior-renovation">
                 <ArrowLeft className="mr-2 h-5 w-5" />
-                Back to Turn Key Management
+                Back to Interior Renovation
               </Link>
             </Button>
           </AnimatedElement>
@@ -200,10 +232,10 @@ export default function PrivateVillaWassenaarPage() {
         </div>
       </section>
 
-      {/* Video Section */}
-      <section className="py-12 lg:py-16 bg-gray-50 text-black">
+      {/* Premium Video Section */}
+      <section className="py-16 lg:py-24 bg-gray-50 text-black">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp" className="text-center mb-12">
+          <AnimatedElement animationType="fadeInUp" className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl mb-4">
               Project Walkthrough
             </h2>
@@ -213,16 +245,59 @@ export default function PrivateVillaWassenaarPage() {
           </AnimatedElement>
           
           <AnimatedElement animationType="fadeInUp" delay={0.2}>
-            <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-              <div className="aspect-video w-full">
-                <iframe
-                  src="https://www.youtube.com/embed/S7YIkF9o3k8?rel=0&modestbranding=1&showinfo=0"
-                  title="Private Villa Wassenaar - Project Walkthrough"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="w-full h-full rounded-xl"
-                ></iframe>
+            <div className="group relative max-w-4xl mx-auto">
+              {/* Video Container with Premium Effects */}
+              <div 
+                className="relative bg-black rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-4xl transition-all duration-700 transform group-hover:scale-[1.02] group-hover:-translate-y-2 cursor-pointer"
+                onClick={openVideoModal}
+              >
+                {/* Click to Expand Indicator */}
+                <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                  </svg>
+                </div>
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Video Embed */}
+                <div className="relative aspect-video">
+                  <iframe
+                    src="https://player.vimeo.com/video/1097920033?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                    title="Private Villa Wassenaar"
+                  />
+                </div>
+                
+                {/* Premium Border Effect */}
+                <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-black/20 via-transparent to-black/20 group-hover:border-black/10 transition-all duration-500" />
+                
+                {/* Corner Accents */}
+                <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-4 w-8 h-8 border-r-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Floating Info Card */}
+                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-20">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <h3 className="text-2xl font-bold text-black">
+                          Private Villa Wassenaar
+                        </h3>
+                        <span className="px-3 py-1 bg-black text-white text-xs font-medium rounded-full">
+                          Interior Renovation
+                        </span>
+                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                        Complete transformation of a classical villa into a modern, elegant home
+                      </p>
+                      <p className="text-xs text-gray-400">Click to view fullscreen</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </AnimatedElement>
@@ -239,9 +314,9 @@ export default function PrivateVillaWassenaarPage() {
           </AnimatedElement>
           
           <div className="space-y-12">
-            {/* Three images in a row */}
-            <div className="grid md:grid-cols-3 gap-8">
-              {projectDetails.additionalImages.slice(0, 3).map((image, index) => (
+            {/* Two images in a row */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.additionalImages.slice(0, 2).map((image, index) => (
                 <AnimatedElement
                   key={index}
                   animationType="fadeInUp"
@@ -297,9 +372,9 @@ export default function PrivateVillaWassenaarPage() {
               </div>
             </AnimatedElement>
 
-            {/* Final three images */}
-            <div className="grid md:grid-cols-3 gap-8">
-              {projectDetails.additionalImages.slice(6, 9).map((image, index) => (
+            {/* Final two images */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.additionalImages.slice(6, 8).map((image, index) => (
                 <AnimatedElement
                   key={index}
                   animationType="fadeInUp"
@@ -342,8 +417,8 @@ export default function PrivateVillaWassenaarPage() {
                     
                   </p>
                   <div className="flex space-x-4">
-                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
-                    <Link href="#" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
+                    <Link href="https://ro.linkedin.com/company/studiobycristian" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
+                    <Link href="https://www.instagram.com/studiobycristian/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
                   </div>
                   <Link 
                     href="mailto:office@studiobycristian.com" 
@@ -389,14 +464,59 @@ export default function PrivateVillaWassenaarPage() {
               size="lg"
               className="bg-white text-black border-gray-300 hover:bg-gray-100"
             >
-              <Link href="/turn-key-management">
+              <Link href="/interior-renovation">
                 <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Turn Key Management
+                Back To Interior Renovation
               </Link>
             </Button>
           </AnimatedElement>
         </div>
       </section>
+      
+      {/* Premium Video Modal/Lightbox */}
+      {isVideoModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/90 backdrop-blur-sm"
+            onClick={closeVideoModal}
+          />
+          
+          {/* Modal Content */}
+          <div className="relative w-full max-w-6xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
+            {/* Close Button */}
+            <button
+              onClick={closeVideoModal}
+              className="absolute top-4 right-4 z-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 text-white transition-all duration-200 hover:scale-110"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Video Info Header */}
+            <div className="absolute top-4 left-4 z-10 bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white">
+              <h3 className="text-xl font-bold mb-1">Private Villa Wassenaar</h3>
+              <p className="text-sm opacity-80">Interior Renovation</p>
+            </div>
+
+            {/* Full-size Video */}
+            <iframe
+              src="https://player.vimeo.com/video/1097920033?autoplay=1&loop=1&muted=0&controls=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              className="w-full h-full"
+              title="Private Villa Wassenaar - Full Video"
+            />
+          </div>
+
+          {/* Instructions */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 text-sm text-center">
+            <p>Press <kbd className="px-2 py-1 bg-white/10 rounded text-xs">ESC</kbd> or click outside to close</p>
+          </div>
+        </div>
+      )}
+
+      {/* Vimeo Script */}
+      <script src="https://player.vimeo.com/api/player.js"></script>
     </div>
   )
 } 

@@ -6,17 +6,18 @@ import { Linkedin, Instagram, Mail, MapPin } from "lucide-react"
 import { motion } from "framer-motion"
 
 const menuLinks = [
+  { href: "/", label: "Home" },
   { href: "/design", label: "Design" },
-  { href: "/furniture-production", label: "Furniture Production" },
-  { href: "/turn-key-management", label: "Turn Key" },
+  { href: "/furniture-production", label: "Furnish" },
+  { href: "/interior-renovation", label: "Renovate" },
   { href: "/work-archive", label: "Work Archive" },
-  { href: "/about", label: "Credentials" },
+  { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
 ]
 
 const socialLinks = [
-  { href: "#", icon: Linkedin, label: "LinkedIn" },
-  { href: "#", icon: Instagram, label: "Instagram" },
+  { href: "https://ro.linkedin.com/company/studiobycristian", icon: Linkedin, label: "LinkedIn" },
+  { href: "https://www.instagram.com/studiobycristian/", icon: Instagram, label: "Instagram" },
 ]
 
 export default function Footer() {

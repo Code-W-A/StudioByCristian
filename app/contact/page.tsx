@@ -81,7 +81,7 @@ export default function ContactPage() {
                     <h3 className="text-2xl font-bold text-black mb-6">Socials</h3>
                     <div className="flex space-x-6">
                       <motion.a
-                        href="#"
+                        href="https://ro.linkedin.com/company/studiobycristian"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex items-center space-x-3 text-gray-700 hover:text-black transition-colors duration-300"
@@ -95,7 +95,7 @@ export default function ContactPage() {
                         <span className="text-lg">LinkedIn</span>
                       </motion.a>
                       <motion.a
-                        href="#"
+                        href="https://www.instagram.com/studiobycristian/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex items-center space-x-3 text-gray-700 hover:text-black transition-colors duration-300"
