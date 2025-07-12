@@ -8,12 +8,19 @@ import Link from "next/link"
 import { ArrowLeft, X } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 const projectDetails = {
   title: "Private Villa Wassenaar",
   category: "Interior Renovation",
   heroImage: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Banner-After-scaled.jpg.jpeg",
+  beforeAfterComparisons: [
+    {
+      before: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Before-7-scaled.jpg.jpeg",
+      after: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Banner-Design-scaled.jpg.jpeg",
+      alt: "Private Villa Wassenaar transformation"
+    }
+  ],
   location: "Wassenaar, The Netherlands",
   status: "Finished",
   service: "Interior Renovation, Design, Before & After",
@@ -37,31 +44,31 @@ const projectDetails = {
     {
       title: "Ground Floor Transformation",
       text: "The main intervention at the ground floor was opening up the passage from the living room to the dining area and kitchen by mounting a large glass door, which created a light filled open space surrounded by nature and benefiting from the warm sunlight at all times. The living room was fitted with warm lights, minimal built-in furniture and a cozy, elegant feel through the suggested finishes.",
-      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-1-1-scaled.jpg.jpeg",
+      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Design-05.jpg.jpeg",
       imageAlt: "Private Villa Wassenaar - Ground floor after renovation"
     },
     {
       title: "First Floor Bedrooms",
       text: "The first floor contains 1 spacious master bedroom and 1 guest bedroom, both equipped with en suite bathrooms. The bathrooms' design maintains the elegant key, playing with large marble slabs alongside dark accents of mosaics, minimal furniture volumes and accessories.",
-      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-15-1-scaled.jpg.jpeg",
+      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Design-10.jpg.jpeg",
       imageAlt: "Private Villa Wassenaar - First floor bedrooms"
     },
     {
       title: "Second Floor & Attic",
       text: "The second floor, which initially only hosted 2 rooms, now provides 2 bedrooms, 1 shared bathroom and 1 toilet. The attic can turn into a playroom, hobby room or an extra bedroom depending on the family needs and there is also a laundry room set up.",
-      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-25-1-scaled.jpg.jpeg",
+      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Banner-Design-scaled.jpg.jpeg",
       imageAlt: "Private Villa Wassenaar - Second floor renovation"
     },
     {
       title: "Outdoor Intervention",
       text: "Intervention on the outdoors aimed at inviting the owner to make use of the available space and so we created different setups so spending as much time outside can be at hand. Dining in the garden, reading, relaxing on the bench or lounging with friends around a pit fire is all accessible.",
-      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-17-1-scaled.jpg.jpeg",
+      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Design-21-610x610.jpg.jpeg",
       imageAlt: "Private Villa Wassenaar - Outdoor spaces"
     },
     {
       title: "After",
       text: "All the actions were set in motion to create the perfect scenery for the future owners. The interventions were restorations, repairments and optimizations of the unseen aspects of the home, all which were covered by the modern light grey paint and warm natural wood floor. Outdoor landscaping, the kitchen, the bathrooms and built-in wardrobes were all provided for the comfort of the new owners, but the canvas of the home had enough space for them to also place their own unique signature.",
-      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-29-1-scaled.jpg.jpeg",
+      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-27-1-scaled.jpg.jpeg",
       imageAlt: "Private Villa Wassenaar - Final result"
     }
   ],
@@ -77,6 +84,88 @@ const projectDetails = {
     { src: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-9-1-scaled.jpg.jpeg", alt: "Private Villa Wassenaar - Additional view 8" },
     { src: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-10-1-scaled.jpg.jpeg", alt: "Private Villa Wassenaar - Additional view 9" },
   ]
+}
+
+// Before/After Comparison Component
+function BeforeAfterComparison({ beforeSrc, afterSrc, alt }: { beforeSrc: string; afterSrc: string; alt: string }) {
+  const [sliderPosition, setSliderPosition] = useState(50)
+  const [isHovering, setIsHovering] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return
+    
+    const rect = containerRef.current.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const percentage = (x / rect.width) * 100
+    setSliderPosition(Math.max(0, Math.min(100, percentage)))
+  }
+
+  const handleMouseEnter = () => {
+    setIsHovering(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovering(false)
+    setSliderPosition(50)
+  }
+
+  return (
+    <div 
+      ref={containerRef}
+      className="relative overflow-hidden rounded-xl shadow-2xl cursor-crosshair group"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="relative w-full aspect-[16/9]">
+        <Image
+          src={afterSrc}
+          alt={`After - ${alt}`}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1400px"
+        />
+      </div>
+
+      <div 
+        className="absolute inset-0 overflow-hidden transition-all duration-300 ease-out"
+        style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+      >
+        <Image
+          src={beforeSrc}
+          alt={`Before - ${alt}`}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1400px"
+        />
+      </div>
+
+      <div 
+        className="absolute top-0 bottom-0 w-1 bg-white shadow-lg transition-all duration-300 ease-out"
+        style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
+      >
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
+          <div className="w-4 h-4 bg-black rounded-full"></div>
+        </div>
+      </div>
+
+      <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-lg text-sm font-medium backdrop-blur-sm">
+        Before
+      </div>
+      <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-lg text-sm font-medium backdrop-blur-sm">
+        After
+      </div>
+
+      {!isHovering && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-300">
+          <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-lg text-black font-medium">
+            Hover to compare
+          </div>
+        </div>
+      )}
+    </div>
+  )
 }
 
 export default function PrivateVillaWassenaarPage() {
@@ -142,6 +231,30 @@ export default function PrivateVillaWassenaarPage() {
                 Back to Interior Renovation
               </Link>
             </Button>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Interactive Before/After Comparison Section */}
+      <section className="pt-6 pb-12 lg:pt-8 lg:pb-16 bg-white text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp" className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl mb-4">
+              Real Picture Before & After
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Hover over the image below to see the dramatic transformation
+            </p>
+          </AnimatedElement>
+
+          <AnimatedElement animationType="fadeInUp" delay={0.2}>
+            <div className="max-w-5xl mx-auto">
+              <BeforeAfterComparison
+                beforeSrc={projectDetails.beforeAfterComparisons[0].before}
+                afterSrc={projectDetails.beforeAfterComparisons[0].after}
+                alt={projectDetails.beforeAfterComparisons[0].alt}
+              />
+            </div>
           </AnimatedElement>
         </div>
       </section>

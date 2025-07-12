@@ -61,9 +61,9 @@ export default function MauritskadePage() {
               size="lg"
               className="bg-white text-black border-gray-300 hover:bg-gray-100"
             >
-              <Link href="/design">
+              <Link href="/furniture-production">
                 <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Design Projects
+                Back To Furniture Production Projects
               </Link>
             </Button>
           </AnimatedElement>
@@ -248,9 +248,9 @@ export default function MauritskadePage() {
               size="lg"
               className="bg-white text-black border-gray-300 hover:bg-gray-100"
             >
-              <Link href="/design">
+              <Link href="/furniture-production">
                 <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Design Projects
+                Back To Furniture Production Projects
               </Link>
             </Button>
           </AnimatedElement>

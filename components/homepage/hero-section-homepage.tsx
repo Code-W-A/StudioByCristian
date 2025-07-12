@@ -100,8 +100,8 @@ export default function HeroSectionHomepage() {
   return (
     <section ref={heroRef} className="relative h-[calc(100vh-5rem)] min-h-[500px] flex flex-col overflow-hidden">
       {/* Background Images with Enhanced Transitions */}
-      <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="wait">
+      <div className="absolute inset-0 z-0 bg-black">
+        <AnimatePresence>
           <motion.div
             key={activeHero.id}
             className="absolute inset-0"
@@ -121,11 +121,11 @@ export default function HeroSectionHomepage() {
               filter: "blur(1px) brightness(0.8)"
             }}
             transition={{ 
-              duration: 0.6,
+              duration: 0.8,
               ease: [0.4, 0.0, 0.2, 1.0], // Smoother easing
-              opacity: { duration: 0.4, ease: "easeInOut" },
-              scale: { duration: 0.6, ease: "easeOut" },
-              filter: { duration: 0.3, ease: "easeInOut" }
+              opacity: { duration: 0.8, ease: "easeInOut" },
+              scale: { duration: 0.8, ease: "easeOut" },
+              filter: { duration: 0.4, ease: "easeInOut" }
             }}
           >
             {/* Image Container with Parallax */}
