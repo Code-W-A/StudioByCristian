@@ -31,6 +31,30 @@ const projectDetails = {
     { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-21-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 6" },
     { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-22-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 7" },
     { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-23-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Final view" },
+    // Susan Pyke Photos - Same Project
+    { src: "/Susan Pyke/Living 01.jpg", alt: "Chic Parisien Apartment - Living room view 1" },
+    { src: "/Susan Pyke/Living 02.jpg", alt: "Chic Parisien Apartment - Living room view 2" },
+    { src: "/Susan Pyke/Living 03.jpg", alt: "Chic Parisien Apartment - Living room view 3" },
+    { src: "/Susan Pyke/Dining 01.jpg", alt: "Chic Parisien Apartment - Dining area view 1" },
+    { src: "/Susan Pyke/Dining 02.jpg", alt: "Chic Parisien Apartment - Dining area view 2" },
+    { src: "/Susan Pyke/Dining 03.jpg", alt: "Chic Parisien Apartment - Dining area view 3" },
+    { src: "/Susan Pyke/Dining 04.jpg", alt: "Chic Parisien Apartment - Dining area view 4" },
+    { src: "/Susan Pyke/Kitchen 01.jpg", alt: "Chic Parisien Apartment - Kitchen detail 1" },
+    { src: "/Susan Pyke/Kitchen 02.jpg", alt: "Chic Parisien Apartment - Kitchen detail 2" },
+    { src: "/Susan Pyke/Master Bedroom 01.jpg", alt: "Chic Parisien Apartment - Master bedroom view 1" },
+    { src: "/Susan Pyke/Master Bedroom 02.jpg", alt: "Chic Parisien Apartment - Master bedroom view 2" },
+    { src: "/Susan Pyke/Bedroom Camille 01.jpg", alt: "Chic Parisien Apartment - Bedroom Camille" },
+    { src: "/Susan Pyke/Bedroom Noemie 01.jpg", alt: "Chic Parisien Apartment - Bedroom Noemie view 1" },
+    { src: "/Susan Pyke/Bedroom Noemie 02.jpg", alt: "Chic Parisien Apartment - Bedroom Noemie view 2" },
+    { src: "/Susan Pyke/Bedroom Noemie 03.jpg", alt: "Chic Parisien Apartment - Bedroom Noemie view 3" },
+    { src: "/Susan Pyke/Master Bathroom 01.jpg", alt: "Chic Parisien Apartment - Master bathroom view 1" },
+    { src: "/Susan Pyke/Master Bathroom 02.jpg", alt: "Chic Parisien Apartment - Master bathroom view 2" },
+    { src: "/Susan Pyke/Master Bathroom  WC.jpg", alt: "Chic Parisien Apartment - Master bathroom WC" },
+    { src: "/Susan Pyke/Guest Bathroom .jpg", alt: "Chic Parisien Apartment - Guest bathroom" },
+    { src: "/Susan Pyke/Guest WC 01.jpg", alt: "Chic Parisien Apartment - Guest WC" },
+    { src: "/Susan Pyke/Office 01.jpg", alt: "Chic Parisien Apartment - Office view 1" },
+    { src: "/Susan Pyke/Office 02.jpg", alt: "Chic Parisien Apartment - Office view 2" },
+    { src: "/Susan Pyke/Laundry 01.jpg", alt: "Chic Parisien Apartment - Laundry room" },
   ]
 }
 
@@ -279,6 +303,160 @@ export default function ChicParisienApartmentPage() {
                 />
               </div>
             </AnimatedElement>
+
+            {/* Susan Pyke Photos - Living Area Section */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {projectDetails.images.slice(14, 17).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={600}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '1/1' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Dining Area - Four images grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {projectDetails.images.slice(17, 21).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.05}
+                >
+                  <div className="relative overflow-hidden rounded-lg shadow-md bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={400}
+                      height={400}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '1/1' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Kitchen Details */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.images.slice(21, 23).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Master Bedroom */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.images.slice(23, 25).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Other Bedrooms - Three images */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {projectDetails.images.slice(25, 29).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={600}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '1/1' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Bathrooms Section */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projectDetails.images.slice(29, 34).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={600}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '1/1' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Office and Utility - Final three images */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {projectDetails.images.slice(34, 37).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={600}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '1/1' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -123,6 +123,74 @@ export default function ThijsOverveenPage() {
         </div>
       </section>
 
+      {/* Project Description Section */}
+      <section className="py-16 lg:py-24 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Text Content - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="space-y-6">
+              <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
+                Bespoke Interior with Technical Precision
+              </h2>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  This bespoke interior was created for Thijs in Overveen, The Netherlands, and designed by Martijn Elzinga from DISEL Architect. The project posed a rewarding challenge in both craftsmanship and technical precision.
+                </p>
+                <p>
+                  The entire space was developed using oak veneer, with a strong emphasis on detail and continuity. Panels were carefully laid out with a deliberate grain orientation and an exact 2mm seam spacing, ensuring a refined and rhythmical visual language throughout the interior.
+                </p>
+              </div>
+            </AnimatedElement>
+
+            {/* Image - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Thijs_Overveen/_EWP6104.jpg"
+                  alt="Thijs Overveen - Oak veneer craftsmanship"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+          </div>
+
+          {/* Second Row - Image Left, Text Right */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-24">
+            {/* Image - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="lg:order-1">
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Thijs_Overveen/_EWP6193.jpg"
+                  alt="Thijs Overveen - Custom oak pivot door and integrated lighting"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+
+            {/* Text Content - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2} className="space-y-6 lg:order-2">
+              <h3 className="text-2xl font-bold tracking-tight text-black">
+                Timeless Living Spaces
+              </h3>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  The kitchen features an island and fronts clad in anti-fingerprint HPL, paired with high-performance LEGRABOX drawers from Blum. A custom-built solid oak pivot door stands as a centerpiece between zones, constructed entirely in massive oak with integrated glass panels.
+                </p>
+                <p>
+                  Additional custom elements include a window seating area with tailored upholstery, wall-to-wall bookshelves, and integrated lighting. This project is a clear reflection of how thoughtful design and expert execution can come together to create calm, coherent, and timeless living spaces.
+                </p>
+              </div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">

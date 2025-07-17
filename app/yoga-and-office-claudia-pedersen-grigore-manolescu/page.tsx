@@ -104,6 +104,74 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
         </div>
       </section>
 
+      {/* Project Description Section */}
+      <section className="py-16 lg:py-24 bg-white text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Text Content - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="space-y-6">
+              <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
+                Multi-Purpose Meditation Room
+              </h2>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  This multi-purpose room holds a special meaning for us. Created for Claudia Pedersen, the space had to combine seemingly opposite functions: a peaceful, symbolic meditation room and a fully functional home office. The challenge was to balance serenity and productivity within one harmonious environment.
+                </p>
+                <p>
+                  We designed custom cabinetry and shelves to accommodate books, decorative objects, and office materials, while also keeping the space feeling airy and calm. The built-in yellow bench provides a cheerful accent and a place for reflection or reading.
+                </p>
+              </div>
+            </AnimatedElement>
+
+            {/* Image - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4413.jpg"
+                  alt="Yoga and Office - Custom cabinetry and yellow bench"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+          </div>
+
+          {/* Second Row - Image Left, Text Right */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-24">
+            {/* Image - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="lg:order-1">
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_6865.jpg"
+                  alt="Yoga and Office - Meditation area with round carpet and symbolic details"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+
+            {/* Text Content - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2} className="space-y-6 lg:order-2">
+              <h3 className="text-2xl font-bold tracking-tight text-black">
+                Where Clarity & Inner Peace Meet
+              </h3>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  Natural textures, soft lighting, and carefully curated details—like the backlit circular mirror and rounded shelves—help foster a gentle, soothing ambiance. A work area with ergonomic seating and seamless desk surfaces supports focus, while the round meditation carpet and symbolic art pieces invite moments of mindfulness.
+                </p>
+                <p>
+                  Everything was tailored to Claudia's needs, with handcrafted millwork in soft wood tones, hidden storage solutions, and warm, tactile finishes. The result is a space that radiates intention—where clarity of thought and inner peace meet.
+                </p>
+              </div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">

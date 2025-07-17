@@ -13,8 +13,23 @@ import ProjectVideoShowcase from "@/components/project-video-showcase"
 const projectDetails = {
   title: "BizzStay Delft Foto",
   category: "Custom Furniture",
-  heroImage: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9002.jpg",
+  heroImage: "/bizzstay_sfeer/SFEER-9.jpg",
   images: [
+    // New BizzStay Sfeer images
+    { src: "/bizzstay_sfeer/SFEER-1.jpg", alt: "BizzStay Delft Foto - Sfeer view 1" },
+    { src: "/bizzstay_sfeer/SFEER-2.jpg", alt: "BizzStay Delft Foto - Sfeer view 2" },
+    { src: "/bizzstay_sfeer/SFEER-9.jpg", alt: "BizzStay Delft Foto - Sfeer view 9" },
+    { src: "/bizzstay_sfeer/SFEER-10.jpg", alt: "BizzStay Delft Foto - Sfeer view 10" },
+    { src: "/bizzstay_sfeer/SFEER-12.jpg", alt: "BizzStay Delft Foto - Sfeer view 12" },
+    { src: "/bizzstay_sfeer/SFEER-17.jpg", alt: "BizzStay Delft Foto - Sfeer view 17" },
+    { src: "/bizzstay_sfeer/SFEER-28.jpg", alt: "BizzStay Delft Foto - Sfeer view 28" },
+    { src: "/bizzstay_sfeer/SF0CF3~1.JPG", alt: "BizzStay Delft Foto - Additional view 1" },
+    { src: "/bizzstay_sfeer/SF3176~1.JPG", alt: "BizzStay Delft Foto - Additional view 2" },
+    { src: "/bizzstay_sfeer/SF3369~1.JPG", alt: "BizzStay Delft Foto - Additional view 3" },
+    { src: "/bizzstay_sfeer/SF7D88~1.JPG", alt: "BizzStay Delft Foto - Additional view 4" },
+    { src: "/bizzstay_sfeer/SF9C57~1.JPG", alt: "BizzStay Delft Foto - Additional view 5" },
+    { src: "/bizzstay_sfeer/SFD138~1.JPG", alt: "BizzStay Delft Foto - Additional view 6" },
+    // Original images
     { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9002.jpg", alt: "BizzStay Delft Foto - Interior view 1" },
     { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9007.jpg", alt: "BizzStay Delft Foto - Interior view 2" },
     { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9017.jpg", alt: "BizzStay Delft Foto - Interior view 3" },
@@ -61,7 +76,7 @@ export default function BizzStayDelftFotoPage() {
       {/* Project Video Showcase */}
       <ProjectVideoShowcase 
         videoId="1097919705"
-        title="Hotel Delft - Luxury Interior Design"
+        title="Hotel Delft - Luxury Custom Furniture"
         description="Discover the sophisticated hospitality design that creates memorable experiences through thoughtful interior architecture and premium furnishing"
       />
 
@@ -107,6 +122,74 @@ export default function BizzStayDelftFotoPage() {
                 </div>
               </AnimatedElement>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Project Description Section */}
+      <section className="py-16 lg:py-24 bg-white text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Text Content - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="space-y-6">
+              <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
+                Hotel Apartments – Delft City Center
+              </h2>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  We had the privilege to contribute to the furnishing of this charming hotel apartment nestled in the heart of the historic city center of Delft, The Netherlands. Designed with thoughtful attention by Valk Design and operated by BizzStay, these short-term stay apartments combine tradition with contemporary comfort.
+                </p>
+                <p>
+                  In homage to Delft's heritage, the design incorporates the iconic Delft blue as a recurring accent—most strikingly in the bespoke kitchens. This bold color choice is elegantly balanced with natural wood tones, tactile textiles, and soft golden elements to create a warm, welcoming atmosphere.
+                </p>
+              </div>
+            </AnimatedElement>
+
+            {/* Image - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/bizzstay_sfeer/SFEER-9.jpg"
+                  alt="BizzStay Delft - Hotel apartment interior"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+          </div>
+
+          {/* Second Row - Image Left, Text Right */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-24">
+            {/* Image - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="lg:order-1">
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/bizzstay_sfeer/SFEER-12.jpg"
+                  alt="BizzStay Delft - Custom furniture details"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+
+            {/* Text Content - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2} className="space-y-6 lg:order-2">
+              <h3 className="text-2xl font-bold tracking-tight text-black">
+                Turnkey Custom Furniture Solutions
+              </h3>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  Our role encompassed the complete turnkey delivery of all custom furniture—from open living areas and compact kitchens to smart workspace nooks, bedrooms, and stylish bathroom vanities. We carefully selected materials for both aesthetics and durability, including fingerprint-resistant MDF with wood-look HPL, Compact HPL, and premium Italian kitchen countertops with a marble finish.
+                </p>
+                <p>
+                  Each apartment is tailored to offer both elegance and functionality. From integrated bunk beds and clever storage solutions to sculptural lighting and layered textures, every detail contributes to a refined, hotel-like experience that feels like home.
+                </p>
+              </div>
+            </AnimatedElement>
           </div>
         </div>
       </section>

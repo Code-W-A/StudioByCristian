@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "@/components/icons/arrow-right"
 import AnimatedElement from "@/components/animated-element"
 import HeroSection from "@/components/hero-section"
-import { Star, Quote, Mail, Globe, MapPin, Send, Settings, Users, Sparkles, Wifi, TrendingUp, Home, Wrench, Palette, Package, Plane, Armchair, Hammer, Check } from "lucide-react"
+import { Quote, Mail, Globe, MapPin, Send, Settings, Users, Sparkles, Wifi, TrendingUp, Home, Wrench, Palette, Package, Plane, Armchair, Hammer, Check } from "lucide-react"
 import { motion } from "framer-motion"
 import ContactForm from "@/components/contact-form"
 
@@ -17,7 +17,7 @@ const sections = [
       "We begin by understanding the function and purpose of each space, aligning it with the desired mood, lifestyle, or brand identity. Together with our clients, we define the look and feel, ensuring every element supports the experience they envision. To bring ideas to life clearly and collaboratively, we provide detailed visualizations and 3D renderings, helping us explore possibilities and ensure the final result is as intentional as it is beautiful.",
     imageSrc: "/about-us/good-design-is-obvious.jpg",
     linkText: "Learn More",
-    linkHref: "#",
+    linkHref: "/design",
   },
   {
     title: "Design is where science meets art — and both serve function.",
@@ -27,7 +27,7 @@ const sections = [
     ],
     imageSrc: "/about-us/Design-where-science-art-break.jpg",
     linkText: "Learn More",
-    linkHref: "#",
+    linkHref: "/design",
   },
   {
     title: "Where ideas take shape — with precision, creativity, and craftsmanship.",
@@ -35,7 +35,7 @@ const sections = [
       "When you choose to work with us on custom furniture, you're entering the final and most tangible stage of the design process: transforming vision into reality. We collaborate with skilled makers and advanced production facilities capable of working with an extensive range of materials — including solid wood, veneer, HPL, MDF, professional lacquers, steel, glass, marble, quartz, and more. We also handle upholstery and fabric production, allowing for full flexibility in both function and style. Every piece is the result of close collaboration between our engineers, project managers, and production partners — all working together to deliver tailored solutions, no matter how ambitious the idea. If you can imagine it, we can make it real.",
     imageSrc: "/about-us/furniture-production-section.jpg",
     linkText: "Learn More",
-    linkHref: "#",
+    linkHref: "/furniture-production",
   },
 ]
 
@@ -177,17 +177,17 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.3}>
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
+                  className="relative overflow-hidden rounded-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/extra Custom Furniture/Thijs_Overveen/_EWP6104.jpg"
+                    src="/extra Custom Furniture/Thijs_Overveen/_EWP6085.jpg"
                     alt="Custom Furniture"
-                    width={800}
-                    height={600}
+                    width={600}
+                    height={750}
                     className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
+                    style={{ aspectRatio: '4/5' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
               </AnimatedElement>
             </div>
@@ -242,17 +242,17 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.5} className="lg:order-1">
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
+                  className="relative overflow-hidden rounded-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/extra design/hero-design.png"
+                    src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5919.jpg"
                     alt="Interior Design"
-                    width={800}
-                    height={800}
+                    width={600}
+                    height={750}
                     className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
+                    style={{ aspectRatio: '4/5' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
               </AnimatedElement>
             </div>
@@ -307,17 +307,17 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.7}>
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
+                  className="relative overflow-hidden rounded-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/turn-key-management-amsterdam-apartment-2/Amsteldijk-Duplex-Appartments-1-1-scaled.jpg.jpeg"
+                    src="/turn-key-management-page/Private-Villa-Wassenaar-Category-1.jpg.jpeg"
                     alt="Interior Renovation"
-                    width={800}
-                    height={800}
+                    width={600}
+                    height={750}
                     className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
+                    style={{ aspectRatio: '4/5' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
               </AnimatedElement>
             </div>
@@ -361,10 +361,9 @@ export default function AboutUsPage() {
               {/* Turn-key process */}
               <AnimatedElement animationType="fadeInUp" delay={0.2}>
                 <motion.div
-                  className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 h-full relative overflow-hidden group"
+                  className="bg-white rounded-2xl border border-gray-100 p-8 h-full relative overflow-hidden group"
                   whileHover={{ 
                     y: -4,
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
                     transition: { duration: 0.4, ease: "easeOut" } 
                   }}
                   initial={{ opacity: 0, y: 20 }}
@@ -386,10 +385,9 @@ export default function AboutUsPage() {
               {/* Flexible team */}
               <AnimatedElement animationType="fadeInUp" delay={0.3}>
                 <motion.div
-                  className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 h-full relative overflow-hidden group"
+                  className="bg-white rounded-2xl border border-gray-100 p-8 h-full relative overflow-hidden group"
                   whileHover={{ 
                     y: -4,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                     transition: { duration: 0.3 } 
                   }}
                   initial={{ opacity: 0, y: 20 }}
@@ -411,10 +409,9 @@ export default function AboutUsPage() {
               {/* Tailored solutions */}
               <AnimatedElement animationType="fadeInUp" delay={0.4}>
                 <motion.div
-                  className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 h-full relative overflow-hidden group"
+                  className="bg-white rounded-2xl border border-gray-100 p-8 h-full relative overflow-hidden group"
                   whileHover={{ 
                     y: -4,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                     transition: { duration: 0.3 } 
                   }}
                   initial={{ opacity: 0, y: 20 }}
@@ -436,10 +433,9 @@ export default function AboutUsPage() {
               {/* Remote collaboration */}
               <AnimatedElement animationType="fadeInUp" delay={0.5}>
                 <motion.div
-                  className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 h-full relative overflow-hidden group"
+                  className="bg-white rounded-2xl border border-gray-100 p-8 h-full relative overflow-hidden group"
                   whileHover={{ 
                     y: -4,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                     transition: { duration: 0.3 } 
                   }}
                   initial={{ opacity: 0, y: 20 }}
@@ -461,10 +457,9 @@ export default function AboutUsPage() {
               {/* Expansion-ready */}
               <AnimatedElement animationType="fadeInUp" delay={0.6}>
                 <motion.div
-                  className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 h-full relative overflow-hidden group"
+                  className="bg-white rounded-2xl border border-gray-100 p-8 h-full relative overflow-hidden group"
                   whileHover={{ 
                     y: -4,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                     transition: { duration: 0.3 } 
                   }}
                   initial={{ opacity: 0, y: 20 }}
@@ -486,10 +481,9 @@ export default function AboutUsPage() {
               {/* Expat-ready */}
               <AnimatedElement animationType="fadeInUp" delay={0.7}>
                 <motion.div
-                  className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 h-full relative overflow-hidden group"
+                  className="bg-white rounded-2xl border border-gray-100 p-8 h-full relative overflow-hidden group"
                   whileHover={{ 
                     y: -4,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                     transition: { duration: 0.3 } 
                   }}
                   initial={{ opacity: 0, y: 20 }}
@@ -609,17 +603,17 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.3}>
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
+                  className="relative overflow-hidden rounded-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5992.jpg"
+                    src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5923.jpg"
                     alt="Essentials Bundle - Apartment Design"
-                    width={800}
-                    height={800}
+                    width={600}
+                    height={750}
                     className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
+                    style={{ aspectRatio: '4/5' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
               </AnimatedElement>
             </div>
@@ -674,17 +668,17 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.5} className="lg:order-1">
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
+                  className="relative overflow-hidden rounded-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5886.jpg"
+                    src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5900.jpg"
                     alt="Design+Furniture Bundle - Custom Furniture Production"
-                    width={800}
-                    height={450}
+                    width={600}
+                    height={750}
                     className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
+                    style={{ aspectRatio: '4/5' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
               </AnimatedElement>
             </div>
@@ -739,17 +733,17 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.7}>
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
+                  className="relative overflow-hidden rounded-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/turn-key-management-page/Turn-Key-Header-Right-Image.jpg.jpeg"
+                    src="/extra Custom Furniture/Thijs_Overveen/_EWP6076.jpg"
                     alt="Turn-key Bundle - Complete Renovation"
-                    width={800}
-                    height={600}
+                    width={600}
+                    height={750}
                     className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
+                    style={{ aspectRatio: '4/5' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
               </AnimatedElement>
             </div>
@@ -804,17 +798,17 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.9} className="lg:order-1">
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl shadow-2xl group w-full"
+                  className="relative overflow-hidden rounded-2xl group w-full"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/laren-house-concept/Laren-House-Concept-2-1-scaled.jpg.jpeg"
+                    src="/laren-house-concept/Laren-House-Concept-9-768x1147.jpg.jpeg"
                     alt="Relocation Bundle - Luxury Home Setup"
-                    width={800}
-                    height={600}
+                    width={600}
+                    height={750}
                     className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
+                    style={{ aspectRatio: '4/5' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
               </AnimatedElement>
             </div>
@@ -822,7 +816,7 @@ export default function AboutUsPage() {
           
           <AnimatedElement animationType="fadeInUp" delay={0.6} className="text-center mt-16">
             <motion.div
-              className="inline-flex items-center bg-gradient-to-r from-gray-50 to-gray-100 px-8 py-4 rounded-2xl shadow-lg border border-gray-200"
+              className="inline-flex items-center bg-gradient-to-r from-gray-50 to-gray-100 px-8 py-4 rounded-2xl border border-gray-200"
               whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
             >
               <span className="text-black font-bold text-xl mr-3"><Check className="w-5 h-5 text-black" /></span>
@@ -841,7 +835,7 @@ export default function AboutUsPage() {
         >
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div
-              className={`grid items-start gap-8 lg:grid-cols-2 lg:gap-12 ${index % 2 === 1 ? "lg:grid-flow-row-dense" : ""}`}
+              className={`grid items-stretch gap-8 lg:grid-cols-2 lg:gap-12 ${index % 2 === 1 ? "lg:grid-flow-row-dense" : ""}`}
             >
               <AnimatedElement
                 animationType={index % 2 === 1 ? "fadeInLeft" : "fadeInRight"}
@@ -850,18 +844,24 @@ export default function AboutUsPage() {
                 duration={0.8}
                 amount={0.2}
               >
-                <div className="inline-block">
+                <div className="flex items-center justify-center h-full">
                   <Image
                     src={section.imageSrc}
                     alt={section.title}
-                    width={800}
-                    height={600}
-                    className="rounded-lg shadow-xl transform transition-transform duration-500 hover:scale-105"
-                    style={{ height: 'auto', maxWidth: index === 0 || index === 2 ? '550px' : '500px', width: '100%' }}
+                    width={400}
+                    height={800}
+                    className="rounded-lg object-cover"
+                    style={{ 
+                      height: '100%', 
+                      minHeight: '400px',
+                      maxHeight: '600px', 
+                      width: 'auto',
+                      aspectRatio: '3/4'
+                    }}
                   />
                 </div>
               </AnimatedElement>
-              <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+              <div className={`flex flex-col justify-center h-full ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
                 <AnimatedElement
                   animationType={index % 2 === 1 ? "fadeInRight" : "fadeInLeft"}
                   delay={0.1}
@@ -930,7 +930,7 @@ export default function AboutUsPage() {
                 delay={index * 0.1}
               >
                 <motion.div
-                  className="bg-white p-8 rounded-xl shadow-lg relative"
+                  className="bg-white p-8 rounded-xl relative"
                   whileHover={{ y: -5, transition: { duration: 0.3 } }}
                 >
                   <div className="absolute top-4 right-4 text-gray-300">
@@ -938,11 +938,6 @@ export default function AboutUsPage() {
                   </div>
                   
                   <div className="mb-6">
-                    <div className="flex items-center mb-2">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
                     <div className="text-sm font-semibold text-black mb-1">{testimonial.type}</div>
                   </div>
 
@@ -1044,7 +1039,7 @@ export default function AboutUsPage() {
 
             <AnimatedElement animationType="fadeInRight" delay={0.3}>
               <motion.div
-                className="bg-black text-white p-8 sm:p-10 lg:p-12 rounded-xl shadow-2xl border border-black/20 relative"
+                className="bg-black text-white p-8 sm:p-10 lg:p-12 rounded-xl border border-black/20 relative"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -1095,14 +1090,13 @@ export default function AboutUsPage() {
                 whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
                 whileHover={{
                   scale: 1.03,
-                  boxShadow: "0px 10px 30px -5px rgba(0, 0, 0, 0.1)",
                   transition: { duration: 0.3 },
                 }}
                 viewport={{ once: true, amount: 0.3 }}
               >
                 <Link
                   href="/work-archive/luxury-stores"
-                  className="group block relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500"
+                  className="group block relative overflow-hidden rounded-xl transition-all duration-500"
                 >
                   {/* Background Image */}
                   <div className="w-full overflow-hidden">
@@ -1114,8 +1108,6 @@ export default function AboutUsPage() {
                       className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                   {/* Text Container */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="relative">
@@ -1154,14 +1146,13 @@ export default function AboutUsPage() {
                 whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
                 whileHover={{
                   scale: 1.03,
-                  boxShadow: "0px 10px 30px -5px rgba(0, 0, 0, 0.1)",
                   transition: { duration: 0.3 },
                 }}
                 viewport={{ once: true, amount: 0.3 }}
               >
                 <Link
                   href="/work-archive/private-homes"
-                  className="group block relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500"
+                  className="group block relative overflow-hidden rounded-xl transition-all duration-500"
                 >
                   <div className="w-full overflow-hidden">
                     <Image
@@ -1172,7 +1163,6 @@ export default function AboutUsPage() {
                       className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="relative">
                       <div className="absolute inset-0 border-2 border-white/30 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:border-white/60" />
@@ -1204,7 +1194,7 @@ export default function AboutUsPage() {
           </div>
           
           <AnimatedElement animationType="fadeInUp" delay={0.4} className="text-center mt-12">
-            <div className="bg-white p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
+            <div className="bg-white p-8 rounded-xl max-w-4xl mx-auto">
               <p className="text-gray-700 leading-relaxed italic">
                 Thank you to everyone who has been part of this journey — for the trust, the challenges, and the shared accomplishments. We look forward to continuing this work and shaping the spaces of tomorrow.
               </p>
@@ -1241,7 +1231,7 @@ export default function AboutUsPage() {
             </div>
             <AnimatedElement
               animationType="fadeInRight"
-              className="w-full rounded-lg shadow-xl overflow-hidden"
+              className="w-full rounded-lg overflow-hidden"
               delay={0.2}
               duration={0.8}
               amount={0.2}

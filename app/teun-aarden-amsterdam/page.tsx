@@ -279,6 +279,74 @@ export default function TeunAardenAmsterdamPage() {
         </div>
       </section>
 
+      {/* Project Description Section */}
+      <section className="py-16 lg:py-24 bg-white text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Text Content - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="space-y-6">
+              <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
+                Elegant Minimalistic Apartment
+              </h2>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  This elegant and minimalistic apartment was crafted with refined simplicity in mind. Designed for Teun Aarden and realized in collaboration with contractor VBS, the project reflects a harmonious blend of functionality and timeless design, right in the heart of Amsterdam.
+                </p>
+                <p>
+                  The kitchen is the true centerpiece of the space—defined by its warm travertine stone used for countertops and backsplash, paired with handle-less cabinetry in a soft, muted tone. Open shelving adds a light, airy feel and allows functional objects to double as decoration.
+                </p>
+              </div>
+            </AnimatedElement>
+
+            {/* Image - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01431.jpg"
+                  alt="Teun Aarden Amsterdam - Kitchen centerpiece"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+          </div>
+
+          {/* Second Row - Image Left, Text Right */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-24">
+            {/* Image - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="lg:order-1">
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01661.jpg"
+                  alt="Teun Aarden Amsterdam - Bathroom and bedroom details"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+
+            {/* Text Content - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2} className="space-y-6 lg:order-2">
+              <h3 className="text-2xl font-bold tracking-tight text-black">
+                Quality Materials & Smart Detailing
+              </h3>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  High-end appliances are seamlessly integrated, including a Quooker tap and Siemens oven, alongside design-forward additions like a SMEG toaster and an espresso machine. Built-in LED lighting subtly illuminates the shelves, enhancing both visibility and ambiance.
+                </p>
+                <p>
+                  The bathroom continues the minimalist theme with a custom-made, seamless white basin and wall-mounted faucet. In the bedroom, we created a custom wardrobe that blends discreetly into the niche. This project is a celebration of clarity, quality materials, and smart detailing.
+                </p>
+              </div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">

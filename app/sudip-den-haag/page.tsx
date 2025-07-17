@@ -314,6 +314,74 @@ export default function SudipDenHaagPage() {
         </div>
       </section>
 
+      {/* Project Description Section */}
+      <section className="py-16 lg:py-24 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Text Content - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="space-y-6">
+              <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
+                Complete Custom Cabinetry
+              </h2>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  This residential project in Den Haag was a full-scope interior cabinetry assignment that showcases a modern and refined aesthetic. Every element of the furniture was tailor-made to integrate harmoniously within the space, offering both visual appeal and highly functional solutions.
+                </p>
+                <p>
+                  The design embraces a neutral palette, with matte finishes and warm undertones. We used fingerprint-resistant HPL and premium MDF to ensure durability and a clean, timeless look.
+                </p>
+              </div>
+            </AnimatedElement>
+
+            {/* Image - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Sudip_Den Haag/_EWP2334.jpg"
+                  alt="Sudip Den Haag - Custom wardrobes and TV cabinetry"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+          </div>
+
+          {/* Second Row - Image Left, Text Right */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-24">
+            {/* Image - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="lg:order-1">
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Sudip_Den Haag/_EWP2319.jpg"
+                  alt="Sudip Den Haag - Home office and custom shelving"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+
+            {/* Text Content - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2} className="space-y-6 lg:order-2">
+              <h3 className="text-2xl font-bold tracking-tight text-black">
+                Expressive Custom Craftsmanship
+              </h3>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  Key elements include custom wardrobes and TV cabinetry with seamless fronts and recessed handles, an elegant home office corner with backlit open shelves and a concealed kitchenette with gold-toned fixtures, and creative wall detailing with vertical slatted panels.
+                </p>
+                <p>
+                  Multi-purpose furniture, such as a mobile storage unit and display walls that subtly reflect the client's cultural and artistic identity. This project is a strong example of how bespoke craftsmanship can elevate everyday living — making each corner not just efficient, but expressive.
+                </p>
+              </div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">

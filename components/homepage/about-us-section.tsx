@@ -27,7 +27,7 @@ export default function AboutUsSection() {
                             className="aspect-w-4 aspect-h-3 w-full overflow-hidden rounded-xl shadow-md"
           >
             <Image
-              src="/home-page/about-us-section.png"
+              src="/WassenaarPlan2000/Round 2/_EWP5710.jpg"
               alt="Studio by Cristian team or office"
               width={800}
               height={600}

@@ -14,6 +14,7 @@ interface ParallaxSectionProps {
   overlayClassName?: string // e.g., 'bg-black/30' for a dark scrim
   className?: string // Additional classes for the section
   id?: string
+  objectPosition?: string // e.g., 'center', 'top', 'bottom', '50% 30%'
 }
 
 export default function ParallaxSection({
@@ -25,6 +26,7 @@ export default function ParallaxSection({
   overlayClassName,
   className = "",
   id,
+  objectPosition = "center",
 }: ParallaxSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -47,9 +49,10 @@ export default function ParallaxSection({
         <Image
           src={imageUrl || "/placeholder.svg"}
           alt={imageAlt}
-          layout="fill"
-          objectFit="cover"
-          className="pointer-events-none"
+          fill={true}
+          sizes="100vw"
+          className="pointer-events-none object-cover"
+          style={{ objectPosition }}
           priority // Consider priority for LCP images like heroes
         />
       </motion.div>

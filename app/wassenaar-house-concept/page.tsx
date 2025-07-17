@@ -6,7 +6,6 @@ import ParallaxSection from "@/components/parallax-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import ProjectVideoShowcase from "@/components/project-video-showcase"
 
 const projectDetails = {
   title: "Wassenaar House Concept",
@@ -83,12 +82,7 @@ export default function WassenaarHouseConceptPage() {
         </div>
       </section>
 
-      {/* Project Video Showcase */}
-      <ProjectVideoShowcase 
-        videoId="1097920320"
-        title="Wassenaar House Concept - Scandinavian Design"
-        description="Explore the complete renovation and design concept for this beautiful Wassenaar residence featuring Scandinavian-inspired interiors and modern functionality"
-      />
+
 
       {/* Dynamic Content Layout */}
       <section className="py-12 lg:py-16 bg-white text-black">

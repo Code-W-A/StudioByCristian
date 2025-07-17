@@ -5,7 +5,7 @@ import AnimatedElement from "@/components/animated-element"
 import ParallaxSection from "@/components/parallax-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowLeft, Star, Quote } from "lucide-react"
+import { ArrowLeft, Quote } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import { motion } from "framer-motion"
 import { allTestimonials } from "@/lib/testimonials-data"
@@ -141,11 +141,6 @@ export default function CredentialsPage() {
                   </div>
                   
                   <div className="mb-6">
-                    <div className="flex items-center mb-2">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
                     <div className="text-sm font-semibold text-black mb-1">{testimonial.type}</div>
                   </div>
 

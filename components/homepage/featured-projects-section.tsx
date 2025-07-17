@@ -55,13 +55,13 @@ export default function FeaturedProjectsSection() {
               <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
                 Featured Projects
               </h2>
-              {/* Elegant underline */}
+              {/* Elegant underline - Hidden on mobile */}
               <motion.div
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-24 bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 rounded-full"
+                className="hidden lg:block absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-24 bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 rounded-full"
               />
             </motion.div>
             
@@ -105,27 +105,27 @@ export default function FeaturedProjectsSection() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-700" />
                     
                     {/* Floating Content Card */}
-                    <div className="absolute bottom-8 left-8 right-8">
+                    <div className="absolute bottom-4 left-4 right-4 lg:bottom-8 lg:left-8 lg:right-8">
                       <motion.div
                         initial={{ y: 20, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="backdrop-blur-xl bg-white/10 rounded-xl p-8 border border-white/20 group-hover:bg-white/15 group-hover:border-white/30 transition-all duration-500"
+                        className="backdrop-blur-xl bg-white/10 rounded-xl p-4 lg:p-8 border border-white/20 group-hover:bg-white/15 group-hover:border-white/30 transition-all duration-500"
                       >
-                        <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
+                        <h3 className="text-xl lg:text-3xl font-bold text-white mb-2 lg:mb-4 leading-tight">
                           {featuredProjectItems[0].name}
                         </h3>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-3">
-                            <div className="w-12 h-px bg-white/60" />
-                            <span className="text-white/80 text-sm font-medium tracking-wide uppercase">
+                            <div className="w-8 lg:w-12 h-px bg-white/60" />
+                            <span className="text-white/80 text-xs lg:text-sm font-medium tracking-wide uppercase">
                               Featured Project
                             </span>
                           </div>
                           <motion.div
                             whileHover={{ x: 8 }}
                             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                            className="flex items-center space-x-2 text-white/90 font-medium"
+                            className="hidden lg:flex items-center space-x-2 text-white/90 font-medium"
                           >
                             <span>Explore</span>
                             <div className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center group-hover:border-white/60 transition-colors duration-300">
@@ -165,15 +165,15 @@ export default function FeaturedProjectsSection() {
                     
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/60 group-hover:to-black/70 transition-all duration-500" />
                     
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="backdrop-blur-sm bg-white/5 rounded-lg p-6 border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-500">
-                        <h3 className="text-xl font-semibold text-white mb-3 leading-tight">
+                    <div className="absolute bottom-4 left-4 right-4 lg:bottom-6 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:w-auto lg:max-w-lg lg:min-w-80">
+                      <div className="backdrop-blur-sm bg-white/5 rounded-lg p-4 lg:p-6 border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-500">
+                        <h3 className="text-lg lg:text-xl font-semibold text-white mb-2 lg:mb-3 leading-tight text-left">
                           {featuredProjectItems[1].name}
                         </h3>
                         <div className="flex items-center text-white/70 group-hover:text-white/90 transition-colors duration-300">
                           <span className="text-sm font-medium">View Project</span>
                           <motion.span
-                            className="ml-2"
+                            className="ml-2 hidden lg:inline"
                             whileHover={{ x: 4 }}
                             transition={{ type: "spring", stiffness: 400, damping: 25 }}
                           >
@@ -212,15 +212,15 @@ export default function FeaturedProjectsSection() {
                     
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/60 group-hover:to-black/70 transition-all duration-500" />
                     
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="backdrop-blur-sm bg-white/5 rounded-lg p-6 border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-500">
-                        <h3 className="text-xl font-semibold text-white mb-3 leading-tight">
+                    <div className="absolute bottom-4 left-4 right-4 lg:bottom-6 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:w-auto lg:max-w-lg lg:min-w-80">
+                      <div className="backdrop-blur-sm bg-white/5 rounded-lg p-4 lg:p-6 border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-500">
+                        <h3 className="text-lg lg:text-xl font-semibold text-white mb-2 lg:mb-3 leading-tight text-left">
                           {featuredProjectItems[2].name}
                         </h3>
                         <div className="flex items-center text-white/70 group-hover:text-white/90 transition-colors duration-300">
                           <span className="text-sm font-medium">View Project</span>
                           <motion.span
-                            className="ml-2"
+                            className="ml-2 hidden lg:inline"
                             whileHover={{ x: 4 }}
                             transition={{ type: "spring", stiffness: 400, damping: 25 }}
                           >
@@ -256,27 +256,27 @@ export default function FeaturedProjectsSection() {
                     
                     <div className="absolute inset-0 bg-gradient-to-tl from-black/70 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-700" />
                     
-                    <div className="absolute bottom-8 left-8 right-8">
+                    <div className="absolute bottom-4 left-4 right-4 lg:bottom-8 lg:left-8 lg:right-8">
                       <motion.div
                         initial={{ y: 20, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="backdrop-blur-xl bg-white/10 rounded-xl p-8 border border-white/20 group-hover:bg-white/15 group-hover:border-white/30 transition-all duration-500"
+                        className="backdrop-blur-xl bg-white/10 rounded-xl p-4 lg:p-8 border border-white/20 group-hover:bg-white/15 group-hover:border-white/30 transition-all duration-500"
                       >
-                        <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
+                        <h3 className="text-xl lg:text-3xl font-bold text-white mb-2 lg:mb-4 leading-tight">
                           {featuredProjectItems[3].name}
                         </h3>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-3">
-                            <div className="w-12 h-px bg-white/60" />
-                            <span className="text-white/80 text-sm font-medium tracking-wide uppercase">
+                            <div className="w-8 lg:w-12 h-px bg-white/60" />
+                            <span className="text-white/80 text-xs lg:text-sm font-medium tracking-wide uppercase">
                               Featured Project
                             </span>
                           </div>
                           <motion.div
                             whileHover={{ x: 8 }}
                             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                            className="flex items-center space-x-2 text-white/90 font-medium"
+                            className="hidden lg:flex items-center space-x-2 text-white/90 font-medium"
                           >
                             <span>Explore</span>
                             <div className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center group-hover:border-white/60 transition-colors duration-300">

@@ -104,14 +104,14 @@ export default function ProjectsGridSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                   
                   {/* Text Container with Animated Border */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="absolute bottom-0 left-0 right-0 p-3 lg:p-6">
                     <div className="relative">
                       {/* Animated Border */}
                       <div className="absolute inset-0 border-2 border-white/30 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:border-white/60" />
                       
                       {/* Backdrop Blur Container */}
-                      <div className="relative backdrop-blur-sm bg-white/10 rounded-lg p-4 border border-white/20 group-hover:bg-white/20 group-hover:border-white/40 transition-all duration-500">
-                        <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-white transition-colors duration-300">
+                      <div className="relative backdrop-blur-sm bg-white/10 rounded-lg p-2 lg:p-4 border border-white/20 group-hover:bg-white/20 group-hover:border-white/40 transition-all duration-500">
+                        <h3 className="text-lg lg:text-xl font-semibold text-white mb-1 lg:mb-2 group-hover:text-white transition-colors duration-300">
                           {project.name}
                         </h3>
                         
@@ -119,11 +119,11 @@ export default function ProjectsGridSection() {
                         <div className="h-0.5 w-0 bg-white/60 group-hover:w-full transition-all duration-700 ease-out" />
                         
                         {/* Explore Text */}
-                        <div className="mt-3 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
-                          <span className="text-white/80 text-sm font-medium flex items-center">
+                        <div className="mt-2 lg:mt-3 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
+                          <span className="text-white/80 text-xs lg:text-sm font-medium flex items-center">
                             Explore Project 
                             <motion.span 
-                              className="ml-2 inline-block"
+                              className="ml-2 inline-block hidden lg:inline"
                               initial={{ x: 0 }}
                               whileHover={{ x: 5 }}
                               transition={{ type: "spring", stiffness: 400, damping: 25 }}

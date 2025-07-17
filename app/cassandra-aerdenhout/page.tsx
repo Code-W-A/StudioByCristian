@@ -16,10 +16,6 @@ const projectDetails = {
   heroImage: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5858.jpg",
   images: [
     { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5858.jpg", alt: "Cassandra Aerdenhout - Interior view 1" },
-    { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5861.jpg", alt: "Cassandra Aerdenhout - Interior view 2" },
-    { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5870.jpg", alt: "Cassandra Aerdenhout - Interior view 3" },
-    { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5873.jpg", alt: "Cassandra Aerdenhout - Interior view 4" },
-    { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5877.jpg", alt: "Cassandra Aerdenhout - Interior view 5" },
     { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5886.jpg", alt: "Cassandra Aerdenhout - Interior view 6" },
     { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5893.jpg", alt: "Cassandra Aerdenhout - Interior view 7" },
     { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5900.jpg", alt: "Cassandra Aerdenhout - Interior view 8" },
@@ -61,7 +57,7 @@ export default function CassandraAerdenhoutPage() {
       {/* Project Video Showcase */}
       <ProjectVideoShowcase 
         videoId="1097919511"
-        title="Cassandra Aerdenhout - Custom Interior Design"
+        title="Cassandra Aerdenhout - Luxury Custom Furniture"
         description="Experience the elegant transformation of this Aerdenhout residence featuring bespoke furniture design and sophisticated interior architecture"
       />
 
@@ -107,6 +103,74 @@ export default function CassandraAerdenhoutPage() {
                 </div>
               </AnimatedElement>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Project Description Section */}
+      <section className="py-16 lg:py-24 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Text Content - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="space-y-6">
+              <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
+                Private Residence – Aerdenhout, The Netherlands
+              </h2>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  A refined interior project nestled in the exclusive surroundings of Aerdenhout, this private residence embodies elegance, precision, and timeless design. Our studio was entrusted with the complete production and installation of bespoke furniture for the kitchen and the library — both integral to the client's vision of sophistication and function.
+                </p>
+                <p>
+                  The kitchen was designed to be a true centerpiece — featuring custom dark wood cabinetry, a large island with 45-degree mitred joints, and a luxurious stone-look tile countertop imported from Italy.
+                </p>
+              </div>
+            </AnimatedElement>
+
+            {/* Image - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5886.jpg"
+                  alt="Cassandra Aerdenhout - Kitchen centerpiece"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+          </div>
+
+          {/* Second Row - Image Left, Text Right */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-24">
+            {/* Image - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="lg:order-1">
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5958.jpg"
+                  alt="Cassandra Aerdenhout - Library and reading area"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+
+            {/* Text Content - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2} className="space-y-6 lg:order-2">
+              <h3 className="text-2xl font-bold tracking-tight text-black">
+                Seamless Luxury & Timeless Design
+              </h3>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  The seamless finish is enhanced by concealed integrated lighting, slim vertical pendant lamps, and illuminated glass-fronted upper cabinets, creating an atmosphere of understated luxury and warmth. The thoughtful layout maximizes both space and visual impact.
+                </p>
+                <p>
+                  An additional bespoke request was the full-wall book cabinet in the reading area. Meticulously crafted from painted MDF and fingerprint-resistant materials, this expansive library combines functionality with minimalist elegance — offering ample closed storage below and open shelving above, all lit by refined top-mounted picture lights for a cozy and curated ambiance.
+                </p>
+              </div>
+            </AnimatedElement>
           </div>
         </div>
       </section>

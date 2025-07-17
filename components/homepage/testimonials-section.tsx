@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import AnimatedElement from "@/components/animated-element"
-import { Star, Quote } from "lucide-react"
+import { Quote } from "lucide-react"
 import { motion } from "framer-motion"
 import { featuredTestimonials } from "@/lib/testimonials-data"
 
@@ -52,13 +52,8 @@ export default function TestimonialsSection() {
                   <Quote className="w-10 h-10" />
                 </div>
                 
-                {/* Stars and Type */}
+                {/* Type */}
                 <div className="mb-6">
-                  <div className="flex items-center mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
                   <div className="inline-block bg-black text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
                     {testimonial.type}
                   </div>

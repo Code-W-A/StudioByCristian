@@ -240,6 +240,74 @@ export default function VBSKitchenAndLivingPage() {
         </div>
       </section>
 
+      {/* Project Description Section */}
+      <section className="py-16 lg:py-24 bg-white text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Text Content - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="space-y-6">
+              <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
+                Seamless Elegance in Wood and Stone
+              </h2>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  In this refined residential project, we delivered full custom furniture for the kitchen and living area, blending warmth and structure into one fluid design. Developed in collaboration with contractor VBS, the concept emphasizes a natural and neutral atmosphere.
+                </p>
+                <p>
+                  The kitchen island features a waterfall stone top with integrated breakfast seating and concealed storage, while a vertical open-shelf partition connects the space visually without closing it off. This element also houses the TV on the living side — a smart multifunctional centerpiece.
+                </p>
+              </div>
+            </AnimatedElement>
+
+            {/* Image - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00005.jpeg"
+                  alt="VBS Kitchen and Living - Kitchen island with waterfall stone top"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+          </div>
+
+          {/* Second Row - Image Left, Text Right */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-24">
+            {/* Image - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="lg:order-1">
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00010.jpeg"
+                  alt="VBS Kitchen and Living - Custom tall units and shelving"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+
+            {/* Text Content - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2} className="space-y-6 lg:order-2">
+              <h3 className="text-2xl font-bold tracking-tight text-black">
+                Timeless Design & Detail Execution
+              </h3>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  Custom tall units with push-to-open fronts and minimalist open shelves offer both elegant display and hidden functionality. The precision-matched oak grain across cabinetry and paneling brings coherence and sophistication.
+                </p>
+                <p>
+                  Recessed lighting and pendant fixtures highlight the clean architectural lines. A balance of openness, function, and intimacy — this project is a testament to timeless design and detail execution.
+                </p>
+              </div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">

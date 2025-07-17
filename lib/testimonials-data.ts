@@ -10,6 +10,14 @@ export interface Testimonial {
 
 export const allTestimonials: Testimonial[] = [
   {
+    name: "Dennis Kellner",
+    company: "BizzStay",
+    role: "Owner",
+    quote: "I've worked with Cristian and the Studio byCristian team for over six years—on everything from small jobs to fully furnished apartments. No matter the challenge, you can always count on them to finish the job and deliver with a smile. They're reliable, focused, and always committed to doing what's best for the client.",
+    type: "Long-term Partnership",
+    projectLink: "/bizzstay-delft-foto"
+  },
+  {
     name: "Thijs Mantel",
     company: "Private Client",
     role: "Homeowner",

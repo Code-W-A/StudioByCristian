@@ -12,7 +12,7 @@ const heroNavItems = [
     id: "design",
     title: "Interior Design",
     subtitle: "Creative direction that elevates your space — and how you experience it.",
-    imageUrl: "/home-page/Design.jpg.jpeg",
+    imageUrl: "/ravy-roy-new-pics/Lounge/Lounge _ 03.jpg",
     link: "/design",
     cta: "Explore Design",
   },
