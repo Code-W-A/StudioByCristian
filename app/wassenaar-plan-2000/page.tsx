@@ -11,6 +11,11 @@ import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import { X } from "lucide-react"
 
+// Generic transparent pixel used for blur placeholder
+const genericBlurDataURL = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=";
+// Quality for optimized images (1-100)
+const imageQuality = 100;
+
 const projectDetails = {
   title: "Wassenaar Plan 2000",
   category: "Custom Furniture",
@@ -47,22 +52,22 @@ const projectDetails = {
   ],
   
   additionalImages: [
-    { src: "/WassenaarPlan2000/Round 2/_EWP5727.jpg", alt: "Wassenaar Plan 2000 - Additional view 1" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5732.jpg", alt: "Wassenaar Plan 2000 - Additional view 2" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5727.jpg", alt: "Wassenaar Plan 2000 - Additional view 1" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5732.jpg", alt: "Wassenaar Plan 2000 - Additional view 2" },
     { src: "/WassenaarPlan2000/Round 2/_EWP5736.jpg", alt: "Wassenaar Plan 2000 - Additional view 3" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5739.jpg", alt: "Wassenaar Plan 2000 - Additional view 4" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5739.jpg", alt: "Wassenaar Plan 2000 - Additional view 4" },
     { src: "/WassenaarPlan2000/Round 2/_EWP5744.jpg", alt: "Wassenaar Plan 2000 - Additional view 5" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5751.jpg", alt: "Wassenaar Plan 2000 - Additional view 6" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5752.jpg", alt: "Wassenaar Plan 2000 - Additional view 7" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5754.jpg", alt: "Wassenaar Plan 2000 - Additional view 8" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5757.jpg", alt: "Wassenaar Plan 2000 - Additional view 9" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5760.jpg", alt: "Wassenaar Plan 2000 - Additional view 10" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5763.jpg", alt: "Wassenaar Plan 2000 - Additional view 11" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5767.jpg", alt: "Wassenaar Plan 2000 - Additional view 12" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5773.jpg", alt: "Wassenaar Plan 2000 - Additional view 13" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5780.jpg", alt: "Wassenaar Plan 2000 - Additional view 14" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5781.jpg", alt: "Wassenaar Plan 2000 - Additional view 15" },
-    { src: "/WassenaarPlan2000/Round 2/_EWP5786.jpg", alt: "Wassenaar Plan 2000 - Additional view 16" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5751.jpg", alt: "Wassenaar Plan 2000 - Additional view 6" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5752.jpg", alt: "Wassenaar Plan 2000 - Additional view 7" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5754.jpg", alt: "Wassenaar Plan 2000 - Additional view 8" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5757.jpg", alt: "Wassenaar Plan 2000 - Additional view 9" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5760.jpg", alt: "Wassenaar Plan 2000 - Additional view 10" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5763.jpg", alt: "Wassenaar Plan 2000 - Additional view 11" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5767.jpg", alt: "Wassenaar Plan 2000 - Additional view 12" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5773.jpg", alt: "Wassenaar Plan 2000 - Additional view 13" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5780.jpg", alt: "Wassenaar Plan 2000 - Additional view 14" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5781.jpg", alt: "Wassenaar Plan 2000 - Additional view 15" },
+    // { src: "/WassenaarPlan2000/Round 2/_EWP5786.jpg", alt: "Wassenaar Plan 2000 - Additional view 16" },
     { src: "/WassenaarPlan2000/Round 2/_EWP5794.jpg", alt: "Wassenaar Plan 2000 - Additional view 17" },
     { src: "/WassenaarPlan2000/Round 2/_EWP5798.jpg", alt: "Wassenaar Plan 2000 - Additional view 18" },
     { src: "/WassenaarPlan2000/Round 2/_EWP5806.jpg", alt: "Wassenaar Plan 2000 - Additional view 19" },
@@ -280,9 +285,12 @@ export default function WassenaarPlan2000Page() {
                   width={800}
                   height={600}
                   loading="lazy"
+                  quality={imageQuality}
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                   style={{ aspectRatio: '4/3' }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  placeholder="blur"
+                  blurDataURL={genericBlurDataURL}
                 />
                   </div>
                 </AnimatedElement>
@@ -300,8 +308,8 @@ export default function WassenaarPlan2000Page() {
           
           <div className="space-y-12">
             {/* Grid of images */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projectDetails.additionalImages.slice(0, 6).map((image, index) => (
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.additionalImages.slice(0, 4).map((image, index) => (
                 <AnimatedElement
                   key={index}
                   animationType="fadeInUp"
@@ -314,33 +322,12 @@ export default function WassenaarPlan2000Page() {
                       width={600}
                       height={600}
                       loading="lazy"
+                      quality={imageQuality}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '1/1' }}
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Two large images */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.additionalImages.slice(6, 8).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={800}
-                      height={600}
-                      loading="lazy"
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '4/3' }}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      placeholder="blur"
+                      blurDataURL={genericBlurDataURL}
                     />
                   </div>
                 </AnimatedElement>
@@ -351,45 +338,24 @@ export default function WassenaarPlan2000Page() {
             <AnimatedElement animationType="fadeInUp" delay={0.3}>
               <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
                 <Image
-                  src={projectDetails.additionalImages[8].src}
-                  alt={projectDetails.additionalImages[8].alt}
+                  src={projectDetails.additionalImages[4].src}
+                  alt={projectDetails.additionalImages[4].alt}
                   width={1400}
                   height={800}
                   loading="lazy"
+                  quality={imageQuality}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                   style={{ aspectRatio: '16/9' }}
+                  placeholder="blur"
+                  blurDataURL={genericBlurDataURL}
                 />
               </div>
             </AnimatedElement>
 
-            {/* More images grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projectDetails.additionalImages.slice(9, 15).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={600}
-                      height={600}
-                      loading="lazy"
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '1/1' }}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
             {/* Final images */}
             <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.additionalImages.slice(15, 17).map((image, index) => (
+              {projectDetails.additionalImages.slice(5).map((image, index) => (
                 <AnimatedElement
                   key={index}
                   animationType="fadeInUp"
@@ -402,33 +368,12 @@ export default function WassenaarPlan2000Page() {
                       width={800}
                       height={600}
                       loading="lazy"
+                      quality={imageQuality}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '4/3' }}
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Remaining images */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {projectDetails.additionalImages.slice(17).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.05}
-                >
-                  <div className="relative overflow-hidden rounded-lg shadow-md bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={400}
-                      height={400}
-                      loading="lazy"
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '1/1' }}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      placeholder="blur"
+                      blurDataURL={genericBlurDataURL}
                     />
                   </div>
                 </AnimatedElement>

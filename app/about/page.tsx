@@ -749,7 +749,7 @@ export default function AboutUsPage() {
             </div>
 
             {/* Relocation Bundle - Text Right, Image Left */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16` items-start">
               <AnimatedElement animationType="fadeInLeft" delay={0.8} className="lg:order-2">
                 <div className="space-y-8">
                                      <div className="flex items-center space-x-4 mb-6">
