@@ -84,7 +84,7 @@ export default function WassenaarHouseConceptPage() {
 
 
 
-      {/* Dynamic Content Layout
+      {/* Dynamic Content Layout */}
       <section className="py-12 lg:py-16 bg-white text-black">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-16">
           
