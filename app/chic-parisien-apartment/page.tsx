@@ -12,36 +12,38 @@ import { motion } from "framer-motion"
 const projectDetails = {
   title: "Chic Parisien Apartment",
   category: "Design Projects",
-  heroImage: "/chic-parisien-apartment/Chic-Parisien-Apartment-1-1-scaled.jpg.jpeg",
+  heroImage: "/chic-parisien-apartment/Chic-Parisien-Apartment-Banner-scaled.jpg.jpeg",
   description: "When you say Paris, you do not simply name a place. Paris is a spirit enchanting and inspiring romantic, poetic and nostalgic hearts all over the world and many arts enthusiasts summon it through music, cuisine and interior decorations.",
   additionalText: "Our client fell in love with Paris and the Art Deco style, and wished to insert the Parisian spirit in the core of her home. The renovation is minimally invasive as for walls and partitions, but fully transformative in terms of design.",
   thirdText: "A chosen few pieces of furniture have been restored from the previous home, and settled alongside the light beige tones of the walls and smokey oak texture of the wooden floor. The modern kitchen is fully equipped with the latest technology and adorned with aged bronze metal accents. The bathrooms rejoice with strong mesh textures, lacquered hand made tiles, vintage floor tiles and elegant furniture pieces. Sightings of gold do occur, but bronze finishes and antique mirrors rule the compositions alongside colour accents of orange, greyish blue and olive green.",
   images: [
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-2-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Living area design" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-3-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Art Deco details" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-4-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Elegant furniture" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-5-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Kitchen design" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-11-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Interior details" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-12-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Bathroom design" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-13-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 1" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-14-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 2" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-15-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 3" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-16-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 4" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-20-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 5" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-21-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 6" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-22-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 7" },
-    { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-23-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Final view" },
-    // Susan Pyke Photos - Same Project
+    // COMMENTED OUT - Chic Parisien Apartment folder images - Can be re-enabled later
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-2-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Living area design" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-3-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Art Deco details" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-4-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Elegant furniture" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-5-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Kitchen design" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-11-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Interior details" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-12-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Bathroom design" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-13-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 1" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-14-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 2" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-15-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 3" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-16-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 4" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-20-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 5" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-21-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 6" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-22-1-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Detail view 7" },
+    // { src: "/chic-parisien-apartment/Chic-Parisien-Apartment-23-scaled.jpg.jpeg", alt: "Chic Parisien Apartment - Final view" },
+    
+    // Susan Pyke Photos - NOW ACTIVE
     { src: "/Susan Pyke/Living 01.jpg", alt: "Chic Parisien Apartment - Living room view 1" },
     { src: "/Susan Pyke/Living 02.jpg", alt: "Chic Parisien Apartment - Living room view 2" },
     { src: "/Susan Pyke/Living 03.jpg", alt: "Chic Parisien Apartment - Living room view 3" },
     { src: "/Susan Pyke/Dining 01.jpg", alt: "Chic Parisien Apartment - Dining area view 1" },
-    { src: "/Susan Pyke/Dining 02.jpg", alt: "Chic Parisien Apartment - Dining area view 2" },
+    // { src: "/Susan Pyke/Dining 02.jpg", alt: "Chic Parisien Apartment - Dining area view 2" },
     { src: "/Susan Pyke/Dining 03.jpg", alt: "Chic Parisien Apartment - Dining area view 3" },
     { src: "/Susan Pyke/Dining 04.jpg", alt: "Chic Parisien Apartment - Dining area view 4" },
     { src: "/Susan Pyke/Kitchen 01.jpg", alt: "Chic Parisien Apartment - Kitchen detail 1" },
     { src: "/Susan Pyke/Kitchen 02.jpg", alt: "Chic Parisien Apartment - Kitchen detail 2" },
-    { src: "/Susan Pyke/Master Bedroom 01.jpg", alt: "Chic Parisien Apartment - Master bedroom view 1" },
+    // { src: "/Susan Pyke/Master Bedroom 01.jpg", alt: "Chic Parisien Apartment - Master bedroom view 1" },
     { src: "/Susan Pyke/Master Bedroom 02.jpg", alt: "Chic Parisien Apartment - Master bedroom view 2" },
     { src: "/Susan Pyke/Bedroom Camille 01.jpg", alt: "Chic Parisien Apartment - Bedroom Camille" },
     { src: "/Susan Pyke/Bedroom Noemie 01.jpg", alt: "Chic Parisien Apartment - Bedroom Noemie view 1" },
@@ -57,6 +59,9 @@ const projectDetails = {
     { src: "/Susan Pyke/Laundry 01.jpg", alt: "Chic Parisien Apartment - Laundry room" },
   ]
 }
+
+// http://localhost:3000/_next/image?url=%2FSusan%20Pyke%2FDining%2004.jpg&w=1080&q=75
+// http://localhost:3000/_next/image?url=%2FSusan%20Pyke%2FMaster%20Bedroom%2001.jpg&w=1200&q=75
 
 export default function ChicParisienApartmentPage() {
   return (
@@ -123,8 +128,8 @@ export default function ChicParisienApartmentPage() {
                   <Image
                     src={projectDetails.images[1].src}
                     alt={projectDetails.images[1].alt}
-                    width={800}
-                    height={600}
+                    width={1200}
+                    height={900}
                     className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     style={{ aspectRatio: '4/3' }}
                   />
@@ -152,8 +157,8 @@ export default function ChicParisienApartmentPage() {
                   <Image
                     src={projectDetails.images[2].src}
                     alt={projectDetails.images[2].alt}
-                    width={800}
-                    height={600}
+                    width={1200}
+                    height={900}
                     className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     style={{ aspectRatio: '4/3' }}
                   />
@@ -182,8 +187,8 @@ export default function ChicParisienApartmentPage() {
                   <Image
                     src={projectDetails.images[4].src}
                     alt={projectDetails.images[4].alt}
-                    width={800}
-                    height={600}
+                    width={1200}
+                    height={900}
                     className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     style={{ aspectRatio: '4/3' }}
                   />
@@ -208,8 +213,8 @@ export default function ChicParisienApartmentPage() {
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      width={600}
-                      height={600}
+                      width={900}
+                      height={900}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '1/1' }}
                     />
@@ -244,8 +249,8 @@ export default function ChicParisienApartmentPage() {
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      width={800}
-                      height={600}
+                      width={1200}
+                      height={900}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '4/3' }}
                     />
@@ -280,8 +285,8 @@ export default function ChicParisienApartmentPage() {
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      width={600}
-                      height={600}
+                      width={900}
+                      height={900}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '1/1' }}
                     />
@@ -316,8 +321,8 @@ export default function ChicParisienApartmentPage() {
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      width={600}
-                      height={600}
+                      width={800}
+                      height={800}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '1/1' }}
                     />
@@ -326,20 +331,20 @@ export default function ChicParisienApartmentPage() {
               ))}
             </div>
 
-            {/* Dining Area - Four images grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Dining Area - Two images grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               {projectDetails.images.slice(17, 21).map((image, index) => (
                 <AnimatedElement
                   key={index}
                   animationType="fadeInUp"
-                  delay={index * 0.05}
+                  delay={index * 0.1}
                 >
                   <div className="relative overflow-hidden rounded-lg shadow-md bg-gray-100">
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      width={400}
-                      height={400}
+                      width={700}
+                      height={700}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '1/1' }}
                     />

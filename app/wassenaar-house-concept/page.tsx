@@ -51,6 +51,8 @@ const projectDetails = {
   ]
 }
 
+// http://localhost:3000/_next/image?url=%2Fwasenaar-house-concept-page%2FWassenaar-House-Concept-10.jpg.jpeg&w=1080&q=75
+
 export default function WassenaarHouseConceptPage() {
   return (
     <div className="bg-white text-black">
@@ -95,10 +97,10 @@ export default function WassenaarHouseConceptPage() {
                 <Image
                   src={projectDetails.gallery[0].src}
                   alt={projectDetails.gallery[0].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </div>
               <div className="space-y-6">
@@ -116,20 +118,20 @@ export default function WassenaarHouseConceptPage() {
                 <Image
                   src={projectDetails.gallery[1].src}
                   alt={projectDetails.gallery[1].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </div>
               <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
                 <Image
                   src={projectDetails.gallery[2].src}
                   alt={projectDetails.gallery[2].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </div>
             </div>
@@ -147,10 +149,10 @@ export default function WassenaarHouseConceptPage() {
                 <Image
                   src={projectDetails.gallery[3].src}
                   alt={projectDetails.gallery[3].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </div>
             </div>
@@ -163,10 +165,10 @@ export default function WassenaarHouseConceptPage() {
                 <Image
                   src={projectDetails.gallery[4].src}
                   alt={projectDetails.gallery[4].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </div>
               <div className="space-y-6">
@@ -184,10 +186,10 @@ export default function WassenaarHouseConceptPage() {
                 <Image
                   src={projectDetails.gallery[5].src}
                   alt={projectDetails.gallery[5].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </div>
               <div className="space-y-6">
@@ -218,8 +220,8 @@ export default function WassenaarHouseConceptPage() {
                     alt={image.alt}
                     width={1200}
                     height={900}
-                    className="w-full h-auto object-contain transition-transform duration-300 hover:scale-105"
-                    style={{ display: 'block' }}
+                    className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+                    style={{ aspectRatio: '4/3' }}
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>

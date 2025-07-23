@@ -831,9 +831,23 @@ export default function AboutUsPage() {
       {sections.map((section, index) => (
         <section
           key={index}
-          className={`py-12 lg:py-20 ${index % 2 === 0 ? "bg-white text-black" : "bg-gray-50 text-black"}`}
+          className={`py-12 lg:py-20 bg-gray-50 text-black"`}
         >
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Add title only for the first section */}
+            {index === 0 && (
+              <AnimatedElement
+                animationType="fadeInUp"
+                className="text-center mb-16"
+                delay={0.1}
+                duration={0.7}
+                amount={0.3}
+              >
+                <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl mb-12">
+                  Our Design Philosophy
+                </h2>
+              </AnimatedElement>
+            )}
             <div
               className={`grid items-stretch gap-8 lg:grid-cols-2 lg:gap-12 ${index % 2 === 1 ? "lg:grid-flow-row-dense" : ""}`}
             >
@@ -1064,8 +1078,8 @@ export default function AboutUsPage() {
 
       
 
-      {/* Work Archive Section */}
-      <section className="py-16 lg:py-20 bg-gray-50 text-black">
+      {/* Work Archive Section - DISABLED - Can be re-enabled by changing false to true */}
+      {false && <section className="py-16 lg:py-20 bg-gray-50 text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement
             animationType="fadeInUp"
@@ -1201,10 +1215,10 @@ export default function AboutUsPage() {
             </div>
           </AnimatedElement>
         </div>
-      </section>
+      </section>}
 
       {/* Picasso Quote Section - Enhanced with staggered animations */}
-      <section className="py-16 lg:py-24 bg-white text-black">
+      {/* <section className="py-16 lg:py-24 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="text-center lg:text-left">
@@ -1250,7 +1264,7 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
-      
+       */}
       {/* Vimeo Script */}
       <script src="https://player.vimeo.com/api/player.js"></script>
     </div>

@@ -13,7 +13,7 @@ const navLinks = [
   { href: "/design", label: "Design" },
   { href: "/furniture-production", label: "Furnish" },
   { href: "/interior-renovation", label: "Renovate" },
-  { href: "/work-archive", label: "Work Archive" },
+  // { href: "/work-archive", label: "Work Archive" }, // COMMENTED OUT - Can be re-enabled later
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
 ]

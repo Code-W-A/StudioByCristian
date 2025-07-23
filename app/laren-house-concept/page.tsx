@@ -27,7 +27,7 @@ const projectDetails = {
     { src: "/laren-house-concept/Laren-House-Concept-18-scaled.jpg.jpeg", alt: "Laren House Concept - Detail view 3" },
     { src: "/laren-house-concept/Laren-House-Concept-19-1-scaled.jpg.jpeg", alt: "Laren House Concept - Detail view 4" },
     { src: "/laren-house-concept/Laren-House-Concept-20-1-scaled.jpg.jpeg", alt: "Laren House Concept - Detail view 5" },
-    { src: "/laren-house-concept/Laren-House-Concept-10-1-scaled.jpg.jpeg", alt: "Laren House Concept - Detail view 6" },
+    // { src: "/laren-house-concept/Laren-House-Concept-10-1-scaled.jpg.jpeg", alt: "Laren House Concept - Detail view 6" }, // COMMENTED OUT
     { src: "/laren-house-concept/Laren-House-Concept-11-scaled.jpg.jpeg", alt: "Laren House Concept - Detail view 7" },
     { src: "/laren-house-concept/Laren-House-Concept-17-scaled.jpg.jpeg", alt: "Laren House Concept - Detail view 8" },
   ]

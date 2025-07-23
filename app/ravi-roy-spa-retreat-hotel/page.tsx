@@ -21,15 +21,15 @@ const projectDetails = {
       images: [
         { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 01.jpg", alt: "Spatial composition overview" },
         { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 02.jpg", alt: "Interior spatial flow" },
-        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 03.jpg", alt: "Architectural detail view" },
-        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 04.jpg", alt: "Interior design element" }
+        // { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 03.jpg", alt: "Architectural detail view" }, // COMMENTED OUT
+        // { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 04.jpg", alt: "Interior design element" } // COMMENTED OUT
       ]
     },
     reception: {
       title: "Reception & Entry Experience",
       description: "Guests are welcomed into a space that sets the tone with organic lines, suspended greenery, golden lighting fixtures, and calming hues. Custom signage, flowing plant elements, and layered surfaces reflect a balance between elegance and nature.",
       images: [
-        { src: "/ravy-roy-new-pics/Reception/Reception_01.jpg", alt: "Reception area with organic design" },
+        // { src: "/ravy-roy-new-pics/Reception/Reception_01.jpg", alt: "Reception area with organic design" }, // COMMENTED OUT
         { src: "/ravy-roy-new-pics/Reception/Reception_02.jpg", alt: "Entry experience with greenery" },
         { src: "/ravy-roy-new-pics/Reception/Reception_03.jpg", alt: "Reception entrance details" },
         { src: "/ravy-roy-new-pics/Reception/Reception_04.jpg", alt: "Reception design detail" },
@@ -41,7 +41,7 @@ const projectDetails = {
       description: "The boutique offers a minimalist yet tactile retail experience, using open wooden shelving, neutral colors, and carefully placed lighting to highlight the homeopathy product lines.",
       images: [
         { src: "/ravy-roy-new-pics/Reception/Gift Shop_01.jpg", alt: "Gift shop boutique area" },
-        { src: "/ravy-roy-new-pics/Reception/Gift Shop_02.jpg", alt: "Gift shop retail display" }
+        // { src: "/ravy-roy-new-pics/Reception/Gift Shop_02.jpg", alt: "Gift shop retail display" } // COMMENTED OUT
       ]
     },
     restaurant: {
@@ -50,13 +50,13 @@ const projectDetails = {
       images: [
         { src: "/ravy-roy-new-pics/Lounge/Lounge _ 01.jpg", alt: "Restaurant lounge area" },
         { src: "/ravy-roy-new-pics/Lounge/Lounge _ 02.jpg", alt: "Lounge seating area" },
-        { src: "/ravy-roy-new-pics/Lounge/Lounge _ 03.jpg", alt: "Lounge with wooden columns" },
+        // { src: "/ravy-roy-new-pics/Lounge/Lounge _ 03.jpg", alt: "Lounge with wooden columns" }, // COMMENTED OUT
         { src: "/ravy-roy-new-pics/Lounge/Lounge _ 04.jpg", alt: "Lounge ambient lighting" },
         { src: "/ravy-roy-new-pics/Lounge/Lounge _ 05.jpg", alt: "Lounge relaxation area" },
         { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 01.jpg", alt: "Restaurant dining area" },
         { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 02.jpg", alt: "Restaurant seating arrangement" },
         { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 03.jpg", alt: "Restaurant traditional dining" },
-        { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 04.jpg", alt: "Restaurant bar area" },
+        // { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 04.jpg", alt: "Restaurant bar area" }, // COMMENTED OUT
         { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 05.jpg", alt: "Restaurant buffet area" },
         { src: "/ravy-roy-new-pics/Lounge/Restaurant _ 06.jpg", alt: "Restaurant additional view" }
       ]
@@ -66,7 +66,7 @@ const projectDetails = {
       description: "A multipurpose space designed for education, wellness lectures, and seminars. The design incorporates warm lighting, arched architectural elements, and ceiling murals reminiscent of open skies and calm mindsets.",
       images: [
         { src: "/ravy-roy-new-pics/Seminary/Seminary_01.jpg", alt: "Seminary room with arched elements" },
-        { src: "/ravy-roy-new-pics/Seminary/Seminary_02.jpg", alt: "Seminary room ceiling murals" }
+        // { src: "/ravy-roy-new-pics/Seminary/Seminary_02.jpg", alt: "Seminary room ceiling murals" } // COMMENTED OUT
       ]
     },
     offices: {
@@ -76,7 +76,7 @@ const projectDetails = {
         { src: "/ravy-roy-new-pics/Therapy/Consultation _ 01.jpg", alt: "Main consultation office" },
         { src: "/ravy-roy-new-pics/Therapy/Consultation _ 02.jpg", alt: "Consultation office arched niches" },
         { src: "/ravy-roy-new-pics/Therapy/Consultation _ 03.jpg", alt: "Consultation botanical setting" },
-        { src: "/ravy-roy-new-pics/Therapy/Consultation _ 04.jpg", alt: "Consultation office hand-painted cabinetry" }
+        // { src: "/ravy-roy-new-pics/Therapy/Consultation _ 04.jpg", alt: "Consultation office hand-painted cabinetry" } // COMMENTED OUT
       ]
     },
     therapy: {
@@ -93,7 +93,7 @@ const projectDetails = {
       description: "A floral concept in pinks and brass, both playful and elegant.\nA forest-themed design with deep greens, organic contours, and earthy materials.\nSpecially designed accessibility bathrooms ensure comfort for all guests.",
       images: [
         { src: "/ravy-roy-new-pics/Bathrooms/Women's Bathroom _ 01.jpg", alt: "Women's bathroom floral design" },
-        { src: "/ravy-roy-new-pics/Bathrooms/Women's Bathroom _ 02.jpg", alt: "Women's bathroom elegant details" },
+        // { src: "/ravy-roy-new-pics/Bathrooms/Women's Bathroom _ 02.jpg", alt: "Women's bathroom elegant details" }, // COMMENTED OUT
         { src: "/ravy-roy-new-pics/Bathrooms/Men's Bathroom _ 01.jpg", alt: "Men's bathroom forest theme" },
         { src: "/ravy-roy-new-pics/Bathrooms/Disability Bathroom _ 01.jpg", alt: "Accessible bathroom design" }
       ]
@@ -105,7 +105,7 @@ const projectDetails = {
         description: "This room emphasizes freshness and light, with watercolor floral murals, soft textiles, and blue-and-yellow accents. The bathroom features dual vanities, natural wood, and violet detail lines, creating a soothing, refined experience.",
         images: [
           { src: "/ravy-roy-new-pics/Room Type 2/Room Type 01 _ 01.jpg", alt: "Botanical serenity room" },
-          { src: "/ravy-roy-new-pics/Room Type 2/Room Type 01 _ 02.jpg", alt: "Botanical room watercolor murals" },
+          // { src: "/ravy-roy-new-pics/Room Type 2/Room Type 01 _ 02.jpg", alt: "Botanical room watercolor murals" }, // COMMENTED OUT
           { src: "/ravy-roy-new-pics/Room Type 2/Room Type 01 _ 03.jpg", alt: "Botanical room bathroom" },
           { src: "/ravy-roy-new-pics/Room Type 2/Room Type 01 _ 04.jpg", alt: "Botanical room violet details" }
         ]
@@ -117,7 +117,7 @@ const projectDetails = {
           { src: "/ravy-roy-new-pics/Room Type 2/Room Type 02 _ 01.jpg", alt: "Forest immersion room" },
           { src: "/ravy-roy-new-pics/Room Type 2/Room Type 02 _ 02.jpg", alt: "Forest room full-height mural" },
           { src: "/ravy-roy-new-pics/Room Type 2/Room Type 02 _ 03.jpg", alt: "Forest room golden birds" },
-          { src: "/ravy-roy-new-pics/Room Type 2/Room Type 02 _ 04.jpg", alt: "Forest room bathroom yellow tiles" },
+          // { src: "/ravy-roy-new-pics/Room Type 2/Room Type 02 _ 04.jpg", alt: "Forest room bathroom yellow tiles" }, // COMMENTED OUT
           { src: "/ravy-roy-new-pics/Room Type 2/Room Type 02 _ 05.jpg", alt: "Forest room bathroom details" }
         ]
       },
@@ -144,6 +144,8 @@ export default function RaviRoySpaRetreatHotelPage() {
         </AnimatedElement>
       </ParallaxSection>
 
+     
+
       <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedElement animationType="fadeInUp">
@@ -154,6 +156,8 @@ export default function RaviRoySpaRetreatHotelPage() {
         </div>
       </section>
 
+     
+
       {/* Introduction Section */}
       <section className="py-16 lg:py-20 bg-gray-50 text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -162,6 +166,14 @@ export default function RaviRoySpaRetreatHotelPage() {
               <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl mb-8">
                 A Philosophy in Physical Form
               </h2>
+
+  
+            <p className="text-lg text-gray-700 font-medium mb-4">
+              <strong>3D Concept Design:</strong> Adelaida and Irina
+            </p>
+       
+     
+
               <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
                 {projectDetails.description}
               </p>
@@ -170,6 +182,7 @@ export default function RaviRoySpaRetreatHotelPage() {
         </div>
       </section>
 
+      
       {/* Spatial Composition Section */}
       <section className="py-16 lg:py-20 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -15,9 +15,9 @@ const projectDetails = {
       content: "A minimal, elegant and modern residential space realised in neutral and warm wood tones mixed together with strong, dark accents and diverse contrasts. This high-end penthouse features an open space living area that also hosts the dining room and the kitchen, all spaces being synced and harmonised with the use of proportional accents and volumes. The main character of the space is the uniquely designed wooden wall contouring the TV area, extending itself visually from the dining space all the way up to the kitchen.",
       mainImage: "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-Banner-scaled.jpg.jpeg",
       galleryImages: [
-        "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-1-1-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-1-1-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-2-1-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-3-1-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-3-1-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-4.jpg.jpeg"
       ]
     },
@@ -26,8 +26,8 @@ const projectDetails = {
       mainImage: "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-5.jpg.jpeg",
       galleryImages: [
         "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-1-1-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-2-1-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-3-1-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-2-1-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-3-1-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-4.jpg.jpeg"
       ]
     }
@@ -211,8 +211,8 @@ export default function PrivatePenthousePage() {
                 </div>
               </AnimatedElement>
 
-              {/* Three images in a row */}
-              <div className="grid md:grid-cols-3 gap-6">
+              {/* Two images in a row */}
+              <div className="grid md:grid-cols-2 gap-8">
                 {projectDetails.sections[1].galleryImages.slice(1, 4).map((image, index) => (
                   <AnimatedElement
                     key={index}
@@ -223,8 +223,8 @@ export default function PrivatePenthousePage() {
                       <Image
                         src={image}
                         alt={`Private Penthouse gallery image ${index + 2}`}
-                        width={600}
-                        height={600}
+                        width={800}
+                        height={800}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         style={{ aspectRatio: '1/1' }}
                       />

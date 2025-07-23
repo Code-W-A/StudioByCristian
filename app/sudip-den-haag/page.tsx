@@ -16,29 +16,30 @@ const projectDetails = {
   description: "Custom furniture project in Den Haag featuring bespoke design and craftsmanship.",
   additionalText: "Our team specializes in creating unique furniture pieces that perfectly complement the architectural style and personal preferences of each client.",
   images: [
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2236.jpg", alt: "Sudip Den Haag - Interior view 1" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2239.jpg", alt: "Sudip Den Haag - Interior view 2" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2242.jpg", alt: "Sudip Den Haag - Interior view 3" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2236.jpg", alt: "Sudip Den Haag - Interior view 1" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2239.jpg", alt: "Sudip Den Haag - Interior view 2" },
+    
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2255.jpg", alt: "Sudip Den Haag - Interior view 4" },
+    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2242.jpg", alt: "Sudip Den Haag - Interior view 3" },
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2266.jpg", alt: "Sudip Den Haag - Interior view 5" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2274.jpg", alt: "Sudip Den Haag - Interior view 6" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2279.jpg", alt: "Sudip Den Haag - Interior view 7" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2287.jpg", alt: "Sudip Den Haag - Interior view 8" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2289.jpg", alt: "Sudip Den Haag - Interior view 9" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2319.jpg", alt: "Sudip Den Haag - Interior view 10" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2274.jpg", alt: "Sudip Den Haag - Interior view 6" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2279.jpg", alt: "Sudip Den Haag - Interior view 7" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2287.jpg", alt: "Sudip Den Haag - Interior view 8" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2289.jpg", alt: "Sudip Den Haag - Interior view 9" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2319.jpg", alt: "Sudip Den Haag - Interior view 10" },
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2324.jpg", alt: "Sudip Den Haag - Interior view 11" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2330.jpg", alt: "Sudip Den Haag - Interior view 12" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2334.jpg", alt: "Sudip Den Haag - Interior view 13" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2338.jpg", alt: "Sudip Den Haag - Interior view 14" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2341.jpg", alt: "Sudip Den Haag - Interior view 15" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2353.jpg", alt: "Sudip Den Haag - Interior view 16" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2330.jpg", alt: "Sudip Den Haag - Interior view 12" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2334.jpg", alt: "Sudip Den Haag - Interior view 13" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2338.jpg", alt: "Sudip Den Haag - Interior view 14" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2341.jpg", alt: "Sudip Den Haag - Interior view 15" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2353.jpg", alt: "Sudip Den Haag - Interior view 16" },
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2357.jpg", alt: "Sudip Den Haag - Interior view 17" },
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2359.jpg", alt: "Sudip Den Haag - Interior view 18" },
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2371.jpg", alt: "Sudip Den Haag - Interior view 19" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2381.jpg", alt: "Sudip Den Haag - Interior view 20" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2385.jpg", alt: "Sudip Den Haag - Interior view 21" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2381.jpg", alt: "Sudip Den Haag - Interior view 20" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2385.jpg", alt: "Sudip Den Haag - Interior view 21" },
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2395.jpg", alt: "Sudip Den Haag - Interior view 22" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2399.jpg", alt: "Sudip Den Haag - Interior view 23" },
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2399.jpg", alt: "Sudip Den Haag - Interior view 23" },
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2402.jpg", alt: "Sudip Den Haag - Interior view 24" },
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2414.jpg", alt: "Sudip Den Haag - Interior view 25" },
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2423.jpg", alt: "Sudip Den Haag - Interior view 26" },
@@ -47,6 +48,11 @@ const projectDetails = {
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2440.jpg", alt: "Sudip Den Haag - Interior view 29" }
   ]
 }
+
+
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FSudip_Den%20Haag%2F_EWP2236.jpg&w=1920&q=75
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FSudip_Den%20Haag%2F_EWP2239.jpg&w=1920&q=75
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FSudip_Den%20Haag%2F_EWP2274.jpg&w=1920&q=75
 
 export default function SudipDenHaagPage() {
   return (

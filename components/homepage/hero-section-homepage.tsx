@@ -29,17 +29,17 @@ const heroNavItems = [
     title: "Interior Renovation",
     subtitle: "Turn-key transformations, managed with precision.",
     imageUrl: "/home-page/Turn-Key-Management-2-scaled.jpg.jpeg",
-    link: "/turn-key-management",
+    link: "/interior-renovation",
     cta: "Learn About Turn Key",
   },
-  {
-    id: "archive",
-    title: "Work Archive",
-    subtitle: "A legacy of transformative projects and inspired spaces.",
-    imageUrl: "/home-page/Credentials-scaled.jpg.jpeg",
-    link: "/work-archive",
-    cta: "View Our Portfolio",
-  },
+  // {
+  //   id: "archive",
+  //   title: "Work Archive",
+  //   subtitle: "A legacy of transformative projects and inspired spaces.",
+  //   imageUrl: "/home-page/Credentials-scaled.jpg.jpeg",
+  //   link: "/work-archive",
+  //   cta: "View Our Portfolio",
+  // }, // COMMENTED OUT - Can be re-enabled later
 ]
 
 export default function HeroSectionHomepage() {
@@ -253,46 +253,49 @@ export default function HeroSectionHomepage() {
             transition={{ duration: 0.8, delay: 1.0 }}
           >
             {heroNavItems.map((item, index) => (
-              <motion.button
+              <Link
                 key={item.id}
-                onClick={() => handleHeroChange(item)}
+                href={item.link}
                 onMouseEnter={() => !isTransitioning && handleHeroChange(item)}
-                disabled={isTransitioning}
-                className={`relative p-4 sm:p-5 text-left rounded-xl transition-all duration-500 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 backdrop-blur-md border overflow-hidden group
-                  ${activeHero.id === item.id 
-                    ? "bg-white/20 border-white/30 shadow-xl" 
-                    : "bg-white/5 border-white/10 hover:bg-white/15 hover:border-white/20 shadow-lg"
-                  }`}
-                whileHover={{ 
-                  scale: 1.02,
-                  y: -2,
-                  transition: { type: "spring", stiffness: 400, damping: 25 }
-                }}
-                whileTap={{ scale: 0.98 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: 1.2 + index * 0.1
-                }}
+                className="group"
+                passHref
               >
-                {/* Active Indicator */}
-                {activeHero.id === item.id && (
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 rounded-xl"
-                    layoutId="activeIndicator"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-                
-                {/* Content */}
-                <div className="relative z-10">
-                  <h3 className="font-semibold text-sm sm:text-base text-white mb-1 group-hover:text-white transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                  <div className={`h-0.5 w-0 bg-white/60 transition-all duration-500 group-hover:w-full ${activeHero.id === item.id ? 'w-full' : ''}`} />
-                </div>
-              </motion.button>
+                <motion.div
+                  className={`relative p-4 sm:p-5 text-left rounded-xl transition-all duration-500 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 backdrop-blur-md border overflow-hidden
+                    ${activeHero.id === item.id 
+                      ? "bg-white/20 border-white/30 shadow-xl" 
+                      : "bg-white/5 border-white/10 hover:bg-white/15 hover:border-white/20 shadow-lg"}`}
+                  whileHover={{ 
+                    scale: 1.02,
+                    y: -2,
+                    transition: { type: "spring", stiffness: 400, damping: 25 }
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: 1.2 + index * 0.1
+                  }}
+                >
+                  {/* Active Indicator */}
+                  {activeHero.id === item.id && (
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 rounded-xl"
+                      layoutId="activeIndicator"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    />
+                  )}
+
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <h3 className="font-semibold text-sm sm:text-base text-white mb-1 group-hover:text-white transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <div className={`h-0.5 w-0 bg-white/60 transition-all duration-500 group-hover:w-full ${activeHero.id === item.id ? 'w-full' : ''}`} />
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </motion.div>
         </div>

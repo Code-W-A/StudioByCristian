@@ -27,12 +27,14 @@ const projectDetails = {
     { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5950.jpg", alt: "Cassandra Aerdenhout - Interior view 14" },
     { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5953.jpg", alt: "Cassandra Aerdenhout - Interior view 15" },
     { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5955.jpg", alt: "Cassandra Aerdenhout - Interior view 16" },
-    { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5958.jpg", alt: "Cassandra Aerdenhout - Interior view 17" },
+    // { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5958.jpg", alt: "Cassandra Aerdenhout - Interior view 17" },
     { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5963.jpg", alt: "Cassandra Aerdenhout - Interior view 18" },
     { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5967.jpg", alt: "Cassandra Aerdenhout - Interior view 19" },
     { src: "/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5970.jpg", alt: "Cassandra Aerdenhout - Interior view 20" }
   ]
 }
+
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FCassandra_Aerdenhout%2F_EWP5958.jpg&w=1920&q=75
 
 export default function CassandraAerdenhoutPage() {
   return (
@@ -95,14 +97,49 @@ export default function CassandraAerdenhoutPage() {
                 </AnimatedElement>
               ))}
             </div>
-            {projectDetails.images.slice(6).map((image, index) => (
-              <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                  <Image src={image.src} alt={image.alt} width={1400} height={800}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '16/9' }} />
-                </div>
-              </AnimatedElement>
-            ))}
+            {/* Alternating layout: 2 images, then 1 image, then 2 images, etc. */}
+            {(() => {
+              const remainingImages = projectDetails.images.slice(6);
+              const elements = [];
+              
+              for (let i = 0; i < remainingImages.length; i += 3) {
+                // Add pair of images (2 in a row)
+                if (i < remainingImages.length) {
+                  elements.push(
+                    <div key={`pair-${i}`} className="grid md:grid-cols-2 gap-8">
+                      <AnimatedElement animationType="fadeInUp" delay={i * 0.1}>
+                        <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                          <Image src={remainingImages[i].src} alt={remainingImages[i].alt} width={900} height={675}
+                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
+                        </div>
+                      </AnimatedElement>
+                      {remainingImages[i + 1] && (
+                        <AnimatedElement animationType="fadeInUp" delay={(i + 1) * 0.1}>
+                          <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                            <Image src={remainingImages[i + 1].src} alt={remainingImages[i + 1].alt} width={900} height={675}
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
+                          </div>
+                        </AnimatedElement>
+                      )}
+                    </div>
+                  );
+                }
+                
+                // Add single image if exists
+                if (remainingImages[i + 2]) {
+                  elements.push(
+                    <AnimatedElement key={`single-${i + 2}`} animationType="fadeInUp" delay={(i + 2) * 0.1}>
+                      <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                        <Image src={remainingImages[i + 2].src} alt={remainingImages[i + 2].alt} width={1400} height={800}
+                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '16/9' }} />
+                      </div>
+                    </AnimatedElement>
+                  );
+                }
+              }
+              
+              return elements;
+            })()}
           </div>
         </div>
       </section>
@@ -147,7 +184,7 @@ export default function CassandraAerdenhoutPage() {
             <AnimatedElement animationType="fadeInLeft" className="lg:order-1">
               <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
                 <Image
-                  src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5958.jpg"
+                  src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5923.jpg"
                   alt="Cassandra Aerdenhout - Library and reading area"
                   width={800}
                   height={600}

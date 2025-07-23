@@ -23,15 +23,17 @@ const projectDetails = {
     { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-5-1-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Custom furniture details" },
     { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-6-1-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Dark wooden accents" },
     { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-7-1-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Warm tones design" },
-    { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-8-1-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Pleasant contrasts" },
+    // { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-8-1-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Pleasant contrasts" },
     { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-1-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Additional view 1" },
     { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-2-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Additional view 2" },
     { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-3-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Additional view 3" },
-    { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-4-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Additional view 4" },
-    { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-5-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Additional view 5" },
-    { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-6-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Final view" },
+    // { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-4-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Additional view 4" },
+    // { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-5-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Additional view 5" },
+    // { src: "/STUDIO BY CRISTIAN/walden-appartments-concept/Walden-Apartments-Concept-6-scaled.jpg.jpeg", alt: "Walden Apartments Concept - Final view" },
   ]
 }
+
+// http://localhost:3000/_next/image?url=%2FSTUDIO%20BY%20CRISTIAN%2Fwalden-appartments-concept%2FWalden-Apartments-Concept-8-1-scaled.jpg.jpeg&w=828&q=75
 
 export default function WaldenApartmentsConceptPage() {
   return (
@@ -209,7 +211,7 @@ export default function WaldenApartmentsConceptPage() {
             </AnimatedElement>
 
             {/* Four square images in grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
               {projectDetails.images.slice(10, 14).map((image, index) => (
                 <AnimatedElement
                   key={index}

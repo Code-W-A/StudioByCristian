@@ -17,7 +17,7 @@ const projectDetails = {
   additionalText: "Our team specializes in creating unique furniture pieces that perfectly complement the architectural style and personal preferences of each client.",
   images: [
     { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00001.jpeg", alt: "VBS Kitchen and Living - Interior view 1" },
-    { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00002.jpeg", alt: "VBS Kitchen and Living - Interior view 2" },
+    // { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00002.jpeg", alt: "VBS Kitchen and Living - Interior view 2" },
     { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00003.jpeg", alt: "VBS Kitchen and Living - Interior view 3" },
     { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00004.jpeg", alt: "VBS Kitchen and Living - Interior view 4" },
     { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00005.jpeg", alt: "VBS Kitchen and Living - Interior view 5" },
@@ -27,10 +27,13 @@ const projectDetails = {
     { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00009.jpeg", alt: "VBS Kitchen and Living - Interior view 9" },
     { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00010.jpeg", alt: "VBS Kitchen and Living - Interior view 10" },
     { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00011.jpeg", alt: "VBS Kitchen and Living - Interior view 11" },
-    { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00012.jpeg", alt: "VBS Kitchen and Living - Interior view 12" },
-    { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00013.jpeg", alt: "VBS Kitchen and Living - Interior view 13" }
+    // { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00012.jpeg", alt: "VBS Kitchen and Living - Interior view 12" },
+    // { src: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00013.jpeg", alt: "VBS Kitchen and Living - Interior view 13" }
   ]
 }
+
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FVBS%20Kitchen%20and%20living%2Fwetransfer_image00001-jpeg_2024-11-11_1203%2Fimage00012.jpeg&w=1920&q=75
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FVBS%20Kitchen%20and%20living%2Fwetransfer_image00001-jpeg_2024-11-11_1203%2Fimage00002.jpeg&w=1920&q=75
 
 export default function VBSKitchenAndLivingPage() {
   return (

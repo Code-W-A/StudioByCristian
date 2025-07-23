@@ -22,7 +22,7 @@ export default function VideosSection() {
       title: "Hotel Delft",
       subtitle: "Hospitality Design",
       description: "Luxury hotel interiors crafted for memorable experiences",
-      projectLink: "/bizzstay-delft-foto"
+      projectLink: "/bizzstay-delft"
     }
   ]
 

@@ -7,7 +7,7 @@ const featuredProjectItems = [
   {
     name: "BizzStay Delft Project",
     imageUrl: "/featured-projects-extra/BizzSaty_Delft-Project.png",
-    link: "/bizzstay-delft-foto",
+    link: "/bizzstay-delft",
   },
   {
     name: "Residential Thijs Overveen",
@@ -20,9 +20,9 @@ const featuredProjectItems = [
     link: "/ravi-roy-spa-retreat-hotel",
   },
   {
-    name: "Mauritskade Residential Apartments",
+    name: "Mauritskade Concept Design",
     imageUrl: "/STUDIO BY CRISTIAN/mauritskade/Mauritskade-Banner-scaled.jpg.jpeg",
-    link: "/mauritskade",
+    link: "/mauritskade-concept-design",
   },
 ]
 

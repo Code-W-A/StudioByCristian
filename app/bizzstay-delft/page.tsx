@@ -11,47 +11,51 @@ import { motion } from "framer-motion"
 import ProjectVideoShowcase from "@/components/project-video-showcase"
 
 const projectDetails = {
-  title: "BizzStay Delft Foto",
+  title: "BizzStay Delft",
   category: "Custom Furniture",
   heroImage: "/bizzstay_sfeer/SFEER-9.jpg",
   images: [
     // New BizzStay Sfeer images
-    { src: "/bizzstay_sfeer/SFEER-1.jpg", alt: "BizzStay Delft Foto - Sfeer view 1" },
-    { src: "/bizzstay_sfeer/SFEER-2.jpg", alt: "BizzStay Delft Foto - Sfeer view 2" },
-    { src: "/bizzstay_sfeer/SFEER-9.jpg", alt: "BizzStay Delft Foto - Sfeer view 9" },
-    { src: "/bizzstay_sfeer/SFEER-10.jpg", alt: "BizzStay Delft Foto - Sfeer view 10" },
-    { src: "/bizzstay_sfeer/SFEER-12.jpg", alt: "BizzStay Delft Foto - Sfeer view 12" },
-    { src: "/bizzstay_sfeer/SFEER-17.jpg", alt: "BizzStay Delft Foto - Sfeer view 17" },
-    { src: "/bizzstay_sfeer/SFEER-28.jpg", alt: "BizzStay Delft Foto - Sfeer view 28" },
-    { src: "/bizzstay_sfeer/SF0CF3~1.JPG", alt: "BizzStay Delft Foto - Additional view 1" },
-    { src: "/bizzstay_sfeer/SF3176~1.JPG", alt: "BizzStay Delft Foto - Additional view 2" },
-    { src: "/bizzstay_sfeer/SF3369~1.JPG", alt: "BizzStay Delft Foto - Additional view 3" },
-    { src: "/bizzstay_sfeer/SF7D88~1.JPG", alt: "BizzStay Delft Foto - Additional view 4" },
-    { src: "/bizzstay_sfeer/SF9C57~1.JPG", alt: "BizzStay Delft Foto - Additional view 5" },
-    { src: "/bizzstay_sfeer/SFD138~1.JPG", alt: "BizzStay Delft Foto - Additional view 6" },
+    { src: "/bizzstay_sfeer/SFEER-1.jpg", alt: "BizzStay Delft - Sfeer view 1" },
+    { src: "/bizzstay_sfeer/SFEER-2.jpg", alt: "BizzStay Delft - Sfeer view 2" },
+    { src: "/bizzstay_sfeer/SFEER-9.jpg", alt: "BizzStay Delft - Sfeer view 9" },
+    // { src: "/bizzstay_sfeer/SFEER-10.jpg", alt: "BizzStay Delft - Sfeer view 10" },
+    { src: "/bizzstay_sfeer/SFEER-12.jpg", alt: "BizzStay Delft - Sfeer view 12" },
+    // { src: "/bizzstay_sfeer/SFEER-17.jpg", alt: "BizzStay Delft - Sfeer view 17" },
+    { src: "/bizzstay_sfeer/SFEER-28.jpg", alt: "BizzStay Delft - Sfeer view 28" },
+    { src: "/bizzstay_sfeer/SF0CF3~1.JPG", alt: "BizzStay Delft - Additional view 1" },
+    { src: "/bizzstay_sfeer/SF3176~1.JPG", alt: "BizzStay Delft - Additional view 2" },
+    { src: "/bizzstay_sfeer/SF3369~1.JPG", alt: "BizzStay Delft - Additional view 3" },
+    { src: "/bizzstay_sfeer/SF7D88~1.JPG", alt: "BizzStay Delft - Additional view 4" },
+    { src: "/bizzstay_sfeer/SF9C57~1.JPG", alt: "BizzStay Delft - Additional view 5" },
+    { src: "/bizzstay_sfeer/SFD138~1.JPG", alt: "BizzStay Delft - Additional view 6" },
     // Original images
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9002.jpg", alt: "BizzStay Delft Foto - Interior view 1" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9007.jpg", alt: "BizzStay Delft Foto - Interior view 2" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9017.jpg", alt: "BizzStay Delft Foto - Interior view 3" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9025.jpg", alt: "BizzStay Delft Foto - Interior view 4" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9036.jpg", alt: "BizzStay Delft Foto - Interior view 5" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9040.jpg", alt: "BizzStay Delft Foto - Interior view 6" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9043.jpg", alt: "BizzStay Delft Foto - Interior view 7" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9046.jpg", alt: "BizzStay Delft Foto - Interior view 8" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9049.jpg", alt: "BizzStay Delft Foto - Interior view 9" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9054.jpg", alt: "BizzStay Delft Foto - Interior view 10" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9065.jpg", alt: "BizzStay Delft Foto - Interior view 11" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9072.jpg", alt: "BizzStay Delft Foto - Interior view 12" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9079.jpg", alt: "BizzStay Delft Foto - Interior view 13" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9083.jpg", alt: "BizzStay Delft Foto - Interior view 14" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9090.jpg", alt: "BizzStay Delft Foto - Interior view 15" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9095.jpg", alt: "BizzStay Delft Foto - Interior view 16" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9104.jpg", alt: "BizzStay Delft Foto - Interior view 17" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9109.jpg", alt: "BizzStay Delft Foto - Interior view 18" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9113.jpg", alt: "BizzStay Delft Foto - Interior view 19" },
-    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9119.jpg", alt: "BizzStay Delft Foto - Interior view 20" }
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9002.jpg", alt: "BizzStay Delft - Interior view 1" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9007.jpg", alt: "BizzStay Delft - Interior view 2" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9017.jpg", alt: "BizzStay Delft - Interior view 3" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9025.jpg", alt: "BizzStay Delft - Interior view 4" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9036.jpg", alt: "BizzStay Delft - Interior view 5" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9040.jpg", alt: "BizzStay Delft - Interior view 6" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9043.jpg", alt: "BizzStay Delft - Interior view 7" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9046.jpg", alt: "BizzStay Delft - Interior view 8" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9049.jpg", alt: "BizzStay Delft - Interior view 9" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9054.jpg", alt: "BizzStay Delft - Interior view 10" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9065.jpg", alt: "BizzStay Delft - Interior view 11" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9072.jpg", alt: "BizzStay Delft - Interior view 12" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9079.jpg", alt: "BizzStay Delft - Interior view 13" },
+    // { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9083.jpg", alt: "BizzStay Delft - Interior view 14" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9090.jpg", alt: "BizzStay Delft - Interior view 15" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9095.jpg", alt: "BizzStay Delft - Interior view 16" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9104.jpg", alt: "BizzStay Delft - Interior view 17" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9109.jpg", alt: "BizzStay Delft - Interior view 18" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9113.jpg", alt: "BizzStay Delft - Interior view 19" },
+    { src: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9119.jpg", alt: "BizzStay Delft - Interior view 20" }
   ]
 }
+
+// http://localhost:3000/_next/image?url=%2Fbizzstay_sfeer%2FSFEER-10.jpg&w=1200&q=75
+// http://localhost:3000/_next/image?url=%2Fbizzstay_sfeer%2FSFEER-12.jpg&w=1200&q=75
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FBizzStay_Delft%20Foto%2F_EWP9083.jpg&w=1920&q=75
 
 export default function BizzStayDelftFotoPage() {
   return (
@@ -91,43 +95,8 @@ export default function BizzStayDelftFotoPage() {
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.images.slice(1, 3).map((image, index) => (
-                <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image src={image.src} alt={image.alt} width={800} height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {projectDetails.images.slice(3, 6).map((image, index) => (
-                <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image src={image.src} alt={image.alt} width={600} height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '1/1' }} />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-            {projectDetails.images.slice(6).map((image, index) => (
-              <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                  <Image src={image.src} alt={image.alt} width={1400} height={800}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '16/9' }} />
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Project Description Section */}
-      <section className="py-16 lg:py-24 bg-white text-black">
+       {/* Project Description Section */}
+       <section className="py-16 lg:py-24 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text Content - Left */}
@@ -193,6 +162,45 @@ export default function BizzStayDelftFotoPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="space-y-16">
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.images.slice(1, 3).map((image, index) => (
+                <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
+                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                    <Image src={image.src} alt={image.alt} width={800} height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {projectDetails.images.slice(3, 5).map((image, index) => (
+                <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
+                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                    <Image src={image.src} alt={image.alt} width={600} height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '1/1' }} />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.images.slice(5).map((image, index) => (
+                <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
+                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                    <Image src={image.src} alt={image.alt} width={800} height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+     
 
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">

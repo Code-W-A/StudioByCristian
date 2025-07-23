@@ -252,7 +252,7 @@ export default function PrivateResidentialHolidayHousePage() {
               <h4 className="text-2xl font-bold text-black mb-8 text-center">
                 {projectDetails.processSteps.concept3D.rooms.otherRooms.title}
               </h4>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 {projectDetails.processSteps.concept3D.rooms.otherRooms.images.map((image, index) => (
                   <AnimatedElement
                     key={index}
@@ -263,8 +263,8 @@ export default function PrivateResidentialHolidayHousePage() {
                       <Image
                         src={image}
                         alt={`Bedroom view ${index + 1}`}
-                        width={400}
-                        height={300}
+                        width={600}
+                        height={450}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         style={{ aspectRatio: '4/3' }}
                       />

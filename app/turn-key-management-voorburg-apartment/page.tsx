@@ -55,12 +55,15 @@ const projectDetails = {
       { src: "/turn-key-management-voorburg-apartment/Voorburg-After-03-scaled.jpg.jpeg", alt: "After renovation - Dining area" },
       { src: "/turn-key-management-voorburg-apartment/Voorburg-After-04-scaled.jpg.jpeg", alt: "After renovation - Bedroom" },
       { src: "/turn-key-management-voorburg-apartment/Voorburg-After-05-scaled.jpg.jpeg", alt: "After renovation - Bathroom" },
-      { src: "/turn-key-management-voorburg-apartment/Voorburg-After-06-scaled.jpg.jpeg", alt: "After renovation - Detail view" },
-      { src: "/turn-key-management-voorburg-apartment/Voorburg-After-07-scaled.jpg.jpeg", alt: "After renovation - Overall view" },
-      { src: "/turn-key-management-voorburg-apartment/Voorburg-After-08-scaled.jpg.jpeg", alt: "After renovation - Final result" },
+      // { src: "/turn-key-management-voorburg-apartment/Voorburg-After-06-scaled.jpg.jpeg", alt: "After renovation - Detail view" },
+      // { src: "/turn-key-management-voorburg-apartment/Voorburg-After-07-scaled.jpg.jpeg", alt: "After renovation - Overall view" },
+      // { src: "/turn-key-management-voorburg-apartment/Voorburg-After-08-scaled.jpg.jpeg", alt: "After renovation - Final result" },
     ]
   }
 }
+
+// http://localhost:3000/_next/image?url=%2Fturn-key-management-voorburg-apartment%2FVoorburg-After-06-scaled.jpg.jpeg&w=1920&q=75
+// http://localhost:3000/_next/image?url=%2Fturn-key-management-voorburg-apartment%2FVoorburg-After-07-scaled.jpg.jpeg&w=1920&q=75
 
 // Before/After Comparison Component
 function BeforeAfterComparison({ beforeSrc, afterSrc, alt }: { beforeSrc: string; afterSrc: string; alt: string }) {

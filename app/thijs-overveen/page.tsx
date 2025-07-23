@@ -13,30 +13,38 @@ import ProjectVideoShowcase from "@/components/project-video-showcase"
 const projectDetails = {
   title: "Thijs Overveen",
   category: "Custom Furniture",
-  heroImage: "/extra Custom Furniture/Thijs_Overveen/_EWP6066.jpg",
+  heroImage: "/extra Custom Furniture/Thijs_Overveen/_EWP6070.jpg",
   images: [
-    { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6066.jpg", alt: "Thijs Overveen - Interior view 1" },
-    { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6070.jpg", alt: "Thijs Overveen - Interior view 2" },
+    // { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6066.jpg", alt: "Thijs Overveen - Interior view 1" },
+    // { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6070.jpg", alt: "Thijs Overveen - Interior view 2" },
     { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6076.jpg", alt: "Thijs Overveen - Interior view 3" },
-    { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6081.jpg", alt: "Thijs Overveen - Interior view 4" },
+    // { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6081.jpg", alt: "Thijs Overveen - Interior view 4" },
     { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6085.jpg", alt: "Thijs Overveen - Interior view 5" },
     { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6104.jpg", alt: "Thijs Overveen - Interior view 6" },
-    { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6123.jpg", alt: "Thijs Overveen - Interior view 7" },
+    // { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6123.jpg", alt: "Thijs Overveen - Interior view 7" },
     { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6130.jpg", alt: "Thijs Overveen - Interior view 8" },
-    { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6139.jpg", alt: "Thijs Overveen - Interior view 9" },
-    { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6150.jpg", alt: "Thijs Overveen - Interior view 10" },
+    // { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6139.jpg", alt: "Thijs Overveen - Interior view 9" },
+    // { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6150.jpg", alt: "Thijs Overveen - Interior view 10" },
     { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6161.jpg", alt: "Thijs Overveen - Interior view 11" },
     { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6164.jpg", alt: "Thijs Overveen - Interior view 12" },
-    { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6193.jpg", alt: "Thijs Overveen - Interior view 13" },
+    // { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6193.jpg", alt: "Thijs Overveen - Interior view 13" },
     { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6198.jpg", alt: "Thijs Overveen - Interior view 14" },
     { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6204.jpg", alt: "Thijs Overveen - Interior view 15" },
     { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6212.jpg", alt: "Thijs Overveen - Interior view 16" },
-    { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6217.jpg", alt: "Thijs Overveen - Interior view 17" },
+    // { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6217.jpg", alt: "Thijs Overveen - Interior view 17" },
     { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6223.jpg", alt: "Thijs Overveen - Interior view 18" },
     { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6231.jpg", alt: "Thijs Overveen - Interior view 19" },
     { src: "/extra Custom Furniture/Thijs_Overveen/_EWP6239.jpg", alt: "Thijs Overveen - Interior view 20" }
   ]
 }
+
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FThijs_Overveen%2F_EWP6081.jpg&w=640&q=75
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FThijs_Overveen%2F_EWP6066.jpg&w=1920&q=75
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FThijs_Overveen%2F_EWP6123.jpg&w=640&q=75
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FThijs_Overveen%2F_EWP6139.jpg&w=640&q=75
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FThijs_Overveen%2F_EWP6150.jpg&w=640&q=75
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FThijs_Overveen%2F_EWP6193.jpg&w=1920&q=75
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FThijs_Overveen%2F_EWP6217.jpg&w=1920&q=75
 
 export default function ThijsOverveenPage() {
   return (
@@ -74,6 +82,111 @@ export default function ThijsOverveenPage() {
         title="Overveen Private Residence"
         description="Take a visual journey through this contemporary interior design project featuring custom furniture and timeless elegance"
       />
+
+
+      {/* Project Description Section */}
+      <section className="py-16 lg:py-24 bg-gray-50 text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Text Content - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="space-y-6">
+              <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
+                Thijs Overveen
+              </h2>
+              <div className="space-y-2 text-lg text-gray-800 font-medium">
+                <p><strong>Client:</strong>Thijs</p>
+                <p><strong>Architect/Designer:</strong> Martijn Elzinga – DISEL Architect</p>
+              </div>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  This bespoke interior was created for Thijs in Overveen, The Netherlands, and designed by Martijn Elzinga from DISEL Architect. The project posed a rewarding challenge in both craftsmanship and technical precision.
+                </p>
+                <p>
+                  The entire space was developed using oak veneer, with a strong emphasis on detail and continuity. Panels were carefully laid out with a deliberate grain orientation and an exact 2mm seam spacing, ensuring a refined and rhythmical visual language throughout the interior. Every joint and connection — including corners and transitions — was executed with 45-degree miters and seamless continuity, completely concealing hardware and reinforcing the minimalist look.
+                </p>
+              </div>
+            </AnimatedElement>
+
+            {/* Image - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Thijs_Overveen/_EWP6104.jpg"
+                  alt="Thijs Overveen - Oak veneer craftsmanship"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+          </div>
+
+          {/* Second Row - Image Left, Text Right */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-24">
+            {/* Image - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="lg:order-1">
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Thijs_Overveen/_EWP6193.jpg"
+                  alt="Thijs Overveen - Custom oak pivot door and integrated lighting"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+
+            {/* Text Content - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2} className="space-y-6 lg:order-2">
+              <h3 className="text-2xl font-bold tracking-tight text-black">
+                Kitchen & Custom Elements
+              </h3>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  The kitchen features an island and fronts clad in anti-fingerprint HPL, paired with high-performance LEGRABOX drawers from Blum. The soft matte finish contrasts beautifully with the warmth of the oak, resulting in a clean yet welcoming atmosphere. Italian tile backsplashes and integrated shelving add texture and practicality to the heart of the home.
+                </p>
+                <p>
+                  A custom-built solid oak pivot door stands as a centerpiece between zones, constructed entirely in massive oak with integrated glass panels, merging architecture with furniture-level precision.
+                </p>
+              </div>
+            </AnimatedElement>
+          </div>
+
+          {/* Third Row - Text Left, Image Right */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-24">
+            {/* Text Content - Left */}
+            <AnimatedElement animationType="fadeInLeft" className="space-y-6">
+              <h3 className="text-2xl font-bold tracking-tight text-black">
+                Timeless Living Spaces
+              </h3>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  Additional custom elements include a window seating area with tailored upholstery, wall-to-wall bookshelves, and integrated lighting — all designed to enhance comfort, light, and usability while staying true to the core materiality of oak.
+                </p>
+                <p>
+                  This project is a clear reflection of how thoughtful design and expert execution can come together to create calm, coherent, and timeless living spaces.
+                </p>
+              </div>
+            </AnimatedElement>
+
+            {/* Image - Right */}
+            <AnimatedElement animationType="fadeInRight" delay={0.2}>
+              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                <Image
+                  src="/extra Custom Furniture/Thijs_Overveen/_EWP6161.jpg"
+                  alt="Thijs Overveen - Window seating and bookshelves"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              </div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
 
       {/* Featured Image */}
       <section className="py-8 bg-gray-50">
@@ -123,73 +236,6 @@ export default function ThijsOverveenPage() {
         </div>
       </section>
 
-      {/* Project Description Section */}
-      <section className="py-16 lg:py-24 bg-gray-50 text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Text Content - Left */}
-            <AnimatedElement animationType="fadeInLeft" className="space-y-6">
-              <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
-                Bespoke Interior with Technical Precision
-              </h2>
-              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
-                <p>
-                  This bespoke interior was created for Thijs in Overveen, The Netherlands, and designed by Martijn Elzinga from DISEL Architect. The project posed a rewarding challenge in both craftsmanship and technical precision.
-                </p>
-                <p>
-                  The entire space was developed using oak veneer, with a strong emphasis on detail and continuity. Panels were carefully laid out with a deliberate grain orientation and an exact 2mm seam spacing, ensuring a refined and rhythmical visual language throughout the interior.
-                </p>
-              </div>
-            </AnimatedElement>
-
-            {/* Image - Right */}
-            <AnimatedElement animationType="fadeInRight" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-                <Image
-                  src="/extra Custom Furniture/Thijs_Overveen/_EWP6104.jpg"
-                  alt="Thijs Overveen - Oak veneer craftsmanship"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '4/3' }}
-                />
-              </div>
-            </AnimatedElement>
-          </div>
-
-          {/* Second Row - Image Left, Text Right */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-24">
-            {/* Image - Left */}
-            <AnimatedElement animationType="fadeInLeft" className="lg:order-1">
-              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-                <Image
-                  src="/extra Custom Furniture/Thijs_Overveen/_EWP6193.jpg"
-                  alt="Thijs Overveen - Custom oak pivot door and integrated lighting"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '4/3' }}
-                />
-              </div>
-            </AnimatedElement>
-
-            {/* Text Content - Right */}
-            <AnimatedElement animationType="fadeInRight" delay={0.2} className="space-y-6 lg:order-2">
-              <h3 className="text-2xl font-bold tracking-tight text-black">
-                Timeless Living Spaces
-              </h3>
-              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
-                <p>
-                  The kitchen features an island and fronts clad in anti-fingerprint HPL, paired with high-performance LEGRABOX drawers from Blum. A custom-built solid oak pivot door stands as a centerpiece between zones, constructed entirely in massive oak with integrated glass panels.
-                </p>
-                <p>
-                  Additional custom elements include a window seating area with tailored upholstery, wall-to-wall bookshelves, and integrated lighting. This project is a clear reflection of how thoughtful design and expert execution can come together to create calm, coherent, and timeless living spaces.
-                </p>
-              </div>
-            </AnimatedElement>
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">

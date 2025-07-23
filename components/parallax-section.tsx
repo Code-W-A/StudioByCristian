@@ -50,10 +50,11 @@ export default function ParallaxSection({
           src={imageUrl || "/placeholder.svg"}
           alt={imageAlt}
           fill={true}
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           className="pointer-events-none object-cover"
           style={{ objectPosition }}
           priority // Consider priority for LCP images like heroes
+          quality={95}
         />
       </motion.div>
       {overlayClassName && <div className={`absolute inset-0 z-10 ${overlayClassName}`} />}

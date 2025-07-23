@@ -15,7 +15,14 @@ export const allTestimonials: Testimonial[] = [
     role: "Owner",
     quote: "I've worked with Cristian and the Studio byCristian team for over six years—on everything from small jobs to fully furnished apartments. No matter the challenge, you can always count on them to finish the job and deliver with a smile. They're reliable, focused, and always committed to doing what's best for the client.",
     type: "Long-term Partnership",
-    projectLink: "/bizzstay-delft-foto"
+    projectLink: "/bizzstay-delft"
+  },
+  {
+    name: "Jana Eschweiler",
+    company: "PURELEI",
+    role: "Team Lead Events",
+    quote: "Working with Studio byCristian was an unforgettable experience. Beyond their exceptional craftsmanship and commitment, they brought a positive mindset and genuine care to every detail. Our PURELEI shop in Köln came to life thanks to their tireless dedication—even working nonstop in the final days to meet our deadline, all with a smile. I truly recommend them and can't wait to collaborate again.",
+    type: "Exceptional Collaboration"
   },
   {
     name: "Thijs Mantel",
@@ -36,10 +43,10 @@ export const allTestimonials: Testimonial[] = [
   {
     name: "Olaf Lawerman",
     company: "Project Partner",
-    role: "Collaborator",
+    role: "Owner",
     quote: "After successfully completing an important and challenging project together with Studio byCristian, I can fairly say both I was pleased with the ways in which we have been collaborating with the company Through many months of working together, I saw that Studio byCristian will not let you down when the project will reach both highs and lows in terms of issues and site management. The team will always be there, flexible, and willing to surpass any difficult moment, ensuring that the good quality of the products that they are delivering remains the same. I would gladly recommend them further.",
     type: "Reliable Partnership",
-    projectLink: "/bizzstay-delft-foto"
+    projectLink: "/bizzstay-delft"
   },
   {
     name: "Valk Design",
@@ -47,7 +54,7 @@ export const allTestimonials: Testimonial[] = [
     role: "Design Partners",
     quote: "Christian and team are hard workers and always willing to deliver beautiful work. Working drawings are extended and on location they are very flexible. Studio by Christian is a good company with friendly people. Our Delft project turned out amazing thanks to Studio by Christian!",
     type: "Professional Partnership",
-    projectLink: "/bizzstay-delft-foto"
+    projectLink: "/bizzstay-delft"
   },
   {
     name: "Wanise",

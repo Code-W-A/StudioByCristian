@@ -15,9 +15,9 @@ const projectDetails = {
       content: "The essence of Dutch housing is poured into this building, both in appearance as well as in structure.",
       mainImage: "/STUDIO BY CRISTIAN/NORITECH-Working-House/NORITECH-Working-House-Banner-scaled.jpg.jpeg",
       galleryImages: [
-        "/STUDIO BY CRISTIAN/NORITECH-Working-House/NORITECH-Working-House-1-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/NORITECH-Working-House/NORITECH-Working-House-1-scaled.jpg.jpeg", // COMMENTED OUT
         "/STUDIO BY CRISTIAN/NORITECH-Working-House/NORITECH-Working-House-3-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/NORITECH-Working-House/NORITECH-Working-House-4-1-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/NORITECH-Working-House/NORITECH-Working-House-4-1-scaled.jpg.jpeg", // COMMENTED OUT
         "/STUDIO BY CRISTIAN/NORITECH-Working-House/NORITECH-Working-House-5-scaled.jpg.jpeg"
       ]
     },

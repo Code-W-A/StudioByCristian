@@ -19,18 +19,18 @@ const projectDetails = {
       src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-07-1-scaled.jpg.jpeg",
       alt: "Day Care Concept - Play area with natural oak furniture"
     },
-    {
-      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-07-scaled.jpg.jpeg",
-      alt: "Day Care Concept - Play space design"
-    },
+    // {
+    //   src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-07-scaled.jpg.jpeg",
+    //   alt: "Day Care Concept - Play space design"
+    // }, // COMMENTED OUT
     {
       src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-08-1-scaled.jpg.jpeg",
       alt: "Day Care Concept - Oak furniture with animal-shaped chairs"
     },
-    {
-      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-08-scaled.jpg.jpeg",
-      alt: "Day Care Concept - Furniture arrangement"
-    },
+    // {
+    //   src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-08-scaled.jpg.jpeg",
+    //   alt: "Day Care Concept - Furniture arrangement"
+    // }, // COMMENTED OUT
     {
       src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-09-1-scaled.jpg.jpeg",
       alt: "Day Care Concept - Lighting system with cloud shapes"
@@ -39,18 +39,18 @@ const projectDetails = {
       src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-10-1-scaled.jpg.jpeg",
       alt: "Day Care Concept - Play zones and activity areas"
     },
-    {
-      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-10-scaled.jpg.jpeg",
-      alt: "Day Care Concept - Activity zone design"
-    },
+    // {
+    //   src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-10-scaled.jpg.jpeg",
+    //   alt: "Day Care Concept - Activity zone design"
+    // }, // COMMENTED OUT
     {
       src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-11-1-scaled.jpg.jpeg",
       alt: "Day Care Concept - Interior design overview"
     },
-    {
-      src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-11-scaled.jpg.jpeg",
-      alt: "Day Care Concept - Interior design view"
-    },
+    // {
+    //   src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-11-scaled.jpg.jpeg",
+    //   alt: "Day Care Concept - Interior design view"
+    // }, // COMMENTED OUT
     {
       src: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-12-scaled.jpg.jpeg",
       alt: "Day Care Concept - Design showcase"
@@ -61,24 +61,25 @@ const projectDetails = {
       content: "The purpose was creating a visually stimulating environment in which children can joyously go through the daily activities offered by a day care service. Playing and learning go better in an interior crafted with natural oak and soft pastel colors.",
       mainImage: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-07-1-scaled.jpg.jpeg",
       galleryImages: [
-        "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-07-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-07-scaled.jpg.jpeg", // COMMENTED OUT
         "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-08-1-scaled.jpg.jpeg"
       ]
     },
     {
       content: "The oak wood furniture and accessories can be found as miniature tables, animal shaped chairs, dressing cupboards, slides, and gym accessories, as well as crafted on the walls and continuing up to the ceiling, offering the space a very in-sync geometry and a pleasant aesthetic, with the occasional uplifting colour accent.",
-      mainImage: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-08-scaled.jpg.jpeg",
+      // mainImage: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-08-scaled.jpg.jpeg", // COMMENTED OUT
+      mainImage: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-09-1-scaled.jpg.jpeg", // Using alternative image
       galleryImages: [
-        "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-09-1-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-09-1-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-10-1-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-10-scaled.jpg.jpeg"
+                  // "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-10-scaled.jpg.jpeg" // COMMENTED OUT
       ]
     },
     {
       content: "These features are enhanced by a natural and warm lighting system that emerges from cloud shapes, ceiling parts or hanging light bulbs.",
       mainImage: "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-11-1-scaled.jpg.jpeg",
       galleryImages: [
-        "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-11-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-11-scaled.jpg.jpeg", // COMMENTED OUT
         "/STUDIO BY CRISTIAN/day-care-concept/Day-Care-Concept-12-scaled.jpg.jpeg"
       ]
     }
@@ -162,8 +163,8 @@ export default function DayCarePage() {
                   <Image
                     src={projectDetails.sections[0].mainImage}
                     alt="Day Care Concept main image"
-                    width={800}
-                    height={600}
+                    width={1200}
+                    height={900}
                     className="w-full h-auto object-cover"
                     style={{ aspectRatio: '4/3' }}
                   />
@@ -184,8 +185,8 @@ export default function DayCarePage() {
                     <Image
                       src={image}
                       alt={`Day Care Concept gallery image ${index + 1}`}
-                      width={800}
-                      height={600}
+                      width={1000}
+                      height={750}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '4/3' }}
                     />
@@ -225,8 +226,8 @@ export default function DayCarePage() {
                   <Image
                     src={projectDetails.sections[1].mainImage}
                     alt="Day Care Concept main image"
-                    width={800}
-                    height={600}
+                    width={1200}
+                    height={900}
                     className="w-full h-auto object-cover"
                     style={{ aspectRatio: '4/3' }}
                   />
@@ -243,8 +244,8 @@ export default function DayCarePage() {
                   <Image
                     src={projectDetails.sections[1].galleryImages[0]}
                     alt="Day Care Concept featured gallery image"
-                    width={1400}
-                    height={800}
+                    width={1600}
+                    height={900}
                     className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     style={{ aspectRatio: '16/9' }}
                   />
@@ -263,8 +264,8 @@ export default function DayCarePage() {
                       <Image
                         src={image}
                         alt={`Day Care Concept gallery image ${index + 2}`}
-                        width={800}
-                        height={600}
+                        width={1000}
+                        height={750}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         style={{ aspectRatio: '4/3' }}
                       />
@@ -305,8 +306,8 @@ export default function DayCarePage() {
                   <Image
                     src={projectDetails.sections[2].mainImage}
                     alt="Day Care Concept main image"
-                    width={800}
-                    height={600}
+                    width={1200}
+                    height={900}
                     className="w-full h-auto object-cover"
                     style={{ aspectRatio: '4/3' }}
                   />
@@ -327,8 +328,8 @@ export default function DayCarePage() {
                     <Image
                       src={image}
                       alt={`Day Care Concept gallery image ${index + 1}`}
-                      width={800}
-                      height={600}
+                      width={1000}
+                      height={750}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '4/3' }}
                     />

@@ -20,9 +20,9 @@ const designProjects = [
     link: "/laren-house-concept",
   },
   {
-    name: "Mauritskade",
+    name: "Mauritskade Concept Design",
     imageUrl: "/design-page/Mauritskade-Category-3-1-768x432.jpg.jpeg",
-    link: "/mauritskade",
+    link: "/mauritskade-concept-design",
   },
   {
     name: "Day Care Concept",

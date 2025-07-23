@@ -10,17 +10,17 @@ import ContactForm from "@/components/contact-form"
 import { motion } from "framer-motion"
 
 const projectDetails = {
-  title: "Yoga and Office Claudia Pedersen Grigore Manolescu",
+  title: "Yoga and Office Claudia Pedersen",
   category: "Custom Furniture",
   heroImage: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4334.jpg",
   images: [
-    { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4334.jpg", alt: "Yoga and Office - Interior view 1" },
+    // { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4334.jpg", alt: "Yoga and Office - Interior view 1" },
     { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4350.jpg", alt: "Yoga and Office - Interior view 2" },
     { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4377.jpg", alt: "Yoga and Office - Interior view 3" },
     { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4380.jpg", alt: "Yoga and Office - Interior view 4" },
-    { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4401.jpg", alt: "Yoga and Office - Interior view 5" },
-    { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4413.jpg", alt: "Yoga and Office - Interior view 6" },
-    { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4419.jpg", alt: "Yoga and Office - Interior view 7" },
+    // { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4401.jpg", alt: "Yoga and Office - Interior view 5" },
+    // { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4413.jpg", alt: "Yoga and Office - Interior view 6" },
+    // { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4419.jpg", alt: "Yoga and Office - Interior view 7" },
     { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4425.jpg", alt: "Yoga and Office - Interior view 8" },
     { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4467.jpg", alt: "Yoga and Office - Interior view 9" },
     { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4473.jpg", alt: "Yoga and Office - Interior view 10" },
@@ -33,10 +33,14 @@ const projectDetails = {
     { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_6865.jpg", alt: "Yoga and Office - Interior view 17" },
     { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_6877.jpg", alt: "Yoga and Office - Interior view 18" },
     { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_6879.jpg", alt: "Yoga and Office - Interior view 19" },
-    { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_6883.jpg", alt: "Yoga and Office - Interior view 20" },
-    { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_6912.jpg", alt: "Yoga and Office - Interior view 21" }
+    // { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_6883.jpg", alt: "Yoga and Office - Interior view 20" },
+    // { src: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_6912.jpg", alt: "Yoga and Office - Interior view 21" }
   ]
 }
+
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FYoga%20and%20Office%20Claudia%20Pedersen_Grigore%20Manolescu%2FHiRes%2FIMG_4401.jpg&w=1200&q=75
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FYoga%20and%20Office%20Claudia%20Pedersen_Grigore%20Manolescu%2FHiRes%2FIMG_4334.jpg&w=1920&q=75
+
 
 export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
   return (
@@ -72,34 +76,67 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
       <section className="py-12 lg:py-16 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.images.slice(1, 3).map((image, index) => (
-                <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image src={image.src} alt={image.alt} width={800} height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {projectDetails.images.slice(3, 6).map((image, index) => (
-                <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image src={image.src} alt={image.alt} width={600} height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '1/1' }} />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-            {projectDetails.images.slice(6).map((image, index) => (
-              <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                  <Image src={image.src} alt={image.alt} width={1400} height={800}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '16/9' }} />
-                </div>
-              </AnimatedElement>
-            ))}
+            {/* Alternating pattern: 2 images, then 1 image, repeating */}
+            {(() => {
+              const result = [];
+              let imageIndex = 1; // Start from index 1 since index 0 is already shown above
+              
+              while (imageIndex < projectDetails.images.length) {
+                // Two images in a row
+                if (imageIndex + 1 < projectDetails.images.length) {
+                  result.push(
+                    <div key={`pair-${imageIndex}`} className="grid md:grid-cols-2 gap-8">
+                      <AnimatedElement animationType="fadeInUp" delay={0.1}>
+                        <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                          <Image 
+                            src={projectDetails.images[imageIndex].src} 
+                            alt={projectDetails.images[imageIndex].alt} 
+                            width={900} 
+                            height={675}
+                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+                            style={{ aspectRatio: '4/3' }} 
+                          />
+                        </div>
+                      </AnimatedElement>
+                      <AnimatedElement animationType="fadeInUp" delay={0.2}>
+                        <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                          <Image 
+                            src={projectDetails.images[imageIndex + 1].src} 
+                            alt={projectDetails.images[imageIndex + 1].alt} 
+                            width={900} 
+                            height={675}
+                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+                            style={{ aspectRatio: '4/3' }} 
+                          />
+                        </div>
+                      </AnimatedElement>
+                    </div>
+                  );
+                  imageIndex += 2;
+                }
+                
+                // Single image
+                if (imageIndex < projectDetails.images.length) {
+                  result.push(
+                    <AnimatedElement key={`single-${imageIndex}`} animationType="fadeInUp" delay={0.1}>
+                      <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                        <Image 
+                          src={projectDetails.images[imageIndex].src} 
+                          alt={projectDetails.images[imageIndex].alt} 
+                          width={1400} 
+                          height={800}
+                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+                          style={{ aspectRatio: '16/9' }} 
+                        />
+                      </div>
+                    </AnimatedElement>
+                  );
+                  imageIndex++;
+                }
+              }
+              
+              return result;
+            })()}
           </div>
         </div>
       </section>

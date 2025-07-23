@@ -5,20 +5,16 @@ import AnimatedElement from "@/components/animated-element"
 
 const furnitureProjects = [
   // Last 6 projects moved to the beginning
-  {
-    name: "VBS Kitchen and Living",
-    imageUrl: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00001.jpeg",
-    link: "/vbs-kitchen-and-living",
-  },
+ 
   {
     name: "Thijs Overveen",
     imageUrl: "/extra Custom Furniture/Thijs_Overveen/_EWP6066.jpg",
     link: "/thijs-overveen",
   },
   {
-    name: "BizzStay Delft Foto",
+    name: "BizzStay Delft",
     imageUrl: "/extra Custom Furniture/BizzStay_Delft Foto/_EWP9002.jpg",
-    link: "/bizzstay-delft-foto",
+    link: "/bizzstay-delft",
   },
   {
     name: "Cassandra Aerdenhout",
@@ -26,20 +22,25 @@ const furnitureProjects = [
     link: "/cassandra-aerdenhout",
   },
   {
-    name: "Yoga and Office Claudia Pedersen Grigore Manolescu",
+    name: "Yoga and Office Claudia Pedersen",
     imageUrl: "/extra Custom Furniture/Yoga and Office Claudia Pedersen_Grigore Manolescu/HiRes/IMG_4334.jpg",
-    link: "/yoga-and-office-claudia-pedersen-grigore-manolescu",
+    link: "/yoga-and-office-claudia-pedersen",
   },
   {
     name: "Sudip Den Haag",
     imageUrl: "/extra Custom Furniture/Sudip_Den Haag/_EWP2334.jpg",
     link: "/sudip-den-haag",
   },
+  {
+    name: "VBS Kitchen and Living",
+    imageUrl: "/extra Custom Furniture/VBS Kitchen and living/wetransfer_image00001-jpeg_2024-11-11_1203/image00001.jpeg",
+    link: "/vbs-kitchen-and-living",
+  },
   // Original projects continue here
   {
     name: "Mauritskade Apartments",
     imageUrl: "/furniture-production-page/www.studiobycristian.com-1750525148492/Mauritskade-Appartments-Category-1-768x511.jpg.jpeg",
-    link: "/mauritskade",
+    link: "/mauritskade-apartments",
   },
   {
     name: "Suriname Apartments Residential 1",

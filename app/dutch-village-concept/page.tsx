@@ -34,10 +34,10 @@ const projectDetails = {
     { src: "/dutch-village-concept/Dutch-Village-Concept-09-scaled.jpg.jpeg", alt: "Dutch Village Concept - View 9" },
     { src: "/dutch-village-concept/Dutch-Village-Concept-10-scaled.jpg.jpeg", alt: "Dutch Village Concept - View 10" },
     { src: "/dutch-village-concept/Dutch-Village-Concept-11.jpg.jpeg", alt: "Dutch Village Concept - View 11" },
-    { src: "/dutch-village-concept/Dutch-Village-Concept-11-1.jpg.jpeg", alt: "Dutch Village Concept - View 11-1" },
-    { src: "/dutch-village-concept/Dutch-Village-Concept-11-2.jpg.jpeg", alt: "Dutch Village Concept - View 11-2" },
+    // { src: "/dutch-village-concept/Dutch-Village-Concept-11-1.jpg.jpeg", alt: "Dutch Village Concept - View 11-1" },
+    // { src: "/dutch-village-concept/Dutch-Village-Concept-11-2.jpg.jpeg", alt: "Dutch Village Concept - View 11-2" },
     { src: "/dutch-village-concept/Dutch-Village-Concept-12-scaled.jpg.jpeg", alt: "Dutch Village Concept - View 12" },
-    { src: "/dutch-village-concept/By-Cristian-Dutch.Village_Ansamble_Top-1.jpg.jpeg", alt: "Dutch Village Concept - Ensemble Top View" },
+    // { src: "/dutch-village-concept/By-Cristian-Dutch.Village_Ansamble_Top-1.jpg.jpeg", alt: "Dutch Village Concept - Ensemble Top View" },
   ]
 }
 
@@ -83,10 +83,10 @@ export default function DutchVillageConceptPage() {
                 <Image
                   src={projectDetails.gallery[0].src}
                   alt={projectDetails.gallery[0].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </div>
               <div className="space-y-6">
@@ -104,20 +104,20 @@ export default function DutchVillageConceptPage() {
                 <Image
                   src={projectDetails.gallery[1].src}
                   alt={projectDetails.gallery[1].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </div>
               <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
                 <Image
                   src={projectDetails.gallery[2].src}
                   alt={projectDetails.gallery[2].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </div>
             </div>
@@ -135,10 +135,10 @@ export default function DutchVillageConceptPage() {
                 <Image
                   src={projectDetails.gallery[3].src}
                   alt={projectDetails.gallery[3].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </div>
             </div>
@@ -151,20 +151,20 @@ export default function DutchVillageConceptPage() {
                 <Image
                   src={projectDetails.gallery[4].src}
                   alt={projectDetails.gallery[4].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </div>
               <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
                 <Image
                   src={projectDetails.gallery[5].src}
                   alt={projectDetails.gallery[5].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </div>
             </div>

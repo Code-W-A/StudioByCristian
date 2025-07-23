@@ -22,36 +22,36 @@ const projectDetails = {
       content: "Our mission for this project was to turn an old barn from nearby Munich into a new, modern, welcoming and fresh space that acts as a showroom and living spot for our clients. Starting from an old wooden barn, we have first created the design project backed-up by indoor and outdoor 3D renderings.",
       mainImage: "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-1-1-scaled.jpg.jpeg",
       galleryImages: [
-        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-1-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-2-1-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-1-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-2-1-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-2-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-3-1-scaled.jpg.jpeg"
+        // "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-3-1-scaled.jpg.jpeg"
       ]
     },
     {
       content: "After the design phase, the entire space has been remodelled to its core, so as to host furniture designed and produced at our studio. The exterior of the barn is now a combination between a typical Bavarian building featuring balconies and wooden touches, and a modern one with a minimalist facade contouring the main entrance.",
       mainImage: "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-3-scaled.jpg.jpeg",
       galleryImages: [
-        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-4-1-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-4-1-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-4-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-5-1-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-6-1-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-6-scaled.jpg.jpeg"
+        // "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-6-scaled.jpg.jpeg"
       ]
     },
     {
       content: "A floor-to-ceiling glass window that ends in big double entrance doors gives the space a modern touch that can be observed in the interior design as well. The space now acts as a furniture showroom, and includes a living space, meeting room, reception, kitchen and dining area, private meeting room and parking space.",
       mainImage: "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-7-1-scaled.jpg.jpeg",
       galleryImages: [
-        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-7-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-7-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-8-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-10-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-11-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-12-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-13-scaled.jpg.jpeg",
         "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-14-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-15-1-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-15-scaled.jpg.jpeg"
+        // "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-15-1-scaled.jpg.jpeg",
+        // "/STUDIO BY CRISTIAN/harmonie-in-holz-house/Harmonie-in-Holz-Showroom-Concept-15-scaled.jpg.jpeg"
       ]
     }
   ]
