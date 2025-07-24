@@ -36,9 +36,11 @@ const projectDetails = {
     { src: "/suriname-apartments-residential-2-furniture/Suriname-Apartments-19.jpg.jpeg", alt: "Suriname Apartments - LED lighting" },
     { src: "/suriname-apartments-residential-2-furniture/Suriname-Apartments-20-scaled.jpg.jpeg", alt: "Suriname Apartments - Modern finishes" },
     { src: "/suriname-apartments-residential-2-furniture/Suriname-Apartments-21.jpg.jpeg", alt: "Suriname Apartments - Marble details" },
-    { src: "/suriname-apartments-residential-2-furniture/Suriname-Apartments-22-200x300.jpg.jpeg", alt: "Suriname Apartments - Complete view" },
+    // { src: "/suriname-apartments-residential-2-furniture/Suriname-Apartments-22-200x300.jpg.jpeg", alt: "Suriname Apartments - Complete view" },
   ]
 }
+
+// http://localhost:3000/_next/image?url=%2Fsuriname-apartments-residential-2-furniture%2FSuriname-Apartments-22-200x300.jpg.jpeg&w=828&q=75
 
 export default function SurinameApartmentsRes2Page() {
   return (
@@ -240,9 +242,9 @@ export default function SurinameApartmentsRes2Page() {
                 ))}
               </div>
 
-              {/* Four images in a grid */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {projectDetails.images.slice(10, 14).map((image, index) => (
+              {/* Three images in a grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {projectDetails.images.slice(10, 13).map((image, index) => (
                   <AnimatedElement
                     key={index}
                     animationType="fadeInUp"
@@ -252,8 +254,8 @@ export default function SurinameApartmentsRes2Page() {
                       <Image
                         src={image.src}
                         alt={image.alt}
-                        width={400}
-                        height={400}
+                        width={500}
+                        height={500}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         style={{ aspectRatio: '1/1' }}
                       />

@@ -112,7 +112,7 @@ export default function ShapesPage() {
       <section className="py-16 lg:py-20 bg-gray-50 text-black">
         <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedElement animationType="fadeInUp">
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed text-justify">
               Our three signature pieces were custom-made and designed exclusively for our selective clients and later added to our portfolio.
             </p>
           </AnimatedElement>
@@ -128,10 +128,10 @@ export default function ShapesPage() {
           <section key={product.id} className={`py-16 lg:py-20 ${bgColor} text-black`}>
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <AnimatedElement animationType="fadeInUp">
-                <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+                <div className={`grid lg:grid-cols-5 gap-12 lg:gap-16 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
                   
                   {/* Text Content */}
-                  <div className={`space-y-6 ${!isEven ? 'lg:col-start-2' : ''}`}>
+                  <div className={`lg:col-span-2 space-y-6 ${!isEven ? 'lg:col-start-4' : ''}`}>
                     <h2 className="text-3xl lg:text-4xl font-bold text-black mb-6">
                       {product.slug !== '#' ? (
                         <Link 
@@ -144,7 +144,7 @@ export default function ShapesPage() {
                         product.name
                       )}
                     </h2>
-                    <p className="text-lg text-gray-700 leading-relaxed">
+                    <p className="text-lg text-gray-700 leading-relaxed text-justify">
                       {product.description}
                     </p>
                     
@@ -170,8 +170,8 @@ export default function ShapesPage() {
                   </div>
 
                   {/* Images */}
-                  <div className={`${!isEven ? 'lg:col-start-1' : ''}`}>
-                    <div className="grid grid-cols-2 gap-4">
+                  <div className={`lg:col-span-3 ${!isEven ? 'lg:col-start-1' : ''}`}>
+                    <div className="grid grid-cols-2 gap-8">
                       {product.images.map((image, imgIndex) => (
                         <motion.div
                           key={imgIndex}
@@ -182,8 +182,8 @@ export default function ShapesPage() {
                           <Image
                             src={image}
                             alt={`${product.name} ${imgIndex + 1}`}
-                            width={400}
-                            height={400}
+                            width={900}
+                            height={900}
                             className="w-full h-auto object-cover"
                             style={{ aspectRatio: '1/1' }}
                           />

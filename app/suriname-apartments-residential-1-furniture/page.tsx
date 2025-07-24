@@ -26,7 +26,7 @@ const projectDetails = {
     { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-3-scaled.jpg.jpeg", alt: "Suriname Apartments - Living Area" },
     { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-4-scaled.jpg.jpeg", alt: "Suriname Apartments - Bathroom Detail" },
     { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-5-scaled.jpg.jpeg", alt: "Suriname Apartments - Bedroom" },
-    { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-7-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Kitchen Island" },
+    { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-11-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 1" },
     { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-8-scaled.jpg.jpeg", alt: "Suriname Apartments - Storage Solutions" },
     { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-9-1.jpg.jpeg", alt: "Suriname Apartments - Dining Area" },
     { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-10-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Wardrobe Detail" },
@@ -41,16 +41,19 @@ const projectDetails = {
     { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-16-1.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 6" },
     { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-17-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 7" },
     { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-18-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 8" },
-    { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-19-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 9" },
-    { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-20-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 10" },
-    { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-21-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 11" },
+    // { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-19-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 9" },
+    // { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-20-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 10" },
+    // { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-21-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 11" },
     { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-22-1.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 12" },
     { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-23-1.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 13" },
-    { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-24-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 14" },
+    // { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-24-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 14" },
     { src: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-25-1-scaled.jpg.jpeg", alt: "Suriname Apartments - Interior Overview 15" },
   ]
 }
-
+// http://localhost:3000/_next/image?url=%2Fsuriname-apartments-residential-1-furniture%2FSuriname-Apartments-21-1-scaled.jpg.jpeg&w=1920&q=75
+// http://localhost:3000/_next/image?url=%2Fsuriname-apartments-residential-1-furniture%2FSuriname-Apartments-19-1-scaled.jpg.jpeg&w=1920&q=75§
+// http://localhost:3000/_next/image?url=%2Fsuriname-apartments-residential-1-furniture%2FSuriname-Apartments-24-1-scaled.jpg.jpeg&w=1920&q=75
+// http://localhost:3000/_next/image?url=%2Fsuriname-apartments-residential-1-furniture%2FSuriname-Apartments-7-1-scaled.jpg.jpeg&w=1920&q=75
 export default function SurinameApartmentsPage() {
   return (
     <div className="bg-white text-black">

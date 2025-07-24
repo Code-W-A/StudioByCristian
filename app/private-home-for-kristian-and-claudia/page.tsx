@@ -234,8 +234,8 @@ export default function PrivateHomeKristianClaudiaPage() {
                 ))}
               </div>
 
-              {/* Four images in a grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Four images in a grid - 2 per row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {projectDetails.images.slice(10, 14).map((image, index) => (
                   <AnimatedElement
                     key={index}
@@ -248,7 +248,7 @@ export default function PrivateHomeKristianClaudiaPage() {
                         alt={image.alt}
                         fill
                         className="object-cover hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        sizes="(max-width: 640px) 100vw, 50vw"
                       />
                     </div>
                   </AnimatedElement>

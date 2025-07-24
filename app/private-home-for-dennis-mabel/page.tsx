@@ -10,29 +10,43 @@ import ParallaxSection from '@/components/parallax-section'
 import AnimatedElement from '@/components/animated-element'
 
 const projectDetails = {
-  sections: [
-    {
-      content: "Thick furniture frames and shelves, bold and massive design pieces, strong lines and moving rhythms – these are some of the characteristics that describe this private residence project for our Dutch clients. The goal was to valorise each corner of the living, dining and working area through beautiful, yet functional furniture pieces, so as to obtain a smooth combination between leisure and work.",
-      mainImage: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-Banner-scaled.jpg.jpeg",
-      galleryImages: [
-        "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-01-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-02-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-03-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-04-scaled.jpg.jpeg"
-      ]
-    },
-    {
-      content: "The modern and elegant approach to this space is enriched by the natural wood furniture decor combined with the owners' delicate and elegant elements of decor, such as glass vases, paintings, decorative flowers or fine lighting. Overall, from the living room storage wall centrepiece, TV furniture, working desk, couch separating high table, and beautiful wardrobes, each component of furniture was carefully crafted and simply designed to render the apartment a complete look.",
-      mainImage: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-05-scaled.jpg.jpeg",
-      galleryImages: [
-        "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-06-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-07-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-08-scaled.jpg.jpeg",
-        "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-09-scaled.jpg.jpeg"
-      ]
-    }
+  title: "Private Home for Dennis & Mabel",
+  category: "Furniture Production", 
+  heroImage: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-Banner-scaled.jpg.jpeg",
+  description: "Thick furniture frames and shelves, bold and massive design pieces, strong lines and moving rhythms – these are some of the characteristics that describe this private residence project for our Dutch clients. The goal was to valorise each corner of the living, dining and working area through beautiful, yet functional furniture pieces, so as to obtain a smooth combination between leisure and work.",
+  additionalText: "The modern and elegant approach to this space is enriched by the natural wood furniture decor combined with the owners' delicate and elegant elements of decor, such as glass vases, paintings, decorative flowers or fine lighting. Overall, from the living room storage wall centrepiece, TV furniture, working desk, couch separating high table, and beautiful wardrobes, each component of furniture was carefully crafted and simply designed to render the apartment a complete look.",
+  location: "Netherlands",
+  status: "Finished",
+  service: "Furniture Production",
+  sectors: "Residential",
+  area: "120m²",
+  client: "Dennis & Mabel",
+  images: [
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-01-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Living area overview" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-02-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Dining area" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-03-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Custom furniture" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-04-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Kitchen design" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-05-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Storage solutions" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-06-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Wood details" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-07-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Interior design" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-08-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Modern furniture" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-09-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Room layout" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-10-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Design details" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-11-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Lighting design" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-12-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Wardrobe design" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-13-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Work area" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-14-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Shelving system" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-15-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Complete view" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-16-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Modern elements" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-17-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Elegant details" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-18-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Final design" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-19-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Overall aesthetic" },
+    { src: "/STUDIO BY CRISTIAN/private-home-for-dennis-mabel/Private-Home-for-Dennis-Mabel-20-scaled.jpg.jpeg", alt: "Private Home for Dennis & Mabel - Completed project" },
   ]
 }
+// http://localhost:3000/_next/image?url=%2FSTUDIO%20BY%20CRISTIAN%2Fprivate-home-for-dennis-mabel%2FPrivate-Home-for-Dennis-Mabel-02-scaled.jpg.jpeg&w=1920&q=75
+
+// http://localhost:3000/_next/image?url=%2FSTUDIO%20BY%20CRISTIAN%2Fprivate-home-for-dennis-mabel%2FPrivate-Home-for-Dennis-Mabel-Banner-scaled.jpg.jpeg&w=1920&q=75
 
 export default function PrivateHomeForDennisMabelPage() {
   return (
@@ -69,7 +83,7 @@ export default function PrivateHomeForDennisMabelPage() {
         </div>
       </section>
 
-      {/* Section 1 - Text Left, Image Right */}
+      {/* Section 1: Text Left, Image Right */}
       <section className="py-16 lg:py-20 bg-gray-50 text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
@@ -77,8 +91,11 @@ export default function PrivateHomeForDennisMabelPage() {
               
               {/* Text Content */}
               <div className="space-y-6">
+                <h3 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
+                  Private Home for Dennis & Mabel
+                </h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  {projectDetails.sections[0].content}
+                  {projectDetails.description}
                 </p>
                 
                 {/* Decorative Element */}
@@ -95,8 +112,8 @@ export default function PrivateHomeForDennisMabelPage() {
                   className="relative"
                 >
                   <Image
-                    src={projectDetails.sections[0].mainImage}
-                    alt="Private Home for Dennis Mabel main image"
+                    src={projectDetails.images[0].src}
+                    alt={projectDetails.images[0].alt}
                     width={800}
                     height={600}
                     className="w-full h-auto object-cover"
@@ -107,57 +124,32 @@ export default function PrivateHomeForDennisMabelPage() {
 
             </div>
 
-            {/* Gallery Images - Two large + Two small */}
-            <div className="space-y-8">
-              {/* Two large images side by side */}
-              <div className="grid md:grid-cols-2 gap-8">
-                {projectDetails.sections[0].galleryImages.slice(0, 2).map((image, index) => (
-                  <AnimatedElement
-                    key={index}
-                    animationType="fadeInUp"
-                    delay={index * 0.1}
-                  >
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                      <Image
-                        src={image}
-                        alt={`Private Home for Dennis Mabel gallery image ${index + 1}`}
-                        width={800}
-                        height={600}
-                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                        style={{ aspectRatio: '4/3' }}
-                      />
-                    </div>
-                  </AnimatedElement>
-                ))}
-              </div>
-
-              {/* Two smaller images side by side */}
-              <div className="grid md:grid-cols-2 gap-8">
-                {projectDetails.sections[0].galleryImages.slice(2, 4).map((image, index) => (
-                  <AnimatedElement
-                    key={index}
-                    animationType="fadeInUp"
-                    delay={index * 0.1}
-                  >
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                      <Image
-                        src={image}
-                        alt={`Private Home for Dennis Mabel gallery image ${index + 3}`}
-                        width={600}
-                        height={600}
-                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                        style={{ aspectRatio: '1/1' }}
-                      />
-                    </div>
-                  </AnimatedElement>
-                ))}
-              </div>
+            {/* Gallery Images - Two by Two layout */}
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              {projectDetails.images.slice(1, 3).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
             </div>
           </AnimatedElement>
         </div>
       </section>
 
-      {/* Section 2 - Text Right, Image Left */}
+      {/* Section 2: Text Right, Image Left */}
       <section className="py-16 lg:py-20 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
@@ -166,7 +158,7 @@ export default function PrivateHomeForDennisMabelPage() {
               {/* Text Content */}
               <div className="space-y-6 lg:col-start-2">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  {projectDetails.sections[1].content}
+                  {projectDetails.additionalText}
                 </p>
                 
                 {/* Decorative Element */}
@@ -183,8 +175,8 @@ export default function PrivateHomeForDennisMabelPage() {
                   className="relative"
                 >
                   <Image
-                    src={projectDetails.sections[1].mainImage}
-                    alt="Private Home for Dennis Mabel section 2 main image"
+                    src={projectDetails.images[3].src}
+                    alt={projectDetails.images[3].alt}
                     width={800}
                     height={600}
                     className="w-full h-auto object-cover"
@@ -195,42 +187,74 @@ export default function PrivateHomeForDennisMabelPage() {
 
             </div>
 
-            {/* Gallery Images - Complex layout */}
+            {/* Gallery Images - All 2 per row */}
             <div className="space-y-8">
-              {/* One large image */}
-              <AnimatedElement animationType="fadeInUp">
-                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-4xl mx-auto">
-                  <Image
-                    src={projectDetails.sections[1].galleryImages[0]}
-                    alt="Private Home for Dennis Mabel large gallery image"
-                    width={1200}
-                    height={675}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
-                </div>
-              </AnimatedElement>
-
-              {/* Three images in a row */}
-              <div className="grid md:grid-cols-3 gap-6">
-                {projectDetails.sections[1].galleryImages.slice(1, 4).map((image, index) => (
-                  <AnimatedElement
-                    key={index}
-                    animationType="fadeInUp"
-                    delay={index * 0.1}
-                  >
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                      <Image
-                        src={image}
-                        alt={`Private Home for Dennis Mabel gallery image ${index + 2}`}
-                        width={600}
-                        height={600}
-                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                        style={{ aspectRatio: '1/1' }}
-                      />
+              {/* All remaining images in consistent 2-column layout */}
+              {(() => {
+                const remainingImages = projectDetails.images.slice(4);
+                const imageRows = [];
+                
+                for (let i = 0; i < remainingImages.length; i += 2) {
+                  const rowImages = remainingImages.slice(i, i + 2);
+                  imageRows.push(
+                    <div key={i} className="grid md:grid-cols-2 gap-8">
+                      {rowImages.map((image, index) => (
+                        <AnimatedElement
+                          key={i + index}
+                          animationType="fadeInUp"
+                          delay={(i + index) * 0.1}
+                        >
+                          <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              width={800}
+                              height={600}
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                              style={{ aspectRatio: '4/3' }}
+                            />
+                          </div>
+                        </AnimatedElement>
+                      ))}
                     </div>
-                  </AnimatedElement>
-                ))}
+                  );
+                }
+                
+                return imageRows;
+              })()}
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Project Info */}
+      <section className="py-8 bg-gray-50">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp" className="text-center">
+            <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 text-left">
+              <div>
+                <h4 className="font-semibold text-black mb-1">Location:</h4>
+                <p className="text-sm text-gray-600">{projectDetails.location}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-black mb-1">Status:</h4>
+                <p className="text-sm text-gray-600">{projectDetails.status}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-black mb-1">Service:</h4>
+                <p className="text-sm text-gray-600">{projectDetails.service}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-black mb-1">Sectors:</h4>
+                <p className="text-sm text-gray-600">{projectDetails.sectors}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-black mb-1">Area:</h4>
+                <p className="text-sm text-gray-600">{projectDetails.area}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-black mb-1">Client:</h4>
+                <p className="text-sm text-gray-600">{projectDetails.client}</p>
               </div>
             </div>
           </AnimatedElement>

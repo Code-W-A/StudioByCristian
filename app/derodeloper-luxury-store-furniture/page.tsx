@@ -239,8 +239,8 @@ export default function DerodeloperLuxuryStorePage() {
                 ))}
               </div>
 
-              {/* Four images in a grid */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Four images in a grid - 2 per row */}
+              <div className="grid md:grid-cols-2 gap-8">
                 {projectDetails.images.slice(10, 14).map((image, index) => (
                   <AnimatedElement
                     key={index}
@@ -251,8 +251,8 @@ export default function DerodeloperLuxuryStorePage() {
                       <Image
                         src={image.src}
                         alt={image.alt}
-                        width={400}
-                        height={400}
+                        width={600}
+                        height={600}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         style={{ aspectRatio: '1/1' }}
                       />

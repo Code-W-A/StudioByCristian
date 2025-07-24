@@ -43,6 +43,18 @@ export default function CassandraAerdenhoutPage() {
         <AnimatedElement animationType="fadeInUp">
           <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">{projectDetails.category}</p>
           <h1 className="mt-2 text-4xl font-bold text-white sm:text-5xl md:text-6xl">{projectDetails.title}</h1>
+          
+          {/* Project badges in hero */}
+          <div className="flex flex-wrap gap-3 mt-6 justify-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border border-white/30">
+              <span className="w-2 h-2 bg-white rounded-full mr-2"></span>
+              Client: Cassandra
+            </div>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border border-white/30">
+              <span className="w-2 h-2 bg-white rounded-full mr-2"></span>
+              Contractor: VBS
+            </div>
+          </div>
         </AnimatedElement>
       </ParallaxSection>
 
@@ -55,6 +67,8 @@ export default function CassandraAerdenhoutPage() {
           </AnimatedElement>
         </div>
       </section>
+
+
 
       {/* Project Video Showcase */}
       <ProjectVideoShowcase 
@@ -71,76 +85,6 @@ export default function CassandraAerdenhoutPage() {
                 className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '16/9' }} />
             </div>
           </AnimatedElement>
-        </div>
-      </section>
-
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.images.slice(1, 3).map((image, index) => (
-                <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image src={image.src} alt={image.alt} width={800} height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {projectDetails.images.slice(3, 6).map((image, index) => (
-                <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image src={image.src} alt={image.alt} width={600} height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '1/1' }} />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-            {/* Alternating layout: 2 images, then 1 image, then 2 images, etc. */}
-            {(() => {
-              const remainingImages = projectDetails.images.slice(6);
-              const elements = [];
-              
-              for (let i = 0; i < remainingImages.length; i += 3) {
-                // Add pair of images (2 in a row)
-                if (i < remainingImages.length) {
-                  elements.push(
-                    <div key={`pair-${i}`} className="grid md:grid-cols-2 gap-8">
-                      <AnimatedElement animationType="fadeInUp" delay={i * 0.1}>
-                        <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                          <Image src={remainingImages[i].src} alt={remainingImages[i].alt} width={900} height={675}
-                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
-                        </div>
-                      </AnimatedElement>
-                      {remainingImages[i + 1] && (
-                        <AnimatedElement animationType="fadeInUp" delay={(i + 1) * 0.1}>
-                          <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                            <Image src={remainingImages[i + 1].src} alt={remainingImages[i + 1].alt} width={900} height={675}
-                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
-                          </div>
-                        </AnimatedElement>
-                      )}
-                    </div>
-                  );
-                }
-                
-                // Add single image if exists
-                if (remainingImages[i + 2]) {
-                  elements.push(
-                    <AnimatedElement key={`single-${i + 2}`} animationType="fadeInUp" delay={(i + 2) * 0.1}>
-                      <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                        <Image src={remainingImages[i + 2].src} alt={remainingImages[i + 2].alt} width={1400} height={800}
-                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '16/9' }} />
-                      </div>
-                    </AnimatedElement>
-                  );
-                }
-              }
-              
-              return elements;
-            })()}
-          </div>
         </div>
       </section>
 
@@ -212,6 +156,78 @@ export default function CassandraAerdenhoutPage() {
         </div>
       </section>
 
+    
+
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="space-y-16">
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.images.slice(1, 3).map((image, index) => (
+                <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
+                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                    <Image src={image.src} alt={image.alt} width={800} height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {projectDetails.images.slice(3, 6).map((image, index) => (
+                <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
+                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                    <Image src={image.src} alt={image.alt} width={600} height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '1/1' }} />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+            {/* Alternating layout: 2 images, then 1 image, then 2 images, etc. */}
+            {(() => {
+              const remainingImages = projectDetails.images.slice(6);
+              const elements = [];
+              
+              for (let i = 0; i < remainingImages.length; i += 3) {
+                // Add pair of images (2 in a row)
+                if (i < remainingImages.length) {
+                  elements.push(
+                    <div key={`pair-${i}`} className="grid md:grid-cols-2 gap-8">
+                      <AnimatedElement animationType="fadeInUp" delay={i * 0.1}>
+                        <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                          <Image src={remainingImages[i].src} alt={remainingImages[i].alt} width={900} height={675}
+                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
+                        </div>
+                      </AnimatedElement>
+                      {remainingImages[i + 1] && (
+                        <AnimatedElement animationType="fadeInUp" delay={(i + 1) * 0.1}>
+                          <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                            <Image src={remainingImages[i + 1].src} alt={remainingImages[i + 1].alt} width={900} height={675}
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
+                          </div>
+                        </AnimatedElement>
+                      )}
+                    </div>
+                  );
+                }
+                
+                // Add single image if exists
+                if (remainingImages[i + 2]) {
+                  elements.push(
+                    <AnimatedElement key={`single-${i + 2}`} animationType="fadeInUp" delay={(i + 2) * 0.1}>
+                      <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                        <Image src={remainingImages[i + 2].src} alt={remainingImages[i + 2].alt} width={1400} height={800}
+                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '16/9' }} />
+                      </div>
+                    </AnimatedElement>
+                  );
+                }
+              }
+              
+              return elements;
+            })()}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
@@ -249,6 +265,8 @@ export default function CassandraAerdenhoutPage() {
           </div>
         </div>
       </section>
+
+      
     </div>
   )
 } 

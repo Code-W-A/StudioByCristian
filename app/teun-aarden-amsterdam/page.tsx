@@ -12,7 +12,7 @@ import { motion } from "framer-motion"
 const projectDetails = {
   title: "Teun Aarden Amsterdam",
   category: "Custom Furniture",
-  location: "Eerste Helmersstraat 181-1 Amsterdam",
+  location: "Amsterdam, The Netherlands",
   heroImage: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01382.jpg",
   description: "Custom furniture project in Amsterdam featuring bespoke design and craftsmanship.",
   additionalText: "Our team specializes in creating unique furniture pieces that perfectly complement the architectural style and personal preferences of each client.",
@@ -22,42 +22,44 @@ const projectDetails = {
     { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01413.jpg", alt: "Teun Aarden Amsterdam - Interior view 3" },
     { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01431.jpg", alt: "Teun Aarden Amsterdam - Interior view 4" },
     { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01435.jpg", alt: "Teun Aarden Amsterdam - Interior view 5" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01437.jpg", alt: "Teun Aarden Amsterdam - Interior view 6" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01440.jpg", alt: "Teun Aarden Amsterdam - Interior view 7" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01442.jpg", alt: "Teun Aarden Amsterdam - Interior view 8" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01452.jpg", alt: "Teun Aarden Amsterdam - Interior view 9" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01458.jpg", alt: "Teun Aarden Amsterdam - Interior view 10" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01437.jpg", alt: "Teun Aarden Amsterdam - Interior view 6" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01440.jpg", alt: "Teun Aarden Amsterdam - Interior view 7" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01442.jpg", alt: "Teun Aarden Amsterdam - Interior view 8" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01452.jpg", alt: "Teun Aarden Amsterdam - Interior view 9" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01458.jpg", alt: "Teun Aarden Amsterdam - Interior view 10" },
     { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01461.jpg", alt: "Teun Aarden Amsterdam - Interior view 11" },
     { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01510.jpg", alt: "Teun Aarden Amsterdam - Interior view 12" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01519.jpg", alt: "Teun Aarden Amsterdam - Interior view 13" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01523.jpg", alt: "Teun Aarden Amsterdam - Interior view 14" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01532.jpg", alt: "Teun Aarden Amsterdam - Interior view 15" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01537.jpg", alt: "Teun Aarden Amsterdam - Interior view 16" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01549.jpg", alt: "Teun Aarden Amsterdam - Interior view 17" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01550.jpg", alt: "Teun Aarden Amsterdam - Interior view 18" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01563.jpg", alt: "Teun Aarden Amsterdam - Interior view 19" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01519.jpg", alt: "Teun Aarden Amsterdam - Interior view 13" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01523.jpg", alt: "Teun Aarden Amsterdam - Interior view 14" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01532.jpg", alt: "Teun Aarden Amsterdam - Interior view 15" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01537.jpg", alt: "Teun Aarden Amsterdam - Interior view 16" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01549.jpg", alt: "Teun Aarden Amsterdam - Interior view 17" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01550.jpg", alt: "Teun Aarden Amsterdam - Interior view 18" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01563.jpg", alt: "Teun Aarden Amsterdam - Interior view 19" },
     { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01578.jpg", alt: "Teun Aarden Amsterdam - Interior view 20" },
     { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01598.jpg", alt: "Teun Aarden Amsterdam - Interior view 21" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01602.jpg", alt: "Teun Aarden Amsterdam - Interior view 22" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01631.jpg", alt: "Teun Aarden Amsterdam - Interior view 23" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01634.jpg", alt: "Teun Aarden Amsterdam - Interior view 24" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01637.jpg", alt: "Teun Aarden Amsterdam - Interior view 25" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01602.jpg", alt: "Teun Aarden Amsterdam - Interior view 22" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01631.jpg", alt: "Teun Aarden Amsterdam - Interior view 23" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01634.jpg", alt: "Teun Aarden Amsterdam - Interior view 24" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01637.jpg", alt: "Teun Aarden Amsterdam - Interior view 25" },
     { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01639.jpg", alt: "Teun Aarden Amsterdam - Interior view 26" },
     { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01653.jpg", alt: "Teun Aarden Amsterdam - Interior view 27" },
     { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01658.jpg", alt: "Teun Aarden Amsterdam - Interior view 28" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01661.jpg", alt: "Teun Aarden Amsterdam - Interior view 29" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01663.jpg", alt: "Teun Aarden Amsterdam - Interior view 30" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01666.jpg", alt: "Teun Aarden Amsterdam - Interior view 31" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01678.jpg", alt: "Teun Aarden Amsterdam - Interior view 32" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01680.jpg", alt: "Teun Aarden Amsterdam - Interior view 33" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01685.jpg", alt: "Teun Aarden Amsterdam - Interior view 34" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01691.jpg", alt: "Teun Aarden Amsterdam - Interior view 35" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01704.jpg", alt: "Teun Aarden Amsterdam - Interior view 36" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01661.jpg", alt: "Teun Aarden Amsterdam - Interior view 29" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01663.jpg", alt: "Teun Aarden Amsterdam - Interior view 30" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01666.jpg", alt: "Teun Aarden Amsterdam - Interior view 31" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01678.jpg", alt: "Teun Aarden Amsterdam - Interior view 32" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01680.jpg", alt: "Teun Aarden Amsterdam - Interior view 33" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01685.jpg", alt: "Teun Aarden Amsterdam - Interior view 34" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01691.jpg", alt: "Teun Aarden Amsterdam - Interior view 35" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01704.jpg", alt: "Teun Aarden Amsterdam - Interior view 36" },
     { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01709.jpg", alt: "Teun Aarden Amsterdam - Interior view 37" },
     { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01714.jpg", alt: "Teun Aarden Amsterdam - Interior view 38" },
-    { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01728.jpg", alt: "Teun Aarden Amsterdam - Interior view 39" },
+    // { src: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01728.jpg", alt: "Teun Aarden Amsterdam - Interior view 39" },
   ]
 }
+
+// http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FTeun%20Aarden_Amsterdam%2FEerste%20Helmersstraat%20181-1%20Amsterdam%2FDSC01437.jpg&w=1920&q=75
 
 export default function TeunAardenAmsterdamPage() {
   return (
@@ -74,6 +76,18 @@ export default function TeunAardenAmsterdamPage() {
           <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">{projectDetails.category}</p>
           <h1 className="mt-2 text-4xl font-bold text-white sm:text-5xl md:text-6xl">{projectDetails.title}</h1>
           <p className="mt-4 text-lg text-gray-200">{projectDetails.location}</p>
+          
+          {/* Project badges in hero */}
+          <div className="flex flex-wrap gap-3 mt-6 justify-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border border-white/30">
+              <span className="w-2 h-2 bg-white rounded-full mr-2"></span>
+              Client: Teun Aarden
+            </div>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border border-white/30">
+              <span className="w-2 h-2 bg-white rounded-full mr-2"></span>
+              Contractor: VBS
+            </div>
+          </div>
         </AnimatedElement>
       </ParallaxSection>
 
@@ -117,164 +131,50 @@ export default function TeunAardenAmsterdamPage() {
       {/* Image Gallery Section */}
       <section className="py-12 lg:py-16 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            {/* Two large images side by side */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.images.slice(1, 3).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '4/3' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Single large featured image */}
-            <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                <Image
-                  src={projectDetails.images[3].src}
-                  alt={projectDetails.images[3].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
-              </div>
-            </AnimatedElement>
-
-            {/* Three images in a row */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {projectDetails.images.slice(4, 7).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={600}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '1/1' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Two large images side by side */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.images.slice(7, 9).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '4/3' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Single wide image */}
-            <AnimatedElement animationType="fadeInUp" delay={0.3}>
-              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                <Image
-                  src={projectDetails.images[9].src}
-                  alt={projectDetails.images[9].alt}
-                  width={1400}
-                  height={700}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
-              </div>
-            </AnimatedElement>
-
-            {/* Three more square images */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {projectDetails.images.slice(10, 13).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={600}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '1/1' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Continue with remaining images */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.images.slice(13, 15).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '4/3' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Remaining images */}
-            {projectDetails.images.slice(15).map((image, index) => (
-              <AnimatedElement
-                key={index}
-                animationType="fadeInUp"
-                delay={index * 0.1}
-              >
-                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={1400}
-                    height={800}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
-                </div>
-              </AnimatedElement>
-            ))}
+          <div className="space-y-8">
+            {/* Alternating layout: 3 images, then 2 images */}
+            {(() => {
+              const galleryImages = projectDetails.images.slice(1);
+              const imageRows = [];
+              let currentIndex = 0;
+              let rowNumber = 0;
+              
+              while (currentIndex < galleryImages.length) {
+                // Alternate: odd rows have 3 images, even rows have 2 images
+                const imagesPerRow = rowNumber % 2 === 0 ? 3 : 2;
+                const rowImages = galleryImages.slice(currentIndex, currentIndex + imagesPerRow);
+                
+                if (rowImages.length > 0) {
+                  imageRows.push(
+                    <div key={currentIndex} className={`grid ${imagesPerRow === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-8`}>
+                      {rowImages.map((image, index) => (
+                        <AnimatedElement
+                          key={currentIndex + index}
+                          animationType="fadeInUp"
+                          delay={(currentIndex + index) * 0.05}
+                        >
+                          <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              width={800}
+                              height={600}
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                              style={{ aspectRatio: '4/3' }}
+                            />
+                          </div>
+                        </AnimatedElement>
+                      ))}
+                    </div>
+                  );
+                }
+                
+                currentIndex += imagesPerRow;
+                rowNumber++;
+              }
+              
+              return imageRows;
+            })()}
           </div>
         </div>
       </section>

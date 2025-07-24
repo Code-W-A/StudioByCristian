@@ -23,12 +23,11 @@ const projectDetails = {
     area: "180 square meters",
     client: "Susan and Cyril"
   },
-  // First 6 images for dynamic layout
+  // First 5 images for dynamic layout
   gallery: [
     { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-1-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 1" },
     { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-2-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 2" },
-    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-3-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 3" },
-    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-4-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 4" },
+    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-37-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 37" },
     { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-5-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 5" },
     { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-6-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 6" },
   ],
@@ -47,7 +46,6 @@ const projectDetails = {
     { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-33.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 33" },
     { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-34.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 34" },
     { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-36-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 36" },
-    { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-37-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 37" },
     { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-38-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 38" },
     { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-39-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 39" },
     { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-40-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 40" },
@@ -55,6 +53,8 @@ const projectDetails = {
     { src: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-45-scaled.jpg.jpeg", alt: "Susan and Cyril Apartment - Interior view 45" },
   ]
 }
+// http://localhost:3000/_next/image?url=%2Fsusan-and-cyril-apartment%2FSusan-and-Cyril-Apartment-37-scaled.jpg.jpeg&w=1920&q=75
+// http://localhost:3000/_next/image?url=%2Fsusan-and-cyril-apartment%2FSusan-and-Cyril-Apartment-3-scaled.jpg.jpeg&w=1920&q=75
 
 export default function SusanAndCyrilApartmentPage() {
   return (
@@ -153,9 +153,9 @@ export default function SusanAndCyrilApartmentPage() {
             </div>
           </AnimatedElement>
 
-          {/* 3. Row with 3 images */}
+          {/* 3. Row with 2 images */}
           <AnimatedElement animationType="fadeInUp" delay={0.2}>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-8">
               <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
                 <Image
                   src={projectDetails.gallery[3].src}
@@ -170,16 +170,6 @@ export default function SusanAndCyrilApartmentPage() {
                 <Image
                   src={projectDetails.gallery[4].src}
                   alt={projectDetails.gallery[4].alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  style={{ display: 'block' }}
-                />
-              </div>
-              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                <Image
-                  src={projectDetails.gallery[5].src}
-                  alt={projectDetails.gallery[5].alt}
                   width={800}
                   height={600}
                   className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"

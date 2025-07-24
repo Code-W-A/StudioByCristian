@@ -60,6 +60,18 @@ export default function ThijsOverveenPage() {
         <AnimatedElement animationType="fadeInUp">
           <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">{projectDetails.category}</p>
           <h1 className="mt-2 text-4xl font-bold text-white sm:text-5xl md:text-6xl">{projectDetails.title}</h1>
+          
+          {/* Project badges in hero */}
+          <div className="flex flex-wrap gap-3 mt-6 justify-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border border-white/30">
+              <span className="w-2 h-2 bg-white rounded-full mr-2"></span>
+              Client: Thijs
+            </div>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border border-white/30">
+              <span className="w-2 h-2 bg-white rounded-full mr-2"></span>
+              Architect/Designer: Martijn Elzinga – DISEL Architect
+            </div>
+          </div>
         </AnimatedElement>
       </ParallaxSection>
 
