@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -48,7 +48,51 @@ const projectDetails = {
 
 // http://localhost:3000/_next/image?url=%2FSTUDIO%20BY%20CRISTIAN%2Fprivate-home-for-dennis-mabel%2FPrivate-Home-for-Dennis-Mabel-Banner-scaled.jpg.jpeg&w=1920&q=75
 
+// Hook to detect mobile device
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  return isMobile
+}
+
+// Mobile-optimized image gallery component
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+  return (
+    <AnimatedElement animationType="fadeInUp" rootMargin="200px">
+      <div className="space-y-6">
+        {images.map((image, index) => (
+          <div key={index} className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+            <Image 
+              src={image.src} 
+              alt={image.alt} 
+              width={800} 
+              height={600}
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+              style={{ aspectRatio }} 
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              sizes="100vw"
+            />
+          </div>
+        ))}
+      </div>
+    </AnimatedElement>
+  )
+}
+
 export default function PrivateHomeForDennisMabelPage() {
+  const isMobile = useIsMobile()
   return (
     <div className="bg-white text-black">
       <ParallaxSection
@@ -188,41 +232,50 @@ export default function PrivateHomeForDennisMabelPage() {
             </div>
 
             {/* Gallery Images - All 2 per row */}
-            <div className="space-y-8">
-              {/* All remaining images in consistent 2-column layout */}
-              {(() => {
-                const remainingImages = projectDetails.images.slice(4);
-                const imageRows = [];
-                
-                for (let i = 0; i < remainingImages.length; i += 2) {
-                  const rowImages = remainingImages.slice(i, i + 2);
-                  imageRows.push(
-                    <div key={i} className="grid md:grid-cols-2 gap-8">
-                      {rowImages.map((image, index) => (
-                        <AnimatedElement
-                          key={i + index}
-                          animationType="fadeInUp"
-                          delay={(i + index) * 0.1}
-                        >
-                          <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                            <Image
-                              src={image.src}
-                              alt={image.alt}
-                              width={800}
-                              height={600}
-                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                              style={{ aspectRatio: '4/3' }}
-                            />
-                          </div>
-                        </AnimatedElement>
-                      ))}
-                    </div>
-                  );
-                }
-                
-                return imageRows;
-              })()}
-            </div>
+            {isMobile ? (
+              // Mobile-optimized version with fewer intersection observers
+              <MobileOptimizedGallery 
+                images={projectDetails.images.slice(4)} 
+                aspectRatio="4/3" 
+              />
+            ) : (
+              // Desktop version with for loop and individual animations
+              <div className="space-y-8">
+                {/* All remaining images in consistent 2-column layout */}
+                {(() => {
+                  const remainingImages = projectDetails.images.slice(4);
+                  const imageRows = [];
+                  
+                  for (let i = 0; i < remainingImages.length; i += 2) {
+                    const rowImages = remainingImages.slice(i, i + 2);
+                    imageRows.push(
+                      <div key={i} className="grid md:grid-cols-2 gap-8">
+                        {rowImages.map((image, index) => (
+                          <AnimatedElement
+                            key={i + index}
+                            animationType="fadeInUp"
+                            delay={(i + index) * 0.1}
+                          >
+                            <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                              <Image
+                                src={image.src}
+                                alt={image.alt}
+                                width={800}
+                                height={600}
+                                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                                style={{ aspectRatio: '4/3' }}
+                              />
+                            </div>
+                          </AnimatedElement>
+                        ))}
+                      </div>
+                    );
+                  }
+                  
+                  return imageRows;
+                })()}
+              </div>
+            )}
           </AnimatedElement>
         </div>
       </section>

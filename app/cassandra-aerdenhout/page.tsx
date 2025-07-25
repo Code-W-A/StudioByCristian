@@ -8,6 +8,7 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
 import ProjectVideoShowcase from "@/components/project-video-showcase"
 
 const projectDetails = {
@@ -36,7 +37,51 @@ const projectDetails = {
 
 // http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FCassandra_Aerdenhout%2F_EWP5958.jpg&w=1920&q=75
 
+// Hook to detect mobile device
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  return isMobile
+}
+
+// Mobile-optimized image gallery component
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+  return (
+    <AnimatedElement animationType="fadeInUp" rootMargin="200px">
+      <div className="space-y-6">
+        {images.map((image, index) => (
+          <div key={index} className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+            <Image 
+              src={image.src} 
+              alt={image.alt} 
+              width={800} 
+              height={600}
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+              style={{ aspectRatio }} 
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              sizes="100vw"
+            />
+          </div>
+        ))}
+      </div>
+    </AnimatedElement>
+  )
+}
+
 export default function CassandraAerdenhoutPage() {
+  const isMobile = useIsMobile()
   return (
     <div className="bg-white text-black">
       <ParallaxSection imageUrl={projectDetails.heroImage} imageAlt={projectDetails.title + " Hero Image"} minHeight="70vh" strength={0.3} overlayClassName="bg-black/40">
@@ -182,48 +227,57 @@ export default function CassandraAerdenhoutPage() {
               ))}
             </div>
             {/* Alternating layout: 2 images, then 1 image, then 2 images, etc. */}
-            {(() => {
-              const remainingImages = projectDetails.images.slice(6);
-              const elements = [];
-              
-              for (let i = 0; i < remainingImages.length; i += 3) {
-                // Add pair of images (2 in a row)
-                if (i < remainingImages.length) {
-                  elements.push(
-                    <div key={`pair-${i}`} className="grid md:grid-cols-2 gap-8">
-                      <AnimatedElement animationType="fadeInUp" delay={i * 0.1}>
-                        <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                          <Image src={remainingImages[i].src} alt={remainingImages[i].alt} width={900} height={675}
-                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
-                        </div>
-                      </AnimatedElement>
-                      {remainingImages[i + 1] && (
-                        <AnimatedElement animationType="fadeInUp" delay={(i + 1) * 0.1}>
+            {isMobile ? (
+              // Mobile-optimized version with fewer intersection observers
+              <MobileOptimizedGallery 
+                images={projectDetails.images.slice(6)} 
+                aspectRatio="4/3" 
+              />
+            ) : (
+              // Desktop version with complex layout and individual animations
+              (() => {
+                const remainingImages = projectDetails.images.slice(6);
+                const elements = [];
+                
+                for (let i = 0; i < remainingImages.length; i += 3) {
+                  // Add pair of images (2 in a row)
+                  if (i < remainingImages.length) {
+                    elements.push(
+                      <div key={`pair-${i}`} className="grid md:grid-cols-2 gap-8">
+                        <AnimatedElement animationType="fadeInUp" delay={i * 0.1}>
                           <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                            <Image src={remainingImages[i + 1].src} alt={remainingImages[i + 1].alt} width={900} height={675}
+                            <Image src={remainingImages[i].src} alt={remainingImages[i].alt} width={900} height={675}
                               className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
                           </div>
                         </AnimatedElement>
-                      )}
-                    </div>
-                  );
+                        {remainingImages[i + 1] && (
+                          <AnimatedElement animationType="fadeInUp" delay={(i + 1) * 0.1}>
+                            <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                              <Image src={remainingImages[i + 1].src} alt={remainingImages[i + 1].alt} width={900} height={675}
+                                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
+                            </div>
+                          </AnimatedElement>
+                        )}
+                      </div>
+                    );
+                  }
+                  
+                  // Add single image if exists
+                  if (remainingImages[i + 2]) {
+                    elements.push(
+                      <AnimatedElement key={`single-${i + 2}`} animationType="fadeInUp" delay={(i + 2) * 0.1}>
+                        <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                          <Image src={remainingImages[i + 2].src} alt={remainingImages[i + 2].alt} width={1400} height={800}
+                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '16/9' }} />
+                        </div>
+                      </AnimatedElement>
+                    );
+                  }
                 }
                 
-                // Add single image if exists
-                if (remainingImages[i + 2]) {
-                  elements.push(
-                    <AnimatedElement key={`single-${i + 2}`} animationType="fadeInUp" delay={(i + 2) * 0.1}>
-                      <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                        <Image src={remainingImages[i + 2].src} alt={remainingImages[i + 2].alt} width={1400} height={800}
-                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '16/9' }} />
-                      </div>
-                    </AnimatedElement>
-                  );
-                }
-              }
-              
-              return elements;
-            })()}
+                return elements;
+              })()
+            )}
           </div>
         </div>
       </section>

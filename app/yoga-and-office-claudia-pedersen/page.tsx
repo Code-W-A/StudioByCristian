@@ -8,6 +8,7 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
 
 const projectDetails = {
   title: "Yoga and Office Claudia Pedersen",
@@ -41,8 +42,51 @@ const projectDetails = {
 // http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FYoga%20and%20Office%20Claudia%20Pedersen_Grigore%20Manolescu%2FHiRes%2FIMG_4401.jpg&w=1200&q=75
 // http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FYoga%20and%20Office%20Claudia%20Pedersen_Grigore%20Manolescu%2FHiRes%2FIMG_4334.jpg&w=1920&q=75
 
+// Hook to detect mobile device
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  return isMobile
+}
+
+// Mobile-optimized image gallery component
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+  return (
+    <AnimatedElement animationType="fadeInUp" rootMargin="200px">
+      <div className="space-y-6">
+        {images.map((image, index) => (
+          <div key={index} className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+            <Image 
+              src={image.src} 
+              alt={image.alt} 
+              width={800} 
+              height={600}
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+              style={{ aspectRatio }} 
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              sizes="100vw"
+            />
+          </div>
+        ))}
+      </div>
+    </AnimatedElement>
+  )
+}
 
 export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
+  const isMobile = useIsMobile()
   return (
     <div className="bg-white text-black">
       <ParallaxSection imageUrl={projectDetails.heroImage} imageAlt={projectDetails.title + " Hero Image"} minHeight="70vh" strength={0.3} overlayClassName="bg-black/40">
@@ -89,66 +133,75 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             {/* Alternating pattern: 2 images, then 1 image, repeating */}
-            {(() => {
-              const result = [];
-              let imageIndex = 1; // Start from index 1 since index 0 is already shown above
-              
-              while (imageIndex < projectDetails.images.length) {
-                // Two images in a row
-                if (imageIndex + 1 < projectDetails.images.length) {
-                  result.push(
-                    <div key={`pair-${imageIndex}`} className="grid md:grid-cols-2 gap-8">
-                      <AnimatedElement animationType="fadeInUp" delay={0.1}>
+            {isMobile ? (
+              // Mobile-optimized version with fewer intersection observers
+              <MobileOptimizedGallery 
+                images={projectDetails.images.slice(1)} 
+                aspectRatio="4/3" 
+              />
+            ) : (
+              // Desktop version with complex while loop and individual animations
+              (() => {
+                const result = [];
+                let imageIndex = 1; // Start from index 1 since index 0 is already shown above
+                
+                while (imageIndex < projectDetails.images.length) {
+                  // Two images in a row
+                  if (imageIndex + 1 < projectDetails.images.length) {
+                    result.push(
+                      <div key={`pair-${imageIndex}`} className="grid md:grid-cols-2 gap-8">
+                        <AnimatedElement animationType="fadeInUp" delay={0.1}>
+                          <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                            <Image 
+                              src={projectDetails.images[imageIndex].src} 
+                              alt={projectDetails.images[imageIndex].alt} 
+                              width={900} 
+                              height={675}
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+                              style={{ aspectRatio: '4/3' }} 
+                            />
+                          </div>
+                        </AnimatedElement>
+                        <AnimatedElement animationType="fadeInUp" delay={0.2}>
+                          <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                            <Image 
+                              src={projectDetails.images[imageIndex + 1].src} 
+                              alt={projectDetails.images[imageIndex + 1].alt} 
+                              width={900} 
+                              height={675}
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+                              style={{ aspectRatio: '4/3' }} 
+                            />
+                          </div>
+                        </AnimatedElement>
+                      </div>
+                    );
+                    imageIndex += 2;
+                  }
+                  
+                  // Single image
+                  if (imageIndex < projectDetails.images.length) {
+                    result.push(
+                      <AnimatedElement key={`single-${imageIndex}`} animationType="fadeInUp" delay={0.1}>
                         <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
                           <Image 
                             src={projectDetails.images[imageIndex].src} 
                             alt={projectDetails.images[imageIndex].alt} 
-                            width={900} 
-                            height={675}
+                            width={1400} 
+                            height={800}
                             className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-                            style={{ aspectRatio: '4/3' }} 
+                            style={{ aspectRatio: '16/9' }} 
                           />
                         </div>
                       </AnimatedElement>
-                      <AnimatedElement animationType="fadeInUp" delay={0.2}>
-                        <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                          <Image 
-                            src={projectDetails.images[imageIndex + 1].src} 
-                            alt={projectDetails.images[imageIndex + 1].alt} 
-                            width={900} 
-                            height={675}
-                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-                            style={{ aspectRatio: '4/3' }} 
-                          />
-                        </div>
-                      </AnimatedElement>
-                    </div>
-                  );
-                  imageIndex += 2;
+                    );
+                    imageIndex++;
+                  }
                 }
                 
-                // Single image
-                if (imageIndex < projectDetails.images.length) {
-                  result.push(
-                    <AnimatedElement key={`single-${imageIndex}`} animationType="fadeInUp" delay={0.1}>
-                      <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                        <Image 
-                          src={projectDetails.images[imageIndex].src} 
-                          alt={projectDetails.images[imageIndex].alt} 
-                          width={1400} 
-                          height={800}
-                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-                          style={{ aspectRatio: '16/9' }} 
-                        />
-                      </div>
-                    </AnimatedElement>
-                  );
-                  imageIndex++;
-                }
-              }
-              
-              return result;
-            })()}
+                return result;
+              })()
+            )}
           </div>
         </div>
       </section>

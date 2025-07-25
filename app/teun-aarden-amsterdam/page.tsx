@@ -8,6 +8,7 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
 
 const projectDetails = {
   title: "Teun Aarden Amsterdam",
@@ -61,7 +62,51 @@ const projectDetails = {
 
 // http://localhost:3000/_next/image?url=%2Fextra%20Custom%20Furniture%2FTeun%20Aarden_Amsterdam%2FEerste%20Helmersstraat%20181-1%20Amsterdam%2FDSC01437.jpg&w=1920&q=75
 
+// Hook to detect mobile device
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  return isMobile
+}
+
+// Mobile-optimized image gallery component
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+  return (
+    <AnimatedElement animationType="fadeInUp" rootMargin="200px">
+      <div className="space-y-6">
+        {images.map((image, index) => (
+          <div key={index} className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+            <Image 
+              src={image.src} 
+              alt={image.alt} 
+              width={800} 
+              height={600}
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+              style={{ aspectRatio }} 
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              sizes="100vw"
+            />
+          </div>
+        ))}
+      </div>
+    </AnimatedElement>
+  )
+}
+
 export default function TeunAardenAmsterdamPage() {
+  const isMobile = useIsMobile()
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
@@ -133,48 +178,57 @@ export default function TeunAardenAmsterdamPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-8">
             {/* Alternating layout: 3 images, then 2 images */}
-            {(() => {
-              const galleryImages = projectDetails.images.slice(1);
-              const imageRows = [];
-              let currentIndex = 0;
-              let rowNumber = 0;
-              
-              while (currentIndex < galleryImages.length) {
-                // Alternate: odd rows have 3 images, even rows have 2 images
-                const imagesPerRow = rowNumber % 2 === 0 ? 3 : 2;
-                const rowImages = galleryImages.slice(currentIndex, currentIndex + imagesPerRow);
+            {isMobile ? (
+              // Mobile-optimized version with fewer intersection observers
+              <MobileOptimizedGallery 
+                images={projectDetails.images.slice(1)} 
+                aspectRatio="4/3" 
+              />
+            ) : (
+              // Desktop version with complex while loop and individual animations
+              (() => {
+                const galleryImages = projectDetails.images.slice(1);
+                const imageRows = [];
+                let currentIndex = 0;
+                let rowNumber = 0;
                 
-                if (rowImages.length > 0) {
-                  imageRows.push(
-                    <div key={currentIndex} className={`grid ${imagesPerRow === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-8`}>
-                      {rowImages.map((image, index) => (
-                        <AnimatedElement
-                          key={currentIndex + index}
-                          animationType="fadeInUp"
-                          delay={(currentIndex + index) * 0.05}
-                        >
-                          <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                            <Image
-                              src={image.src}
-                              alt={image.alt}
-                              width={800}
-                              height={600}
-                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                              style={{ aspectRatio: '4/3' }}
-                            />
-                          </div>
-                        </AnimatedElement>
-                      ))}
-                    </div>
-                  );
+                while (currentIndex < galleryImages.length) {
+                  // Alternate: odd rows have 3 images, even rows have 2 images
+                  const imagesPerRow = rowNumber % 2 === 0 ? 3 : 2;
+                  const rowImages = galleryImages.slice(currentIndex, currentIndex + imagesPerRow);
+                  
+                  if (rowImages.length > 0) {
+                    imageRows.push(
+                      <div key={currentIndex} className={`grid ${imagesPerRow === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-8`}>
+                        {rowImages.map((image, index) => (
+                          <AnimatedElement
+                            key={currentIndex + index}
+                            animationType="fadeInUp"
+                            delay={(currentIndex + index) * 0.05}
+                          >
+                            <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                              <Image
+                                src={image.src}
+                                alt={image.alt}
+                                width={800}
+                                height={600}
+                                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                                style={{ aspectRatio: '4/3' }}
+                              />
+                            </div>
+                          </AnimatedElement>
+                        ))}
+                      </div>
+                    );
+                  }
+                  
+                  currentIndex += imagesPerRow;
+                  rowNumber++;
                 }
                 
-                currentIndex += imagesPerRow;
-                rowNumber++;
-              }
-              
-              return imageRows;
-            })()}
+                return imageRows;
+              })()
+            )}
           </div>
         </div>
       </section>
