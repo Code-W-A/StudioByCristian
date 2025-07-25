@@ -29,6 +29,17 @@ export default function ParallaxSection({
   objectPosition = "center",
 }: ParallaxSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null)
+  
+  // Check if user prefers reduced motion or is on mobile
+  const prefersReducedMotion = typeof window !== 'undefined' && 
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  
+  const isMobile = typeof window !== 'undefined' && 
+    (window.innerWidth <= 768 || 'ontouchstart' in window)
+  
+  // Reduce or disable parallax on mobile for better performance
+  const effectiveStrength = (prefersReducedMotion || isMobile) ? 0 : strength
+  
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"], // Animate when section is from start of viewport to end
@@ -37,8 +48,8 @@ export default function ParallaxSection({
   // Adjust the output range based on strength.
   // A positive strength means image moves up as user scrolls down (appears slower).
   // A negative strength means image moves down as user scrolls down (appears faster).
-  const yRangeStart = `${-strength * 100}%`
-  const yRangeEnd = `${strength * 100}%`
+  const yRangeStart = `${-effectiveStrength * 100}%`
+  const yRangeEnd = `${effectiveStrength * 100}%`
   const y = useTransform(scrollYProgress, [0, 1], [yRangeStart, yRangeEnd])
 
   return (

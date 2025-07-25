@@ -3,7 +3,8 @@
 import type React from "react"
 
 import { motion, type Variants } from "framer-motion"
-import { useInView } from "react-intersection-observer" // framer-motion also has useInView, but this is a common alternative
+import { useInView } from "react-intersection-observer"
+import { useEffect, useState } from "react"
 
 interface AnimatedElementProps {
   children: React.ReactNode
@@ -14,6 +15,7 @@ interface AnimatedElementProps {
   once?: boolean // Whether the animation should only run once
   amount?: number // How much of the element needs to be in view to trigger (0 to 1)
   staggerChildren?: number // If this element has children, stagger their animation
+  rootMargin?: string // Add custom root margin for earlier triggering
 }
 
 const animationVariants: Record<string, Variants> = {
@@ -39,6 +41,12 @@ const animationVariants: Record<string, Variants> = {
   },
 }
 
+// Check if user is on mobile device
+const isMobile = () => {
+  if (typeof window === 'undefined') return false
+  return window.innerWidth <= 768 || 'ontouchstart' in window
+}
+
 export default function AnimatedElement({
   children,
   className,
@@ -46,26 +54,57 @@ export default function AnimatedElement({
   delay = 0,
   duration = 0.5,
   once = true,
-  amount = 0.2, // Trigger when 20% of the element is in view
+  amount = 0.2,
   staggerChildren,
+  rootMargin = "100px", // Default margin to trigger earlier
 }: AnimatedElementProps) {
-  const { ref, inView } = useInView({
+  const [isMobileDevice, setIsMobileDevice] = useState(false)
+
+  useEffect(() => {
+    setIsMobileDevice(isMobile())
+    
+    const handleResize = () => {
+      setIsMobileDevice(isMobile())
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // Mobile-optimized intersection observer settings
+  const intersectionConfig = {
     triggerOnce: once,
-    threshold: amount,
-  })
+    threshold: isMobileDevice ? 0.05 : amount, // Lower threshold for mobile
+    rootMargin: isMobileDevice ? "150px" : rootMargin, // Larger margin for mobile
+    skip: false,
+  }
+
+  const { ref, inView } = useInView(intersectionConfig)
 
   const selectedVariant = animationVariants[animationType] || animationVariants.fadeInUp
+
+  // Reduced animation duration for mobile to feel more responsive
+  const adjustedDuration = isMobileDevice ? Math.min(duration * 0.7, 0.4) : duration
+  const adjustedDelay = isMobileDevice ? Math.min(delay * 0.5, 0.2) : delay
 
   const variantsWithDelay: Variants = {
     hidden: selectedVariant.hidden,
     visible: {
       ...selectedVariant.visible,
       transition: {
-        duration,
-        delay,
-        ...(staggerChildren && { staggerChildren }),
+        duration: adjustedDuration,
+        delay: adjustedDelay,
+        ease: "easeOut", // Smoother easing for mobile
+        ...(staggerChildren && { staggerChildren: isMobileDevice ? staggerChildren * 0.5 : staggerChildren }),
       },
     },
+  }
+
+  // On mobile, if animation is disabled or reduced motion is preferred, just show content
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  
+  if (prefersReducedMotion) {
+    return <div ref={ref} className={className}>{children}</div>
   }
 
   return (
@@ -75,6 +114,8 @@ export default function AnimatedElement({
       animate={inView ? "visible" : "hidden"}
       variants={variantsWithDelay}
       className={className}
+      // Add will-change for better mobile performance
+      style={{ willChange: inView ? 'transform, opacity' : 'auto' }}
     >
       {children}
     </motion.div>
