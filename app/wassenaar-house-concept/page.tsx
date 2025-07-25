@@ -6,6 +6,7 @@ import ParallaxSection from "@/components/parallax-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import { useState, useEffect } from "react"
 
 const projectDetails = {
   title: "Wassenaar House Concept",
@@ -53,7 +54,51 @@ const projectDetails = {
 
 // http://localhost:3000/_next/image?url=%2Fwasenaar-house-concept-page%2FWassenaar-House-Concept-10.jpg.jpeg&w=1080&q=75
 
+// Hook to detect mobile device
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  return isMobile
+}
+
+// Mobile-optimized image gallery component
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+  return (
+    <AnimatedElement animationType="fadeInUp" rootMargin="200px">
+      <div className="space-y-6">
+        {images.map((image, index) => (
+          <div key={index} className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+            <Image 
+              src={image.src} 
+              alt={image.alt} 
+              width={800} 
+              height={600}
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+              style={{ aspectRatio }} 
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              sizes="100vw"
+            />
+          </div>
+        ))}
+      </div>
+    </AnimatedElement>
+  )
+}
+
 export default function WassenaarHouseConceptPage() {
+  const isMobile = useIsMobile()
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
@@ -206,28 +251,37 @@ export default function WassenaarHouseConceptPage() {
       {/* Large Dynamic Images Grid - Fewer per row, larger size */}
       <section className="py-12 lg:py-16 bg-gray-50 text-black">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="columns-1 lg:columns-2 gap-8 space-y-8">
-            {projectDetails.gallery.slice(6).concat(projectDetails.sliderImages).map((image, index) => (
-              <AnimatedElement
-                key={index}
-                animationType="scaleIn"
-                delay={index * 0.1}
-                className="break-inside-avoid"
-              >
-                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 mb-8">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={1200}
-                    height={900}
-                    className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
-                    style={{ aspectRatio: '4/3' }}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
+          {isMobile ? (
+            // Mobile-optimized version with fewer intersection observers
+            <MobileOptimizedGallery 
+              images={projectDetails.gallery.slice(6).concat(projectDetails.sliderImages)} 
+              aspectRatio="4/3" 
+            />
+          ) : (
+            // Desktop version with individual animations
+            <div className="columns-1 lg:columns-2 gap-8 space-y-8">
+              {projectDetails.gallery.slice(6).concat(projectDetails.sliderImages).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="scaleIn"
+                  delay={index * 0.1}
+                  className="break-inside-avoid"
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 mb-8">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={1200}
+                      height={900}
+                      className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+                      style={{ aspectRatio: '4/3' }}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
