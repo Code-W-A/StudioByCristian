@@ -225,15 +225,17 @@ export default function ChicParisienApartmentPage() {
 
             {/* Additional single image */}
             <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                <Image
-                  src={projectDetails.images[7].src}
-                  alt={projectDetails.images[7].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
+              <div className="flex justify-center">
+                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-4xl w-full">
+                  <Image
+                    src={projectDetails.images[7].src}
+                    alt={projectDetails.images[7].alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
               </div>
             </AnimatedElement>
 
@@ -261,15 +263,17 @@ export default function ChicParisienApartmentPage() {
 
             {/* Single wide image */}
             <AnimatedElement animationType="fadeInUp" delay={0.3}>
-              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-                <Image
-                  src={projectDetails.images[10].src}
-                  alt={projectDetails.images[10].alt}
-                  width={1400}
-                  height={700}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
+              <div className="flex justify-center">
+                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100 max-w-4xl w-full">
+                  <Image
+                    src={projectDetails.images[10].src}
+                    alt={projectDetails.images[10].alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
               </div>
             </AnimatedElement>
 
@@ -297,15 +301,17 @@ export default function ChicParisienApartmentPage() {
 
             {/* Final image */}
             <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                <Image
-                  src={projectDetails.images[13].src}
-                  alt={projectDetails.images[13].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
+              <div className="flex justify-center">
+                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-4xl w-full">
+                  <Image
+                    src={projectDetails.images[13].src}
+                    alt={projectDetails.images[13].alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
               </div>
             </AnimatedElement>
 
@@ -354,115 +360,144 @@ export default function ChicParisienApartmentPage() {
             </div>
 
             {/* Kitchen Details */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.images.slice(21, 23).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '4/3' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
+            {projectDetails.images.slice(21, 23).length > 0 && (
+              <div className="grid md:grid-cols-2 gap-8">
+                {projectDetails.images.slice(21, 23).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '4/3' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+            )}
 
             {/* Master Bedroom */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.images.slice(23, 25).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '4/3' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
+            {projectDetails.images.slice(23, 25).length > 0 && (
+              <div className="grid md:grid-cols-2 gap-8">
+                {projectDetails.images.slice(23, 25).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '4/3' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+            )}
 
             {/* Other Bedrooms - Three images */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {projectDetails.images.slice(25, 29).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={600}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '1/1' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
+            {projectDetails.images.slice(25, 29).length > 0 && (
+              <div className="grid md:grid-cols-3 gap-6">
+                {projectDetails.images.slice(25, 29).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '1/1' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+            )}
 
             {/* Bathrooms Section */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {projectDetails.images.slice(29, 34).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={600}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '1/1' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
+            {projectDetails.images.slice(29, 34).length > 0 && (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {projectDetails.images.slice(29, 34).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '1/1' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+            )}
 
             {/* Office and Utility - Final three images */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {projectDetails.images.slice(34, 37).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={600}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '1/1' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
+            {projectDetails.images.slice(34, 37).length > 0 && (
+              <div className="grid md:grid-cols-3 gap-6">
+                {projectDetails.images.slice(34, 37).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '1/1' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+            )}
           </div>
+        </div>
+      </section>
+
+        {/* Back Button Bottom */}
+        <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/design">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back To Design Projects
+              </Link>
+            </Button>
+          </AnimatedElement>
         </div>
       </section>
 
@@ -515,24 +550,7 @@ export default function ChicParisienApartmentPage() {
         </div>
       </section>
 
-      {/* Back Button Bottom */}
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedElement animationType="fadeInUp">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-white text-black border-gray-300 hover:bg-gray-100"
-            >
-              <Link href="/design">
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Design Projects
-              </Link>
-            </Button>
-          </AnimatedElement>
-        </div>
-      </section>
+    
     </div>
   )
 }

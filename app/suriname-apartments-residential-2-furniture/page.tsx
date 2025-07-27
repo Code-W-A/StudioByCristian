@@ -184,21 +184,23 @@ export default function SurinameApartmentsRes2Page() {
 
             {/* Gallery Images - Featured + Grid */}
             <div className="space-y-8">
-              {/* Single large featured image */}
+              {/* Single large featured image - centered and smaller */}
               <AnimatedElement animationType="fadeInUp" delay={0.2}>
-                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-                  <Image
-                    src={projectDetails.images[4].src}
-                    alt={projectDetails.images[4].alt}
-                    width={1400}
-                    height={800}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
+                <div className="flex justify-center">
+                  <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100 max-w-4xl w-full">
+                    <Image
+                      src={projectDetails.images[4].src}
+                      alt={projectDetails.images[4].alt}
+                      width={1200}
+                      height={675}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '16/9' }}
+                    />
+                  </div>
                 </div>
               </AnimatedElement>
 
-              {/* Three images in a row */}
+              {/* Three images in a row - improved quality */}
               <div className="grid md:grid-cols-3 gap-6">
                 {projectDetails.images.slice(5, 8).map((image, index) => (
                   <AnimatedElement
@@ -210,8 +212,8 @@ export default function SurinameApartmentsRes2Page() {
                       <Image
                         src={image.src}
                         alt={image.alt}
-                        width={600}
-                        height={600}
+                        width={900}
+                        height={900}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         style={{ aspectRatio: '1/1' }}
                       />
@@ -220,7 +222,7 @@ export default function SurinameApartmentsRes2Page() {
                 ))}
               </div>
 
-              {/* Two large images side by side */}
+              {/* Two large images side by side - improved quality */}
               <div className="grid md:grid-cols-2 gap-8">
                 {projectDetails.images.slice(8, 10).map((image, index) => (
                   <AnimatedElement
@@ -232,8 +234,8 @@ export default function SurinameApartmentsRes2Page() {
                       <Image
                         src={image.src}
                         alt={image.alt}
-                        width={800}
-                        height={600}
+                        width={1000}
+                        height={750}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         style={{ aspectRatio: '4/3' }}
                       />
@@ -242,7 +244,7 @@ export default function SurinameApartmentsRes2Page() {
                 ))}
               </div>
 
-              {/* Three images in a grid */}
+              {/* Three images in a grid - improved quality */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projectDetails.images.slice(10, 13).map((image, index) => (
                   <AnimatedElement
@@ -254,8 +256,8 @@ export default function SurinameApartmentsRes2Page() {
                       <Image
                         src={image.src}
                         alt={image.alt}
-                        width={500}
-                        height={500}
+                        width={900}
+                        height={900}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         style={{ aspectRatio: '1/1' }}
                       />
@@ -306,6 +308,25 @@ export default function SurinameApartmentsRes2Page() {
         </div>
       </section>
 
+       {/* Back Button Bottom */}
+       <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/furniture-production">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back To Furniture Production
+              </Link>
+            </Button>
+          </AnimatedElement>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -345,24 +366,7 @@ export default function SurinameApartmentsRes2Page() {
         </div>
       </section>
 
-      {/* Back Button Bottom */}
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedElement animationType="fadeInUp">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-white text-black border-gray-300 hover:bg-gray-100"
-            >
-              <Link href="/furniture-production">
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Furniture Production
-              </Link>
-            </Button>
-          </AnimatedElement>
-        </div>
-      </section>
+     
     </div>
   )
 }

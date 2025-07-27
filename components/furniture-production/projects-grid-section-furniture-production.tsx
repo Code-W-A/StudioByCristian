@@ -98,11 +98,11 @@ const furnitureProjects = [
     imageUrl: "/furniture-production-page/www.studiobycristian.com-1750525148492/Shapes-Category-2-768x511.jpg.jpeg",
     link: "/shapes",
   },
-  {
-    name: "Wassenaar House Concept",
-    imageUrl: "/wasenaar-house-concept-page/Wassenaar-House-Category.jpg.jpeg",
-    link: "/wassenaar-house-concept",
-  },
+  // {
+  //   name: "Wassenaar House Concept",
+  //   imageUrl: "/wasenaar-house-concept-page/Wassenaar-House-Category.jpg.jpeg",
+  //   link: "/wassenaar-house-concept",
+  // },
   {
     name: "Teun Aarden Amsterdam",
     imageUrl: "/extra Custom Furniture/Teun Aarden_Amsterdam/Eerste Helmersstraat 181-1 Amsterdam/DSC01382.jpg",

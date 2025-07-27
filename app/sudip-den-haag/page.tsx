@@ -45,7 +45,7 @@ const projectDetails = {
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2423.jpg", alt: "Sudip Den Haag - Interior view 26" },
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2424.jpg", alt: "Sudip Den Haag - Interior view 27" },
     { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2433.jpg", alt: "Sudip Den Haag - Interior view 28" },
-    { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2440.jpg", alt: "Sudip Den Haag - Interior view 29" }
+    // { src: "/extra Custom Furniture/Sudip_Den Haag/_EWP2440.jpg", alt: "Sudip Den Haag - Interior view 29" }
   ]
 }
 
@@ -218,15 +218,17 @@ export default function SudipDenHaagPage() {
 
             {/* Single large featured image */}
             <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                <Image
-                  src={projectDetails.images[3].src}
-                  alt={projectDetails.images[3].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
+              <div className="flex justify-center">
+                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 max-w-4xl w-full">
+                  <Image
+                    src={projectDetails.images[3].src}
+                    alt={projectDetails.images[3].alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
               </div>
             </AnimatedElement>
 
@@ -254,15 +256,17 @@ export default function SudipDenHaagPage() {
 
             {/* Additional single image */}
             <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                <Image
-                  src={projectDetails.images[6].src}
-                  alt={projectDetails.images[6].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
+              <div className="flex justify-center">
+                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 max-w-4xl w-full">
+                  <Image
+                    src={projectDetails.images[6].src}
+                    alt={projectDetails.images[6].alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
               </div>
             </AnimatedElement>
 
@@ -290,15 +294,17 @@ export default function SudipDenHaagPage() {
 
             {/* Single wide image */}
             <AnimatedElement animationType="fadeInUp" delay={0.3}>
-              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                <Image
-                  src={projectDetails.images[9].src}
-                  alt={projectDetails.images[9].alt}
-                  width={1400}
-                  height={700}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
+              <div className="flex justify-center">
+                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 max-w-4xl w-full">
+                  <Image
+                    src={projectDetails.images[9].src}
+                    alt={projectDetails.images[9].alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
               </div>
             </AnimatedElement>
 
@@ -326,15 +332,17 @@ export default function SudipDenHaagPage() {
 
             {/* Additional single image */}
             <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                <Image
-                  src={projectDetails.images[12].src}
-                  alt={projectDetails.images[12].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
+              <div className="flex justify-center">
+                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 max-w-4xl w-full">
+                  <Image
+                    src={projectDetails.images[12].src}
+                    alt={projectDetails.images[12].alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
               </div>
             </AnimatedElement>
 
@@ -367,15 +375,17 @@ export default function SudipDenHaagPage() {
                 animationType="fadeInUp"
                 delay={index * 0.1}
               >
-                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={1400}
-                    height={800}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
+                <div className="flex justify-center">
+                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 max-w-4xl w-full">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={1200}
+                      height={675}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '16/9' }}
+                    />
+                  </div>
                 </div>
               </AnimatedElement>
             ))}

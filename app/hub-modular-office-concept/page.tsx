@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import ParallaxSection from "@/components/parallax-section"
 import AnimatedElement from "@/components/animated-element"
+import { Button } from "@/components/ui/button"
 
 export default function HubModularOfficePage() {
   const projectDetails = {
@@ -35,11 +36,18 @@ export default function HubModularOfficePage() {
       </ParallaxSection>
 
       <main className="container mx-auto px-4 py-12 md:py-16">
-        <AnimatedElement>
-          <Link href="/design" className="inline-flex items-center text-neutral-600 hover:text-black mb-8 group">
-            <ArrowLeft size={20} className="mr-2 transition-transform group-hover:-translate-x-1" />
-            Back To Design Projects
-          </Link>
+        <AnimatedElement className="text-center mb-8">
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="bg-white text-black border-gray-300 hover:bg-gray-100"
+          >
+            <Link href="/design">
+              <ArrowLeft className="mr-2 h-5 w-5" />
+              Back To Design Projects
+            </Link>
+          </Button>
         </AnimatedElement>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">

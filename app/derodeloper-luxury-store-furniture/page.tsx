@@ -181,17 +181,19 @@ export default function DerodeloperLuxuryStorePage() {
 
             {/* Gallery Images - Featured + Grid */}
             <div className="space-y-8">
-              {/* Single large featured image */}
+              {/* Single large featured image - centered and smaller */}
               <AnimatedElement animationType="fadeInUp" delay={0.2}>
-                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-                  <Image
-                    src={projectDetails.images[4].src}
-                    alt={projectDetails.images[4].alt}
-                    width={1400}
-                    height={800}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
+                <div className="flex justify-center">
+                  <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100 max-w-4xl w-full">
+                    <Image
+                      src={projectDetails.images[4].src}
+                      alt={projectDetails.images[4].alt}
+                      width={1200}
+                      height={675}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '16/9' }}
+                    />
+                  </div>
                 </div>
               </AnimatedElement>
 
@@ -299,6 +301,25 @@ export default function DerodeloperLuxuryStorePage() {
         </div>
       </section>
 
+           {/* Back Button Bottom */}
+           <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/furniture-production">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back To Furniture Production
+              </Link>
+            </Button>
+          </AnimatedElement>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -357,24 +378,7 @@ export default function DerodeloperLuxuryStorePage() {
         </div>
       </section>
 
-      {/* Back Button Bottom */}
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedElement animationType="fadeInUp">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-white text-black border-gray-300 hover:bg-gray-100"
-            >
-              <Link href="/furniture-production">
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Furniture Production
-              </Link>
-            </Button>
-          </AnimatedElement>
-        </div>
-      </section>
+ 
     </div>
   )
 }

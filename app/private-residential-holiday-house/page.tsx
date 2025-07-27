@@ -416,6 +416,24 @@ export default function PrivateResidentialHolidayHousePage() {
 
 
 
+      {/* Back Button Bottom */}
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/design">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back To Design Projects
+              </Link>
+            </Button>
+          </AnimatedElement>
+        </div>
+      </section>
       {/* Contact Section */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -474,24 +492,6 @@ export default function PrivateResidentialHolidayHousePage() {
         </div>
       </section>
 
-      {/* Back Button Bottom */}
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedElement animationType="fadeInUp">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-white text-black border-gray-300 hover:bg-gray-100"
-            >
-              <Link href="/design">
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Design Projects
-              </Link>
-            </Button>
-          </AnimatedElement>
-        </div>
-      </section>
     </div>
   )
 } 

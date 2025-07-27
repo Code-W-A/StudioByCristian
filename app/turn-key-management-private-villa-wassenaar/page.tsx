@@ -228,7 +228,7 @@ export default function PrivateVillaWassenaarPage() {
             >
               <Link href="/interior-renovation">
                 <ArrowLeft className="mr-2 h-5 w-5" />
-                Back to Interior Renovation
+                Back To Interior Renovation
               </Link>
             </Button>
           </AnimatedElement>
@@ -332,8 +332,8 @@ export default function PrivateVillaWassenaarPage() {
                     <Image
                       src={section.image}
                       alt={section.imageAlt}
-                      width={800}
-                      height={600}
+                      width={600}
+                      height={450}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '4/3' }}
                     />
@@ -385,15 +385,15 @@ export default function PrivateVillaWassenaarPage() {
                   />
                 </div>
                 
-                {/* Premium Border Effect */}
-                <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-black/20 via-transparent to-black/20 group-hover:border-black/10 transition-all duration-500" />
+                {/* Premium Border Effect - Hidden on mobile */}
+                <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-black/20 via-transparent to-black/20 md:group-hover:border-black/10 transition-all duration-500" />
                 
-                {/* Corner Accents */}
-                <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-4 left-4 w-8 h-8 border-r-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Corner Accents - Hidden on mobile */}
+                <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/30 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-4 w-8 h-8 border-r-2 border-b-2 border-white/30 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
                 
-                {/* Floating Info Card */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-20">
+                {/* Floating Info Card - Hidden animation on mobile */}
+                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-6 transform translate-y-full md:group-hover:translate-y-0 transition-transform duration-500 z-20">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -427,7 +427,7 @@ export default function PrivateVillaWassenaarPage() {
           </AnimatedElement>
           
           <div className="space-y-12">
-            {/* Two images in a row */}
+            {/* Two images in a row - high quality like reference w=1200 */}
             <div className="grid md:grid-cols-2 gap-8">
               {projectDetails.additionalImages.slice(0, 2).map((image, index) => (
                 <AnimatedElement
@@ -439,8 +439,8 @@ export default function PrivateVillaWassenaarPage() {
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      width={600}
-                      height={600}
+                      width={1200}
+                      height={1200}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '1/1' }}
                     />
@@ -449,7 +449,7 @@ export default function PrivateVillaWassenaarPage() {
               ))}
             </div>
 
-            {/* Two large images */}
+            {/* Two images in a row - high quality like reference w=1200 */}
             <div className="grid md:grid-cols-2 gap-8">
               {projectDetails.additionalImages.slice(3, 5).map((image, index) => (
                 <AnimatedElement
@@ -461,8 +461,8 @@ export default function PrivateVillaWassenaarPage() {
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      width={800}
-                      height={600}
+                      width={1200}
+                      height={900}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '4/3' }}
                     />
@@ -471,21 +471,23 @@ export default function PrivateVillaWassenaarPage() {
               ))}
             </div>
 
-            {/* Single wide image */}
-            <AnimatedElement animationType="fadeInUp" delay={0.3}>
-              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-                <Image
-                  src={projectDetails.additionalImages[5].src}
-                  alt={projectDetails.additionalImages[5].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
-              </div>
-            </AnimatedElement>
+            {/* Single wide image - high quality like reference w=1200 */}
+            <div className="flex justify-center">
+              <AnimatedElement animationType="fadeInUp" delay={0.3}>
+                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100 max-w-4xl w-full">
+                  <Image
+                    src={projectDetails.additionalImages[5].src}
+                    alt={projectDetails.additionalImages[5].alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
+              </AnimatedElement>
+            </div>
 
-            {/* Final two images */}
+            {/* Final two images - high quality like reference w=1200 */}
             <div className="grid md:grid-cols-2 gap-8">
               {projectDetails.additionalImages.slice(6, 8).map((image, index) => (
                 <AnimatedElement
@@ -497,8 +499,8 @@ export default function PrivateVillaWassenaarPage() {
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      width={600}
-                      height={600}
+                      width={1200}
+                      height={1200}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '1/1' }}
                     />
@@ -507,6 +509,25 @@ export default function PrivateVillaWassenaarPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+        {/* Back Button Bottom */}
+        <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/interior-renovation">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back To Interior Renovation
+              </Link>
+            </Button>
+          </AnimatedElement>
         </div>
       </section>
 
@@ -567,24 +588,7 @@ export default function PrivateVillaWassenaarPage() {
         </div>
       </section>
 
-      {/* Back Button Bottom */}
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedElement animationType="fadeInUp">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-white text-black border-gray-300 hover:bg-gray-100"
-            >
-              <Link href="/interior-renovation">
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Interior Renovation
-              </Link>
-            </Button>
-          </AnimatedElement>
-        </div>
-      </section>
+  
       
       {/* Premium Video Modal/Lightbox */}
       {isVideoModalOpen && (

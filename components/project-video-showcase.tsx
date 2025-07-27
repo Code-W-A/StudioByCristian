@@ -92,8 +92,8 @@ export default function ProjectVideoShowcase({ videoId, title, description }: Pr
                   />
                 </div>
 
-                {/* Info Card */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-xl p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-20">
+                {/* Info Card - Hidden animation on mobile */}
+                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-xl p-6 transform translate-y-full md:group-hover:translate-y-0 transition-transform duration-500 z-20">
                   <div className="flex items-center justify-between">
                     <div>
                       <h3 className="text-xl font-bold text-black mb-2">{title}</h3>
@@ -107,9 +107,9 @@ export default function ProjectVideoShowcase({ videoId, title, description }: Pr
                   </div>
                 </div>
 
-                {/* Decorative Corners */}
-                <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Decorative Corners - Hidden on mobile */}
+                <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/30 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-white/30 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             </div>
           </AnimatedElement>

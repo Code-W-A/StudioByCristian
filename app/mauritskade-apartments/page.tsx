@@ -168,25 +168,27 @@ export default function MauritskadeApartmentsPage() {
             </h3>
           </AnimatedElement>
 
-          {/* Featured large image */}
+          {/* Featured large image - centered and smaller */}
           <div className="mb-12">
             <AnimatedElement animationType="fadeInUp">
-              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                <Image
-                  src={projectDetails.images[2].src}
-                  alt={projectDetails.images[2].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
+              <div className="flex justify-center">
+                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-4xl w-full">
+                  <Image
+                    src={projectDetails.images[2].src}
+                    alt={projectDetails.images[2].alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
               </div>
             </AnimatedElement>
           </div>
 
           {/* Grid of images */}
           <div className="space-y-8">
-            {/* Two columns */}
+            {/* Two columns - improved quality */}
             <div className="grid md:grid-cols-2 gap-8">
               {projectDetails.images.slice(3, 5).map((image, index) => (
                 <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
@@ -194,8 +196,8 @@ export default function MauritskadeApartmentsPage() {
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      width={800}
-                      height={600}
+                      width={1000}
+                      height={750}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '4/3' }}
                     />
@@ -204,7 +206,7 @@ export default function MauritskadeApartmentsPage() {
               ))}
             </div>
 
-            {/* Three columns */}
+            {/* Three columns - improved quality */}
             <div className="grid md:grid-cols-3 gap-6">
               {projectDetails.images.slice(5, 8).map((image, index) => (
                 <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
@@ -212,8 +214,8 @@ export default function MauritskadeApartmentsPage() {
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      width={600}
-                      height={600}
+                      width={900}
+                      height={900}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '1/1' }}
                     />
@@ -222,24 +224,40 @@ export default function MauritskadeApartmentsPage() {
               ))}
             </div>
 
-            {/* Final images */}
+            {/* Final images - centered and smaller */}
             {projectDetails.images.slice(8).map((image, index) => (
               <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
-                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={1400}
-                    height={800}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
+                <div className="flex justify-center">
+                  <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100 max-w-4xl w-full">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={1200}
+                      height={675}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '16/9' }}
+                    />
+                  </div>
                 </div>
               </AnimatedElement>
             ))}
           </div>
         </div>
       </section>
+
+   {/* Back Button */}
+   <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button asChild variant="outline" size="lg" className="bg-white text-black border-gray-300 hover:bg-gray-100">
+              <Link href="/furniture-production">
+                <ArrowLeft className="mr-2 h-5 w-5" />Back to Furniture Production
+              </Link>
+            </Button>
+          </AnimatedElement>
+        </div>
+      </section>
+
 
       {/* Contact Section */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">

@@ -246,8 +246,39 @@ export default function HeroSectionHomepage() {
       {/* Enhanced Navigation with Modern Design */}
       <div className="relative z-20 mt-auto w-full pb-8 sm:pb-12">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Mobile Version - Simple Lines */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
+            className="md:hidden flex justify-center space-x-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+          >
+            {heroNavItems.map((item, index) => (
+              <motion.button
+                key={item.id}
+                onClick={() => !isTransitioning && handleHeroChange(item)}
+                className="group focus:outline-none"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: 1.2 + index * 0.1
+                }}
+              >
+                <div 
+                  className={`w-12 h-0.5 transition-all duration-500 ${
+                    activeHero.id === item.id 
+                      ? "bg-white opacity-100" 
+                      : "bg-white/40 opacity-60 group-hover:opacity-80"
+                  }`}
+                />
+              </motion.button>
+            ))}
+          </motion.div>
+
+          {/* Desktop Version - Full Cards */}
+          <motion.div 
+            className="hidden md:grid grid-cols-4 gap-3 sm:gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}

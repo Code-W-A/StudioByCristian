@@ -947,8 +947,9 @@ export default function AboutUsPage() {
                   className="bg-white p-8 rounded-xl relative"
                   whileHover={{ y: -5, transition: { duration: 0.3 } }}
                 >
-                  <div className="absolute top-4 right-4 text-gray-300">
-                    <Quote className="w-8 h-8" />
+                  {/* Quote Icon - Mobile: corner position, Desktop: current position */}
+                  <div className="absolute top-2 right-2 md:top-4 md:right-4 text-gray-300">
+                    <Quote className="w-6 h-6 md:w-8 md:h-8" />
                   </div>
                   
                   <div className="mb-6">

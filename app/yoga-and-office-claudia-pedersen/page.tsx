@@ -118,96 +118,8 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
         </div>
       </section>
 
-      <section className="py-8 bg-gray-50">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp">
-            <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-              <Image src={projectDetails.images[0].src} alt={projectDetails.images[0].alt} width={1400} height={800}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '16/9' }} />
-            </div>
-          </AnimatedElement>
-        </div>
-      </section>
-
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            {/* Alternating pattern: 2 images, then 1 image, repeating */}
-            {isMobile ? (
-              // Mobile-optimized version with fewer intersection observers
-              <MobileOptimizedGallery 
-                images={projectDetails.images.slice(1)} 
-                aspectRatio="4/3" 
-              />
-            ) : (
-              // Desktop version with complex while loop and individual animations
-              (() => {
-                const result = [];
-                let imageIndex = 1; // Start from index 1 since index 0 is already shown above
-                
-                while (imageIndex < projectDetails.images.length) {
-                  // Two images in a row
-                  if (imageIndex + 1 < projectDetails.images.length) {
-                    result.push(
-                      <div key={`pair-${imageIndex}`} className="grid md:grid-cols-2 gap-8">
-                        <AnimatedElement animationType="fadeInUp" delay={0.1}>
-                          <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                            <Image 
-                              src={projectDetails.images[imageIndex].src} 
-                              alt={projectDetails.images[imageIndex].alt} 
-                              width={900} 
-                              height={675}
-                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-                              style={{ aspectRatio: '4/3' }} 
-                            />
-                          </div>
-                        </AnimatedElement>
-                        <AnimatedElement animationType="fadeInUp" delay={0.2}>
-                          <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                            <Image 
-                              src={projectDetails.images[imageIndex + 1].src} 
-                              alt={projectDetails.images[imageIndex + 1].alt} 
-                              width={900} 
-                              height={675}
-                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-                              style={{ aspectRatio: '4/3' }} 
-                            />
-                          </div>
-                        </AnimatedElement>
-                      </div>
-                    );
-                    imageIndex += 2;
-                  }
-                  
-                  // Single image
-                  if (imageIndex < projectDetails.images.length) {
-                    result.push(
-                      <AnimatedElement key={`single-${imageIndex}`} animationType="fadeInUp" delay={0.1}>
-                        <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                          <Image 
-                            src={projectDetails.images[imageIndex].src} 
-                            alt={projectDetails.images[imageIndex].alt} 
-                            width={1400} 
-                            height={800}
-                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-                            style={{ aspectRatio: '16/9' }} 
-                          />
-                        </div>
-                      </AnimatedElement>
-                    );
-                    imageIndex++;
-                  }
-                }
-                
-                return result;
-              })()
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Project Description Section */}
-      <section className="py-16 lg:py-24 bg-white text-black">
+       {/* Project Description Section */}
+       <section className="py-16 lg:py-24 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text Content - Left */}
@@ -273,6 +185,110 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-8 bg-gray-50">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp">
+            <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+              <Image src={projectDetails.images[0].src} alt={projectDetails.images[0].alt} width={1400} height={800}
+                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '16/9' }} />
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="space-y-16">
+            {/* Alternating pattern: 2 images, then 1 image, repeating */}
+            {isMobile ? (
+              // Mobile-optimized version with fewer intersection observers
+              <MobileOptimizedGallery 
+                images={projectDetails.images.slice(1)} 
+                aspectRatio="4/3" 
+              />
+            ) : (
+              // Desktop version with complex while loop and individual animations
+              (() => {
+                const result = [];
+                let imageIndex = 1; // Start from index 1 since index 0 is already shown above
+                
+                while (imageIndex < projectDetails.images.length) {
+                  // Two images in a row
+                  if (imageIndex + 1 < projectDetails.images.length) {
+                    result.push(
+                      <div key={`pair-${imageIndex}`} className="grid md:grid-cols-2 gap-8">
+                        <AnimatedElement animationType="fadeInUp" delay={0.1}>
+                          <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                            <Image 
+                              src={projectDetails.images[imageIndex].src} 
+                              alt={projectDetails.images[imageIndex].alt} 
+                              width={900} 
+                              height={675}
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+                              style={{ aspectRatio: '4/3' }} 
+                            />
+                          </div>
+                        </AnimatedElement>
+                        <AnimatedElement animationType="fadeInUp" delay={0.2}>
+                          <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                            <Image 
+                              src={projectDetails.images[imageIndex + 1].src} 
+                              alt={projectDetails.images[imageIndex + 1].alt} 
+                              width={900} 
+                              height={675}
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+                              style={{ aspectRatio: '4/3' }} 
+                            />
+                          </div>
+                        </AnimatedElement>
+                      </div>
+                    );
+                    imageIndex += 2;
+                  }
+                  
+                  // Single image
+                  if (imageIndex < projectDetails.images.length) {
+                    result.push(
+                      <AnimatedElement key={`single-${imageIndex}`} animationType="fadeInUp" delay={0.1}>
+                        <div className="flex justify-center">
+                          <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 max-w-4xl w-full">
+                            <Image 
+                              src={projectDetails.images[imageIndex].src} 
+                              alt={projectDetails.images[imageIndex].alt} 
+                              width={1200} 
+                              height={675}
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+                              style={{ aspectRatio: '16/9' }} 
+                            />
+                          </div>
+                        </div>
+                      </AnimatedElement>
+                    );
+                    imageIndex++;
+                  }
+                }
+                
+                return result;
+              })()
+            )}
+          </div>
+        </div>
+      </section>
+
+     
+
+
+      <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button asChild variant="outline" size="lg" className="bg-white text-black border-gray-300 hover:bg-gray-100">
+              <Link href="/furniture-production"><ArrowLeft className="mr-2 h-5 w-5" />Back to Custom Furniture</Link>
+            </Button>
+          </AnimatedElement>
+        </div>
+      </section>
+
 
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">

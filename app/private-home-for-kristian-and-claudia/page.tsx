@@ -96,19 +96,20 @@ export default function PrivateHomeKristianClaudiaPage() {
                 </div>
               </div>
 
-              {/* Main Image */}
-              <div className="relative overflow-hidden rounded-2xl shadow-md bg-gray-100 aspect-[4/3]">
+              {/* Main Image - high quality like reference */}
+              <div className="relative overflow-hidden rounded-2xl shadow-md bg-gray-100">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="relative w-full h-full"
+                  className="relative"
                 >
                   <Image
                     src={projectDetails.images[0].src}
                     alt={projectDetails.images[0].alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    width={1600}
+                    height={1200}
+                    className="w-full h-auto object-cover"
+                    style={{ aspectRatio: '4/3' }}
                     priority
                   />
                 </motion.div>
@@ -116,7 +117,7 @@ export default function PrivateHomeKristianClaudiaPage() {
 
             </div>
 
-            {/* Gallery Images */}
+            {/* Gallery Images - high quality like reference */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {projectDetails.images.slice(1, 3).map((image, index) => (
                 <AnimatedElement
@@ -124,13 +125,14 @@ export default function PrivateHomeKristianClaudiaPage() {
                   animationType="fadeInUp"
                   delay={index * 0.1}
                 >
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 aspect-[4/3]">
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      fill
-                      className="object-cover hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      width={1600}
+                      height={1200}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
                     />
                   </div>
                 </AnimatedElement>
@@ -158,19 +160,20 @@ export default function PrivateHomeKristianClaudiaPage() {
                 </div>
               </div>
 
-              {/* Main Image */}
-              <div className="relative overflow-hidden rounded-2xl shadow-md bg-gray-100 aspect-[4/3] lg:col-start-1">
+              {/* Main Image - high quality like reference */}
+              <div className="relative overflow-hidden rounded-2xl shadow-md bg-gray-100 lg:col-start-1">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="relative w-full h-full"
+                  className="relative"
                 >
                   <Image
                     src={projectDetails.images[3].src}
                     alt={projectDetails.images[3].alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    width={1600}
+                    height={1200}
+                    className="w-full h-auto object-cover"
+                    style={{ aspectRatio: '4/3' }}
                   />
                 </motion.div>
               </div>
@@ -179,76 +182,88 @@ export default function PrivateHomeKristianClaudiaPage() {
 
             {/* Gallery Images - Featured + Grid */}
             <div className="space-y-8">
-              {/* Single large featured image */}
-              <AnimatedElement animationType="fadeInUp" delay={0.2}>
-                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100 aspect-video">
-                  <Image
-                    src={projectDetails.images[4].src}
-                    alt={projectDetails.images[4].alt}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                    sizes="100vw"
-                  />
-                </div>
-              </AnimatedElement>
-
-              {/* Three images in a row */}
+              {/* Three images in a row including the featured one */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {projectDetails.images.slice(5, 8).map((image, index) => (
+                {projectDetails.images.slice(4, 7).map((image, index) => (
                   <AnimatedElement
                     key={index}
                     animationType="fadeInUp"
                     delay={index * 0.1}
                   >
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 aspect-square">
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
                       <Image
                         src={image.src}
                         alt={image.alt}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                        width={900}
+                        height={900}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '1/1' }}
                       />
                     </div>
                   </AnimatedElement>
                 ))}
               </div>
 
-              {/* Two large images side by side */}
+              {/* Additional row of three images */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {projectDetails.images.slice(7, 10).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={900}
+                        height={900}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '1/1' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+
+              {/* Two large images side by side - high quality like reference */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {projectDetails.images.slice(8, 10).map((image, index) => (
+                {projectDetails.images.slice(10, 12).map((image, index) => (
                   <AnimatedElement
                     key={index}
                     animationType="fadeInUp"
                     delay={index * 0.1}
                   >
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 aspect-[4/3]">
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
                       <Image
                         src={image.src}
                         alt={image.alt}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={1600}
+                        height={1200}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '4/3' }}
                       />
                     </div>
                   </AnimatedElement>
                 ))}
               </div>
 
-              {/* Four images in a grid - 2 per row */}
+              {/* Two remaining images in a grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {projectDetails.images.slice(10, 14).map((image, index) => (
+                {projectDetails.images.slice(12, 14).map((image, index) => (
                   <AnimatedElement
                     key={index}
                     animationType="fadeInUp"
                     delay={index * 0.1}
                   >
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 aspect-square">
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
                       <Image
                         src={image.src}
                         alt={image.alt}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 640px) 100vw, 50vw"
+                        width={1600}
+                        height={1200}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '4/3' }}
                       />
                     </div>
                   </AnimatedElement>
@@ -289,6 +304,25 @@ export default function PrivateHomeKristianClaudiaPage() {
                 <p className="text-sm text-gray-600">{projectDetails.client}</p>
               </div>
             </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+         {/* Back Button Bottom */}
+         <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/furniture-production">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back To Furniture Production
+              </Link>
+            </Button>
           </AnimatedElement>
         </div>
       </section>
@@ -351,24 +385,7 @@ export default function PrivateHomeKristianClaudiaPage() {
         </div>
       </section>
 
-      {/* Back Button Bottom */}
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedElement animationType="fadeInUp">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-white text-black border-gray-300 hover:bg-gray-100"
-            >
-              <Link href="/furniture-production">
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Furniture Production
-              </Link>
-            </Button>
-          </AnimatedElement>
-        </div>
-      </section>
+   
     </div>
   )
 }

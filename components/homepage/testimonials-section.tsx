@@ -47,9 +47,9 @@ export default function TestimonialsSection() {
                   transition: { duration: 0.3 } 
                 }}
               >
-                {/* Quote Icon */}
-                <div className="absolute top-6 right-6 text-gray-200 group-hover:text-gray-300 transition-colors">
-                  <Quote className="w-10 h-10" />
+                {/* Quote Icon - Mobile: corner position, Desktop: current position */}
+                <div className="absolute top-3 right-3 md:top-6 md:right-6 text-gray-200 group-hover:text-gray-300 transition-colors">
+                  <Quote className="w-8 h-8 md:w-10 md:h-10" />
                 </div>
                 
                 {/* Type */}

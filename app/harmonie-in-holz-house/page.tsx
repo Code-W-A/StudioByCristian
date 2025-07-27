@@ -102,61 +102,36 @@ export default function HarmonieInHolzPage() {
                   <Image
                     src={projectDetails.sections[0].mainImage}
                     alt="Harmonie in Holz main image"
-                    width={800}
-                    height={600}
+                    width={1200}
+                    height={675}
                     className="w-full h-auto object-cover"
-                    style={{ aspectRatio: '4/3' }}
+                    style={{ aspectRatio: '16/9' }}
                   />
                 </motion.div>
               </div>
 
             </div>
 
-            {/* Gallery Images - Two large + Two small */}
-            <div className="space-y-8">
-              {/* Two large images side by side */}
-              <div className="grid md:grid-cols-2 gap-8">
-                {projectDetails.sections[0].galleryImages.slice(0, 2).map((image, index) => (
-                  <AnimatedElement
-                    key={index}
-                    animationType="fadeInUp"
-                    delay={index * 0.1}
-                  >
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                      <Image
-                        src={image}
-                        alt={`Harmonie in Holz gallery image ${index + 1}`}
-                        width={800}
-                        height={600}
-                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                        style={{ aspectRatio: '4/3' }}
-                      />
-                    </div>
-                  </AnimatedElement>
-                ))}
-              </div>
-
-              {/* Two smaller images side by side */}
-              <div className="grid md:grid-cols-2 gap-8">
-                {projectDetails.sections[0].galleryImages.slice(2, 4).map((image, index) => (
-                  <AnimatedElement
-                    key={index}
-                    animationType="fadeInUp"
-                    delay={index * 0.1}
-                  >
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                      <Image
-                        src={image}
-                        alt={`Harmonie in Holz gallery image ${index + 3}`}
-                        width={600}
-                        height={600}
-                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                        style={{ aspectRatio: '1/1' }}
-                      />
-                    </div>
-                  </AnimatedElement>
-                ))}
-              </div>
+            {/* Gallery Images - All in Grid */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.sections[0].galleryImages.slice(0, 4).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image}
+                      alt={`Harmonie in Holz gallery image ${index + 1}`}
+                      width={1200}
+                      height={900}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
             </div>
           </AnimatedElement>
         </div>
@@ -199,25 +174,10 @@ export default function HarmonieInHolzPage() {
 
             </div>
 
-            {/* Gallery Images - Featured + Grid */}
+            {/* Gallery Images - First 4 in grid, last one centered */}
             <div className="space-y-8">
-              {/* Single large featured image */}
-              <AnimatedElement animationType="fadeInUp" delay={0.2}>
-                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-                  <Image
-                    src={projectDetails.sections[1].galleryImages[0]}
-                    alt="Harmonie in Holz featured gallery image"
-                    width={1400}
-                    height={800}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
-                </div>
-              </AnimatedElement>
-
-              {/* Four images in a 2x2 grid */}
               <div className="grid md:grid-cols-2 gap-8">
-                {projectDetails.sections[1].galleryImages.slice(1, 5).map((image, index) => (
+                {projectDetails.sections[1].galleryImages.slice(0, 4).map((image, index) => (
                   <AnimatedElement
                     key={index}
                     animationType="fadeInUp"
@@ -226,9 +186,9 @@ export default function HarmonieInHolzPage() {
                     <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
                       <Image
                         src={image}
-                        alt={`Harmonie in Holz gallery image ${index + 2}`}
-                        width={800}
-                        height={600}
+                        alt={`Harmonie in Holz gallery image ${index + 1}`}
+                        width={1000}
+                        height={750}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         style={{ aspectRatio: '4/3' }}
                       />
@@ -236,6 +196,24 @@ export default function HarmonieInHolzPage() {
                   </AnimatedElement>
                 ))}
               </div>
+              
+              {/* Single centered image */}
+              {projectDetails.sections[1].galleryImages.slice(4, 5).length > 0 && (
+                <div className="flex justify-center">
+                  <AnimatedElement animationType="fadeInUp" delay={0.4}>
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-4xl w-full">
+                      <Image
+                        src={projectDetails.sections[1].galleryImages[4]}
+                        alt="Harmonie in Holz gallery image 5"
+                        width={1200}
+                        height={675}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '16/9' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                </div>
+              )}
             </div>
           </AnimatedElement>
         </div>
@@ -278,88 +256,150 @@ export default function HarmonieInHolzPage() {
 
             </div>
 
-            {/* Gallery Images - Complex dynamic layout */}
+            {/* Gallery Images - Optimized Grid Layout */}
             <div className="space-y-8">
-              {/* Three images in a row */}
-              <div className="grid md:grid-cols-3 gap-6">
-                {projectDetails.sections[2].galleryImages.slice(0, 3).map((image, index) => (
-                  <AnimatedElement
-                    key={index}
-                    animationType="fadeInUp"
-                    delay={index * 0.1}
-                  >
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                      <Image
-                        src={image}
-                        alt={`Harmonie in Holz gallery image ${index + 1}`}
-                        width={600}
-                        height={600}
-                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                        style={{ aspectRatio: '1/1' }}
-                      />
-                    </div>
-                  </AnimatedElement>
-                ))}
-              </div>
-
-              {/* Single wide image */}
-              <AnimatedElement animationType="fadeInUp" delay={0.3}>
-                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-                  <Image
-                    src={projectDetails.sections[2].galleryImages[3]}
-                    alt="Harmonie in Holz wide gallery image"
-                    width={1400}
-                    height={700}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
+              {/* First set - Two images in grid, one centered */}
+              <div className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  {projectDetails.sections[2].galleryImages.slice(0, 2).map((image, index) => (
+                    <AnimatedElement
+                      key={index}
+                      animationType="fadeInUp"
+                      delay={index * 0.1}
+                    >
+                      <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                        <Image
+                          src={image}
+                          alt={`Harmonie in Holz gallery image ${index + 1}`}
+                          width={900}
+                          height={900}
+                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                          style={{ aspectRatio: '1/1' }}
+                        />
+                      </div>
+                    </AnimatedElement>
+                  ))}
                 </div>
-              </AnimatedElement>
-
-              {/* Two large images side by side */}
-              <div className="grid md:grid-cols-2 gap-8">
-                {projectDetails.sections[2].galleryImages.slice(4, 6).map((image, index) => (
-                  <AnimatedElement
-                    key={index}
-                    animationType="fadeInUp"
-                    delay={index * 0.1}
-                  >
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                
+                {/* Single centered image */}
+                <div className="flex justify-center">
+                  <AnimatedElement animationType="fadeInUp" delay={0.2}>
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-4xl w-full">
                       <Image
-                        src={image}
-                        alt={`Harmonie in Holz gallery image ${index + 5}`}
-                        width={800}
-                        height={600}
+                        src={projectDetails.sections[2].galleryImages[2]}
+                        alt="Harmonie in Holz gallery image 3"
+                        width={1200}
+                        height={675}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                        style={{ aspectRatio: '4/3' }}
+                        style={{ aspectRatio: '16/9' }}
                       />
                     </div>
                   </AnimatedElement>
-                ))}
+                </div>
               </div>
 
-              {/* Final three images in a row */}
-              <div className="grid md:grid-cols-3 gap-6">
-                {projectDetails.sections[2].galleryImages.slice(6, 9).map((image, index) => (
-                  <AnimatedElement
-                    key={index}
-                    animationType="fadeInUp"
-                    delay={index * 0.1}
-                  >
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                      <Image
-                        src={image}
-                        alt={`Harmonie in Holz gallery image ${index + 7}`}
-                        width={600}
-                        height={600}
-                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                        style={{ aspectRatio: '1/1' }}
-                      />
-                    </div>
-                  </AnimatedElement>
-                ))}
+              {/* Second set - First 2 in grid, last one centered */}
+              <div className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {projectDetails.sections[2].galleryImages.slice(3, 5).map((image, index) => (
+                    <AnimatedElement
+                      key={index}
+                      animationType="fadeInUp"
+                      delay={index * 0.1}
+                    >
+                      <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                        <Image
+                          src={image}
+                          alt={`Harmonie in Holz gallery image ${index + 4}`}
+                          width={1200}
+                          height={900}
+                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                          style={{ aspectRatio: '4/3' }}
+                        />
+                      </div>
+                    </AnimatedElement>
+                  ))}
+                </div>
+                
+                {/* Single centered image */}
+                {projectDetails.sections[2].galleryImages.slice(5, 6).length > 0 && (
+                  <div className="flex justify-center">
+                    <AnimatedElement animationType="fadeInUp" delay={0.2}>
+                      <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-4xl w-full">
+                        <Image
+                          src={projectDetails.sections[2].galleryImages[5]}
+                          alt="Harmonie in Holz gallery image 6"
+                          width={1200}
+                          height={675}
+                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                          style={{ aspectRatio: '16/9' }}
+                        />
+                      </div>
+                    </AnimatedElement>
+                  </div>
+                )}
+              </div>
+
+              {/* Final set - Two images in grid, one centered */}
+              <div className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  {projectDetails.sections[2].galleryImages.slice(6, 8).map((image, index) => (
+                    <AnimatedElement
+                      key={index}
+                      animationType="fadeInUp"
+                      delay={index * 0.1}
+                    >
+                      <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                        <Image
+                          src={image}
+                          alt={`Harmonie in Holz gallery image ${index + 7}`}
+                          width={900}
+                          height={900}
+                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                          style={{ aspectRatio: '1/1' }}
+                        />
+                      </div>
+                    </AnimatedElement>
+                  ))}
+                </div>
+                
+                {/* Single centered image */}
+                {projectDetails.sections[2].galleryImages.slice(8, 9).length > 0 && (
+                  <div className="flex justify-center">
+                    <AnimatedElement animationType="fadeInUp" delay={0.2}>
+                      <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-4xl w-full">
+                        <Image
+                          src={projectDetails.sections[2].galleryImages[8]}
+                          alt="Harmonie in Holz gallery image 9"
+                          width={1200}
+                          height={675}
+                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                          style={{ aspectRatio: '16/9' }}
+                        />
+                      </div>
+                    </AnimatedElement>
+                  </div>
+                )}
               </div>
             </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/design">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back To Design Projects
+              </Link>
+            </Button>
           </AnimatedElement>
         </div>
       </section>
@@ -407,23 +447,7 @@ export default function HarmonieInHolzPage() {
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedElement animationType="fadeInUp">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-white text-black border-gray-300 hover:bg-gray-100"
-            >
-              <Link href="/design">
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Design Projects
-              </Link>
-            </Button>
-          </AnimatedElement>
-        </div>
-      </section>
+   
     </div>
   )
 }

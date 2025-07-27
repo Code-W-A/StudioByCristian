@@ -85,178 +85,26 @@ export default function VBSKitchenAndLivingPage() {
 
       {/* Featured Image */}
       <section className="py-8 bg-gray-50">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
-            <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-              <Image
-                src={projectDetails.images[0].src}
-                alt={projectDetails.images[0].alt}
-                width={1400}
-                height={800}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                style={{ aspectRatio: '16/9' }}
-              />
+            <div className="flex justify-center">
+              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 max-w-4xl w-full">
+                <Image
+                  src={projectDetails.images[0].src}
+                  alt={projectDetails.images[0].alt}
+                  width={1200}
+                  height={675}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ aspectRatio: '16/9' }}
+                />
+              </div>
             </div>
           </AnimatedElement>
         </div>
       </section>
 
-      {/* Image Gallery Section */}
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            {/* Two large images side by side */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.images.slice(1, 3).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '4/3' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Single large featured image */}
-            <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                <Image
-                  src={projectDetails.images[3].src}
-                  alt={projectDetails.images[3].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
-              </div>
-            </AnimatedElement>
-
-            {/* Two images in a row */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {projectDetails.images.slice(4, 6).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={600}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '1/1' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Additional single image */}
-            <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                <Image
-                  src={projectDetails.images[6].src}
-                  alt={projectDetails.images[6].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
-              </div>
-            </AnimatedElement>
-
-            {/* Two large images side by side */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.images.slice(7, 9).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '4/3' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Single wide image */}
-            <AnimatedElement animationType="fadeInUp" delay={0.3}>
-              <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                <Image
-                  src={projectDetails.images[9].src}
-                  alt={projectDetails.images[9].alt}
-                  width={1400}
-                  height={700}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
-              </div>
-            </AnimatedElement>
-
-            {/* Remaining images */}
-            {projectDetails.images.slice(10).map((image, index) => (
-              <AnimatedElement
-                key={index}
-                animationType="fadeInUp"
-                delay={index * 0.1}
-              >
-                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={1400}
-                    height={800}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Back Button Bottom */}
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedElement animationType="fadeInUp">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-white text-black border-gray-300 hover:bg-gray-100"
-            >
-              <Link href="/furniture-production">
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Back to Custom Furniture
-              </Link>
-            </Button>
-          </AnimatedElement>
-        </div>
-      </section>
-
-      {/* Project Description Section */}
-      <section className="py-16 lg:py-24 bg-white text-black">
+        {/* Project Description Section */}
+        <section className="py-16 lg:py-24 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text Content - Left */}
@@ -320,6 +168,172 @@ export default function VBSKitchenAndLivingPage() {
               </div>
             </AnimatedElement>
           </div>
+        </div>
+      </section>
+
+      {/* Image Gallery Section */}
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="space-y-16">
+            {/* Two large images side by side - improved quality */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.images.slice(1, 3).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={1000}
+                      height={750}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Single large featured image */}
+            <AnimatedElement animationType="fadeInUp" delay={0.2}>
+              <div className="flex justify-center">
+                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 max-w-4xl w-full">
+                  <Image
+                    src={projectDetails.images[3].src}
+                    alt={projectDetails.images[3].alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
+              </div>
+            </AnimatedElement>
+
+            {/* Two images in a row - improved quality */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {projectDetails.images.slice(4, 6).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={900}
+                      height={900}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '1/1' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Additional single image */}
+            <AnimatedElement animationType="fadeInUp" delay={0.2}>
+              <div className="flex justify-center">
+                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 max-w-4xl w-full">
+                  <Image
+                    src={projectDetails.images[6].src}
+                    alt={projectDetails.images[6].alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
+              </div>
+            </AnimatedElement>
+
+            {/* Two large images side by side - improved quality */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.images.slice(7, 9).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={1000}
+                      height={750}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Single wide image */}
+            <AnimatedElement animationType="fadeInUp" delay={0.3}>
+              <div className="flex justify-center">
+                <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 max-w-4xl w-full">
+                  <Image
+                    src={projectDetails.images[9].src}
+                    alt={projectDetails.images[9].alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                </div>
+              </div>
+            </AnimatedElement>
+
+            {/* Remaining images */}
+            {projectDetails.images.slice(10).map((image, index) => (
+              <AnimatedElement
+                key={index}
+                animationType="fadeInUp"
+                delay={index * 0.1}
+              >
+                <div className="flex justify-center">
+                  <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 max-w-4xl w-full">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={1200}
+                      height={675}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '16/9' }}
+                    />
+                  </div>
+                </div>
+              </AnimatedElement>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    
+
+    
+
+        {/* Back Button Bottom */}
+        <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/furniture-production">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back to Custom Furniture
+              </Link>
+            </Button>
+          </AnimatedElement>
         </div>
       </section>
 

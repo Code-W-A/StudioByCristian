@@ -71,126 +71,13 @@ export default function LarenHouseConceptPage() {
 
 
 
-      {/* Featured Image */}
-      <section className="py-8 bg-gray-50">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp">
-            <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-              <Image
-                src={projectDetails.images[0].src}
-                alt={projectDetails.images[0].alt}
-                width={1400}
-                height={800}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                style={{ aspectRatio: '16/9' }}
-              />
-            </div>
-          </AnimatedElement>
-        </div>
-      </section>
-
       {/* Image Gallery Section */}
       <section className="py-12 lg:py-16 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
-            {/* 1. Image Left, Text Right */}
-            <AnimatedElement animationType="fadeInUp">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                  <Image
-                    src={projectDetails.images[1].src}
-                    alt={projectDetails.images[1].alt}
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '4/3' }}
-                  />
-                </div>
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-bold tracking-tight text-black sm:text-3xl">
-                    Luxury Interior Design
-                  </h3>
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    {projectDetails.description}
-                  </p>
-                </div>
-              </div>
-            </AnimatedElement>
-
-            {/* 2. Text Left, Image Right */}
-            <AnimatedElement animationType="fadeInUp" delay={0.1}>
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6 lg:order-1">
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    {projectDetails.additionalText}
-                  </p>
-                </div>
-                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 lg:order-2">
-                  <Image
-                    src={projectDetails.images[2].src}
-                    alt={projectDetails.images[2].alt}
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '4/3' }}
-                  />
-                </div>
-              </div>
-            </AnimatedElement>
-
-            {/* Single large featured image */}
-            <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-                <Image
-                  src={projectDetails.images[3].src}
-                  alt={projectDetails.images[3].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
-              </div>
-            </AnimatedElement>
-
-            {/* Two images in a row */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {projectDetails.images.slice(4, 6).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={600}
-                      height={600}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '1/1' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Additional single image */}
-            <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                <Image
-                  src={projectDetails.images[6].src}
-                  alt={projectDetails.images[6].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
-              </div>
-            </AnimatedElement>
-
-            {/* Two large images side by side */}
+            {/* 1. First two images in a grid */}
             <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.images.slice(7, 9).map((image, index) => (
+              {projectDetails.images.slice(0, 2).map((image, index) => (
                 <AnimatedElement
                   key={index}
                   animationType="fadeInUp"
@@ -210,23 +97,54 @@ export default function LarenHouseConceptPage() {
               ))}
             </div>
 
-            {/* Single wide image */}
-            <AnimatedElement animationType="fadeInUp" delay={0.3}>
-              <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-                <Image
-                  src={projectDetails.images[9].src}
-                  alt={projectDetails.images[9].alt}
-                  width={1400}
-                  height={700}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
+            {/* 2. Image Left, Text Right */}
+            <AnimatedElement animationType="fadeInUp">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                  <Image
+                    src={projectDetails.images[2].src}
+                    alt={projectDetails.images[2].alt}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '4/3' }}
+                  />
+                </div>
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-bold tracking-tight text-black sm:text-3xl">
+                    Luxury Interior Design
+                  </h3>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    {projectDetails.description}
+                  </p>
+                </div>
               </div>
             </AnimatedElement>
 
-            {/* Two more square images */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {projectDetails.images.slice(10, 12).map((image, index) => (
+            {/* 3. Text Left, Image Right */}
+            <AnimatedElement animationType="fadeInUp" delay={0.1}>
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6 lg:order-1">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    {projectDetails.additionalText}
+                  </p>
+                </div>
+                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 lg:order-2">
+                  <Image
+                    src={projectDetails.images[3].src}
+                    alt={projectDetails.images[3].alt}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    style={{ aspectRatio: '4/3' }}
+                  />
+                </div>
+              </div>
+            </AnimatedElement>
+
+            {/* Three images in a row */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {projectDetails.images.slice(4, 7).map((image, index) => (
                 <AnimatedElement
                   key={index}
                   animationType="fadeInUp"
@@ -246,40 +164,93 @@ export default function LarenHouseConceptPage() {
               ))}
             </div>
 
-            {/* Additional single image */}
-            <AnimatedElement animationType="fadeInUp" delay={0.2}>
-              <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                <Image
-                  src={projectDetails.images[12].src}
-                  alt={projectDetails.images[12].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9' }}
-                />
-              </div>
-            </AnimatedElement>
+            {/* Four images in a 2x2 grid */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectDetails.images.slice(7, 11).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
 
-            {/* Final image */}
-            {projectDetails.images.slice(13).map((image, index) => (
-              <AnimatedElement
-                key={index}
-                animationType="fadeInUp"
-                delay={index * 0.1}
-              >
-                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={1400}
-                    height={800}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
-                </div>
-              </AnimatedElement>
-            ))}
+            {/* Remaining images in a mixed grid layout */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {projectDetails.images.slice(11, 14).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={600}
+                      height={600}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '1/1' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
+
+            {/* Final images in pairs */}
+            {projectDetails.images.slice(14).length > 0 && (
+              <div className="grid md:grid-cols-2 gap-8">
+                {projectDetails.images.slice(14).map((image, index) => (
+                  <AnimatedElement
+                    key={index}
+                    animationType="fadeInUp"
+                    delay={index * 0.1}
+                  >
+                    <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '4/3' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+            )}
           </div>
+        </div>
+      </section>
+
+            {/* Back Button Bottom */}
+            <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/design">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back To Design Projects
+              </Link>
+            </Button>
+          </AnimatedElement>
         </div>
       </section>
 
@@ -332,24 +303,7 @@ export default function LarenHouseConceptPage() {
         </div>
       </section>
 
-      {/* Back Button Bottom */}
-      <section className="py-12 lg:py-16 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedElement animationType="fadeInUp">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-white text-black border-gray-300 hover:bg-gray-100"
-            >
-              <Link href="/design">
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Back To Design Projects
-              </Link>
-            </Button>
-          </AnimatedElement>
-        </div>
-      </section>
+
     </div>
   )
 }

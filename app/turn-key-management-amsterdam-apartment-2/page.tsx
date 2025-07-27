@@ -158,12 +158,17 @@ export default function AmsterdamApartment2Page() {
       </ParallaxSection>
 
       {/* Back Button */}
-      <section className="pt-12 pb-6 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedElement animationType="fadeInUp">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
               <Link href="/interior-renovation">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-5 w-5" />
                 Back to Interior Renovation
               </Link>
             </Button>
@@ -200,12 +205,13 @@ export default function AmsterdamApartment2Page() {
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Before Section - First image with text improved quality */}
               <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
                 <Image
                   src={projectDetails.beforeSection.images[0].src}
                   alt={projectDetails.beforeSection.images[0].alt}
-                  width={800}
-                  height={600}
+                  width={1000}
+                  height={750}
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                   style={{ aspectRatio: '4/3' }}
                 />
@@ -228,40 +234,43 @@ export default function AmsterdamApartment2Page() {
           </AnimatedElement>
 
           <div className="mt-16" id="before-gallery">
-            <div className="space-y-12">
+                        <div className="space-y-12">
+              {/* Before Section - Grid images improved quality */}
               <div className="grid md:grid-cols-2 gap-8">
-                {projectDetails.beforeSection.images.slice(1, 3).map((image, index) => (
-                  <AnimatedElement
-                    key={index}
-                    animationType="fadeInUp"
-                    delay={index * 0.1}
-                  >
-                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        width={800}
-                        height={600}
-                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                        style={{ aspectRatio: '4/3' }}
-                      />
-                    </div>
-                  </AnimatedElement>
-                ))}
-              </div>
+              {projectDetails.beforeSection.images.slice(1, 3).map((image, index) => (
+                <AnimatedElement
+                  key={index}
+                  animationType="fadeInUp"
+                  delay={index * 0.1}
+                >
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={1000}
+                      height={750}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      style={{ aspectRatio: '4/3' }}
+                    />
+                  </div>
+                </AnimatedElement>
+              ))}
+            </div>
 
+            <div className="flex justify-center">
               <AnimatedElement animationType="fadeInUp" delay={0.3}>
-                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                  <Image
-                    src={projectDetails.beforeSection.images[3].src}
-                    alt={projectDetails.beforeSection.images[3].alt}
-                    width={1200}
-                    height={700}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
-                </div>
-              </AnimatedElement>
+                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-3xl w-full">
+                                        <Image
+                        src={projectDetails.beforeSection.images[3].src}
+                        alt={projectDetails.beforeSection.images[3].alt}
+                        width={1000}
+                        height={563}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '16/9' }}
+                      />
+                                  </div>
+                </AnimatedElement>
+              </div>
             </div>
           </div>
         </div>
@@ -281,12 +290,13 @@ export default function AmsterdamApartment2Page() {
                 </p>
               </div>
               
+              {/* In Progress Section - First image improved quality */}
               <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 lg:order-2">
                 <Image
                   src={projectDetails.inProgressSection.images[0].src}
                   alt={projectDetails.inProgressSection.images[0].alt}
-                  width={800}
-                  height={600}
+                  width={1000}
+                  height={750}
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                   style={{ aspectRatio: '4/3' }}
                 />
@@ -295,6 +305,7 @@ export default function AmsterdamApartment2Page() {
           </AnimatedElement>
 
           <div className="mt-16">
+            {/* In Progress Section - Grid images improved quality */}
             <div className="grid md:grid-cols-3 gap-6">
               {projectDetails.inProgressSection.images.slice(1).map((image, index) => (
                 <AnimatedElement
@@ -306,8 +317,8 @@ export default function AmsterdamApartment2Page() {
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      width={600}
-                      height={600}
+                      width={900}
+                      height={900}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                       style={{ aspectRatio: '1/1' }}
                     />
@@ -324,12 +335,13 @@ export default function AmsterdamApartment2Page() {
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* After Section - First image improved quality */}
               <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
                 <Image
                   src={projectDetails.afterSection.images[0].src}
                   alt={projectDetails.afterSection.images[0].alt}
-                  width={800}
-                  height={600}
+                  width={1000}
+                  height={750}
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                   style={{ aspectRatio: '4/3' }}
                 />
@@ -354,19 +366,22 @@ export default function AmsterdamApartment2Page() {
 
           <div className="mt-16">
             <div className="space-y-12">
-              <AnimatedElement animationType="fadeInUp" delay={0.1}>
-                <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                  <Image
-                    src={projectDetails.afterSection.images[1].src}
-                    alt={projectDetails.afterSection.images[1].alt}
-                    width={1400}
-                    height={800}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
-                </div>
-              </AnimatedElement>
+              <div className="flex justify-center">
+                <AnimatedElement animationType="fadeInUp" delay={0.1}>
+                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-3xl w-full">
+                                          <Image
+                        src={projectDetails.afterSection.images[1].src}
+                        alt={projectDetails.afterSection.images[1].alt}
+                        width={1000}
+                        height={563}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '16/9' }}
+                      />
+                  </div>
+                </AnimatedElement>
+              </div>
 
+              {/* After Section - Grid images improved quality */}
               <div className="grid md:grid-cols-3 gap-6">
                 {projectDetails.afterSection.images.slice(2, 5).map((image, index) => (
                   <AnimatedElement
@@ -378,8 +393,8 @@ export default function AmsterdamApartment2Page() {
                       <Image
                         src={image.src}
                         alt={image.alt}
-                        width={600}
-                        height={600}
+                        width={900}
+                        height={900}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         style={{ aspectRatio: '1/1' }}
                       />
@@ -399,8 +414,8 @@ export default function AmsterdamApartment2Page() {
                       <Image
                         src={image.src}
                         alt={image.alt}
-                        width={800}
-                        height={600}
+                        width={1000}
+                        height={750}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                         style={{ aspectRatio: '4/3' }}
                       />
@@ -410,18 +425,20 @@ export default function AmsterdamApartment2Page() {
               </div>
 
               {projectDetails.afterSection.images[7] && (
-                <AnimatedElement animationType="fadeInUp" delay={0.4}>
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                    <Image
-                      src={projectDetails.afterSection.images[7].src}
-                      alt={projectDetails.afterSection.images[7].alt}
-                      width={1200}
-                      height={700}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '16/9' }}
-                    />
-                  </div>
-                </AnimatedElement>
+                <div className="flex justify-center">
+                  <AnimatedElement animationType="fadeInUp" delay={0.4}>
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-3xl w-full">
+                      <Image
+                        src={projectDetails.afterSection.images[7].src}
+                        alt={projectDetails.afterSection.images[7].alt}
+                        width={1000}
+                        height={563}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '16/9' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                </div>
               )}
             </div>
           </div>
@@ -498,6 +515,25 @@ export default function AmsterdamApartment2Page() {
         </div>
       </section>
 
+      {/* Back Button Bottom */}
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/interior-renovation">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back To Interior Renovation
+              </Link>
+            </Button>
+          </AnimatedElement>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -544,20 +580,6 @@ export default function AmsterdamApartment2Page() {
               </motion.div>
             </AnimatedElement>
           </div>
-        </div>
-      </section>
-
-      {/* Back Button Bottom */}
-      <section className="pt-6 pb-12 bg-white text-black">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp">
-            <Button asChild variant="link" className="px-0 text-black hover:text-gray-700">
-              <Link href="/interior-renovation">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back To Interior Renovation
-              </Link>
-            </Button>
-          </AnimatedElement>
         </div>
       </section>
     </div>

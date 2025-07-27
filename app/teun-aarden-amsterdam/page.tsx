@@ -301,6 +301,25 @@ export default function TeunAardenAmsterdamPage() {
         </div>
       </section>
 
+         {/* Back Button */}
+         <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/furniture-production">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back to Custom Furniture
+              </Link>
+            </Button>
+          </AnimatedElement>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">

@@ -96,13 +96,15 @@ export default function WaldenBizStayKitchensPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative aspect-[4/3]"
+              className="relative overflow-hidden rounded-lg shadow-lg bg-gray-100"
             >
               <Image
                 src={images[1]}
                 alt="Walden BizStay Kitchen 1"
-                fill
-                className="object-cover rounded-lg shadow-lg"
+                width={1200}
+                height={900}
+                className="w-full h-auto object-cover"
+                style={{ aspectRatio: '4/3' }}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </motion.div>
@@ -116,50 +118,58 @@ export default function WaldenBizStayKitchensPage() {
             viewport={{ once: true }}
             className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            <div className="relative aspect-[4/3]">
+            <div className="relative overflow-hidden rounded-lg shadow-lg bg-gray-100">
               <Image
                 src={images[2]}
                 alt="Walden BizStay Kitchen 2"
-                fill
-                className="object-cover rounded-lg shadow-lg"
+                width={1000}
+                height={750}
+                className="w-full h-auto object-cover"
+                style={{ aspectRatio: '4/3' }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             </div>
-            <div className="relative aspect-[4/3]">
+            <div className="relative overflow-hidden rounded-lg shadow-lg bg-gray-100">
               <Image
                 src={images[3]}
                 alt="Walden BizStay Kitchen 3"
-                fill
-                className="object-cover rounded-lg shadow-lg"
+                width={1000}
+                height={750}
+                className="w-full h-auto object-cover"
+                style={{ aspectRatio: '4/3' }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             </div>
-            <div className="relative aspect-[4/3] md:col-span-2 lg:col-span-1">
+            <div className="relative overflow-hidden rounded-lg shadow-lg bg-gray-100 md:col-span-2 lg:col-span-1">
               <Image
                 src={images[4]}
                 alt="Walden BizStay Kitchen 4"
-                fill
-                className="object-cover rounded-lg shadow-lg"
+                width={1000}
+                height={750}
+                className="w-full h-auto object-cover"
+                style={{ aspectRatio: '4/3' }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             </div>
           </motion.div>
 
-          {/* Additional Featured Image */}
+          {/* Additional Featured Image - centered and smaller */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-12"
+            className="mt-12 flex justify-center"
           >
-            <div className="relative aspect-[16/9] w-full">
+            <div className="relative overflow-hidden rounded-lg shadow-lg bg-gray-100 max-w-4xl w-full">
               <Image
                 src={images[5]}
                 alt="Walden BizStay Kitchen 5"
-                fill
-                className="object-cover rounded-lg shadow-lg"
-                sizes="100vw"
+                width={1200}
+                height={675}
+                className="w-full h-auto object-cover"
+                style={{ aspectRatio: '16/9' }}
+                sizes="(max-width: 768px) 100vw, 80vw"
               />
             </div>
           </motion.div>
