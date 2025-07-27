@@ -19,7 +19,7 @@ export default function IntroSectionFurnitureProduction() {
             <AnimatedElement animationType="fadeInRight" delay={0.2}>
               <div className="mx-auto lg:mx-0 overflow-hidden rounded-md shadow-lg" style={{ width: 400, height: 300 }}>
                 <Image
-                  src="/furniture-production-page/www.studiobycristian.com-1750525148492/Furniture-Production-Right-Image-768x300.jpg.jpeg"
+                  src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5858.jpg"
                   alt="Furniture detail"
                   width={400}
                   height={300}
