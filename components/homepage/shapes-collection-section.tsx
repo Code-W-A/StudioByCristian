@@ -26,7 +26,7 @@ export default function ShapesCollectionSection() {
   return (
     <ParallaxSection
       id="shapes-collection"
-      imageUrl="/home-page/LadyChair-3-700x466.jpg.jpeg"
+      imageUrl="/STUDIO BY CRISTIAN/shapes-out-table/OutTable-3.jpg.jpeg"
       imageAlt="Shapes Collection Background"
       minHeight="auto"
       strength={0.05} // Very subtle parallax
