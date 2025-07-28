@@ -8,6 +8,7 @@ import { ArrowLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import ParallaxSection from '@/components/parallax-section'
 import AnimatedElement from '@/components/animated-element'
+import ContactForm from '@/components/contact-form'
 
 const images = [
   '/STUDIO BY CRISTIAN/walden-bizstay-kitchens/Walden-BizStay-Kitchens-Banner-scaled.jpg.jpeg',
@@ -176,8 +177,8 @@ export default function WaldenBizStayKitchensPage() {
         </div>
       </section>
 
-      {/* Back Button */}
-      <section className="py-12 lg:py-16 bg-white text-black">
+           {/* Back Button */}
+           <section className="py-12 lg:py-16 bg-white text-black">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedElement animationType="fadeInUp">
             <Button
@@ -194,6 +195,47 @@ export default function WaldenBizStayKitchensPage() {
           </AnimatedElement>
         </div>
       </section>
+
+      {/* Contact Us Section */}
+      <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+            <AnimatedElement animationType="fadeInLeft" className="space-y-8">
+              <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Contact Us</h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                We're passionate about bringing unique visions to life. Whether you have a clear concept or are just
+                starting to dream, we'd love to hear from you.
+              </p>
+              <div className="space-y-4 text-gray-700">
+                <p><strong>Headquarters:</strong> The Netherlands</p>
+                <div className="flex space-x-4">
+                  <Link href="https://ro.linkedin.com/company/studiobycristian" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
+                  <Link href="https://www.instagram.com/studiobycristian/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
+                </div>
+                <Link href="mailto:office@studiobycristian.com" className="block text-gray-700 hover:text-black transition-colors">office@studiobycristian.com</Link>
+              </div>
+            </AnimatedElement>
+            <AnimatedElement animationType="fadeInRight">
+              <motion.div className="bg-black text-white p-8 sm:p-10 lg:p-12 rounded-xl shadow-2xl border border-black/20 relative"
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }} viewport={{ once: true, amount: 0.3 }}>
+                <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/40" />
+                <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-white/40" />
+                
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
+                  Would you like to discuss a project?
+                </h2>
+                
+                {/* Decorative line */}
+                <div className="w-24 h-0.5 bg-gradient-to-r from-white/60 to-transparent mx-auto mb-8" />
+                
+                <ContactForm />
+              </motion.div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
+ 
     </div>
   );
 }
