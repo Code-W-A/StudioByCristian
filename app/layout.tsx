@@ -5,6 +5,7 @@ import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
+import BackToTopButton from "@/components/back-to-top-button"
 
 // Using Libre Baskerville as a similar serif font to GFS Didot available on Google Fonts
 const gfsDidotAlternative = Libre_Baskerville({ 
@@ -53,6 +54,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
         <Toaster />
+        <BackToTopButton />
       </body>
     </html>
   )

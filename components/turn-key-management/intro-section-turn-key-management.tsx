@@ -18,7 +18,7 @@ export default function IntroSectionTurnKeyManagement() {
             <AnimatedElement animationType="fadeInRight" delay={0.2}>
               <div className="mx-auto lg:mx-0 overflow-hidden rounded-md shadow-lg" style={{ width: 440, height: 172 }}>
                 <Image
-                  src="/turn-key-management-page/Turn-Key-Header-Right-Image-440x172.jpg.jpeg"
+                  src="/turn-key-management-amsterdam-apartment-1/Amsterdam-1-After-Banner-scaled.jpg.jpeg"
                   alt="Interior Renovation detail"
                   width={440}
                   height={172}

@@ -242,16 +242,18 @@ export default function AboutUsPage() {
               
               <AnimatedElement animationType="fadeInRight" delay={0.5} className="lg:order-1">
                 <motion.div
-                  className="relative overflow-hidden rounded-2xl group w-full"
+                  className="relative overflow-hidden rounded-2xl group w-full h-[750px]"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5919.jpg"
+                    src="/ravy-roy-new-pics/Lounge/Lounge _ 05.jpg"
                     alt="Interior Design"
-                    width={600}
-                    height={750}
-                    className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
-                    style={{ aspectRatio: '4/5' }}
+                    fill
+                    className="object-cover transform transition-transform duration-500 hover:scale-105"
+                    style={{ objectPosition: 'center center' }}
+                    priority={false}
+                    quality={100}
+                    sizes="(max-width: 768px) 100vw, 600px"
                   />
                 </motion.div>
               </AnimatedElement>
@@ -607,7 +609,7 @@ export default function AboutUsPage() {
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/extra Custom Furniture/Cassandra_Aerdenhout/_EWP5923.jpg"
+                    src="/bizzstay_sfeer/SFEER-9.jpg"
                     alt="Essentials Bundle - Apartment Design"
                     width={600}
                     height={750}
