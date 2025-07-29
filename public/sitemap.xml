@@ -1,320 +1,354 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
   <url>
-    <loc>https://studiobycristian.com/</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.studiobycristian.com/</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Main Pages -->
   <url>
-    <loc>https://studiobycristian.com/about</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://studiobycristian.com/contact</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://studiobycristian.com/credentials</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/about</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Services -->
   <url>
-    <loc>https://studiobycristian.com/design</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://studiobycristian.com/concept-design</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/contact</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/furniture-production</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Turn Key Management -->
-  <url>
-    <loc>https://studiobycristian.com/turn-key-management</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://studiobycristian.com/turn-key-management/amsterdam-apartment-1</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://studiobycristian.com/turn-key-management/amsterdam-apartment-2</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://studiobycristian.com/turn-key-management/voorburg-apartment</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://studiobycristian.com/turn-key-management/private-villa-wassenaar</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Work Archive -->
-  <url>
-    <loc>https://studiobycristian.com/work-archive</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://studiobycristian.com/work-archive/private-homes</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://studiobycristian.com/work-archive/luxury-stores</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://studiobycristian.com/work-archive/restaurants-hotels</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Shapes Collection -->
-  <url>
-    <loc>https://studiobycristian.com/shapes</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/design</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/shapes-lady-chair</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/furniture-production</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/interior-renovation</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/work-archive</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/concept-design</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/credentials</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/shapes-out-table</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/shapes</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Project Pages -->
+  <url>
+    <loc>https://www.studiobycristian.com/amsterdam-amsteldijk-double-apartments</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/shapes-ufo-chair</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/bizzstay-delft</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/shapes-spider-kit</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/cassandra-aerdenhout</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-  
-  <!-- Residential Projects -->
   <url>
-    <loc>https://studiobycristian.com/amsterdam-amsteldijk-double-apartments</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/chi-cafe</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/mauritskade</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/chic-parisien-apartment</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/mauritskade-apartments</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/day-care-concept</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/wassenaar-plan-2000</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/derodeloper-luxury-store-furniture</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/private-home-for-dennis-mabel</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/dutch-village-concept</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/private-home-for-kristian-and-claudia</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/harmonie-in-holz-house</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/private-penthouse</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/hub-modular-office-concept</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/susan-and-cyril-apartment</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/laren-house-concept</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/chic-parisien-apartment</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/mauritskade-apartments</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/harmonie-in-holz-house</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/mauritskade-concept-design</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
-  <!-- Concept Projects -->
   <url>
-    <loc>https://studiobycristian.com/dutch-village-concept</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/noritech-working-house</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/laren-house-concept</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/oba-amsterdam-library</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/wassenaar-house-concept</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/private-home-for-dennis-mabel</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/walden-appartments-concept</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/private-home-for-kristian-and-claudia</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/walden-bizstay-kitchens</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/private-penthouse</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/day-care-concept</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/private-residential-holiday-house</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/hub-modular-office-concept</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/ravi-roy-spa-retreat-hotel</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
-  <!-- Commercial Projects -->
   <url>
-    <loc>https://studiobycristian.com/chi-cafe</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/shapes-lady-chair</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/derodeloper-luxury-store-furniture</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/shapes-out-table</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/oba-amsterdam-library</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/shapes-spider-kit</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/noritech-working-house</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/shapes-ufo-chair</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
-  <!-- Furniture Projects -->
   <url>
-    <loc>https://studiobycristian.com/suriname-apartments-residential-1-furniture</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/sudip-den-haag</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://studiobycristian.com/suriname-apartments-residential-2-furniture</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://www.studiobycristian.com/suriname-apartments-residential-1-furniture</loc>
+    <lastmod>2024-01-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/suriname-apartments-residential-2-furniture</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/susan-and-cyril-apartment</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/teun-aarden-amsterdam</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/thijs-overveen</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/turn-key-management-amsterdam-apartment-1</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/turn-key-management-amsterdam-apartment-2</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/turn-key-management-private-villa-wassenaar</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/turn-key-management-voorburg-apartment</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/vbs-kitchen-and-living</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/walden-appartments-concept</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/walden-bizstay-kitchens</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/wasenaar-house-concept</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/wassenaar-house-concept</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/wassenaar-plan-2000</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/yoga-and-office-claudia-pedersen</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Interior Renovation Sub-pages -->
+  <url>
+    <loc>https://www.studiobycristian.com/interior-renovation/amsterdam-apartment-1</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/interior-renovation/amsterdam-apartment-2</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/interior-renovation/private-villa-wassenaar</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/interior-renovation/voorburg-apartment</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Work Archive Sub-pages -->
+  <url>
+    <loc>https://www.studiobycristian.com/work-archive/luxury-stores</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/work-archive/private-homes</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.studiobycristian.com/work-archive/restaurants-hotels</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset> 

@@ -1,3 +1,5 @@
+"use client"
+
 import AnimatedElement from "@/components/animated-element"
 import ParallaxSection from "@/components/parallax-section"
 

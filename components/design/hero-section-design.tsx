@@ -1,5 +1,7 @@
 "use client"
 
+"use client"
+
 import Image from "next/image"
 import AnimatedElement from "@/components/animated-element"
 import { motion, useScroll, useTransform } from "framer-motion"

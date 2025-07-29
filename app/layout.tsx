@@ -15,7 +15,7 @@ const gfsDidotAlternative = Libre_Baskerville({
 })
 
 export const metadata: Metadata = {
-  title: "Studio by Cristian - Interior Design",
+  title: "Studio byCristian - Interior Design",
   description: "Modern interior design and furniture production.",
   generator: 'v0.dev',
   icons: {
