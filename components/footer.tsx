@@ -206,9 +206,19 @@ export default function Footer() {
           className="mt-16 pt-8 border-t border-gray-700/30"
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-500">
-              Copyright {currentYear} © Studio byCristian. All rights reserved.
-            </p>
+            <div className="flex flex-col items-center md:items-start">
+              <p className="text-sm text-gray-500">
+                Copyright {currentYear} © Studio byCristian. All rights reserved.
+              </p>
+              <a
+                href="https://www.webdynamicx.ro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-500 hover:text-gray-300 transition-colors"
+              >
+                Developed by WebDynamicx
+              </a>
+            </div>
             
             {/* Geometric accent */}
             <div className="flex items-center space-x-2">
