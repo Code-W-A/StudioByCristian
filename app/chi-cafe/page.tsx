@@ -1,0 +1,327 @@
+"use client"
+
+import Image from "next/image"
+import AnimatedElement from "@/components/animated-element"
+import ParallaxSection from "@/components/parallax-section"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { ArrowLeft } from "lucide-react"
+import ContactForm from "@/components/contact-form"
+import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
+
+const projectDetails = {
+  title: "Chi Cafe",
+  category: "Furniture Production",
+  heroImage: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-Banner-scaled.jpg.jpeg",
+  description: "Chi Cafe was a very fun project for us to undertake due to the custom made furniture we have produced for the space. The mix between massive wood with painted MDF and modern colors, combined with steel and wood ceilings decorations was a nice process for our talented carpenters.",
+  additionalText: "We are happy to work and combine different materials - from classic to modern, from real wood to veneer, HPL, or steel. Our carpenters are always challenged by the complexity of our projects and designs.",
+  images: [
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-01-1-scaled.jpg.jpeg", alt: "Chi Cafe - Interior design view 1" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-02-1-scaled.jpg.jpeg", alt: "Chi Cafe - Interior design view 2" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-03-1-scaled.jpg.jpeg", alt: "Chi Cafe - Interior design view 3" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-04-1-scaled.jpg.jpeg", alt: "Chi Cafe - Interior design view 4" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-05-scaled.jpg.jpeg", alt: "Chi Cafe - Seating area" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-06-scaled.jpg.jpeg", alt: "Chi Cafe - Custom furniture details" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-07-scaled.jpg.jpeg", alt: "Chi Cafe - Wood and steel combination" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-08-scaled.jpg.jpeg", alt: "Chi Cafe - Modern design elements" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-09-scaled.jpg.jpeg", alt: "Chi Cafe - Overall space design" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-10-scaled.jpg.jpeg", alt: "Chi Cafe - Lighting and atmosphere" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-11-scaled.jpg.jpeg", alt: "Chi Cafe - Custom carpentry work" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-12-1-scaled.jpg.jpeg", alt: "Chi Cafe - Material combinations" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-13-scaled.jpg.jpeg", alt: "Chi Cafe - Detailed view" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-14-1-scaled.jpg.jpeg", alt: "Chi Cafe - Final design" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-15-scaled.jpg.jpeg", alt: "Chi Cafe - Furniture finish" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-16-1-scaled.jpg.jpeg", alt: "Chi Cafe - Complete space" },
+    { src: "/STUDIO BY CRISTIAN/chi-cafe/Chi-Cafe-17-1-scaled.jpg.jpeg", alt: "Chi Cafe - Final result" },
+  ]
+}
+
+// Hook to detect mobile device
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  return isMobile
+}
+
+// Mobile-optimized image gallery component
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+  return (
+    <AnimatedElement animationType="fadeInUp" rootMargin="200px">
+      <div className="space-y-6">
+        {images.map((image, index) => (
+          <div key={index} className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+            <Image 
+              src={image.src} 
+              alt={image.alt} 
+              width={800} 
+              height={600}
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+              style={{ aspectRatio }} 
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              sizes="100vw"
+            />
+          </div>
+        ))}
+      </div>
+    </AnimatedElement>
+  )
+}
+
+export default function ChiCafePage() {
+  const isMobile = useIsMobile()
+  return (
+    <div className="bg-white text-black">
+      {/* Hero Section */}
+      <ParallaxSection
+        imageUrl={projectDetails.heroImage}
+        imageAlt={projectDetails.title + " Hero Image"}
+        minHeight="70vh"
+        strength={0.3}
+        overlayClassName="bg-black/40"
+      >
+        <AnimatedElement animationType="fadeInUp">
+          <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">{projectDetails.category}</p>
+          <h1 className="mt-2 text-4xl font-bold text-white sm:text-5xl md:text-6xl">{projectDetails.title}</h1>
+        </AnimatedElement>
+      </ParallaxSection>
+
+      {/* Back Button */}
+      <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/furniture-production">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back to Furniture Production
+              </Link>
+            </Button>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Project Description Section */}
+      <section className="pt-6 pb-12 lg:pt-8 lg:pb-16 bg-white text-black">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animationType="fadeInUp" className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl mb-8">
+              Custom Furniture Production
+            </h2>
+            <div className="max-w-4xl mx-auto space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                {projectDetails.description}
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                {projectDetails.additionalText}
+              </p>
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Image Gallery Section - 2 per row then 1 per row pattern */}
+      <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          {isMobile ? (
+            // Mobile-optimized version with fewer intersection observers
+            <MobileOptimizedGallery 
+              images={projectDetails.images} 
+              aspectRatio="4/3" 
+            />
+          ) : (
+            // Desktop version with 2+1 pattern
+            <div className="space-y-12">
+
+              {/* First two images in a grid */}
+              <div className="grid md:grid-cols-2 gap-8">
+                {projectDetails.images.slice(0, 2).map((image, index) => (
+                  <AnimatedElement key={index} animationType="fadeInUp" delay={index * 0.1}>
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '4/3' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                ))}
+              </div>
+
+              {/* Single centered image */}
+              {projectDetails.images.slice(2, 3).length > 0 && (
+                <div className="flex justify-center">
+                  <AnimatedElement animationType="fadeInUp" delay={0.2}>
+                    <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-4xl w-full">
+                      <Image
+                        src={projectDetails.images[2].src}
+                        alt={projectDetails.images[2].alt}
+                        width={1200}
+                        height={675}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                        style={{ aspectRatio: '16/9' }}
+                      />
+                    </div>
+                  </AnimatedElement>
+                </div>
+              )}
+
+              {/* Continue pattern for remaining images */}
+              {projectDetails.images.slice(3).map((image, index) => {
+                const globalIndex = index + 3;
+                const positionInGroup = index % 3;
+
+                if (positionInGroup === 0) {
+                  // Start of new group - first image of 2-image grid
+                  return (
+                    <div key={`group-${globalIndex}`} className="space-y-12">
+                      <div className="grid md:grid-cols-2 gap-8">
+                        <AnimatedElement animationType="fadeInUp" delay={0.1}>
+                          <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              width={800}
+                              height={600}
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                              style={{ aspectRatio: '4/3' }}
+                            />
+                          </div>
+                        </AnimatedElement>
+                        {/* Second image in the pair */}
+                        {projectDetails.images[globalIndex + 1] && (
+                          <AnimatedElement animationType="fadeInUp" delay={0.2}>
+                            <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
+                              <Image
+                                src={projectDetails.images[globalIndex + 1].src}
+                                alt={projectDetails.images[globalIndex + 1].alt}
+                                width={800}
+                                height={600}
+                                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                                style={{ aspectRatio: '4/3' }}
+                              />
+                            </div>
+                          </AnimatedElement>
+                        )}
+                      </div>
+
+                      {/* Single centered image after the pair */}
+                      {projectDetails.images[globalIndex + 2] && (
+                        <div className="flex justify-center">
+                          <AnimatedElement animationType="fadeInUp" delay={0.3}>
+                            <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 max-w-4xl w-full">
+                              <Image
+                                src={projectDetails.images[globalIndex + 2].src}
+                                alt={projectDetails.images[globalIndex + 2].alt}
+                                width={1200}
+                                height={675}
+                                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                                style={{ aspectRatio: '16/9' }}
+                              />
+                            </div>
+                          </AnimatedElement>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+                // Skip images at positions 1 and 2 in each group of 3, they're handled above
+                return null;
+              })}
+
+            </div>
+          )}
+        </div>
+      </section>
+     {/* Back Button Bottom */}
+     <section className="py-12 lg:py-16 bg-white text-black">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedElement animationType="fadeInUp">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="bg-white text-black border-gray-300 hover:bg-gray-100"
+            >
+              <Link href="/furniture-production">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back To Furniture Production
+              </Link>
+            </Button>
+          </AnimatedElement>
+        </div>
+      </section>
+
+
+      {/* Contact Section */}
+      <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+            <AnimatedElement animationType="fadeInLeft" className="space-y-8">
+              <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                Contact Us
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                We're passionate about bringing unique visions to life. Whether you have a clear concept or are just
+                starting to dream, we'd love to hear from you. Reach out to discuss your project, and let's explore the
+                possibilities together.
+              </p>
+              <div className="space-y-4 text-gray-700">
+                <div className="space-y-4">
+                  <p className="text-gray-700">
+                    <strong>Headquarters:</strong> The Netherlands<br />
+                    
+                  </p>
+                  <div className="flex space-x-4">
+                    <Link href="https://ro.linkedin.com/company/studiobycristian" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
+                    <Link href="https://www.instagram.com/studiobycristian/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
+                  </div>
+                  <Link 
+                    href="mailto:office@studiobycristian.com" 
+                    className="block text-gray-700 hover:text-black transition-colors"
+                  >
+                    office@studiobycristian.com
+                  </Link>
+                </div>
+              </div>
+            </AnimatedElement>
+
+            <AnimatedElement animationType="fadeInRight">
+              <motion.div
+                className="bg-black text-white p-8 sm:p-10 lg:p-12 rounded-xl shadow-2xl border border-black/20 relative"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/40" />
+                <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-white/40" />
+                <ContactForm />
+              </motion.div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
+ 
+    </div>
+  )
+}
