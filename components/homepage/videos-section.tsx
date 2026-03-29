@@ -16,7 +16,7 @@ export default function VideosSection() {
     subtitle: "Utrecht Workplace",
     description:
       "A project story that follows the Utrecht interior from bold concept language to on-site execution and final spatial identity.",
-    imageUrl: "/unusual-spaces/Under construction/IMG_4251.jpg",
+    imageUrl: "/unusual-spaces/Utrecht - Pictures/_EWP0966.jpg",
     projectLink: "/unusual-spaces",
   }
 

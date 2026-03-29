@@ -21,7 +21,7 @@ const featuredProjectItems = [
   },
   {
     name: "Unusual Spaces",
-    imageUrl: "/unusual-spaces/Under construction/IMG_4251.jpg",
+    imageUrl: "/unusual-spaces/Utrecht - Pictures/_EWP0966.jpg",
     link: "/unusual-spaces",
   },
 ]

@@ -15,7 +15,7 @@ export const metadata: Metadata = getPageMetadata("/unusual-spaces")
 const projectDetails = {
   title: "Unusual Spaces",
   category: "Furniture Production",
-  heroImage: "/unusual-spaces/Under construction/IMG_4251.jpg",
+  heroImage: "/unusual-spaces/Utrecht - Pictures/_EWP0966.jpg",
   location: "Utrecht, The Netherlands",
   client: "Unusual Spaces",
   designer: "Bengi Amaç",
@@ -31,59 +31,79 @@ const projectDetails = {
   ],
   storyImages: [
     {
-      src: "/unusual-spaces/Under construction/IMG_0417.jpg",
-      alt: "Unusual Spaces open-plan workspace during the fit-out phase in Utrecht",
+      src: "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0839.webp",
+      alt: "Unusual Spaces finished collaborative lounge with graphic flooring, integrated seating, and meeting pod in Utrecht",
     },
     {
-      src: "/unusual-spaces/Under construction/IMG_0399.jpg",
-      alt: "Unusual Spaces stripped-back open-plan area during site preparation in Utrecht",
+      src: "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0906.webp",
+      alt: "Unusual Spaces finished office zone with bespoke shelving, planting wall, and integrated coffee point in Utrecht",
     },
   ],
   comparison: {
     beforeSrc: "/unusual-spaces/Under construction/IMG_0423.jpg",
-    afterSrc: "/unusual-spaces/Under construction/IMG_4251.jpg",
-    alt: "Unusual Spaces main Utrecht workspace transformed from active fit-out to finished concept-driven interior",
+    afterSrc: "/unusual-spaces/Utrecht - Pictures/_EWP0966.jpg",
+    alt: "Unusual Spaces main Utrecht zone transformed from shell-stage fit-out into a finished collaborative interior",
   },
-  executionLead: {
-    src: "/unusual-spaces/Under construction/IMG_0432.jpg",
-    alt: "Unusual Spaces wide execution-progress view showing ceiling infrastructure and framing in Utrecht",
-  },
-  executionRows: [
-    [
-      {
-        src: "/unusual-spaces/Under construction/IMG_0642.jpg",
-        alt: "Unusual Spaces execution detail showing curved joinery and exposed service runs in progress",
-        aspectRatio: "4/3",
-      },
-      {
-        src: "/unusual-spaces/Under construction/IMG_0644.jpg",
-        alt: "Unusual Spaces custom-built niche with a taped technical drawing during fabrication and fit-out",
-        aspectRatio: "4/3",
-      },
-    ],
-    [
-      {
-        src: "/unusual-spaces/Under construction/IMG_0433.jpg",
-        alt: "Unusual Spaces bay-window room during early fit-out and finishing works",
-        aspectRatio: "16/10",
-      },
-    ],
-    [
-      {
-        src: "/unusual-spaces/Under construction/IMG_0409.jpg",
-        alt: "Unusual Spaces stripped-back interior showing exposed structure before completion",
-        aspectRatio: "4/3",
-      },
-      {
-        src: "/unusual-spaces/Under construction/IMG_2898.jpg",
-        alt: "Unusual Spaces custom partition doors and glazing during installation in Utrecht",
-        aspectRatio: "4/3",
-      },
-    ],
+  galleryImages: [
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0836.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0845.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0846.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0851.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0854.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0860.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0862.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0875.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0878.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0882.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0887.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0891.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0893.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0898.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0903.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0909.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0918.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0923.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0930.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0933.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0935.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0945.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0949.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0957.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0966.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0973.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0974.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0975.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0977.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0978.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0980.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0981.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0982.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0985.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0986.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0989.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP0993.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP1013.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP1014.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP1034.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP1045.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP1052.webp",
+    "/unusual-spaces/Utrecht - Pictures/optimized/_EWP1057.webp",
   ],
 }
 
 export default function UnusualSpacesPage() {
+  const galleryRows: string[][] = []
+  const galleryPattern = [2, 1]
+  let galleryIndex = 0
+  let patternIndex = 0
+
+  while (galleryIndex < projectDetails.galleryImages.length) {
+    const groupSize = galleryPattern[patternIndex % galleryPattern.length]
+    galleryRows.push(projectDetails.galleryImages.slice(galleryIndex, galleryIndex + groupSize))
+    galleryIndex += groupSize
+    patternIndex += 1
+  }
+
   return (
     <div className="bg-white text-black">
       <ParallaxSection
@@ -144,7 +164,7 @@ export default function UnusualSpacesPage() {
               Before &amp; After
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              A direct comparison of the same Utrecht workspace zone, showing how the raw fit-out stage evolved into the finished Unusual Spaces interior.
+              A direct comparison between the early shell-stage workspace and the completed Unusual Spaces interior, showing how the concept was translated into built form.
             </p>
           </AnimatedElement>
 
@@ -222,67 +242,38 @@ export default function UnusualSpacesPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp" className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl mb-4">
-              Execution Process
+              Project Gallery
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Beyond the direct comparison above, these Utrecht site images document the wider build phase, from technical preparation and bespoke fabrication to the coordinated installation of the final interior.
+              Most of the final photography from the Utrecht project, arranged in a repeating 2 plus 1 rhythm to show the full range of custom joinery, meeting zones, work areas, and social spaces.
             </p>
           </AnimatedElement>
 
           <div className="space-y-8">
-            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-              <AnimatedElement animationType="fadeInLeft" delay={0.1}>
-                <div className="relative overflow-hidden rounded-2xl shadow-lg bg-gray-100">
-                  <Image
-                    src={projectDetails.executionLead.src}
-                    alt={projectDetails.executionLead.alt}
-                    width={1400}
-                    height={1000}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: "4/3" }}
-                  />
-                </div>
-              </AnimatedElement>
-
-              <AnimatedElement animationType="fadeInRight" delay={0.15} className="flex items-center">
-                <div className="rounded-2xl border border-gray-200 bg-gray-50 p-8 shadow-sm">
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-gray-500">
-                    Utrecht Build Phase
-                  </p>
-                  <h3 className="mt-4 text-2xl font-bold tracking-tight text-black sm:text-3xl">
-                    Site coordination, detailing, and custom fit-out in progress
-                  </h3>
-                  <p className="mt-4 text-lg leading-relaxed text-gray-700">
-                    These images expand on the before-and-after view above, highlighting the structural preparation, technical coordination, and installation stages required to deliver a highly graphic interior with custom-built elements.
-                  </p>
-                </div>
-              </AnimatedElement>
-            </div>
-
             <div className="space-y-8">
-              {projectDetails.executionRows.map((row, rowIndex) => (
+              {galleryRows.map((row, rowIndex) => (
                 <div
                   key={`execution-row-${rowIndex}`}
                   className={
                     row.length === 1
-                      ? "grid w-full gap-8 mx-auto max-w-5xl"
+                      ? "grid w-full gap-8 mx-auto max-w-4xl"
                       : "grid gap-8 md:grid-cols-2"
                   }
                 >
-                  {row.map((image, imageIndex) => (
+                  {row.map((imageSrc, imageIndex) => (
                     <AnimatedElement
-                      key={image.src}
+                      key={imageSrc}
                       animationType="fadeInUp"
                       delay={0.08 * (rowIndex + imageIndex)}
                     >
                       <div className="relative overflow-hidden rounded-2xl shadow-lg bg-gray-100">
                         <Image
-                          src={image.src}
-                          alt={image.alt}
-                          width={row.length === 1 ? 1400 : 900}
+                          src={imageSrc}
+                          alt={`Unusual Spaces completed Utrecht workplace interior view ${rowIndex * 2 + imageIndex + 1}`}
+                          width={row.length === 1 ? 1200 : 900}
                           height={row.length === 1 ? 900 : 700}
                           className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                          style={{ aspectRatio: image.aspectRatio }}
+                          style={{ aspectRatio: "4/3" }}
                         />
                       </div>
                     </AnimatedElement>

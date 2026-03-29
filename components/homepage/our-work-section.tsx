@@ -10,7 +10,7 @@ import { motion, type Variants } from "framer-motion"
 const ourWorkItems = [
   {
     title: "Custom Furniture",
-    imageUrl: "/unusual-spaces/Under construction/IMG_4251.jpg",
+    imageUrl: "/unusual-spaces/Utrecht - Pictures/_EWP0966.jpg",
     link: "/furniture-production",
     description: "We create custom-made furniture that blends aesthetics, comfort, and function — every piece made to order.",
   },

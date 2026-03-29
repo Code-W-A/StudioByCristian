@@ -34,7 +34,7 @@ const sections = [
     title: "Where ideas take shape — with precision, creativity, and craftsmanship.",
     content:
       "When you choose to work with us on custom furniture, you're entering the final and most tangible stage of the design process: transforming vision into reality. We collaborate with skilled makers and advanced production facilities capable of working with an extensive range of materials — including solid wood, veneer, HPL, MDF, professional lacquers, steel, glass, marble, quartz, and more. We also handle upholstery and fabric production, allowing for full flexibility in both function and style. Every piece is the result of close collaboration between our engineers, project managers, and production partners — all working together to deliver tailored solutions, no matter how ambitious the idea. If you can imagine it, we can make it real.",
-    imageSrc: "/unusual-spaces/Under construction/IMG_4251.jpg",
+    imageSrc: "/unusual-spaces/Utrecht - Pictures/_EWP0966.jpg",
     linkText: "Learn More",
     linkHref: "/furniture-production",
   },
@@ -180,7 +180,7 @@ export default function AboutUsPage() {
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/unusual-spaces/Under construction/IMG_4251.jpg"
+                    src="/unusual-spaces/Utrecht - Pictures/_EWP0966.jpg"
                     alt="Custom Furniture"
                     width={600}
                     height={750}

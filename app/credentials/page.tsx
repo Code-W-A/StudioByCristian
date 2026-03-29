@@ -14,9 +14,9 @@ import AboutIntroText from "@/components/about-intro-text"
 const credentialsData = {
   title: "Credentials",
   category: "Professional & Talent",
-  heroImage: "/unusual-spaces/Under construction/IMG_4251.jpg",
+  heroImage: "/unusual-spaces/Utrecht - Pictures/_EWP0966.jpg",
   tagline: "Good design is obvious — great design feels effortless.",
-  profileImage: "/unusual-spaces/Under construction/IMG_4251.jpg"
+  profileImage: "/unusual-spaces/Utrecht - Pictures/_EWP0966.jpg"
 }
 
 export default function CredentialsPage() {
