@@ -15,21 +15,28 @@ export const metadata: Metadata = getPageMetadata("/purelei-store")
 
 const PURELEI_PROJECT_PUBLIC = "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI"
 
-function listGalleryImagesFromSubfolder(subfolder: string): { src: string; alt: string }[] {
-  const dir = path.join(process.cwd(), "public", "purelei-store", "P1034_S1033_DE_BB_RPC_PURELEI", subfolder)
+function listOptimizedGalleryImages(): { src: string; alt: string }[] {
+  const dir = path.join(
+    process.cwd(),
+    "public",
+    "purelei-store",
+    "P1034_S1033_DE_BB_RPC_PURELEI",
+    "Picturest",
+    "optimized"
+  )
   if (!fs.existsSync(dir)) return []
   return fs
     .readdirSync(dir)
-    .filter((name) => /\.(jpe?g|png|webp)$/i.test(name))
+    .filter((name) => /\.webp$/i.test(name))
     .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base", numeric: true }))
     .map((name) => ({
-      src: `${PURELEI_PROJECT_PUBLIC}/${subfolder}/${name}`,
+      src: `${PURELEI_PROJECT_PUBLIC}/Picturest/optimized/${name}`,
       alt: `PURELEI store — ${path.parse(name).name}`,
     }))
 }
 
-/** All final photography from Picturest (project shoot). Under construction stays in Execution Process only. */
-const pureleiProjectGallery = listGalleryImagesFromSubfolder("Picturest")
+/** WebP outputs from Picturest/optimized (see optimize-images.js). Under construction stays in Execution Process only. */
+const pureleiProjectGallery = listOptimizedGalleryImages()
 
 /** Desktop: rows of 2, then 1, then 2… (mobile: one column). */
 function groupPureleiGalleryRows(images: { src: string; alt: string }[]) {
