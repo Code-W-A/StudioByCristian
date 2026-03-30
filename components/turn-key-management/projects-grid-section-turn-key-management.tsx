@@ -10,7 +10,7 @@ const turnKeyProjects = [
   {
     name: "PURELEI Store",
     description: "A refined retail fit-out in Cologne where Studio byCristian acted as General Contractor, coordinating custom display systems, clean architectural detailing, and a warm monochromatic atmosphere.",
-    imageUrl: "/derodeloper-luxury-store-furniture/DERODELOPER-Luxury-Store-Banner-scaled.jpg.jpeg",
+    imageUrl: "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI/Picturest/_EWP7377.jpg",
     link: "/purelei-store",
   },
   {

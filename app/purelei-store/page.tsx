@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+import fs from "node:fs"
+import path from "node:path"
 import Image from "next/image"
 import Link from "next/link"
 import AnimatedElement from "@/components/animated-element"
@@ -10,6 +12,44 @@ import { ArrowLeft } from "lucide-react"
 import { getPageMetadata } from "@/lib/seo-metadata"
 
 export const metadata: Metadata = getPageMetadata("/purelei-store")
+
+const PURELEI_PROJECT_PUBLIC = "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI"
+
+function listGalleryImagesFromSubfolder(subfolder: string): { src: string; alt: string }[] {
+  const dir = path.join(process.cwd(), "public", "purelei-store", "P1034_S1033_DE_BB_RPC_PURELEI", subfolder)
+  if (!fs.existsSync(dir)) return []
+  return fs
+    .readdirSync(dir)
+    .filter((name) => /\.(jpe?g|png|webp)$/i.test(name))
+    .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base", numeric: true }))
+    .map((name) => ({
+      src: `${PURELEI_PROJECT_PUBLIC}/${subfolder}/${name}`,
+      alt: `PURELEI store — ${path.parse(name).name}`,
+    }))
+}
+
+/** All final photography from Picturest (project shoot). Under construction stays in Execution Process only. */
+const pureleiProjectGallery = listGalleryImagesFromSubfolder("Picturest")
+
+/** Desktop: rows of 2, then 1, then 2… (mobile: one column). */
+function groupPureleiGalleryRows(images: { src: string; alt: string }[]) {
+  const groups: { src: string; alt: string }[][] = []
+  let i = 0
+  let pairNext = true
+  while (i < images.length) {
+    if (pairNext) {
+      groups.push(images.slice(i, i + 2))
+      i += Math.min(2, images.length - i)
+    } else {
+      groups.push(images.slice(i, i + 1))
+      i += 1
+    }
+    pairNext = !pairNext
+  }
+  return groups
+}
+
+const pureleiGalleryRowGroups = groupPureleiGalleryRows(pureleiProjectGallery)
 
 const projectDetails = {
   title: "PURELEI Store",
@@ -63,48 +103,6 @@ const projectDetails = {
     {
       src: "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI/Under construction/IMG_5235.jpg",
       alt: "PURELEI execution-phase interior showing site coordination and final adjustments",
-    },
-  ],
-  gallery: [
-    {
-      src: "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI/Picturest/_EWP7393.jpg",
-      alt: "PURELEI wall-mounted display systems inside the finished store",
-      aspectRatio: "4/3",
-    },
-    {
-      src: "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI/Picturest/_EWP7499.jpg",
-      alt: "PURELEI storefront and window display viewed from the street",
-      aspectRatio: "4/3",
-    },
-    {
-      src: "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI/Picturest/_EWP7369.jpg",
-      alt: "PURELEI interior overview with mirrored surfaces and central display table",
-      aspectRatio: "16/9",
-    },
-    {
-      src: "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI/Picturest/_EWP7558.jpg",
-      alt: "PURELEI close-up of a vertical jewelry display module",
-      aspectRatio: "4/5",
-    },
-    {
-      src: "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI/Picturest/_EWP7546.jpg",
-      alt: "PURELEI close-up of necklaces presented on sculptural stone supports",
-      aspectRatio: "4/5",
-    },
-    {
-      src: "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI/Picturest/_EWP7522.jpg",
-      alt: "PURELEI jewelry detail against the warm monochromatic backdrop",
-      aspectRatio: "4/5",
-    },
-    {
-      src: "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI/Picturest/_EWP7403.jpg",
-      alt: "PURELEI shelving composition highlighting clean lines and subtle lighting",
-      aspectRatio: "16/10",
-    },
-    {
-      src: "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI/Picturest/_EWP7451.jpg",
-      alt: "PURELEI jewelry display detail with circular presentation forms",
-      aspectRatio: "16/10",
     },
   ],
 }
@@ -311,70 +309,58 @@ export default function PureleiStorePage() {
             </p>
           </AnimatedElement>
 
-          <div className="space-y-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.gallery.slice(0, 2).map((image) => (
-                <AnimatedElement key={image.src} animationType="fadeInUp">
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={900}
-                      height={700}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: image.aspectRatio }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
+          <div className="flex flex-col gap-6">
+            {pureleiGalleryRowGroups.map((group, groupIndex) => {
+              const startIndex = pureleiGalleryRowGroups
+                .slice(0, groupIndex)
+                .reduce((sum, g) => sum + g.length, 0)
+              const rowKey = group.map((g) => g.src).join("|")
 
-            <AnimatedElement animationType="fadeInUp" delay={0.1}>
-              <div className="relative overflow-hidden rounded-2xl shadow-lg bg-gray-100 max-w-5xl mx-auto">
-                <Image
-                  src={projectDetails.gallery[2].src}
-                  alt={projectDetails.gallery[2].alt}
-                  width={1400}
-                  height={800}
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ aspectRatio: projectDetails.gallery[2].aspectRatio }}
-                />
-              </div>
-            </AnimatedElement>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {projectDetails.gallery.slice(3, 6).map((image, index) => (
-                <AnimatedElement key={image.src} animationType="fadeInUp" delay={0.1 * index}>
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={700}
-                      height={700}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: image.aspectRatio }}
-                    />
+              if (group.length === 2) {
+                return (
+                  <div key={rowKey} className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    {group.map((image, j) => (
+                      <AnimatedElement
+                        key={image.src}
+                        animationType="fadeInUp"
+                        delay={Math.min(startIndex + j, 12) * 0.03}
+                      >
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gray-100 shadow-lg">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            className="object-cover transition-transform duration-500 hover:scale-105"
+                            sizes="(max-width: 767px) 100vw, 50vw"
+                          />
+                        </div>
+                      </AnimatedElement>
+                    ))}
                   </div>
-                </AnimatedElement>
-              ))}
-            </div>
+                )
+              }
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.gallery.slice(6).map((image, index) => (
-                <AnimatedElement key={image.src} animationType="fadeInUp" delay={0.1 * index}>
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={900}
-                      height={700}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: image.aspectRatio }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
+              const image = group[0]
+              return (
+                <div key={rowKey} className="flex justify-center">
+                  <AnimatedElement
+                    animationType="fadeInUp"
+                    delay={Math.min(startIndex, 12) * 0.03}
+                    className="w-full md:w-[calc(50%-0.75rem)]"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gray-100 shadow-lg">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        className="object-cover transition-transform duration-500 hover:scale-105"
+                        sizes="(max-width: 767px) 100vw, 50vw"
+                      />
+                    </div>
+                  </AnimatedElement>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
