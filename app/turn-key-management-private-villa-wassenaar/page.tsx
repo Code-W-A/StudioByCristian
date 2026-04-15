@@ -9,17 +9,123 @@ import { ArrowLeft, X } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import { motion } from "framer-motion"
 import { useState, useEffect, useRef } from "react"
+import { wassenaarAsset, WASSENAAR_HERO_IMAGE } from "@/lib/wassenaar-public-assets"
+
+/** WebP outputs from `New House/optimized` (run `node optimize-images.js` in New House). Sorted for gallery. */
+const NEW_HOUSE_OPTIMIZED_WEBP = [
+  "QY0A9346.webp",
+  "QY0A9368.webp",
+  "QY0A9373.webp",
+  "QY0A9389.webp",
+  "QY0A9396.webp",
+  "QY0A9402.webp",
+  "QY0A9408.webp",
+  "QY0A9433.webp",
+  "QY0A9452.webp",
+  "QY0A9459.webp",
+  "QY0A9495.webp",
+  "QY0A9570.webp",
+  "QY0A9620.webp",
+  "QY0A9712.webp",
+  "QY0A9717.webp",
+  "QY0A9873.webp",
+  "QY0A9875.webp",
+  "QY0A9881.webp",
+  "QY0A9891.webp",
+  "QY0A9897.webp",
+] as const
+
+/** WebP outputs in `turn key wassennarr old/optimized` (sorted). */
+const TURN_KEY_WASSENNARR_OLD_OPTIMIZED_WEBP = [
+  "BEFORE-IMAGE.webp",
+  "ByCristian-700x466.jpg.webp",
+  "Private-Villa-Wassenaar-After-1-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-10-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-11-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-12-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-13-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-14-1.jpg.webp",
+  "Private-Villa-Wassenaar-After-15-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-16-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-17-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-18-2-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-19-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-2-2-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-22-1.jpg.webp",
+  "Private-Villa-Wassenaar-After-25-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-26-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-27-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-28-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-3-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-31-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-33-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-34-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-35-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-36-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-37-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-38-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-39-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-4-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-40-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-41-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-42-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-43-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-44-1.jpg.webp",
+  "Private-Villa-Wassenaar-After-45-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-46-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-5-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-6-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-7-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-8-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-After-9-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Banner-After-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Banner-Design-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Before-1-1-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Before-10.jpg.webp",
+  "Private-Villa-Wassenaar-Before-11-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Before-12-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Before-13-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Before-2-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Before-3-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Before-4-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Before-5-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Before-6-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Before-7-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Before-8-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Before-9-scaled.jpg.webp",
+  "Private-Villa-Wassenaar-Design-01.jpg.webp",
+  "Private-Villa-Wassenaar-Design-02.jpg.webp",
+  "Private-Villa-Wassenaar-Design-03.jpg.webp",
+  "Private-Villa-Wassenaar-Design-04.jpg.webp",
+  "Private-Villa-Wassenaar-Design-05.jpg.webp",
+  "Private-Villa-Wassenaar-Design-06.jpg.webp",
+  "Private-Villa-Wassenaar-Design-07.jpg.webp",
+  "Private-Villa-Wassenaar-Design-08.jpg.webp",
+  "Private-Villa-Wassenaar-Design-09.jpg.webp",
+  "Private-Villa-Wassenaar-Design-10.jpg.webp",
+  "Private-Villa-Wassenaar-Design-11.jpg.webp",
+  "Private-Villa-Wassenaar-Design-12.jpg.webp",
+  "Private-Villa-Wassenaar-Design-13.jpg.webp",
+  "Private-Villa-Wassenaar-Design-14.jpg.webp",
+  "Private-Villa-Wassenaar-Design-15.jpg.webp",
+  "Private-Villa-Wassenaar-Design-16.jpg.webp",
+  "Private-Villa-Wassenaar-Design-17.jpg.webp",
+  "Private-Villa-Wassenaar-Design-18.jpg.webp",
+  "Private-Villa-Wassenaar-Design-19.jpg.webp",
+  "Private-Villa-Wassenaar-Design-20.jpg.webp",
+  "Second Floor & Attic.webp",
+] as const
 
 const projectDetails = {
   title: "Private Villa Wassenaar",
   category: "Interior Renovation",
-  heroImage: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Banner-After-scaled.jpg.jpeg",
+  heroImage: WASSENAAR_HERO_IMAGE,
   beforeAfterComparisons: [
     {
-      before: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Before-7-scaled.jpg.jpeg",
-      after: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Banner-Design-scaled.jpg.jpeg",
-      alt: "Private Villa Wassenaar transformation"
-    }
+      before: wassenaarAsset("turn key wassennarr old/optimized/BEFORE-IMAGE.webp"),
+      after: wassenaarAsset("Render/optimized/AFTER-IMAGE.webp"),
+      alt: "Private Villa Wassenaar transformation",
+    },
   ],
   location: "Wassenaar, The Netherlands",
   status: "Finished",
@@ -32,58 +138,76 @@ const projectDetails = {
     {
       title: "Before",
       text: "We found the house picturing the melancholic nuances of her younger times. The patina of the classical approach was not fit anymore for a residence in the flourishing Wassenaar | The Netherlands.",
-      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Before-1-1-scaled.jpg.jpeg",
-      imageAlt: "Private Villa Wassenaar - Before renovation"
+      image: wassenaarAsset("Old/optimized/IMG_1470.webp"),
+      imageAlt: "Private Villa Wassenaar - Before renovation",
     },
     {
       title: "Design",
       text: "Envisioning the highest potential for this home, we studied every aspect, every functional and aesthetical detail. We've put up a mood to inspire the future residents to see the potential their home can reach. Designing the interior had a focus on elegance and the visual symphony of neutral tones, black accents and the warmth of natural wood, all resting on the background of the invigorating outdoor greenery.",
-      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Design-01.jpg.jpeg",
-      imageAlt: "Private Villa Wassenaar - Design concept"
+      image: wassenaarAsset("New House/optimized/QY0A9620.webp"),
+      imageAlt: "Private Villa Wassenaar - Design concept",
     },
     {
       title: "Ground Floor Transformation",
       text: "The main intervention at the ground floor was opening up the passage from the living room to the dining area and kitchen by mounting a large glass door, which created a light filled open space surrounded by nature and benefiting from the warm sunlight at all times. The living room was fitted with warm lights, minimal built-in furniture and a cozy, elegant feel through the suggested finishes.",
-      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Design-05.jpg.jpeg",
-      imageAlt: "Private Villa Wassenaar - Ground floor after renovation"
+      image: wassenaarAsset("Render/optimized/02_Deijlerweg_House_living_1.webp"),
+      imageAlt: "Private Villa Wassenaar - Ground floor after renovation",
     },
     {
       title: "First Floor Bedrooms",
       text: "The first floor contains 1 spacious master bedroom and 1 guest bedroom, both equipped with en suite bathrooms. The bathrooms' design maintains the elegant key, playing with large marble slabs alongside dark accents of mosaics, minimal furniture volumes and accessories.",
-      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Design-10.jpg.jpeg",
-      imageAlt: "Private Villa Wassenaar - First floor bedrooms"
+      image: wassenaarAsset("Render/optimized/14_Deijlerweg_House_kids.bedroom.1.webp"),
+      imageAlt: "Private Villa Wassenaar - First floor bedrooms",
     },
     {
       title: "Second Floor & Attic",
       text: "The second floor, which initially only hosted 2 rooms, now provides 2 bedrooms, 1 shared bathroom and 1 toilet. The attic can turn into a playroom, hobby room or an extra bedroom depending on the family needs and there is also a laundry room set up.",
-      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Banner-Design-scaled.jpg.jpeg",
-      imageAlt: "Private Villa Wassenaar - Second floor renovation"
+      image: wassenaarAsset("turn key wassennarr old/optimized/Second Floor & Attic.webp"),
+      imageAlt: "Private Villa Wassenaar - Second floor renovation",
     },
     {
       title: "Outdoor Intervention",
       text: "Intervention on the outdoors aimed at inviting the owner to make use of the available space and so we created different setups so spending as much time outside can be at hand. Dining in the garden, reading, relaxing on the bench or lounging with friends around a pit fire is all accessible.",
-      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-Design-21-610x610.jpg.jpeg",
-      imageAlt: "Private Villa Wassenaar - Outdoor spaces"
+      image: wassenaarAsset("Old/optimized/IMG_1475.webp"),
+      imageAlt: "Private Villa Wassenaar - Outdoor spaces",
     },
     {
       title: "After",
       text: "All the actions were set in motion to create the perfect scenery for the future owners. The interventions were restorations, repairments and optimizations of the unseen aspects of the home, all which were covered by the modern light grey paint and warm natural wood floor. Outdoor landscaping, the kitchen, the bathrooms and built-in wardrobes were all provided for the comfort of the new owners, but the canvas of the home had enough space for them to also place their own unique signature.",
-      image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-27-1-scaled.jpg.jpeg",
-      imageAlt: "Private Villa Wassenaar - Final result"
-    }
+      image: wassenaarAsset("New House/optimized/QY0A9897.webp"),
+      imageAlt: "Private Villa Wassenaar - Final result",
+    },
   ],
-  
+
   additionalImages: [
-    { src: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-2-1-scaled.jpg.jpeg", alt: "Private Villa Wassenaar - Additional view 1" },
-    { src: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-3-1-scaled.jpg.jpeg", alt: "Private Villa Wassenaar - Additional view 2" },
-    { src: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-4-1-scaled.jpg.jpeg", alt: "Private Villa Wassenaar - Additional view 3" },
-    { src: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-5-1-scaled.jpg.jpeg", alt: "Private Villa Wassenaar - Additional view 4" },
-    { src: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-6-1-scaled.jpg.jpeg", alt: "Private Villa Wassenaar - Additional view 5" },
-    { src: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-7-1-scaled.jpg.jpeg", alt: "Private Villa Wassenaar - Additional view 6" },
-    { src: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-8-1-scaled.jpg.jpeg", alt: "Private Villa Wassenaar - Additional view 7" },
-    { src: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-9-1-scaled.jpg.jpeg", alt: "Private Villa Wassenaar - Additional view 8" },
-    { src: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/Private-Villa-Wassenaar-After-10-1-scaled.jpg.jpeg", alt: "Private Villa Wassenaar - Additional view 9" },
-  ]
+    ...NEW_HOUSE_OPTIMIZED_WEBP.map((file) => ({
+      src: wassenaarAsset(`New House/optimized/${file}`),
+      alt: `Private Villa Wassenaar — ${file.replace(/\.webp$/i, "")}`,
+    })),
+    ...TURN_KEY_WASSENNARR_OLD_OPTIMIZED_WEBP.map((file) => ({
+      src: wassenaarAsset(`turn key wassennarr old/optimized/${file}`),
+      alt: `Private Villa Wassenaar — ${file.replace(/\.webp$/i, "")}`,
+    })),
+  ],
+}
+
+function WassenaarGalleryTile({ src, alt, index }: { src: string; alt: string; index: number }) {
+  const [failed, setFailed] = useState(false)
+  if (failed) return null
+  return (
+    <AnimatedElement animationType="fadeInUp" delay={Math.min(index, 12) * 0.04}>
+      <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover transition-transform duration-500 hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          onError={() => setFailed(true)}
+        />
+      </div>
+    </AnimatedElement>
+  )
 }
 
 // Before/After Comparison Component
@@ -377,7 +501,7 @@ export default function PrivateVillaWassenaarPage() {
                 {/* Video Embed */}
                 <div className="relative aspect-video">
                   <iframe
-                    src="https://player.vimeo.com/video/1097920033?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479"
+                    src="https://player.vimeo.com/video/1100652693?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479"
                     frameBorder="0"
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -426,88 +550,10 @@ export default function PrivateVillaWassenaarPage() {
             </h2>
           </AnimatedElement>
           
-          <div className="space-y-12">
-            {/* Two images in a row - high quality like reference w=1200 */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.additionalImages.slice(0, 2).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={1200}
-                      height={1200}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '1/1' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Two images in a row - high quality like reference w=1200 */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.additionalImages.slice(3, 5).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={1200}
-                      height={900}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '4/3' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-
-            {/* Single wide image - high quality like reference w=1200 */}
-            <div className="flex justify-center">
-              <AnimatedElement animationType="fadeInUp" delay={0.3}>
-                <div className="relative overflow-hidden rounded-xl shadow-md bg-gray-100 max-w-4xl w-full">
-                  <Image
-                    src={projectDetails.additionalImages[5].src}
-                    alt={projectDetails.additionalImages[5].alt}
-                    width={1200}
-                    height={675}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    style={{ aspectRatio: '16/9' }}
-                  />
-                </div>
-              </AnimatedElement>
-            </div>
-
-            {/* Final two images - high quality like reference w=1200 */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {projectDetails.additionalImages.slice(6, 8).map((image, index) => (
-                <AnimatedElement
-                  key={index}
-                  animationType="fadeInUp"
-                  delay={index * 0.1}
-                >
-                  <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={1200}
-                      height={1200}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                      style={{ aspectRatio: '1/1' }}
-                    />
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {projectDetails.additionalImages.map((image, index) => (
+              <WassenaarGalleryTile key={image.src} src={image.src} alt={image.alt} index={index} />
+            ))}
           </div>
         </div>
       </section>
@@ -617,7 +663,7 @@ export default function PrivateVillaWassenaarPage() {
 
             {/* Full-size Video */}
             <iframe
-              src="https://player.vimeo.com/video/1097920033?autoplay=1&loop=1&muted=0&controls=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              src="https://player.vimeo.com/video/1100652693?autoplay=1&loop=1&muted=0&controls=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               className="w-full h-full"

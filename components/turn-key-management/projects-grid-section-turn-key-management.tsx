@@ -5,6 +5,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import AnimatedElement from "@/components/animated-element"
+import { WASSENAAR_HERO_IMAGE } from "@/lib/wassenaar-public-assets"
 
 const turnKeyProjects = [
   {
@@ -16,7 +17,7 @@ const turnKeyProjects = [
   {
     name: "Private Villa Wassenaar",
     description: "The flipping of this lovely property was a challenge we loved to undertake. Trimming down the old and bringing in the new Scandinavian high-quality finishes and fixtures gave this private residence a revitalizing new life.",
-    imageUrl: "/turn-key-management-page/Private-Villa-Wassenaar-Category-1-768x511.jpg.jpeg",
+    imageUrl: WASSENAAR_HERO_IMAGE,
     link: "/turn-key-management-private-villa-wassenaar",
   },
   {

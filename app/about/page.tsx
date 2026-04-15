@@ -10,6 +10,7 @@ import { Quote, Mail, Globe, MapPin, Send, Settings, Users, Sparkles, Wifi, Tren
 import { motion } from "framer-motion"
 import ContactForm from "@/components/contact-form"
 import AboutIntroText from "@/components/about-intro-text"
+import { WASSENAAR_HERO_IMAGE } from "@/lib/wassenaar-public-assets"
 
 const sections = [
   {
@@ -313,7 +314,7 @@ export default function AboutUsPage() {
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
-                    src="/turn-key-management-page/Private-Villa-Wassenaar-Category-1.jpg.jpeg"
+                    src={WASSENAAR_HERO_IMAGE}
                     alt="Interior Renovation"
                     width={600}
                     height={750}
