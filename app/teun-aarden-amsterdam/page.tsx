@@ -70,7 +70,7 @@ const useIsMobile = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768)
     }
-    
+
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
@@ -80,19 +80,19 @@ const useIsMobile = () => {
 }
 
 // Mobile-optimized image gallery component
-const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: Array<{ src: string; alt: string }>, aspectRatio?: string }) => {
   return (
     <AnimatedElement animationType="fadeInUp" rootMargin="200px">
       <div className="space-y-6">
         {images.map((image, index) => (
           <div key={index} className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-            <Image 
-              src={image.src} 
-              alt={image.alt} 
-              width={800} 
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={800}
               height={600}
-              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-              style={{ aspectRatio }} 
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+              style={{ aspectRatio }}
               loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
@@ -121,7 +121,7 @@ export default function TeunAardenAmsterdamPage() {
           <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">{projectDetails.category}</p>
           <h1 className="mt-2 text-4xl font-bold text-white sm:text-5xl md:text-6xl">{projectDetails.title}</h1>
           <p className="mt-4 text-lg text-gray-200">{projectDetails.location}</p>
-          
+
           {/* Project badges in hero */}
           <div className="flex flex-wrap gap-3 mt-6 justify-center">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border border-white/30">
@@ -180,9 +180,9 @@ export default function TeunAardenAmsterdamPage() {
             {/* Alternating layout: 3 images, then 2 images */}
             {isMobile ? (
               // Mobile-optimized version with fewer intersection observers
-              <MobileOptimizedGallery 
-                images={projectDetails.images.slice(1)} 
-                aspectRatio="4/3" 
+              <MobileOptimizedGallery
+                images={projectDetails.images.slice(1)}
+                aspectRatio="4/3"
               />
             ) : (
               // Desktop version with complex while loop and individual animations
@@ -191,12 +191,12 @@ export default function TeunAardenAmsterdamPage() {
                 const imageRows = [];
                 let currentIndex = 0;
                 let rowNumber = 0;
-                
+
                 while (currentIndex < galleryImages.length) {
                   // Alternate: odd rows have 3 images, even rows have 2 images
                   const imagesPerRow = rowNumber % 2 === 0 ? 3 : 2;
                   const rowImages = galleryImages.slice(currentIndex, currentIndex + imagesPerRow);
-                  
+
                   if (rowImages.length > 0) {
                     imageRows.push(
                       <div key={currentIndex} className={`grid ${imagesPerRow === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-8`}>
@@ -221,11 +221,11 @@ export default function TeunAardenAmsterdamPage() {
                       </div>
                     );
                   }
-                  
+
                   currentIndex += imagesPerRow;
                   rowNumber++;
                 }
-                
+
                 return imageRows;
               })()
             )}
@@ -337,14 +337,14 @@ export default function TeunAardenAmsterdamPage() {
                 <div className="space-y-4">
                   <p className="text-gray-700">
                     <strong>Headquarters:</strong> The Netherlands<br />
-                    
+
                   </p>
                   <div className="flex space-x-4">
                     <Link href="https://ro.linkedin.com/company/studiobycristian" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
                     <Link href="https://www.instagram.com/studiobycristian/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
                   </div>
-                  <Link 
-                    href="mailto:office@studiobycristian.com" 
+                  <Link
+                    href="mailto:office@studiobycristian.com"
                     className="block text-gray-700 hover:text-black transition-colors"
                   >
                     office@studiobycristian.com
@@ -370,4 +370,4 @@ export default function TeunAardenAmsterdamPage() {
       </section>
     </div>
   )
-} 
+}

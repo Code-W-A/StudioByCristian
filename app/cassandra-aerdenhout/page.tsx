@@ -45,7 +45,7 @@ const useIsMobile = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768)
     }
-    
+
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
@@ -55,19 +55,19 @@ const useIsMobile = () => {
 }
 
 // Mobile-optimized image gallery component
-const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: Array<{ src: string; alt: string }>, aspectRatio?: string }) => {
   return (
     <AnimatedElement animationType="fadeInUp" rootMargin="200px">
       <div className="space-y-6">
         {images.map((image, index) => (
           <div key={index} className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-            <Image 
-              src={image.src} 
-              alt={image.alt} 
-              width={800} 
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={800}
               height={600}
-              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-              style={{ aspectRatio }} 
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+              style={{ aspectRatio }}
               loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
@@ -88,7 +88,7 @@ export default function CassandraAerdenhoutPage() {
         <AnimatedElement animationType="fadeInUp">
           <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">{projectDetails.category}</p>
           <h1 className="mt-2 text-4xl font-bold text-white sm:text-5xl md:text-6xl">{projectDetails.title}</h1>
-          
+
           {/* Project badges in hero */}
           <div className="flex flex-wrap gap-3 mt-6 justify-center">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border border-white/30">
@@ -116,7 +116,7 @@ export default function CassandraAerdenhoutPage() {
 
 
       {/* Project Video Showcase */}
-      <ProjectVideoShowcase 
+      <ProjectVideoShowcase
         videoId="1097919511"
         title="Cassandra Aerdenhout - Luxury Custom Furniture"
         description="Experience the elegant transformation of this Aerdenhout residence featuring bespoke furniture design and sophisticated interior architecture"
@@ -201,7 +201,7 @@ export default function CassandraAerdenhoutPage() {
         </div>
       </section>
 
-    
+
 
       <section className="py-12 lg:py-16 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -229,16 +229,16 @@ export default function CassandraAerdenhoutPage() {
             {/* Alternating layout: 2 images, then 1 image, then 2 images, etc. */}
             {isMobile ? (
               // Mobile-optimized version with fewer intersection observers
-              <MobileOptimizedGallery 
-                images={projectDetails.images.slice(6)} 
-                aspectRatio="4/3" 
+              <MobileOptimizedGallery
+                images={projectDetails.images.slice(6)}
+                aspectRatio="4/3"
               />
             ) : (
               // Desktop version with complex layout and individual animations
               (() => {
                 const remainingImages = projectDetails.images.slice(6);
                 const elements = [];
-                
+
                 for (let i = 0; i < remainingImages.length; i += 3) {
                   // Add pair of images (2 in a row)
                   if (i < remainingImages.length) {
@@ -261,7 +261,7 @@ export default function CassandraAerdenhoutPage() {
                       </div>
                     );
                   }
-                  
+
                   // Add single image if exists
                   if (remainingImages[i + 2]) {
                     elements.push(
@@ -276,7 +276,7 @@ export default function CassandraAerdenhoutPage() {
                     );
                   }
                 }
-                
+
                 return elements;
               })()
             )}
@@ -318,14 +318,14 @@ export default function CassandraAerdenhoutPage() {
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }} viewport={{ once: true, amount: 0.3 }}>
                 <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/40" />
                 <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-white/40" />
-                
+
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
                   Would you like to discuss a project?
                 </h2>
-                
+
                 {/* Decorative line */}
                 <div className="w-24 h-0.5 bg-gradient-to-r from-white/60 to-transparent mx-auto mb-8" />
-                
+
                 <ContactForm />
               </motion.div>
             </AnimatedElement>
@@ -333,7 +333,7 @@ export default function CassandraAerdenhoutPage() {
         </div>
       </section>
 
-      
+
     </div>
   )
-} 
+}

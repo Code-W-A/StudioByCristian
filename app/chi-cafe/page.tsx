@@ -55,7 +55,7 @@ const useIsMobile = () => {
 }
 
 // Mobile-optimized image gallery component
-const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: Array<{ src: string; alt: string }>, aspectRatio?: string }) => {
   return (
     <AnimatedElement animationType="fadeInUp" rootMargin="200px">
       <div className="space-y-6">

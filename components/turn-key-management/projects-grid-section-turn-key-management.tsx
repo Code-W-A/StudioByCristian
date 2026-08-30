@@ -9,6 +9,12 @@ import { WASSENAAR_HERO_IMAGE } from "@/lib/wassenaar-public-assets"
 
 const turnKeyProjects = [
   {
+    name: "Duplex Transformation Amsterdam",
+    description: "An ageing Amsterdam duplex transformed into two independent, all-electric apartments with custom kitchens, new technical systems and a rooftop extension.",
+    imageUrl: "/duplex-transformation-amsterdam/design-vision/render-04.webp",
+    link: "/duplex-transformation-amsterdam",
+  },
+  {
     name: "PURELEI Store",
     description: "A refined retail fit-out in Cologne where Studio byCristian acted as General Contractor, coordinating custom display systems, clean architectural detailing, and a warm monochromatic atmosphere.",
     imageUrl: "/purelei-store/P1034_S1033_DE_BB_RPC_PURELEI/Picturest/_EWP7377.jpg",

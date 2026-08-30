@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
-import type { MouseEvent, TouchEvent } from "react"
+import type { KeyboardEvent, MouseEvent, TouchEvent } from "react"
 import Image from "next/image"
 
 interface BeforeAfterComparisonProps {
@@ -12,6 +12,8 @@ interface BeforeAfterComparisonProps {
   afterLabel?: string
   instruction?: string
   resetOnMouseLeave?: boolean
+  aspectRatioClassName?: string
+  imageQuality?: number
 }
 
 export default function BeforeAfterComparison({
@@ -22,6 +24,8 @@ export default function BeforeAfterComparison({
   afterLabel = "After",
   instruction = "Drag or hover to compare",
   resetOnMouseLeave = true,
+  aspectRatioClassName = "aspect-[16/9]",
+  imageQuality,
 }: BeforeAfterComparisonProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [sliderPosition, setSliderPosition] = useState(50)
@@ -52,12 +56,45 @@ export default function BeforeAfterComparison({
 
   const handleTouchEnd = () => {
     setIsInteracting(false)
+    if (resetOnMouseLeave) {
+      setSliderPosition(50)
+    }
+  }
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    const positions: Partial<Record<string, number>> = {
+      ArrowLeft: Math.max(0, sliderPosition - 5),
+      ArrowRight: Math.min(100, sliderPosition + 5),
+      Home: 0,
+      End: 100,
+    }
+    const nextPosition = positions[event.key]
+
+    if (nextPosition === undefined) return
+
+    event.preventDefault()
+    setIsInteracting(true)
+    setSliderPosition(nextPosition)
   }
 
   return (
     <div
       ref={containerRef}
-      className="relative overflow-hidden rounded-xl shadow-2xl cursor-ew-resize group"
+      className="group relative touch-pan-y cursor-ew-resize overflow-hidden rounded-xl shadow-2xl"
+      role="slider"
+      tabIndex={0}
+      aria-label={`${beforeLabel} and ${afterLabel} image comparison`}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(sliderPosition)}
+      aria-valuetext={`${Math.round(sliderPosition)}% ${beforeLabel}`}
+      onKeyDown={handleKeyDown}
+      onBlur={() => {
+        setIsInteracting(false)
+        if (resetOnMouseLeave) {
+          setSliderPosition(50)
+        }
+      }}
       onMouseEnter={() => setIsInteracting(true)}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => {
@@ -70,11 +107,12 @@ export default function BeforeAfterComparison({
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="relative w-full aspect-[16/9]">
+      <div className={`relative w-full ${aspectRatioClassName}`}>
         <Image
           src={afterSrc}
           alt={`After - ${alt}`}
           fill
+          quality={imageQuality}
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
         />
@@ -88,6 +126,7 @@ export default function BeforeAfterComparison({
           src={beforeSrc}
           alt={`Before - ${alt}`}
           fill
+          quality={imageQuality}
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
         />

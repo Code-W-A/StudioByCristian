@@ -31,7 +31,11 @@ export default function HubModularOfficePage() {
 
   return (
     <div className="bg-white text-neutral-800">
-      <ParallaxSection bgImage="/placeholder.svg?width=1200&height=800" className="h-[60vh] md:h-[80vh]">
+      <ParallaxSection
+        imageUrl="/placeholder.svg?width=1200&height=800"
+        imageAlt="HUB Modular Office Concept"
+        className="h-[60vh] md:h-[80vh]"
+      >
         <div className="absolute inset-0 bg-black/30" />
         <AnimatedElement className="relative z-10 flex flex-col items-center justify-center h-full text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white">HUB Modular Office Concept</h1>

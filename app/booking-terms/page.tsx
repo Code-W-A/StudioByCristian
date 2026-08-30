@@ -1,0 +1,13 @@
+import { LegalPage, LegalSection } from "@/components/legal-page"
+import { LEGAL_VERSIONS } from "@/lib/one-stop-shop/constants"
+
+export default function BookingTermsPage() { return <LegalPage label="One Stop Shop" title="Booking Terms" version={LEGAL_VERSIONS.bookingTerms}>
+  <LegalSection title="1. About these terms"><p>These terms apply to free showroom and online project consultation requests made with Studio ByCristian B.V., KVK 72154500, at Van Beverningkstraat 101B, 2582 VC Den Haag.</p></LegalSection>
+  <LegalSection title="2. Requests and temporary holds"><p>Submitting the form creates a pending request, not a confirmed appointment and not a contract for design, renovation or furniture services. The selected slot is held for up to 24 hours while we review the request. A hold may expire if it is not processed within that period.</p></LegalSection>
+  <LegalSection title="3. Confirmation and alternatives"><p>An appointment becomes confirmed only when Studio ByCristian sends a confirmation. We may propose an alternative time. A secure response link allows you to accept or decline that proposal before it expires.</p></LegalSection>
+  <LegalSection title="4. Price and scope"><p>The consultation booking is free in v1. Any project scope, estimate, offer, schedule or contract discussed later is separate and becomes binding only when agreed in writing by the relevant parties.</p></LegalSection>
+  <LegalSection title="5. Changes, cancellation and attendance"><p>Please notify us as early as possible if you cannot attend. Studio ByCristian may cancel or reschedule for operational reasons and will communicate this using the contact details supplied. Repeated non-attendance may affect whether future requests are accepted.</p></LegalSection>
+  <LegalSection title="6. Information and files"><p>You are responsible for providing accurate contact and project information and for having the right to share uploaded files. Do not upload unlawful material, malware, unnecessary sensitive personal information or documents belonging to another person without authority.</p></LegalSection>
+  <LegalSection title="7. Availability and liability"><p>We take reasonable care to keep the booking service available and appointment information accurate, but temporary interruption may occur. Nothing in these terms excludes liability that cannot lawfully be excluded under Dutch law.</p></LegalSection>
+  <LegalSection title="8. Privacy and law"><p>Personal data is handled as described in our Privacy Policy. These terms are governed by Dutch law. This text should be legally reviewed before public launch.</p></LegalSection>
+  </LegalPage> }

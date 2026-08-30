@@ -5,8 +5,16 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "next lint",
-    "start": "next start"
+    "lint": "eslint .",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:rules": "FIREBASE_EMULATORS_PATH=.firebase/emulators firebase emulators:exec --only firestore,storage \"vitest run --config vitest.rules.config.ts\"",
+    "test:functions": "npm --prefix functions test",
+    "test:e2e": "playwright test",
+    "firebase:emulators": "firebase emulators:start",
+    "firebase:deploy": "firebase deploy --project studio-bycristian-oss"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -42,11 +50,13 @@
     "clsx": "^2.1.1",
     "cmdk": "latest",
     "date-fns": "4.1.0",
+    "date-fns-tz": "^3.2.0",
     "embla-carousel-react": "latest",
+    "firebase": "^12.18.0",
     "framer-motion": "latest",
     "input-otp": "latest",
     "lucide-react": "^0.454.0",
-    "next": "15.5.14",
+    "next": "^15.5.24",
     "next-themes": "latest",
     "react": "^19",
     "react-day-picker": "latest",
@@ -54,7 +64,7 @@
     "react-hook-form": "latest",
     "react-intersection-observer": "latest",
     "react-resizable-panels": "latest",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.4",
     "sonner": "latest",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
@@ -62,12 +72,29 @@
     "zod": "latest"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@firebase/rules-unit-testing": "^5.0.2",
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "postcss": "^8.5",
+    "@typescript-eslint/eslint-plugin": "^8.68.0",
+    "@typescript-eslint/parser": "^8.68.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.24",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "firebase-admin": "^14.3.0",
+    "postcss": "8.5.24",
     "tailwindcss": "^4.2.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.11"
+  },
+  "overrides": {
+    "nanoid": "3.3.18",
+    "postcss": "8.5.24"
   }
 }

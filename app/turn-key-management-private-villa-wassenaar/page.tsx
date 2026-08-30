@@ -10,6 +10,7 @@ import ContactForm from "@/components/contact-form"
 import { motion } from "framer-motion"
 import { useState, useEffect, useRef } from "react"
 import { wassenaarAsset, WASSENAAR_HERO_IMAGE } from "@/lib/wassenaar-public-assets"
+import ConsentGate from "@/components/consent-gate"
 
 /** WebP outputs from `New House/optimized` (run `node optimize-images.js` in New House). Sorted for gallery. */
 const NEW_HOUSE_OPTIMIZED_WEBP = [
@@ -500,13 +501,13 @@ export default function PrivateVillaWassenaarPage() {
                 
                 {/* Video Embed */}
                 <div className="relative aspect-video">
-                  <iframe
+                  <ConsentGate compact><iframe
                     src="https://player.vimeo.com/video/1100652693?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479"
                     frameBorder="0"
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                     title="Private Villa Wassenaar"
-                  />
+                  /></ConsentGate>
                 </div>
                 
                 {/* Premium Border Effect - Hidden on mobile */}
@@ -662,13 +663,13 @@ export default function PrivateVillaWassenaarPage() {
             </div>
 
             {/* Full-size Video */}
-            <iframe
+            <ConsentGate compact><iframe
               src="https://player.vimeo.com/video/1100652693?autoplay=1&loop=1&muted=0&controls=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               className="w-full h-full"
               title="Private Villa Wassenaar - Full Video"
-            />
+            /></ConsentGate>
           </div>
 
           {/* Instructions */}

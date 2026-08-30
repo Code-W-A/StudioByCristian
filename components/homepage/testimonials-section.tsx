@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import AnimatedElement from "@/components/animated-element"
 import { Quote } from "lucide-react"
@@ -27,7 +26,7 @@ export default function TestimonialsSection() {
             What Our Clients Say
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Good design is a universal language. Here's what industry professionals and satisfied clients 
+            Good design is a universal language. Here's what industry professionals and satisfied clients
             say about working with Studio byCristian.
           </p>
         </AnimatedElement>
@@ -41,17 +40,17 @@ export default function TestimonialsSection() {
             >
               <motion.div
                 className="bg-white p-8 lg:p-10 rounded-2xl shadow-sm relative group"
-                whileHover={{ 
-                  y: -8, 
+                whileHover={{
+                  y: -8,
                   boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                  transition: { duration: 0.3 } 
+                  transition: { duration: 0.3 }
                 }}
               >
                 {/* Quote Icon - Mobile: corner position, Desktop: current position */}
                 <div className="absolute top-3 right-3 md:top-6 md:right-6 text-gray-200 group-hover:text-gray-300 transition-colors">
                   <Quote className="w-8 h-8 md:w-10 md:h-10" />
                 </div>
-                
+
                 {/* Type */}
                 <div className="mb-6">
                   <div className="inline-block bg-black text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -73,12 +72,12 @@ export default function TestimonialsSection() {
                       <div className="text-gray-500 text-sm font-medium">{testimonial.company}</div>
                       {testimonial.projectLink && (
                         <div className="mt-3">
-                          <Link 
+                          <Link
                             href={testimonial.projectLink}
                             className="inline-flex items-center text-sm font-medium text-black hover:text-white bg-transparent hover:bg-black px-3 py-2 rounded-md transition-all duration-300 group border border-gray-300 hover:border-black"
                           >
                             View Project
-                            <motion.span 
+                            <motion.span
                               className="ml-2 inline-block"
                               whileHover={{ x: 4 }}
                               transition={{ type: "spring", stiffness: 400, damping: 25 }}
@@ -108,8 +107,8 @@ export default function TestimonialsSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link 
-              href="/credentials" 
+            <Link
+              href="/credentials"
               className="inline-flex items-center bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-medium"
             >
               View All Credentials
@@ -122,4 +121,4 @@ export default function TestimonialsSection() {
       </div>
     </section>
   )
-} 
+}

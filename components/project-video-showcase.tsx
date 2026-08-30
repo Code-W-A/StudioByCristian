@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { X, Play } from "lucide-react"
 import AnimatedElement from "@/components/animated-element"
+import ConsentGate from "@/components/consent-gate"
 
 interface ProjectVideoShowcaseProps {
   videoId: string
@@ -89,13 +90,13 @@ export default function ProjectVideoShowcase({ videoId, title, description }: Pr
                 {/* Video Embed */}
                 <div className="relative aspect-video">
                   {isMounted ? (
-                    <iframe
+                    <ConsentGate compact><iframe
                       src={`https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479`}
                       frameBorder="0"
                       allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                       className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                       title={title}
-                    />
+                    /></ConsentGate>
                   ) : (
                     <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
                   )}
@@ -151,13 +152,13 @@ export default function ProjectVideoShowcase({ videoId, title, description }: Pr
             </div>
 
             {/* Full-size Video with Controls */}
-            <iframe
+            <ConsentGate compact><iframe
               src={`https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&muted=0&controls=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               className="w-full h-full"
               title="Video Player"
-            />
+            /></ConsentGate>
           </div>
 
           {/* Instructions */}

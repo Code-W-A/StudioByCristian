@@ -1,0 +1,44 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isTeam(orgId) {
+      return request.auth != null
+        && request.auth.token.orgId == orgId
+        && request.auth.token.role in ['admin', 'staff'];
+    }
+    function permittedType() {
+      return request.resource.contentType.matches('image/.*')
+        || request.resource.contentType in [
+          'application/pdf',
+          'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+          'application/acad',
+          'application/x-acad',
+          'application/dxf',
+          'application/octet-stream'
+        ];
+    }
+
+    match /organizations/{orgId}/booking-drafts/{uid}/{draftId}/{fileName} {
+      allow create: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.size <= 20 * 1024 * 1024
+        && permittedType();
+      allow update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.size <= 20 * 1024 * 1024
+        && permittedType();
+      allow delete: if request.auth != null && request.auth.uid == uid;
+      allow read: if isTeam(orgId);
+    }
+
+    match /organizations/{orgId}/clients/{clientId}/{fileName} {
+      allow read: if isTeam(orgId);
+      allow write: if false;
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

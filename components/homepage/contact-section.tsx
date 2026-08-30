@@ -1,9 +1,10 @@
 import Link from "next/link"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import AnimatedElement from "@/components/animated-element"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import ConsentGate from "@/components/consent-gate"
 
 export default function ContactSection() {
   return (
@@ -18,7 +19,7 @@ export default function ContactSection() {
           sizes="100vw"
         />
       </div>
-      
+
       <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <AnimatedElement animationType="fadeInLeft" className="space-y-8">
@@ -43,11 +44,11 @@ export default function ContactSection() {
                   <div className="text-sm text-gray-500 mt-1">(Available by appointment)</div>
                 </div>
               </div>
-              
+
               {/* Google Maps */}
               <div className="mt-6">
                 <div className="bg-gray-100 rounded-lg overflow-hidden h-64">
-                  <iframe
+                  <ConsentGate compact><iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2447.1687165324447!2d4.269782877378158!3d52.09034596073154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b18cee7893f1%3A0x55a59501f2eab3db!2sStudio%20byCristian!5e0!3m2!1sen!2snl!4v1735661234567!5m2!1sen!2snl"
                     width="100%"
                     height="100%"
@@ -56,10 +57,10 @@ export default function ContactSection() {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Studio byCristian Location"
-                  />
+                  /></ConsentGate>
                 </div>
                 <p className="text-sm text-gray-500 mt-2 text-center">
-                  <Link 
+                  <Link
                     href="https://www.google.com/maps/place/Studio+byCristian/@52.0903459,4.2697828,17z/data=!3m1!4b1!4m6!3m5!1s0x47c5b18cee7893f1:0x55a59501f2eab3db!8m2!3d52.0903426!4d4.2723577!16s%2Fg%2F11ybnk5jg4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -86,4 +87,4 @@ export default function ContactSection() {
       </div>
     </section>
   )
-} 
+}

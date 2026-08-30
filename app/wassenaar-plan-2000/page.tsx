@@ -10,6 +10,7 @@ import ContactForm from "@/components/contact-form"
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import { X } from "lucide-react"
+import ConsentGate from "@/components/consent-gate"
 
 // Generic transparent pixel used for blur placeholder
 const genericBlurDataURL = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=";
@@ -34,7 +35,7 @@ const useIsMobile = () => {
 }
 
 // Mobile-optimized image gallery component  
-const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: Array<{ src: string; alt: string }>, aspectRatio?: string }) => {
   return (
     <AnimatedElement animationType="fadeInUp" rootMargin="200px">
       <div className="space-y-6">
@@ -272,14 +273,14 @@ export default function WassenaarPlan2000Page() {
                 
                 {/* Video Embed */}
                 <div className="relative aspect-video">
-                  <iframe
+                  <ConsentGate compact><iframe
                     src="https://player.vimeo.com/video/1097920320?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479"
                     frameBorder="0"
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                     title="Wassenaar Plan 2000"
                     suppressHydrationWarning
-                  />
+                  /></ConsentGate>
                 </div>
                 
                 {/* Premium Border Effect - Hidden on mobile */}
@@ -562,14 +563,14 @@ export default function WassenaarPlan2000Page() {
             </div>
 
             {/* Full-size Video */}
-            <iframe
+            <ConsentGate compact><iframe
               src="https://player.vimeo.com/video/1097920320?autoplay=1&loop=1&muted=0&controls=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               className="w-full h-full"
               title="Wassenaar Plan 2000 - Full Video"
               suppressHydrationWarning
-            />
+            /></ConsentGate>
           </div>
 
           {/* Instructions */}

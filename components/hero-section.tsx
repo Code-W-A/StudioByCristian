@@ -20,7 +20,6 @@ interface HeroSectionProps {
   dynamicWords?: string[]
   className?: string
   slideshow?: boolean
-  slideshowImages?: string[]
   slideshowImageConfigs?: ImageConfig[] // New prop for individual image configs
 }
 
@@ -50,14 +49,13 @@ export default function HeroSection({
   dynamicWords = [],
   className = "",
   slideshow = false,
-  slideshowImages = technicalImages,
   slideshowImageConfigs = defaultImageConfigs
 }: HeroSectionProps) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
   const [currentText, setCurrentText] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
   const [isWaiting, setIsWaiting] = useState(false)
-  
+
   // Slideshow state
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
@@ -66,7 +64,7 @@ export default function HeroSection({
     if (dynamicWords.length === 0) return
 
     const currentWord = dynamicWords[currentWordIndex]
-    
+
     const timeout = setTimeout(() => {
       if (isWaiting) {
         setIsWaiting(false)
@@ -107,10 +105,10 @@ export default function HeroSection({
 
 
   return (
-    <section 
+    <section
       className={`relative bg-black overflow-hidden ${className}`}
-      style={{ 
-        marginTop: 0, 
+      style={{
+        marginTop: 0,
         paddingTop: 0,
         height: slideshow ? '100vh' : '92vh', // Slightly taller for mobile slideshow layout
         maxHeight: slideshow ? '100vh' : '92vh',
@@ -118,7 +116,7 @@ export default function HeroSection({
       }}
     >
       {/* Grid Pattern Overlay */}
-      <svg 
+      <svg
         className="absolute inset-0 w-full h-full z-10 pointer-events-none opacity-20"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -136,7 +134,7 @@ export default function HeroSection({
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#grid-split)" />
-        
+
         {/* Animated accent lines */}
         <motion.line
           x1="0%"
@@ -174,8 +172,8 @@ export default function HeroSection({
                   <div
                     key={index}
                     className={`absolute inset-0 transition-all duration-700 ease-out ${
-                      index === currentImageIndex 
-                        ? 'opacity-100 scale-100' 
+                      index === currentImageIndex
+                        ? 'opacity-100 scale-100'
                         : 'opacity-0 scale-105'
                     }`}
                     style={{
@@ -195,10 +193,10 @@ export default function HeroSection({
               </div>
 
             </div>
-            
+
             {/* Mobile Text Content */}
             <div className="flex-1 flex flex-col justify-center">
-              <motion.p 
+              <motion.p
                 className="text-sm font-light uppercase tracking-[0.3em] text-gray-400 mb-6"
                 initial={{ opacity: 0, letterSpacing: "0.1em" }}
                 animate={{ opacity: 1, letterSpacing: "0.3em" }}
@@ -206,10 +204,10 @@ export default function HeroSection({
               >
                 {subtitle}
               </motion.p>
-              
+
               <div className="relative">
                 {/* Mobile title with dynamic typing */}
-                <motion.h1 
+                <motion.h1
                   className="text-3xl md:text-4xl font-extralight text-white leading-tight"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -218,7 +216,7 @@ export default function HeroSection({
                 >
                   {/* SEO-friendly hidden text */}
                   <span className="sr-only">We design your space for living, working, relaxing, and creating</span>
-                  
+
                   {/* Visible animated title */}
                   <span aria-hidden="true">
                     {(dynamicWords.length > 0 ? title.split(" ") : title.split(" ").slice(0, -1)).map((word, index) => (
@@ -227,8 +225,8 @@ export default function HeroSection({
                         className="inline-block mr-3"
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ 
-                          duration: 0.8, 
+                        transition={{
+                          duration: 0.8,
                           delay: 1.2 + index * 0.1,
                           ease: [0.25, 0.46, 0.45, 0.94]
                         }}
@@ -236,15 +234,15 @@ export default function HeroSection({
                         {word}
                       </motion.span>
                     ))}
-                    
+
                     {/* Dynamic word with typing effect */}
                     {dynamicWords.length > 0 && (
                       <motion.span
                         className="inline-block"
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ 
-                          duration: 0.8, 
+                        transition={{
+                          duration: 0.8,
                           delay: 1.6,
                           ease: [0.25, 0.46, 0.45, 0.94]
                         }}
@@ -266,7 +264,7 @@ export default function HeroSection({
                     )}
                   </span>
                 </motion.h1>
-                
+
                 {/* Mobile accent line */}
                 <motion.div
                   className="h-px bg-white mt-6"
@@ -282,7 +280,7 @@ export default function HeroSection({
         {/* Desktop Layout (or mobile for non-slideshow) */}
         <div className={`${slideshow ? 'hidden lg:flex' : 'flex'} w-full lg:w-1/2 items-center justify-start px-8 lg:pl-16`}>
           <div className="max-w-4xl text-left w-full">
-            <motion.p 
+            <motion.p
               className="text-sm font-light uppercase tracking-[0.3em] text-gray-400 mb-8"
               initial={{ opacity: 0, letterSpacing: "0.1em" }}
               animate={{ opacity: 1, letterSpacing: "0.3em" }}
@@ -290,10 +288,10 @@ export default function HeroSection({
             >
               {subtitle}
             </motion.p>
-            
+
             <div className="relative">
               {/* Main title with dynamic typing */}
-              <motion.h1 
+              <motion.h1
                 className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-extralight text-white leading-tight"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -302,7 +300,7 @@ export default function HeroSection({
               >
                 {/* SEO-friendly hidden text */}
                 <span className="sr-only">We design your space for living, working, relaxing, and creating</span>
-                
+
                 {/* Visible animated title */}
                 <span aria-hidden="true">
                   {(dynamicWords.length > 0 ? title.split(" ") : title.split(" ").slice(0, -1)).map((word, index) => (
@@ -311,8 +309,8 @@ export default function HeroSection({
                       className="inline-block mr-3"
                       initial={{ opacity: 0, y: 100 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ 
-                        duration: 0.8, 
+                      transition={{
+                        duration: 0.8,
                         delay: 1.2 + index * 0.1,
                         ease: [0.25, 0.46, 0.45, 0.94]
                       }}
@@ -320,15 +318,15 @@ export default function HeroSection({
                       {word}
                     </motion.span>
                   ))}
-                  
+
                   {/* Dynamic word with typing effect */}
                   {dynamicWords.length > 0 && (
                     <motion.span
                       className="inline-block"
                       initial={{ opacity: 0, y: 100 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ 
-                        duration: 0.8, 
+                      transition={{
+                        duration: 0.8,
                         delay: 1.6,
                         ease: [0.25, 0.46, 0.45, 0.94]
                       }}
@@ -350,7 +348,7 @@ export default function HeroSection({
                   )}
                 </span>
               </motion.h1>
-              
+
               {/* Accent line */}
               <motion.div
                 className="h-px bg-white mt-8"
@@ -384,11 +382,11 @@ export default function HeroSection({
                         key={index}
                         className={`${index === currentImageIndex ? 'block' : 'hidden'} w-full`}
                         initial={{ opacity: 0 }}
-                        animate={{ 
+                        animate={{
                           opacity: index === currentImageIndex ? 1 : 0,
                           scale: index === currentImageIndex ? 1 : 1.08
                         }}
-                        transition={{ 
+                        transition={{
                           duration: 1.2,
                           ease: "easeInOut"
                         }}
@@ -408,7 +406,7 @@ export default function HeroSection({
                         />
                       </motion.div>
                     ))}
-                    
+
                     {/* Enhanced overlays for better styling and depth */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 pointer-events-none" />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10 pointer-events-none" />
@@ -438,4 +436,4 @@ export default function HeroSection({
       </div>
     </section>
   )
-} 
+}

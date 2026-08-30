@@ -1,11 +1,9 @@
 "use client"
 
 import Image from "next/image"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
 import AnimatedElement from "@/components/animated-element"
-import { motion, type Variants } from "framer-motion"
+import { motion } from "framer-motion"
 // Add ParallaxSection to imports
 import ParallaxSection from "@/components/parallax-section"
 
@@ -28,17 +26,6 @@ const archiveCategories = [
     link: "/work-archive/restaurants-hotels",
   },
 ]
-
-// Text on image overlay will be white
-const overlayItemVariants: Variants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-}
-// Text in card content (white card) will be black
-const contentItemVariants: Variants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-}
 
 export default function WorkArchivePage() {
   return (

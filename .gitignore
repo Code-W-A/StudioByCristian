@@ -19,6 +19,7 @@ yarn-error.log*
 
 # env files
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -26,3 +27,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local source materials; optimized web assets live in /public/duplex-transformation-amsterdam
+/public/Douplex Transformation Amsterdam-Renovate/
+
+# Firebase local state and secrets
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
+functions/lib/
+functions/.env*
+!functions/.env.example
+functions/.secret.local
+test-results/
+playwright-report/

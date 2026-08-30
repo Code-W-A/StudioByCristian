@@ -50,7 +50,7 @@ const useIsMobile = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768)
     }
-    
+
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
@@ -60,19 +60,19 @@ const useIsMobile = () => {
 }
 
 // Mobile-optimized image gallery component
-const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: Array<{ src: string; alt: string }>, aspectRatio?: string }) => {
   return (
     <AnimatedElement animationType="fadeInUp" rootMargin="200px">
       <div className="space-y-6">
         {images.map((image, index) => (
           <div key={index} className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-            <Image 
-              src={image.src} 
-              alt={image.alt} 
-              width={800} 
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={800}
               height={600}
-              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-              style={{ aspectRatio }} 
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+              style={{ aspectRatio }}
               loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
@@ -93,7 +93,7 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
         <AnimatedElement animationType="fadeInUp">
           <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">{projectDetails.category}</p>
           <h1 className="mt-2 text-4xl font-bold text-white sm:text-5xl md:text-6xl">{projectDetails.title}</h1>
-          
+
           {/* Project badges in hero */}
           <div className="flex flex-wrap gap-3 mt-6 justify-center">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border border-white/30">
@@ -203,16 +203,16 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
             {/* Alternating pattern: 2 images, then 1 image, repeating */}
             {isMobile ? (
               // Mobile-optimized version with fewer intersection observers
-              <MobileOptimizedGallery 
-                images={projectDetails.images.slice(1)} 
-                aspectRatio="4/3" 
+              <MobileOptimizedGallery
+                images={projectDetails.images.slice(1)}
+                aspectRatio="4/3"
               />
             ) : (
               // Desktop version with complex while loop and individual animations
               (() => {
                 const result = [];
                 let imageIndex = 1; // Start from index 1 since index 0 is already shown above
-                
+
                 while (imageIndex < projectDetails.images.length) {
                   // Two images in a row
                   if (imageIndex + 1 < projectDetails.images.length) {
@@ -220,25 +220,25 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
                       <div key={`pair-${imageIndex}`} className="grid md:grid-cols-2 gap-8">
                         <AnimatedElement animationType="fadeInUp" delay={0.1}>
                           <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                            <Image 
-                              src={projectDetails.images[imageIndex].src} 
-                              alt={projectDetails.images[imageIndex].alt} 
-                              width={900} 
+                            <Image
+                              src={projectDetails.images[imageIndex].src}
+                              alt={projectDetails.images[imageIndex].alt}
+                              width={900}
                               height={675}
-                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-                              style={{ aspectRatio: '4/3' }} 
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                              style={{ aspectRatio: '4/3' }}
                             />
                           </div>
                         </AnimatedElement>
                         <AnimatedElement animationType="fadeInUp" delay={0.2}>
                           <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100">
-                            <Image 
-                              src={projectDetails.images[imageIndex + 1].src} 
-                              alt={projectDetails.images[imageIndex + 1].alt} 
-                              width={900} 
+                            <Image
+                              src={projectDetails.images[imageIndex + 1].src}
+                              alt={projectDetails.images[imageIndex + 1].alt}
+                              width={900}
                               height={675}
-                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-                              style={{ aspectRatio: '4/3' }} 
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                              style={{ aspectRatio: '4/3' }}
                             />
                           </div>
                         </AnimatedElement>
@@ -246,20 +246,20 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
                     );
                     imageIndex += 2;
                   }
-                  
+
                   // Single image
                   if (imageIndex < projectDetails.images.length) {
                     result.push(
                       <AnimatedElement key={`single-${imageIndex}`} animationType="fadeInUp" delay={0.1}>
                         <div className="flex justify-center">
                           <div className="relative overflow-hidden rounded-xl shadow-sm bg-gray-100 max-w-4xl w-full">
-                            <Image 
-                              src={projectDetails.images[imageIndex].src} 
-                              alt={projectDetails.images[imageIndex].alt} 
-                              width={1200} 
+                            <Image
+                              src={projectDetails.images[imageIndex].src}
+                              alt={projectDetails.images[imageIndex].alt}
+                              width={1200}
                               height={675}
-                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-                              style={{ aspectRatio: '16/9' }} 
+                              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                              style={{ aspectRatio: '16/9' }}
                             />
                           </div>
                         </div>
@@ -268,7 +268,7 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
                     imageIndex++;
                   }
                 }
-                
+
                 return result;
               })()
             )}
@@ -276,7 +276,7 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
         </div>
       </section>
 
-     
+
 
 
       <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
@@ -313,14 +313,14 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }} viewport={{ once: true, amount: 0.3 }}>
                 <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/40" />
                 <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-white/40" />
-                
+
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
                   Would you like to discuss a project?
                 </h2>
-                
+
                 {/* Decorative line */}
                 <div className="w-24 h-0.5 bg-gradient-to-r from-white/60 to-transparent mx-auto mb-8" />
-                
+
                 <ContactForm />
               </motion.div>
             </AnimatedElement>
@@ -329,4 +329,4 @@ export default function YogaAndOfficeClaudiaPedersenGrigoreManolescuPage() {
       </section>
     </div>
   )
-} 
+}

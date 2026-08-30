@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { X } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import ConsentGate from "@/components/consent-gate"
 
 export default function VideosSection() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
@@ -115,13 +116,13 @@ export default function VideosSection() {
                 sizes="100vw"
               />
               {isMounted && (
-                <iframe
+                <ConsentGate compact><iframe
                   src={`https://player.vimeo.com/video/${featuredStory.id}?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479`}
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   className="absolute inset-0 h-full w-full object-cover pointer-events-none"
                   title={featuredStory.title}
-                />
+                /></ConsentGate>
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent transition-opacity duration-500 group-hover:from-black/72 group-hover:via-black/20 group-hover:to-transparent" />
 
@@ -198,13 +199,13 @@ export default function VideosSection() {
                     {/* Video Embed - Autoplay & No Controls */}
                     <div className="relative aspect-video">
                       {isMounted ? (
-                        <iframe
+                        <ConsentGate compact><iframe
                           src={`https://player.vimeo.com/video/${video.id}?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479`}
                           frameBorder="0"
                           allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                           title={video.title}
-                        />
+                        /></ConsentGate>
                       ) : (
                         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
                       )}
@@ -313,13 +314,13 @@ export default function VideosSection() {
             </div>
 
             {/* Full-size Video */}
-            <iframe
+            <ConsentGate compact><iframe
               src={`https://player.vimeo.com/video/${selectedVideo}?autoplay=1&loop=1&muted=0&controls=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               className="w-full h-full"
               title="Video Player"
-            />
+            /></ConsentGate>
           </div>
 
           {/* Instructions */}

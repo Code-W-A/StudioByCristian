@@ -130,7 +130,7 @@ const projectDetails = {
         ]
       }
     },
- 
+
   },
   conclusion: "The Ravy Roy Homeopathy Retreat is a living dialogue between cultures, materials, and the human spirit. It is a carefully crafted atmosphere where every corner, texture, and light source contributes to the process of healing, learning, and self-reconnection.\nThis is not just a project—it is a philosophy in physical form. A place where architecture becomes therapy, and design becomes ritual."
 }
@@ -143,7 +143,7 @@ const useIsMobile = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768)
     }
-    
+
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
@@ -153,19 +153,19 @@ const useIsMobile = () => {
 }
 
 // Mobile-optimized image gallery component
-const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: Array<{ src: string; alt: string }>, aspectRatio?: string }) => {
   return (
     <AnimatedElement animationType="fadeInUp" rootMargin="200px">
       <div className="space-y-6">
         {images.map((image, index) => (
           <div key={index} className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-            <Image 
-              src={image.src} 
-              alt={image.alt} 
-              width={800} 
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={800}
               height={600}
-              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-              style={{ aspectRatio }} 
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+              style={{ aspectRatio }}
               loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
@@ -180,7 +180,7 @@ const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[]
 
 export default function RaviRoySpaRetreatHotelPage() {
   const isMobile = useIsMobile()
-  
+
   return (
     <div className="bg-white text-black">
       <ParallaxSection imageUrl={projectDetails.heroImage} imageAlt={projectDetails.title + " Hero Image"} minHeight="70vh" strength={0.3} overlayClassName="bg-black/40">
@@ -190,7 +190,7 @@ export default function RaviRoySpaRetreatHotelPage() {
         </AnimatedElement>
       </ParallaxSection>
 
-     
+
 
       <section className="pt-12 pb-6 lg:pt-16 lg:pb-8 bg-white text-black">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
@@ -202,7 +202,7 @@ export default function RaviRoySpaRetreatHotelPage() {
         </div>
       </section>
 
-     
+
 
       {/* Introduction Section */}
       <section className="py-16 lg:py-20 bg-gray-50 text-black">
@@ -213,12 +213,12 @@ export default function RaviRoySpaRetreatHotelPage() {
                 A Philosophy in Physical Form
               </h2>
 
-  
+
             <p className="text-lg text-gray-700 font-medium mb-4">
               <strong>3D Concept Design:</strong> Adelaida and Irina
             </p>
-       
-     
+
+
 
               <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
                 {projectDetails.description}
@@ -228,7 +228,7 @@ export default function RaviRoySpaRetreatHotelPage() {
         </div>
       </section>
 
-      
+
       {/* Spatial Composition Section */}
       <section className="py-16 lg:py-20 bg-white text-black">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -386,11 +386,11 @@ export default function RaviRoySpaRetreatHotelPage() {
               </div>
               <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
                 <Image src={projectDetails.spaces.restaurant.images[0].src} alt={projectDetails.spaces.restaurant.images[0].alt} width={600} height={450}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} 
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }}
                       priority
                       placeholder="blur"
                       blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                      loading="eager" 
+                      loading="eager"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw" />
               </div>
             </div>
@@ -410,7 +410,7 @@ export default function RaviRoySpaRetreatHotelPage() {
                           <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100" style={{ aspectRatio: '4/3' }}>
                             <Image src={image.src} alt={image.alt} fill
                               className="object-cover hover:scale-105 transition-transform duration-500"
-                              sizes="(max-width: 768px) 100vw, 50vw" 
+                              sizes="(max-width: 768px) 100vw, 50vw"
                               loading="lazy"
                               placeholder="blur"
                               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==" />
@@ -424,7 +424,7 @@ export default function RaviRoySpaRetreatHotelPage() {
                       <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100" style={{ aspectRatio: '16/9' }}>
                         <Image src={projectDetails.spaces.restaurant.images[3].src} alt={projectDetails.spaces.restaurant.images[3].alt} fill
                           className="object-cover hover:scale-105 transition-transform duration-500"
-                          sizes="100vw" 
+                          sizes="100vw"
                           loading="lazy"
                           placeholder="blur"
                           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==" />
@@ -438,7 +438,7 @@ export default function RaviRoySpaRetreatHotelPage() {
                           <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100 aspect-square">
                             <Image src={image.src} alt={image.alt} fill
                               className="object-cover hover:scale-105 transition-transform duration-500"
-                              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw" 
+                              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                               loading="lazy"
                               placeholder="blur"
                               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==" />
@@ -455,7 +455,7 @@ export default function RaviRoySpaRetreatHotelPage() {
                             <div className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100" style={{ aspectRatio: '4/3' }}>
                               <Image src={image.src} alt={image.alt} fill
                                 className="object-cover hover:scale-105 transition-transform duration-500"
-                                sizes="(max-width: 768px) 100vw, 50vw" 
+                                sizes="(max-width: 768px) 100vw, 50vw"
                                 loading="lazy"
                                 placeholder="blur"
                                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==" />
@@ -775,7 +775,7 @@ export default function RaviRoySpaRetreatHotelPage() {
         </div>
       </section>
 
-  
+
 
       {/* Conclusion Section */}
       <section className="py-16 lg:py-20 bg-white text-black">
@@ -830,14 +830,14 @@ export default function RaviRoySpaRetreatHotelPage() {
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }} viewport={{ once: true, amount: 0.3 }}>
                 <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/40" />
                 <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-white/40" />
-                
+
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
                   Would you like to discuss a project?
                 </h2>
-                
+
                 {/* Decorative line */}
                 <div className="w-24 h-0.5 bg-gradient-to-r from-white/60 to-transparent mx-auto mb-8" />
-                
+
                 <ContactForm />
               </motion.div>
             </AnimatedElement>
@@ -846,4 +846,4 @@ export default function RaviRoySpaRetreatHotelPage() {
       </section>
     </div>
   )
-} 
+}

@@ -92,6 +92,17 @@ export const seoEntries = {
     "Day Care Concept presents a thoughtful interior proposal by Studio ByCristian, designed to support comfort, clarity, and a welcoming environment for children.",
     projectKeywords("Day Care Concept", [...designTerms, "commercial interiors", "concept design"]),
   ),
+  "/duplex-transformation-amsterdam": project(
+    "Duplex Transformation Amsterdam | Studio ByCristian",
+    "An Amsterdam duplex transformation into two all-electric apartments with new technical systems, custom kitchens, turn-key renovation, and a rooftop extension.",
+    projectKeywords("Duplex Transformation Amsterdam", [
+      ...renovationTerms,
+      "Amsterdam duplex transformation",
+      "all-electric apartments",
+      "rooftop extension",
+      "turn-key renovation",
+    ]),
+  ),
   "/derodeloper-luxury-store-furniture": project(
     "DERODELOPER Luxury Store | Retail Furniture | Studio ByCristian",
     "DERODELOPER Luxury Store showcases premium retail furniture and refined material detailing executed by Studio ByCristian for a luxury sneaker environment in The Hague.",

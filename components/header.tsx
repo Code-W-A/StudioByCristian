@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/design", label: "Design" },
   { href: "/furniture-production", label: "Furnish" },
   { href: "/interior-renovation", label: "Renovate" },
+  { href: "/one-stop-shop", label: "One Stop Shop" },
   // { href: "/work-archive", label: "Work Archive" }, // COMMENTED OUT - Can be re-enabled later
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
@@ -21,6 +22,8 @@ const navLinks = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+
+  if (pathname.startsWith("/admin")) return null
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-700/30 bg-black/95 backdrop-blur-md text-white shadow-2xl">
@@ -43,7 +46,7 @@ export default function Header() {
         </Link>
 
         {/* Enhanced Desktop Navigation */}
-        <nav className="hidden md:flex space-x-1">
+        <nav className="hidden md:flex space-x-0.5">
           {navLinks.map((link, index) => (
             <motion.div
               key={link.href}
@@ -53,7 +56,7 @@ export default function Header() {
             >
               <Link
                 href={link.href}
-                className="relative px-4 py-3 text-sm font-medium text-gray-300 transition-all duration-300 hover:text-white rounded-lg group overflow-hidden"
+                className="relative px-3 py-3 text-sm font-medium text-gray-300 transition-all duration-300 hover:text-white rounded-lg group overflow-hidden lg:px-4"
               >
                 {/* Background hover effect */}
                 <div className="absolute inset-0 bg-white/5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg" />

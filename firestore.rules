@@ -1,0 +1,43 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function belongsTo(orgId) {
+      return signedIn() && request.auth.token.orgId == orgId;
+    }
+    function roleIs(orgId, role) {
+      return belongsTo(orgId) && request.auth.token.role == role;
+    }
+    function teamMember(orgId) {
+      return roleIs(orgId, 'admin') || roleIs(orgId, 'staff');
+    }
+
+    match /organizations/{orgId} {
+      allow read: if teamMember(orgId);
+      allow write: if false;
+
+      match /members/{memberId} {
+        allow read: if teamMember(orgId) && (roleIs(orgId, 'admin') || request.auth.uid == memberId);
+        allow write: if false;
+      }
+
+      match /settings/{document=**} {
+        allow read: if roleIs(orgId, 'admin');
+        allow write: if false;
+      }
+
+      match /{collection}/{document=**} {
+        allow read: if teamMember(orgId)
+          && collection in ['appointments', 'clients', 'activities', 'emailJobs', 'appointmentTypes', 'availability', 'clientNotes'];
+        allow write: if false;
+      }
+    }
+
+    // Public traffic never reads or writes CRM records directly. All mutations
+    // are validated in callable Functions and use the Admin SDK.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

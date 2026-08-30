@@ -4,12 +4,15 @@ import Link from "next/link"
 import Image from "next/image"
 import { Linkedin, Instagram, Mail, MapPin } from "lucide-react"
 import { motion } from "framer-motion"
+import { CookieSettingsButton } from "@/components/cookie-consent-banner"
+import { usePathname } from "next/navigation"
 
 const menuLinks = [
   { href: "/", label: "Home" },
   { href: "/design", label: "Design" },
   { href: "/furniture-production", label: "Furnish" },
   { href: "/interior-renovation", label: "Renovate" },
+  { href: "/one-stop-shop", label: "One Stop Shop" },
   // { href: "/work-archive", label: "Work Archive" }, // COMMENTED OUT - Can be re-enabled later
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
@@ -22,6 +25,9 @@ const socialLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const pathname = usePathname()
+
+  if (pathname.startsWith("/admin")) return null
 
   return (
     <footer className="relative border-t border-gray-700/30 bg-black text-gray-300 overflow-hidden">
@@ -181,10 +187,10 @@ export default function Footer() {
                 Ready to start your project?
               </p>
               <Link 
-                href="/contact" 
+                href="/one-stop-shop#book" 
                 className="inline-flex items-center mt-2 text-sm font-medium text-white hover:text-gray-300 transition-colors"
               >
-                Get in touch
+                Book a consultation
                 <motion.span
                   className="ml-2"
                   whileHover={{ x: 3 }}
@@ -218,6 +224,12 @@ export default function Footer() {
               >
                 Developed by WebDynamicx
               </a>
+              <div className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-gray-500 md:justify-start">
+                <Link href="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link>
+                <Link href="/cookie-policy" className="hover:text-gray-300">Cookie Policy</Link>
+                <Link href="/booking-terms" className="hover:text-gray-300">Booking Terms</Link>
+                <CookieSettingsButton className="hover:text-gray-300" />
+              </div>
             </div>
             
             {/* Geometric accent */}

@@ -16,11 +16,11 @@ const projectDetails = {
   heroImage: "/suriname-apartments-residential-1-furniture/Suriname-Apartments-1.jpg.jpeg",
   description: [
     "The two apartments are the definition of luxurious Scandinavian design and character due to their simplicity combined with a refined, high end quality. Though similar in appearance, they differ through colour accents and details.\n\nThe apartments' highlights are the ample kitchen areas that feature large kitchen islands realised by a delicate and elegant combination of marble and wood – accents that are to be found throughout the entire kitchen space.",
-    
+
     "The same simplicity characterises the dressing rooms, working spaces, storage racks and TV furniture. The Scandinavian design is also visible in all the other quality details distinguishing the apartments: the unique wooden doors with black doorknobs are custom made by our carpenters to match the floor – to – ceiling glass doors and very high ceilings, while the wooden walls are designed to act as both doors to secret rooms and true pieces of artistry.\n\nTogether, the clean, minimal spaces are a luxurious, yet comfortable oasis that you can call home.",
-    
+
     "The challenge in this production process was to choose and deliver OAK Wood quality class AA and keep the wood fiber continuously on the doors. The Carrara Marble was carefully chosen, hence the sink is made out of Marble as well.\n\nWe chose a light black vanish that was hand painted, therefore we have a discontinuous accent on some of the cupboards. Accessories are from BLUM Motion, fully electric.",
-    
+
     "Location: The Hague | The Netherlands\nStatus: Finished\nService: Interior Architectura & Furniture Production\nSectors: Residential\nArea: 680m²\nClient: Philippe Citroen | Lemons BV\n\nMain used materials:\nOAK Veneer MDF with OAK Vanish\nOAK Professional MDF with RAL paint code\nMasive OAK Wood\nCarrara Marble\nBLUM accessories\nHAFELE accessories\nNEF Appliances\nQuooker"
   ],
   // First 8 images for dynamic gallery
@@ -66,7 +66,7 @@ const useIsMobile = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768)
     }
-    
+
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
@@ -76,19 +76,19 @@ const useIsMobile = () => {
 }
 
 // Mobile-optimized image gallery component
-const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: Array<{ src: string; alt: string }>, aspectRatio?: string }) => {
   return (
     <AnimatedElement animationType="fadeInUp" rootMargin="200px">
       <div className="space-y-6">
         {images.map((image, index) => (
           <div key={index} className="relative overflow-hidden rounded-xl shadow-lg bg-gray-100">
-            <Image 
-              src={image.src} 
-              alt={image.alt} 
-              width={800} 
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={800}
               height={600}
-              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-              style={{ aspectRatio }} 
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+              style={{ aspectRatio }}
               loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
@@ -141,7 +141,7 @@ export default function SurinameApartmentsPage() {
       {/* Dynamic Content Layout */}
       <section className="py-12 lg:py-16 bg-white text-black">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-16">
-          
+
           {/* 1. Image Left, Text Right */}
           <AnimatedElement animationType="fadeInUp">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -264,11 +264,11 @@ export default function SurinameApartmentsPage() {
                       Project Information
                     </p>
                   </div>
-                  
+
                   <h2 className="text-3xl md:text-4xl font-extralight text-black leading-tight">
                     Project Details
                   </h2>
-                  
+
                   <div className="space-y-4">
                     <AnimatedElement animationType="fadeInUp" delay={0.1}>
                       <div className="flex flex-col sm:flex-row sm:justify-between border-b border-gray-100 pb-3">
@@ -280,7 +280,7 @@ export default function SurinameApartmentsPage() {
                         </span>
                       </div>
                     </AnimatedElement>
-                    
+
                     <AnimatedElement animationType="fadeInUp" delay={0.2}>
                       <div className="flex flex-col sm:flex-row sm:justify-between border-b border-gray-100 pb-3">
                         <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">
@@ -291,7 +291,7 @@ export default function SurinameApartmentsPage() {
                         </span>
                       </div>
                     </AnimatedElement>
-                    
+
                     <AnimatedElement animationType="fadeInUp" delay={0.3}>
                       <div className="flex flex-col sm:flex-row sm:justify-between border-b border-gray-100 pb-3">
                         <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">
@@ -302,7 +302,7 @@ export default function SurinameApartmentsPage() {
                         </span>
                       </div>
                     </AnimatedElement>
-                    
+
                     <AnimatedElement animationType="fadeInUp" delay={0.4}>
                       <div className="flex flex-col sm:flex-row sm:justify-between border-b border-gray-100 pb-3">
                         <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">
@@ -313,7 +313,7 @@ export default function SurinameApartmentsPage() {
                         </span>
                       </div>
                     </AnimatedElement>
-                    
+
                     <AnimatedElement animationType="fadeInUp" delay={0.5}>
                       <div className="flex flex-col sm:flex-row sm:justify-between border-b border-gray-100 pb-3">
                         <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">
@@ -324,7 +324,7 @@ export default function SurinameApartmentsPage() {
                         </span>
                       </div>
                     </AnimatedElement>
-                    
+
                     <AnimatedElement animationType="fadeInUp" delay={0.6}>
                       <div className="flex flex-col sm:flex-row sm:justify-between border-b border-gray-100 pb-3">
                         <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">
@@ -350,11 +350,11 @@ export default function SurinameApartmentsPage() {
                       Main Used Materials
                     </p>
                   </div>
-                  
+
                   <h2 className="text-3xl md:text-4xl font-extralight text-black leading-tight">
                     Materials & Finishes
                   </h2>
-                  
+
                   <div className="grid grid-cols-1 gap-3">
                     <AnimatedElement animationType="fadeInUp" delay={0.3}>
                       <div className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
@@ -362,49 +362,49 @@ export default function SurinameApartmentsPage() {
                         <span className="text-gray-700 font-light">OAK Veneer MDF with OAK Vanish</span>
                       </div>
                     </AnimatedElement>
-                    
+
                     <AnimatedElement animationType="fadeInUp" delay={0.4}>
                       <div className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
                         <div className="w-2 h-2 bg-black rounded-full group-hover:scale-125 transition-transform duration-200"></div>
                         <span className="text-gray-700 font-light">OAK Professional MDF with RAL paint code</span>
                       </div>
                     </AnimatedElement>
-                    
+
                     <AnimatedElement animationType="fadeInUp" delay={0.5}>
                       <div className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
                         <div className="w-2 h-2 bg-black rounded-full group-hover:scale-125 transition-transform duration-200"></div>
                         <span className="text-gray-700 font-light">Masive OAK Wood</span>
                       </div>
                     </AnimatedElement>
-                    
+
                     <AnimatedElement animationType="fadeInUp" delay={0.6}>
                       <div className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
                         <div className="w-2 h-2 bg-black rounded-full group-hover:scale-125 transition-transform duration-200"></div>
                         <span className="text-gray-700 font-light">Carrara Marble</span>
                       </div>
                     </AnimatedElement>
-                    
+
                     <AnimatedElement animationType="fadeInUp" delay={0.7}>
                       <div className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
                         <div className="w-2 h-2 bg-black rounded-full group-hover:scale-125 transition-transform duration-200"></div>
                         <span className="text-gray-700 font-light">BLUM accessories</span>
                       </div>
                     </AnimatedElement>
-                    
+
                     <AnimatedElement animationType="fadeInUp" delay={0.8}>
                       <div className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
                         <div className="w-2 h-2 bg-black rounded-full group-hover:scale-125 transition-transform duration-200"></div>
                         <span className="text-gray-700 font-light">HAFELE accessories</span>
                       </div>
                     </AnimatedElement>
-                    
+
                     <AnimatedElement animationType="fadeInUp" delay={0.9}>
                       <div className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
                         <div className="w-2 h-2 bg-black rounded-full group-hover:scale-125 transition-transform duration-200"></div>
                         <span className="text-gray-700 font-light">NEF Appliances</span>
                       </div>
                     </AnimatedElement>
-                    
+
                     <AnimatedElement animationType="fadeInUp" delay={1.0}>
                       <div className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
                         <div className="w-2 h-2 bg-black rounded-full group-hover:scale-125 transition-transform duration-200"></div>
@@ -424,9 +424,9 @@ export default function SurinameApartmentsPage() {
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           {isMobile ? (
             // Mobile-optimized version with fewer intersection observers
-            <MobileOptimizedGallery 
-              images={projectDetails.gallery.slice(6).concat(projectDetails.sliderImages)} 
-              aspectRatio="4/3" 
+            <MobileOptimizedGallery
+              images={projectDetails.gallery.slice(6).concat(projectDetails.sliderImages)}
+              aspectRatio="4/3"
             />
           ) : (
             // Desktop version with individual animations
@@ -492,14 +492,14 @@ export default function SurinameApartmentsPage() {
                 <div className="space-y-4">
                   <p className="text-gray-700">
                     <strong>Headquarters:</strong> The Netherlands<br />
-                    
+
                   </p>
                   <div className="flex space-x-4">
                     <Link href="https://ro.linkedin.com/company/studiobycristian" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">LinkedIn</Link>
                     <Link href="https://www.instagram.com/studiobycristian/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition-colors">Instagram</Link>
                   </div>
-                  <Link 
-                    href="mailto:office@studiobycristian.com" 
+                  <Link
+                    href="mailto:office@studiobycristian.com"
                     className="block text-gray-700 hover:text-black transition-colors"
                   >
                     office@studiobycristian.com
@@ -526,4 +526,4 @@ export default function SurinameApartmentsPage() {
 
     </div>
   )
-} 
+}

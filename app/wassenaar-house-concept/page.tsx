@@ -74,7 +74,7 @@ const useIsMobile = () => {
 }
 
 // Mobile-optimized image gallery component
-const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: any[], aspectRatio?: string }) => {
+const MobileOptimizedGallery = ({ images, aspectRatio = '4/3' }: { images: Array<{ src: string; alt: string }>, aspectRatio?: string }) => {
   return (
     <AnimatedElement animationType="fadeInUp" rootMargin="200px">
       <div className="space-y-6">
@@ -312,7 +312,6 @@ export default function WassenaarHouseConceptPage() {
               {/* Remaining images from sliderImages - continue the pattern */}
               {projectDetails.sliderImages.map((image, index) => {
                 const globalIndex = index + 9; // Offset by 9 (6 from first gallery + 2 grid + 1 single)
-                const isEvenPair = Math.floor(index / 3) % 2 === 0;
                 const positionInGroup = index % 3;
                 
                 if (positionInGroup === 0) {
