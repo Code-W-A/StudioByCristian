@@ -6,6 +6,7 @@ import AnimatedElement from "@/components/animated-element"
 import BeforeAfterComparison from "@/components/before-after-comparison"
 import ContactForm from "@/components/contact-form"
 import ParallaxSection from "@/components/parallax-section"
+import ProjectVideoShowcase from "@/components/project-video-showcase"
 import { Button } from "@/components/ui/button"
 
 const assetRoot = "/duplex-transformation-amsterdam"
@@ -158,6 +159,15 @@ export default function DuplexTransformationAmsterdamPage() {
           </Button>
         </div>
       </section>
+
+      <ProjectVideoShowcase
+        videoId="1222436845"
+        title="Duplex Transformation Amsterdam"
+        description="Take a virtual tour through the Duplex Transformation Amsterdam project and see the complete renovation process."
+        variant="walkthrough"
+        category="Interior Renovation"
+        cardDescription="Complete transformation of an Amsterdam duplex into two all-electric apartments with a rooftop extension"
+      />
 
       <section className="py-16 lg:py-24">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

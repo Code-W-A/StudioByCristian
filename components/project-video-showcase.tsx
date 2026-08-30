@@ -9,11 +9,28 @@ interface ProjectVideoShowcaseProps {
   videoId: string
   title: string
   description: string
+  aspectRatio?: "16:9" | "4:3"
+  variant?: "showcase" | "walkthrough"
+  category?: string
+  cardDescription?: string
 }
 
-export default function ProjectVideoShowcase({ videoId, title, description }: ProjectVideoShowcaseProps) {
+export default function ProjectVideoShowcase({
+  videoId,
+  title,
+  description,
+  aspectRatio = "16:9",
+  variant = "showcase",
+  category = "Interior Renovation",
+  cardDescription,
+}: ProjectVideoShowcaseProps) {
   const [showModal, setShowModal] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
+  const aspectRatioClassName = aspectRatio === "4:3" ? "aspect-[4/3]" : "aspect-video"
+  const modalStyle = aspectRatio === "4:3"
+    ? { width: "min(100%, 80rem, calc(133.333vh - 2.667rem))" }
+    : undefined
+  const isWalkthrough = variant === "walkthrough"
 
   // Handle escape key to close modal
   useEffect(() => {
@@ -51,49 +68,61 @@ export default function ProjectVideoShowcase({ videoId, title, description }: Pr
   return (
     <>
       {/* Video Showcase Section */}
-      <section className="py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className={isWalkthrough ? "bg-gray-50 py-16 text-black lg:py-24" : "bg-gradient-to-b from-gray-50 to-white py-16 lg:py-20"}>
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp" className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-12 h-12 bg-black rounded-xl mb-4 transform rotate-45">
-              <div className="w-6 h-6 bg-white rounded transform -rotate-45" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Project Showcase
+          <AnimatedElement animationType="fadeInUp" className={isWalkthrough ? "mb-16 text-center" : "mb-12 text-center"}>
+            {!isWalkthrough && (
+              <div className="mb-4 inline-flex h-12 w-12 rotate-45 transform items-center justify-center rounded-xl bg-black">
+                <div className="h-6 w-6 -rotate-45 transform rounded bg-white" />
+              </div>
+            )}
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-black sm:text-4xl">
+              {isWalkthrough ? "Project Walkthrough" : "Project Showcase"}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className={`${isWalkthrough ? "max-w-3xl text-gray-700" : "max-w-2xl text-gray-600"} mx-auto text-lg`}>
               {description}
             </p>
           </AnimatedElement>
 
           {/* Large Video Container */}
           <AnimatedElement animationType="fadeInUp" delay={0.2}>
-            <div 
-              className="relative group cursor-pointer"
+            <div
+              className={isWalkthrough ? "group relative mx-auto max-w-4xl cursor-pointer" : "group relative cursor-pointer"}
               onClick={openModal}
             >
               {/* Video Container */}
-              <div className="relative bg-black rounded-2xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-700 transform group-hover:scale-[1.02]">
+              <div className={isWalkthrough
+                ? "relative transform overflow-hidden rounded-3xl bg-black shadow-2xl transition-all duration-700 group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:shadow-2xl"
+                : "relative transform overflow-hidden rounded-2xl bg-black shadow-xl transition-all duration-700 group-hover:scale-[1.02] group-hover:shadow-2xl"
+              }>
                 {/* Play Button Overlay */}
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-6 transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                    <Play className="w-8 h-8 text-black ml-1" fill="currentColor" />
+                {!isWalkthrough && (
+                  <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    <div className="scale-75 transform rounded-full bg-white/90 p-6 backdrop-blur-sm transition-transform duration-300 group-hover:scale-100">
+                      <Play className="ml-1 h-8 w-8 text-black" fill="currentColor" />
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Expand Icon */}
-                <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-sm rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className={`absolute z-30 rounded-full bg-white/20 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 ${isWalkthrough ? "right-4 top-4 p-2" : "right-6 top-6 p-3"}`}>
+                  <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
                   </svg>
                 </div>
 
+                {isWalkthrough && (
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                )}
+
                 {/* Video Embed */}
-                <div className="relative aspect-video">
+                <div className={`relative ${aspectRatioClassName}`}>
                   {isMounted ? (
                     <ConsentGate compact><iframe
                       src={`https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479`}
                       frameBorder="0"
                       allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
                       className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                       title={title}
                     /></ConsentGate>
@@ -102,24 +131,41 @@ export default function ProjectVideoShowcase({ videoId, title, description }: Pr
                   )}
                 </div>
 
+                {isWalkthrough && (
+                  <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-black/20 via-transparent to-black/20 transition-all duration-500 md:group-hover:border-black/10" />
+                )}
+
                 {/* Info Card - Hidden animation on mobile */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-xl p-6 transform translate-y-full md:group-hover:translate-y-0 transition-transform duration-500 z-20">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-xl font-bold text-black mb-2">{title}</h3>
-                      <p className="text-gray-600 text-sm">
-                        Click to view fullscreen with controls
-                      </p>
-                    </div>
-                    <div className="flex-shrink-0 w-10 h-10 bg-black rounded-full flex items-center justify-center ml-4">
-                      <Play className="w-4 h-4 text-white ml-0.5" fill="currentColor" />
+                {isWalkthrough ? (
+                  <div className="absolute bottom-6 left-6 right-6 z-20 hidden translate-y-full transform rounded-2xl bg-white/95 p-6 backdrop-blur-md transition-transform duration-500 md:block md:group-hover:translate-y-0">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <div className="mb-2 flex flex-wrap items-center gap-3">
+                          <h3 className="text-2xl font-bold text-black">{title}</h3>
+                          <span className="rounded-full bg-black px-3 py-1 text-xs font-medium text-white">{category}</span>
+                        </div>
+                        <p className="mb-3 text-sm leading-relaxed text-gray-600">{cardDescription}</p>
+                        <p className="text-xs text-gray-400">Click to view fullscreen</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="absolute bottom-6 left-6 right-6 z-20 translate-y-full transform rounded-xl bg-white/95 p-6 backdrop-blur-md transition-transform duration-500 md:group-hover:translate-y-0">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className="mb-2 text-xl font-bold text-black">{title}</h3>
+                        <p className="text-sm text-gray-600">Click to view fullscreen with controls</p>
+                      </div>
+                      <div className="ml-4 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-black">
+                        <Play className="ml-0.5 h-4 w-4 text-white" fill="currentColor" />
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 {/* Decorative Corners - Hidden on mobile */}
                 <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/30 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-white/30 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
+                <div className={`absolute bottom-4 h-8 w-8 border-b-2 border-r-2 border-white/30 opacity-0 transition-opacity duration-500 md:group-hover:opacity-100 ${isWalkthrough ? "left-4" : "right-4"}`} />
               </div>
             </div>
           </AnimatedElement>
@@ -136,19 +182,26 @@ export default function ProjectVideoShowcase({ videoId, title, description }: Pr
           />
           
           {/* Modal Content */}
-          <div className="relative w-full max-w-7xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
+          <div
+            className={`relative w-full ${isWalkthrough ? "max-w-6xl" : "max-w-7xl"} ${aspectRatioClassName} bg-black rounded-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300`}
+            style={modalStyle}
+          >
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 z-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 text-white transition-all duration-200 hover:scale-110"
+              aria-label="Close video"
+              className="absolute top-4 right-4 z-30 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 text-white transition-all duration-200 hover:scale-110"
             >
               <X className="w-6 h-6" />
             </button>
 
             {/* Video Info Header */}
-            <div className="absolute top-4 left-4 z-10 bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white">
+            <div
+              className="absolute top-4 left-4 z-10 bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white"
+              style={{ maxWidth: "calc(100% - 6rem)" }}
+            >
               <h3 className="text-xl font-bold mb-1">{title}</h3>
-              <p className="text-sm opacity-80">Project Showcase Video</p>
+              <p className="text-sm opacity-80">{isWalkthrough ? category : "Project Showcase Video"}</p>
             </div>
 
             {/* Full-size Video with Controls */}
@@ -156,6 +209,7 @@ export default function ProjectVideoShowcase({ videoId, title, description }: Pr
               src={`https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&muted=0&controls=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               className="w-full h-full"
               title="Video Player"
             /></ConsentGate>
