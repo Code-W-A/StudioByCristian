@@ -161,7 +161,7 @@ export default function DuplexTransformationAmsterdamPage() {
       </section>
 
       <ProjectVideoShowcase
-        videoId="1222436845"
+        videoId="1222457694"
         title="Duplex Transformation Amsterdam"
         description="Take a virtual tour through the Duplex Transformation Amsterdam project and see the complete renovation process."
         variant="walkthrough"

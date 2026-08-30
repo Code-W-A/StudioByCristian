@@ -75,16 +75,16 @@ export default function ProjectsGridSectionTurnKeyManagement() {
                 whileHover="hover"
                 className="bg-white rounded-xl shadow-lg overflow-hidden"
               >
-                <div className={`lg:grid lg:grid-cols-2 lg:items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                <div className={`lg:grid lg:grid-cols-2 lg:items-stretch ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                   {/* Image Section */}
                   <div className={`relative group overflow-hidden ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                    <div className="aspect-video w-full overflow-hidden">
+                    <div className="relative aspect-video w-full overflow-hidden lg:absolute lg:inset-0 lg:aspect-auto">
                       <Image
                         src={project.imageUrl}
                         alt={project.name}
-                        width={600}
-                        height={400}
-                        className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                        fill
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                     </div>
                     
