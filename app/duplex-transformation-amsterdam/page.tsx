@@ -7,7 +7,6 @@ import BeforeAfterComparison from "@/components/before-after-comparison"
 import ContactForm from "@/components/contact-form"
 import ParallaxSection from "@/components/parallax-section"
 import ProjectVideoShowcase from "@/components/project-video-showcase"
-import { Button } from "@/components/ui/button"
 
 const assetRoot = "/duplex-transformation-amsterdam"
 
@@ -139,35 +138,22 @@ export default function DuplexTransformationAmsterdamPage() {
         objectPosition="center"
       >
         <AnimatedElement animationType="fadeInUp" className="mx-auto max-w-5xl px-4">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-gray-200">Interior Renovation</p>
-          <h1 className="mt-4 text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            Duplex Transformation Amsterdam
+          <Link
+            href="/interior-renovation"
+            className="mb-10 inline-flex items-center gap-2 text-sm text-white/80 transition-colors hover:text-white"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Interior Renovation
+          </Link>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-gray-200">JAVASTRAAT 69</p>
+          <h1 className="mt-4 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            Duplex Transformation into Two Apartments + Rooftop Extension
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/90 sm:text-xl">
-            Duplex Transformation into Two Apartments + Rooftop Extension
+            Amsterdam, The Netherlands
           </p>
         </AnimatedElement>
       </ParallaxSection>
-
-      <section className="border-b border-gray-100 bg-white py-8">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Button asChild variant="outline" className="border-gray-300 bg-white text-black hover:bg-gray-100">
-            <Link href="/interior-renovation">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Interior Renovation
-            </Link>
-          </Button>
-        </div>
-      </section>
-
-      <ProjectVideoShowcase
-        videoId="1222457694"
-        title="Duplex Transformation Amsterdam"
-        description="Take a virtual tour through the Duplex Transformation Amsterdam project and see the complete renovation process."
-        variant="walkthrough"
-        category="Interior Renovation"
-        cardDescription="Complete transformation of an Amsterdam duplex into two all-electric apartments with a rooftop extension"
-      />
 
       <section className="py-16 lg:py-24">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -196,15 +182,26 @@ export default function DuplexTransformationAmsterdamPage() {
 
       <section className="bg-gray-50 py-16 lg:py-24">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animationType="fadeInUp" className="mb-10 text-center">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-gray-500">Interactive Comparison</p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ongoing / Render</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-gray-600">
-              Drag across the image to compare the construction stage with the design vision for the living–dining area.
-            </p>
+          <AnimatedElement animationType="fadeInUp" className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">The Transformation</h2>
+            <div className="mt-6 space-y-5 text-lg leading-relaxed text-gray-700">
+              <p>
+                This project involved the complete transformation of an existing duplex property in Amsterdam into
+                two independent, modern apartments, together with the creation of an additional rooftop extension.
+              </p>
+              <p>
+                The original property was technically outdated and required a full rebuild of the interior. The new
+                apartments were developed almost entirely from zero, with new layouts, renewed construction layers,
+                new technical installations and completely new interior finishes.
+              </p>
+            </div>
           </AnimatedElement>
 
-          <AnimatedElement animationType="fadeInUp" delay={0.15} className="mx-auto max-w-5xl">
+          <AnimatedElement animationType="fadeInUp" delay={0.15} className="mx-auto mt-12 max-w-5xl">
+            <div className="mb-8 text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-gray-500">Interactive Comparison</p>
+              <h3 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">Ongoing / Render</h3>
+            </div>
             <BeforeAfterComparison
               beforeSrc={`${assetRoot}/work-in-progress/ongoing-16.webp`}
               afterSrc={`${assetRoot}/design-vision/render-04.webp`}
@@ -219,44 +216,18 @@ export default function DuplexTransformationAmsterdamPage() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <AnimatedElement animationType="fadeInLeft">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-gray-500">Complete Rebuild</p>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">The Transformation</h2>
-              <div className="mt-6 space-y-5 text-lg leading-relaxed text-gray-700">
-                <p>
-                  This project involved the complete transformation of an existing duplex property in Amsterdam into
-                  two independent, modern apartments, together with the creation of an additional rooftop extension.
-                </p>
-                <p>
-                  The original property was technically outdated and required a full rebuild of the interior. The new
-                  apartments were developed almost entirely from zero, with new layouts, renewed construction layers,
-                  new technical installations and completely new interior finishes.
-                </p>
-              </div>
-            </AnimatedElement>
-
-            <AnimatedElement animationType="fadeInRight" delay={0.15}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gray-100 shadow-lg">
-                <Image
-                  src={`${assetRoot}/work-in-progress/ongoing-01.webp`}
-                  alt="Duplex Transformation Amsterdam interior during construction"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </AnimatedElement>
-          </div>
-        </div>
-      </section>
+      <ProjectVideoShowcase
+        videoId="1222457694"
+        title="Duplex Transformation Amsterdam"
+        description="A complete residential transformation delivered from zero: new layouts, new technical systems, new bathrooms, custom kitchens and an additional rooftop extension."
+        variant="walkthrough"
+        category="Interior Renovation"
+        cardDescription="Two brand-new, all-electric apartments created within the shell of an existing Amsterdam property — combining modern technical systems, custom interiors and additional living space through the rooftop extension."
+      />
 
       <section className="bg-black py-16 text-white lg:py-24">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp" className="mx-auto max-w-4xl text-center">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-white/60">Technical Concept</p>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">An All-Electric Residential Concept</h2>
             <p className="mt-6 text-lg leading-relaxed text-white/75">
               A defining aspect of the project is that both apartments operate as fully electric homes. The electrical
@@ -286,7 +257,6 @@ export default function DuplexTransformationAmsterdamPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <AnimatedElement animationType="fadeInLeft" className="lg:order-2">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-gray-500">Tailored Interiors</p>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Bathrooms & Kitchens</h2>
               <div className="mt-6 space-y-5 text-lg leading-relaxed text-gray-700">
                 <p>
@@ -320,7 +290,6 @@ export default function DuplexTransformationAmsterdamPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <AnimatedElement animationType="fadeInLeft">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-gray-500">Additional Living Space</p>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Rooftop Extension</h2>
               <p className="mt-6 text-lg leading-relaxed text-gray-700">
                 The new rooftop extension added valuable living space while requiring careful integration with the
@@ -347,7 +316,6 @@ export default function DuplexTransformationAmsterdamPage() {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp" className="text-center">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-gray-500">Turn-Key Delivery</p>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Scope of Works</h2>
           </AnimatedElement>
 
@@ -369,23 +337,26 @@ export default function DuplexTransformationAmsterdamPage() {
           <div className="grid gap-8 lg:grid-cols-2">
             <AnimatedElement animationType="fadeInLeft">
               <article className="h-full rounded-2xl bg-white p-8 shadow-sm sm:p-10">
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-gray-500">Complex Coordination</p>
-                <h2 className="mt-3 text-3xl font-bold tracking-tight">The Challenge</h2>
-                <p className="mt-6 text-lg leading-relaxed text-gray-700">
-                  The central challenge was to transform a very old property in one of Amsterdam&apos;s busy urban areas
-                  into two contemporary residential units while working within the limitations of the existing
-                  building. Structural conditions, restricted site access, logistics, existing services and the
-                  technical requirements of creating two fully independent homes all had to be coordinated within one
-                  construction process. The rooftop extension added another layer of structural and logistical
-                  complexity.
-                </p>
+                <h2 className="text-3xl font-bold tracking-tight">The Challenge</h2>
+                <div className="mt-6 space-y-5 text-lg leading-relaxed text-gray-700">
+                  <p>
+                    The central challenge was to transform a very old property in one of Amsterdam&apos;s busy urban areas
+                    into two contemporary residential units while working within the limitations of the existing
+                    building.
+                  </p>
+                  <p>
+                    Structural conditions, restricted site access, logistics, existing services and the technical
+                    requirements of creating two fully independent homes all had to be coordinated within one
+                    construction process. The rooftop extension added another layer of structural and logistical
+                    complexity.
+                  </p>
+                </div>
               </article>
             </AnimatedElement>
 
             <AnimatedElement animationType="fadeInRight" delay={0.1}>
               <article className="h-full rounded-2xl bg-black p-8 text-white shadow-sm sm:p-10">
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/60">Transformation Outcome</p>
-                <h2 className="mt-3 text-3xl font-bold tracking-tight">The Result</h2>
+                <h2 className="text-3xl font-bold tracking-tight">The Result</h2>
                 <p className="mt-6 text-lg leading-relaxed text-white/75">
                   Two brand-new, all-electric apartments created within the shell of an existing Amsterdam property —
                   combining modern technical systems, custom interiors and additional living space through the rooftop
@@ -409,17 +380,6 @@ export default function DuplexTransformationAmsterdamPage() {
         description="The intended atmosphere and final spatial direction for the renewed apartments and rooftop extension."
         background="bg-gray-50"
       />
-
-      <section className="bg-white py-12">
-        <div className="container mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <Button asChild variant="outline" size="lg" className="border-gray-300 bg-white text-black hover:bg-gray-100">
-            <Link href="/interior-renovation">
-              <ArrowLeft className="mr-2 h-5 w-5" />
-              Back to Interior Renovation
-            </Link>
-          </Button>
-        </div>
-      </section>
 
       <section className="relative overflow-hidden bg-white py-16 lg:py-24">
         <div className="container relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
