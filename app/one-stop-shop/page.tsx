@@ -46,7 +46,7 @@ const levels = [
 
 const eyebrow = "text-[10px] uppercase tracking-[0.32em]"
 const container = "mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12"
-const sectionHeading = "text-[clamp(2.6rem,10vw,4.5rem)] uppercase leading-[0.92] tracking-[-0.045em]"
+const sectionHeading = "text-[clamp(2.6rem,10vw,3rem)] uppercase leading-[0.92] tracking-[-0.045em] md:text-[clamp(3rem,5.1vw,4.5rem)] lg:text-[clamp(3.25rem,4.6vw,4.5rem)]"
 const bodyCopy = "text-[clamp(1.0625rem,1.15vw,1.1875rem)] leading-[1.75]"
 const sectionSpacing = "py-[clamp(5.5rem,8vw,8rem)]"
 const generousSpacing = "py-[clamp(6.5rem,10vw,10rem)]"
@@ -54,20 +54,24 @@ const generousSpacing = "py-[clamp(6.5rem,10vw,10rem)]"
 export default function OneStopShopPage() {
   return (
     <div className="overflow-hidden bg-[#f4f1eb] text-[#151515]">
-      <section className="relative min-h-[88svh] overflow-hidden bg-black text-white lg:min-h-[92vh]">
+      <section className="relative min-h-[calc(100svh-5rem)] overflow-hidden bg-black text-white lg:min-h-[86svh]">
         <Image src="/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-Banner-scaled.jpg.jpeg" alt="Complete Studio ByCristian interior project" fill priority sizes="100vw" className="object-cover object-center" />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,.78)_0%,rgba(0,0,0,.42)_52%,rgba(0,0,0,.12)_100%)]" />
-        <div className={`${container} relative flex min-h-[88svh] flex-col justify-end pb-[clamp(3rem,8vh,6.5rem)] pt-28 lg:min-h-[92vh]`}>
-          <p className={`${eyebrow} text-white/65`}>The One-Stop Shop</p>
-          <h1 className="mt-7 max-w-5xl text-[clamp(3.7rem,8.3vw,8.5rem)] font-normal uppercase leading-[0.87] tracking-[-0.055em]">One partner.<br />Your entire space.</h1>
-          <p className="mt-8 text-[clamp(1.15rem,1.7vw,1.65rem)] leading-tight text-white/90">A One-Stop Shop for Interior Projects</p>
-          <p className="mt-5 max-w-3xl text-[1.0625rem] leading-7 text-white/72">From a single room upgrade to a complete turn-key interior, Studio byCristian brings design, renovation, custom furniture, production, sourcing and installation together in one coordinated service.</p>
-          <p className="mt-7 text-[10px] uppercase tracking-[0.3em] text-white/65">Design&nbsp; / &nbsp;Renovate&nbsp; / &nbsp;Furnish&nbsp; / &nbsp;Deliver</p>
-          <div className="mt-9 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-            <Link href="#book" className="group inline-flex items-center gap-4 bg-white px-6 py-4 text-[10px] uppercase tracking-[0.22em] text-black outline-none transition-colors hover:bg-[#d8d3c9] focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black">Start a project consultation <ArrowRight size={15} className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none" /></Link>
-            <Link href="#concept" className="inline-flex items-center gap-3 border-b border-white/50 py-2 text-[10px] uppercase tracking-[0.22em] text-white/85 outline-none hover:border-white focus-visible:ring-2 focus-visible:ring-white">Explore the concept <ArrowDown size={14} /></Link>
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,.76)_0%,rgba(0,0,0,.43)_48%,rgba(0,0,0,.1)_82%,rgba(0,0,0,.04)_100%)]" />
+        <div className={`${container} relative grid min-h-[calc(100svh-5rem)] grid-rows-[minmax(0,1fr)_auto] pb-[clamp(2rem,4vh,3rem)] pt-[clamp(2.5rem,6vh,5rem)] lg:min-h-[86svh]`}>
+          <div className="flex items-center pt-[clamp(1.5rem,4vh,3.5rem)]">
+            <div className="max-w-[64rem]">
+              <p className={`${eyebrow} text-white/58`}>The One-Stop Shop</p>
+              <h1 className="mt-7 text-[clamp(2.9rem,6.2vw,6.75rem)] font-normal leading-[0.92] tracking-[-0.045em]">One partner.<br />Your entire space.</h1>
+              <p className="mt-[clamp(1.75rem,3.2vh,2.25rem)] text-[clamp(1.15rem,1.45vw,1.5rem)] leading-tight text-white/90">A One-Stop Shop for Interior Projects</p>
+              <p className="mt-5 max-w-[42rem] text-[1.0625rem] leading-[1.7] text-white/74">From a single room upgrade to a complete turn-key interior, Studio byCristian brings design, renovation, custom furniture, production, sourcing and installation together in one coordinated service.</p>
+              <div className="mt-[clamp(2rem,4vh,2.75rem)] flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-7">
+                <Link href="#book" className="group inline-flex items-center gap-4 bg-white px-6 py-4 text-[10px] uppercase tracking-[0.22em] text-black outline-none transition-colors hover:bg-[#d8d3c9] focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black">Start a project consultation <ArrowRight size={15} className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none" /></Link>
+                <Link href="#concept" className="inline-flex items-center gap-3 border-b border-white/45 py-2 text-[10px] uppercase tracking-[0.22em] text-white/78 outline-none transition-colors hover:border-white hover:text-white focus-visible:ring-2 focus-visible:ring-white">Explore the concept <ArrowDown size={14} /></Link>
+              </div>
+            </div>
           </div>
+          <p className="mt-[clamp(2rem,4vh,3.5rem)] whitespace-nowrap pl-12 text-[8px] uppercase tracking-[0.16em] text-white/48 sm:pl-0 sm:text-[10px] sm:tracking-[0.3em]">Design — Renovate — Furnish — Deliver</p>
         </div>
       </section>
 
@@ -78,7 +82,7 @@ export default function OneStopShopPage() {
             <h2 className={`max-w-[58rem] ${sectionHeading}`}>
               <span className="lg:block">Your project</span>{" "}
               <span className="lg:block">should feel connected,</span>{" "}
-              <span className="sm:whitespace-nowrap lg:block">not fragmented.</span>
+              <span className="lg:block">not fragmented.</span>
             </h2>
             <div className={`mt-[clamp(3rem,4vw,3.75rem)] max-w-[38rem] space-y-6 text-black/70 ${bodyCopy}`}>
               <p>Interior projects are usually fragmented. One company designs, another renovates, a different supplier builds the furniture, and the client is left to coordinate everyone.</p>

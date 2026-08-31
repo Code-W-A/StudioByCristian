@@ -429,7 +429,7 @@ export default function DuplexTransformationAmsterdamPage() {
         <div className="container relative z-10 mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp" className="border-t border-white/15 pt-[clamp(1.5rem,2vw,1.875rem)] lg:pl-[clamp(2rem,4vw,5rem)]">
             <p className="text-[clamp(0.75rem,0.85vw,0.875rem)] font-semibold uppercase tracking-[0.26em] text-[#a8a39b]">The transformation</p>
-            <p className="mt-[clamp(1.75rem,2.5vw,2.25rem)] max-w-[72rem] text-[clamp(2rem,6.2vw,6.2rem)] font-bold uppercase leading-[0.88] tracking-[-0.045em]">
+            <p className="mt-[clamp(1.75rem,2.5vw,2.25rem)] max-w-[72rem] text-[clamp(2rem,6.2vw,6.2rem)] font-bold uppercase leading-[0.98] tracking-[-0.045em]">
               <span className="block lg:whitespace-nowrap">From one duplex</span>
               <span className="mt-1 block text-[#8e8e8e] lg:mt-2">
                 <span className="lg:block lg:whitespace-nowrap">to two</span>{" "}
@@ -536,7 +536,7 @@ export default function DuplexTransformationAmsterdamPage() {
         <div className="container relative z-10 mx-auto max-w-[90rem] px-4 py-[clamp(4rem,6vw,6rem)] sm:px-6 lg:px-8">
           <AnimatedElement animationType="fadeInUp" className="border-t border-white/35 pt-6">
             <p className="text-[clamp(0.8rem,1vw,1rem)] font-semibold uppercase tracking-[0.26em] text-white/75">02 — The Result</p>
-            <h2 className="mt-7 max-w-6xl text-[clamp(1.8rem,6vw,6.5rem)] font-bold uppercase leading-[0.88] tracking-[-0.045em]">
+            <h2 className="mt-7 max-w-6xl text-[clamp(1.8rem,6vw,6.5rem)] font-bold uppercase leading-[0.98] tracking-[-0.045em]">
               <span className="block whitespace-nowrap">Two brand-new,</span>
               <span className="block sm:whitespace-nowrap">all-electric</span>
               <span className="block">apartments.</span>
