@@ -5,7 +5,6 @@ import { connectAuthEmulator, getAuth } from "firebase/auth"
 import { connectFirestoreEmulator, getFirestore } from "firebase/firestore"
 import { connectFunctionsEmulator, getFunctions } from "firebase/functions"
 import { connectStorageEmulator, getStorage } from "firebase/storage"
-import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check"
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -24,8 +23,6 @@ export const firestore = app ? getFirestore(app) : null
 export const firebaseFunctions = app ? getFunctions(app, "europe-west1") : null
 export const firebaseStorage = app ? getStorage(app) : null
 
-declare global { interface Window { FIREBASE_APPCHECK_DEBUG_TOKEN?: boolean | string } }
-
 if (app && typeof window !== "undefined") {
   const state = window as typeof window & { __firebaseOssInitialized?: boolean }
   if (!state.__firebaseOssInitialized) {
@@ -35,11 +32,6 @@ if (app && typeof window !== "undefined") {
       connectFirestoreEmulator(firestore!, "127.0.0.1", 8080)
       connectFunctionsEmulator(firebaseFunctions!, "127.0.0.1", 5001)
       connectStorageEmulator(firebaseStorage!, "127.0.0.1", 9199)
-    } else if (process.env.NEXT_PUBLIC_FIREBASE_APPCHECK_SITE_KEY) {
-      initializeAppCheck(app, {
-        provider: new ReCaptchaV3Provider(process.env.NEXT_PUBLIC_FIREBASE_APPCHECK_SITE_KEY),
-        isTokenAutoRefreshEnabled: true,
-      })
     }
   }
 }

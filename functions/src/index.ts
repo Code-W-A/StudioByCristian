@@ -45,22 +45,58 @@ async function addActivity(type: string, actorId: string, entityId: string, deta
 }
 
 export const getPublicAvailability = onCall(callableOptions, async (request) => {
-  const input = z.object({ from: z.string().date(), to: z.string().date(), appointmentTypeId: z.string().default("project-consultation") }).parse(request.data)
-  const settings = await loadSettings()
-  const from = DateTime.fromISO(input.from, { zone: settings.timeZone }).startOf("day").toUTC().toJSDate()
-  const to = DateTime.fromISO(input.to, { zone: settings.timeZone }).endOf("day").toUTC().toJSDate()
-  const appointments = await org.collection("appointments").where("startsAt", ">=", Timestamp.fromDate(from)).where("startsAt", "<=", Timestamp.fromDate(to)).get()
-  const occupied = new Set<string>()
-  const now = new Date()
-  for (const appointment of appointments.docs) {
-    const data = appointment.data()
-    const holding = data.status === "confirmed" || data.status === "proposed" || (data.status === "pending" && data.holdExpiresAt?.toDate() > now)
-    if (holding) occupied.add(data.startsAt.toDate().toISOString())
-  }
-  return {
-    timeZone: settings.timeZone,
-    durationMinutes: settings.durationMinutes,
-    slots: generateSlots(settings as AvailabilitySettings, input.from, input.to, occupied),
+  const startedAt = Date.now()
+  const traceId = request.rawRequest.get("x-cloud-trace-context")?.split("/")[0] ?? "unavailable"
+  const requestedFrom = typeof request.data?.from === "string" ? request.data.from : "invalid"
+  const requestedTo = typeof request.data?.to === "string" ? request.data.to : "invalid"
+
+  logger.info("availability.request.received", {
+    traceId,
+    from: requestedFrom,
+    to: requestedTo,
+    hasAuth: Boolean(request.auth),
+  })
+
+  try {
+    const input = z.object({ from: z.string().date(), to: z.string().date(), appointmentTypeId: z.string().default("project-consultation") }).parse(request.data)
+    const settings = await loadSettings()
+    const from = DateTime.fromISO(input.from, { zone: settings.timeZone }).startOf("day").toUTC().toJSDate()
+    const to = DateTime.fromISO(input.to, { zone: settings.timeZone }).endOf("day").toUTC().toJSDate()
+    const appointments = await org.collection("appointments").where("startsAt", ">=", Timestamp.fromDate(from)).where("startsAt", "<=", Timestamp.fromDate(to)).get()
+    const occupied = new Set<string>()
+    const now = new Date()
+    for (const appointment of appointments.docs) {
+      const data = appointment.data()
+      const holding = data.status === "confirmed" || data.status === "proposed" || (data.status === "pending" && data.holdExpiresAt?.toDate() > now)
+      if (holding) occupied.add(data.startsAt.toDate().toISOString())
+    }
+    const slots = generateSlots(settings as AvailabilitySettings, input.from, input.to, occupied)
+    logger.info("availability.request.completed", {
+      traceId,
+      from: input.from,
+      to: input.to,
+      appointmentCount: appointments.size,
+      occupiedCount: occupied.size,
+      slotCount: slots.length,
+      durationMs: Date.now() - startedAt,
+    })
+    return {
+      timeZone: settings.timeZone,
+      durationMinutes: settings.durationMinutes,
+      slots,
+    }
+  } catch (error) {
+    const loggedError = error as { name?: unknown; message?: unknown; code?: unknown }
+    logger.error("availability.request.failed", {
+      traceId,
+      from: requestedFrom,
+      to: requestedTo,
+      durationMs: Date.now() - startedAt,
+      name: typeof loggedError?.name === "string" ? loggedError.name : "unknown",
+      code: typeof loggedError?.code === "string" ? loggedError.code : "unknown",
+      message: typeof loggedError?.message === "string" ? loggedError.message : "Unknown availability error",
+    })
+    throw error
   }
 })
 

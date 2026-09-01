@@ -7,8 +7,8 @@
 - Firestore: created in `eur3`, native mode, deletion protection enabled.
 - Firestore rules and indexes: deployed.
 - Authentication API: enabled, but provider configuration is blocked until billing is linked.
-- Storage bucket, Functions, Secret Manager, Cloud Scheduler and App Check: not yet provisioned because the project has no billing account.
-- Production deployment: intentionally not performed. Public launch is gated by billing, SMTP verification, App Check and legal review.
+- Storage bucket, Functions, Secret Manager and Cloud Scheduler: not yet provisioned because the project has no billing account.
+- Production deployment: intentionally not performed. Public launch is gated by billing, SMTP verification and legal review.
 
 ## Required manual prerequisite
 
@@ -23,8 +23,7 @@ Link the intended Google Cloud billing account to `studio-bycristian-oss` in the
    firebase deploy --only storage --project studio-bycristian-oss
    ```
 
-3. Add a reCAPTCHA Enterprise web App Check app for the production domain and place its site key in `NEXT_PUBLIC_FIREBASE_APPCHECK_SITE_KEY`.
-4. Set Functions secrets. Never commit values:
+3. Set Functions secrets. Never commit values:
 
    ```sh
    firebase functions:secrets:set SMTP_HOST --project studio-bycristian-oss
@@ -38,14 +37,14 @@ Link the intended Google Cloud billing account to `studio-bycristian-oss` in the
 
    `BOOKING_LINK_SECRET` should be at least 32 random bytes. `PUBLIC_SITE_URL` should be `https://www.studiobycristian.com`. Verify SPF, DKIM and DMARC for the Studio SMTP sender before sending production mail.
 
-5. Deploy Functions and all rules/indexes:
+4. Deploy Functions and all rules/indexes:
 
    ```sh
    npm --prefix functions run build
    firebase deploy --only functions,firestore,storage --project studio-bycristian-oss
    ```
 
-6. Bootstrap the initial admin with Application Default Credentials that have Firebase Admin access:
+5. Bootstrap the initial admin with Application Default Credentials that have Firebase Admin access:
 
    ```sh
    npm --prefix functions run bootstrap:admin -- adrian@webdynamicx.ro

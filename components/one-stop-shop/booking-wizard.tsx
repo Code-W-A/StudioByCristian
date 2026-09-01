@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useMemo, useState } from "react"
+import { useMemo, useRef, useState } from "react"
 import { signInAnonymously } from "firebase/auth"
 import { ref, uploadBytesResumable } from "firebase/storage"
 import { ArrowLeft, ArrowRight, Check, FileUp, Loader2 } from "lucide-react"
@@ -11,6 +11,7 @@ import { ALLOWED_UPLOAD_EXTENSIONS, LEGAL_VERSIONS, MAX_UPLOAD_FILES, MAX_UPLOAD
 
 type Slot = { startsAt: string; endsAt: string; localLabel: string }
 type UploadedFile = { name: string; path: string; size: number; contentType: string }
+type AvailabilityStatus = "idle" | "loading" | "ready" | "empty" | "error"
 type FormState = {
   service: string; mode: "showroom" | "online"; date: string; startsAt: string;
   name: string; email: string; phone: string; location: string; description: string;
@@ -29,6 +30,7 @@ export default function BookingWizard() {
   const [step, setStep] = useState(1)
   const [form, setForm] = useState(initialState)
   const [slots, setSlots] = useState<Slot[]>([])
+  const [availabilityStatus, setAvailabilityStatus] = useState<AvailabilityStatus>("idle")
   const [uploads, setUploads] = useState<UploadedFile[]>([])
   const [draftId] = useState(() => crypto.randomUUID())
   const [busy, setBusy] = useState(false)
@@ -36,19 +38,57 @@ export default function BookingWizard() {
   const [error, setError] = useState("")
   const [success, setSuccess] = useState<{ appointmentId: string; holdExpiresAt: string } | null>(null)
   const [draftRegistered, setDraftRegistered] = useState(false)
+  const availabilityRequest = useRef(0)
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) => setForm((current) => ({ ...current, [key]: value }))
   const totalUploadSize = useMemo(() => uploads.reduce((sum, file) => sum + file.size, 0), [uploads])
 
-  async function loadSlots() {
-    if (!form.date) return setError("Choose a date first.")
-    setBusy(true); setError(""); setSlots([]); update("startsAt", "")
+  async function loadSlots(date: string) {
+    const requestId = availabilityRequest.current + 1
+    const startedAt = performance.now()
+    availabilityRequest.current = requestId
+    update("date", date)
+    update("startsAt", "")
+    setError("")
+    setSlots([])
+
+    if (!date) {
+      setAvailabilityStatus("idle")
+      return
+    }
+
+    setAvailabilityStatus("loading")
+    console.info("[booking.availability] request", {
+      requestId,
+      date,
+      region: "europe-west1",
+      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ?? "missing",
+    })
     try {
-      const result = await callFirebase<{ from: string; to: string; appointmentTypeId: string }, { slots: Slot[] }>("getPublicAvailability", { from: form.date, to: form.date, appointmentTypeId: "project-consultation" })
+      const result = await callFirebase<{ from: string; to: string; appointmentTypeId: string }, { slots: Slot[] }>("getPublicAvailability", { from: date, to: date, appointmentTypeId: "project-consultation" })
+      if (requestId !== availabilityRequest.current) return
       setSlots(result.slots)
-      if (!result.slots.length) setError("No times are available on this date. Please choose another day.")
-    } catch (reason) { setError(reason instanceof Error ? reason.message : "Could not load availability.") }
-    finally { setBusy(false) }
+      setAvailabilityStatus(result.slots.length ? "ready" : "empty")
+      console.info("[booking.availability] success", {
+        requestId,
+        date,
+        slotCount: result.slots.length,
+        durationMs: Math.round(performance.now() - startedAt),
+      })
+    } catch (reason) {
+      if (requestId !== availabilityRequest.current) return
+      const firebaseError = reason as { name?: unknown; message?: unknown; code?: unknown; details?: unknown }
+      console.error("[booking.availability] failed", {
+        requestId,
+        date,
+        durationMs: Math.round(performance.now() - startedAt),
+        name: typeof firebaseError?.name === "string" ? firebaseError.name : "unknown",
+        code: typeof firebaseError?.code === "string" ? firebaseError.code : "unknown",
+        message: typeof firebaseError?.message === "string" ? firebaseError.message : "Unknown availability error",
+        details: typeof firebaseError?.details === "string" ? firebaseError.details : undefined,
+      })
+      setAvailabilityStatus("error")
+    }
   }
 
   async function uploadFiles(files: FileList | null) {
@@ -171,8 +211,21 @@ export default function BookingWizard() {
       {step === 3 && <div className="mt-4">
         <h3 className="text-2xl">Choose a preferred time</h3>
         <p className="mt-2 text-sm text-black/60">Times are shown in Europe/Amsterdam. A request holds the slot for 24 hours.</p>
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row"><input className={fieldClass} type="date" value={form.date} min={new Date().toISOString().slice(0, 10)} onChange={(event) => update("date", event.target.value)} /><button type="button" onClick={loadSlots} disabled={busy} className="shrink-0 bg-black px-6 py-3 text-sm text-white disabled:opacity-50">{busy ? "Loading…" : "Show times"}</button></div>
-        <div className="mt-5 grid gap-2 sm:grid-cols-2">{slots.map((slot) => <button type="button" key={slot.startsAt} onClick={() => update("startsAt", slot.startsAt)} className={`border p-3 text-sm ${form.startsAt === slot.startsAt ? "border-black bg-black text-white" : "border-black/15 bg-white"}`}>{slot.localLabel}</button>)}</div>
+        <label className="mt-6 block text-[10px] uppercase tracking-[0.2em] text-black/50">
+          Preferred date
+          <input className={`${fieldClass} mt-3 min-h-14 text-base`} type="date" value={form.date} min={new Date().toISOString().slice(0, 10)} onChange={(event) => void loadSlots(event.target.value)} />
+        </label>
+
+        <div className="mt-5 min-h-20" aria-live="polite">
+          {availabilityStatus === "idle" && <p className="border border-black/12 bg-white/45 p-4 text-sm text-black/55">Choose a date to see the available consultation times.</p>}
+          {availabilityStatus === "loading" && <p className="flex items-center gap-3 border border-black/12 bg-white/55 p-4 text-sm text-black/65"><Loader2 size={16} className="animate-spin" /> Checking availability…</p>}
+          {availabilityStatus === "empty" && <p className="border border-black/15 bg-[#e4dfd6] p-4 text-sm leading-6 text-black/65">No consultation times are available on this date. Please choose another day.</p>}
+          {availabilityStatus === "error" && <p className="border border-black/15 bg-[#e4dfd6] p-4 text-sm leading-6 text-black/65">Availability could not be checked right now. Please choose another date or try again shortly.</p>}
+          {availabilityStatus === "ready" && <div>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-black/50">Available times</p>
+            <div className="mt-3 grid gap-2 sm:grid-cols-2">{slots.map((slot) => <button type="button" key={slot.startsAt} aria-pressed={form.startsAt === slot.startsAt} onClick={() => update("startsAt", slot.startsAt)} className={`border p-3 text-left text-sm transition-colors ${form.startsAt === slot.startsAt ? "border-black bg-black text-white" : "border-black/15 bg-white hover:border-black/50"}`}>{slot.localLabel}</button>)}</div>
+          </div>}
+        </div>
       </div>}
 
       {step === 4 && <div className="mt-4">
@@ -188,7 +241,7 @@ export default function BookingWizard() {
       {error && <p className="mt-5 rounded-xl bg-red-50 p-4 text-sm text-red-800" role="alert">{error}</p>}
       <div className="mt-8 flex items-center justify-between gap-4">
         <button type="button" onClick={() => { setError(""); setStep((current) => Math.max(1, current - 1)) }} disabled={step === 1 || busy} className="inline-flex items-center gap-2 border-b border-black/30 px-1 py-3 text-sm disabled:opacity-30"><ArrowLeft size={16} /> Back</button>
-        {step < 4 ? <button type="button" onClick={next} className="inline-flex items-center gap-2 bg-black px-6 py-3 text-sm text-white">Continue <ArrowRight size={16} /></button> : <button type="button" onClick={() => void submit()} disabled={busy} className="inline-flex items-center gap-2 bg-black px-6 py-3 text-sm text-white disabled:opacity-50">{busy && <Loader2 size={16} className="animate-spin" />} Submit request</button>}
+        {step < 4 ? <button type="button" onClick={next} disabled={step === 3 && !form.startsAt} className="inline-flex items-center gap-2 bg-black px-6 py-3 text-sm text-white disabled:cursor-not-allowed disabled:opacity-30">Continue <ArrowRight size={16} /></button> : <button type="button" onClick={() => void submit()} disabled={busy} className="inline-flex items-center gap-2 bg-black px-6 py-3 text-sm text-white disabled:opacity-50">{busy && <Loader2 size={16} className="animate-spin" />} Submit request</button>}
       </div>
           </div>
         </div>

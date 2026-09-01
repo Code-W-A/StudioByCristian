@@ -11,7 +11,6 @@ export const ORG_ID = "studio-bycristian"
 export const org = db.collection("organizations").doc(ORG_ID)
 export const callableOptions = {
   region: REGION,
-  enforceAppCheck: process.env.FUNCTIONS_EMULATOR !== "true",
   cors: ["https://www.studiobycristian.com", "https://studiobycristian.com", /localhost:\d+$/],
 }
 
