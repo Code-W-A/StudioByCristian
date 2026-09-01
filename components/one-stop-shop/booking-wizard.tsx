@@ -22,7 +22,7 @@ const initialState: FormState = {
   description: "", budget: "", timeline: "", acknowledged: false,
 }
 
-const fieldClass = "w-full rounded-xl border border-black/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-black focus:ring-2 focus:ring-black/10"
+const fieldClass = "w-full border border-black/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-black focus:ring-2 focus:ring-black/10"
 const stepLabels = ["Project", "Details", "Consultation", "Materials"] as const
 
 export default function BookingWizard() {
@@ -118,17 +118,41 @@ export default function BookingWizard() {
   )
 
   return (
-    <div className="border-y border-black/20 bg-[#ede9e1] p-5 sm:p-8 lg:border lg:p-10">
-      <div className="mb-10 grid grid-cols-4 border-t border-black/20" aria-label={`Step ${step} of 4`}>
-        {[1, 2, 3, 4].map((item) => <div key={item} className={`border-t-2 pt-3 text-[9px] uppercase tracking-[0.16em] ${item <= step ? "-mt-px border-black text-black" : "-mt-px border-transparent text-black/35"}`}><span className="hidden sm:inline">0{item} {stepLabels[item - 1]}</span><span className="sm:hidden">0{item}</span></div>)}
-      </div>
-      <p className="text-[10px] uppercase tracking-[0.25em] text-black/50">0{step} / {stepLabels[step - 1]}</p>
+    <div className="border border-black/20 bg-[#f4f1eb] text-[#151515] shadow-[0_24px_70px_rgba(50,43,34,.12)]">
+      <div className="grid lg:min-h-[42rem] lg:grid-cols-[17rem_minmax(0,1fr)]">
+        <aside className="flex flex-col bg-[#151515] p-5 text-white sm:p-7 lg:p-9" aria-label={`Step ${step} of 4`}>
+          <p className="text-[9px] uppercase tracking-[0.28em] text-white/48">Consultation route</p>
+          <ol className="mt-5 grid grid-cols-4 gap-2 lg:mt-10 lg:flex lg:flex-col lg:gap-0">
+            {[1, 2, 3, 4].map((item) => {
+              const active = item === step
+              const complete = item < step
+              return (
+                <li key={item} className="relative lg:border-t lg:border-white/16 lg:py-6">
+                  <div className="flex items-center gap-4">
+                    <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-[9px] tracking-[0.12em] transition-colors duration-500 ${active ? "border-white bg-white text-black" : complete ? "border-white/60 bg-white/12 text-white" : "border-white/22 text-white/38"}`}>
+                      0{item}
+                    </span>
+                    <div className="hidden lg:block">
+                      <p className={`text-[9px] uppercase tracking-[0.2em] ${active ? "text-white" : complete ? "text-white/65" : "text-white/32"}`}>{stepLabels[item - 1]}</p>
+                      {active && <p className="mt-1 text-xs text-white/45">Current step</p>}
+                    </div>
+                  </div>
+                </li>
+              )
+            })}
+          </ol>
+          <p className="mt-auto hidden border-t border-white/16 pt-6 text-[9px] uppercase leading-[1.7] tracking-[0.2em] text-white/34 lg:block">One request<br />Four clear steps</p>
+        </aside>
+
+        <div className="p-5 sm:p-8 lg:p-12 xl:p-14">
+          <div className="mx-auto max-w-[58rem]">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-black/50">0{step} / {stepLabels[step - 1]}</p>
 
       {step === 1 && <div className="mt-4">
         <h3 className="text-2xl">What can we help you with?</h3>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">{PROJECT_SERVICES.map((service) => <button type="button" key={service} aria-pressed={form.service === service} onClick={() => update("service", service)} className={`rounded-xl border p-4 text-left text-sm transition ${form.service === service ? "border-black bg-black text-white" : "border-black/15 bg-white hover:border-black/50"}`}>{service}</button>)}</div>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">{PROJECT_SERVICES.map((service) => <button type="button" key={service} aria-pressed={form.service === service} onClick={() => update("service", service)} className={`border p-4 text-left text-sm transition ${form.service === service ? "border-black bg-black text-white" : "border-black/15 bg-white hover:border-black/50"}`}>{service}</button>)}</div>
         <h4 className="mt-8 text-sm font-semibold">Consultation format</h4>
-        <div className="mt-3 grid grid-cols-2 gap-3">{(["showroom", "online"] as const).map((mode) => <button type="button" key={mode} aria-pressed={form.mode === mode} onClick={() => update("mode", mode)} className={`rounded-xl border p-4 text-sm capitalize ${form.mode === mode ? "border-black bg-black text-white" : "border-black/15 bg-white"}`}>{mode === "showroom" ? "Studio showroom" : "Online consultation"}</button>)}</div>
+        <div className="mt-3 grid grid-cols-2 gap-3">{(["showroom", "online"] as const).map((mode) => <button type="button" key={mode} aria-pressed={form.mode === mode} onClick={() => update("mode", mode)} className={`border p-4 text-sm capitalize ${form.mode === mode ? "border-black bg-black text-white" : "border-black/15 bg-white"}`}>{mode === "showroom" ? "Studio showroom" : "Online consultation"}</button>)}</div>
       </div>}
 
       {step === 2 && <div className="mt-4">
@@ -165,6 +189,9 @@ export default function BookingWizard() {
       <div className="mt-8 flex items-center justify-between gap-4">
         <button type="button" onClick={() => { setError(""); setStep((current) => Math.max(1, current - 1)) }} disabled={step === 1 || busy} className="inline-flex items-center gap-2 border-b border-black/30 px-1 py-3 text-sm disabled:opacity-30"><ArrowLeft size={16} /> Back</button>
         {step < 4 ? <button type="button" onClick={next} className="inline-flex items-center gap-2 bg-black px-6 py-3 text-sm text-white">Continue <ArrowRight size={16} /></button> : <button type="button" onClick={() => void submit()} disabled={busy} className="inline-flex items-center gap-2 bg-black px-6 py-3 text-sm text-white disabled:opacity-50">{busy && <Loader2 size={16} className="animate-spin" />} Submit request</button>}
+      </div>
+          </div>
+        </div>
       </div>
     </div>
   )
