@@ -2,35 +2,59 @@
 
 import AnimatedElement from "@/components/animated-element"
 import { useState, useEffect } from "react"
+import type { KeyboardEvent as ReactKeyboardEvent } from "react"
 import { X } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import ConsentGate from "@/components/consent-gate"
 
+type VideoStory = {
+  id: string
+  title: string
+  subtitle: string
+  description: string
+  projectLink: string
+  imageUrl?: string
+  vimeoId?: string
+  videoSrc?: string
+  posterSrc?: string
+}
+
 export default function VideosSection() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
   const [isMounted, setIsMounted] = useState(false)
 
-  const featuredStory = {
-    id: "1177752529",
-    title: "Unusual Spaces",
-    subtitle: "Utrecht Workplace",
+  const featuredStory: VideoStory = {
+    id: "satkara-restaurant",
+    title: "Satkara Restaurant",
+    subtitle: "Turn-Key Renovation",
     description:
-      "A project story that follows the Utrecht interior from bold concept language to on-site execution and final spatial identity.",
-    imageUrl: "/unusual-spaces/Utrecht - Pictures/_EWP0966.jpg",
-    projectLink: "/unusual-spaces",
+      "A complete transformation shaped by heritage, craftsmanship, natural materials and precise execution.",
+    videoSrc: "/satkara-restaurant-turn-key-renovation/video/satkara-story.mp4",
+    posterSrc: "/satkara-restaurant-turn-key-renovation/final/final-19.webp",
+    projectLink: "/satkara-restaurant-turn-key-renovation",
   }
 
-  const videos = [
+  const videos: VideoStory[] = [
     {
-      id: "1097920033",
+      id: "unusual-spaces",
+      vimeoId: "1177752529",
+      title: "Unusual Spaces",
+      subtitle: "Utrecht Workplace",
+      description: "A project story that follows the Utrecht interior from bold concept language to on-site execution and final spatial identity.",
+      projectLink: "/unusual-spaces",
+    },
+    {
+      id: "overveen",
+      vimeoId: "1097920033",
       title: "Overveen",
       subtitle: "Private Residence",
       description: "Contemporary interior design with timeless elegance",
       projectLink: "/thijs-overveen"
     },
     {
-      id: "1097919705", 
+      id: "hotel-delft",
+      vimeoId: "1097919705",
       title: "Hotel Delft",
       subtitle: "Hospitality Design",
       description: "Luxury hotel interiors crafted for memorable experiences",
@@ -73,6 +97,12 @@ export default function VideosSection() {
     setSelectedVideo(null)
   }
 
+  const handleVideoKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>, videoId: string) => {
+    if (event.key !== "Enter" && event.key !== " ") return
+    event.preventDefault()
+    openModal(videoId)
+  }
+
   return (
     <>
       <section className="relative py-32 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
@@ -109,21 +139,33 @@ export default function VideosSection() {
               onClick={() => openModal(featuredStory.id)}
             >
               <Image
-                src={featuredStory.imageUrl}
+                src={featuredStory.posterSrc ?? featuredStory.imageUrl ?? "/satkara-restaurant-turn-key-renovation/final/final-19.webp"}
                 alt={featuredStory.title}
                 fill
                 className="object-cover"
                 sizes="100vw"
               />
-              {isMounted && (
+              {featuredStory.videoSrc ? (
+                <video
+                  src={featuredStory.videoSrc}
+                  poster={featuredStory.posterSrc}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label={`${featuredStory.title} video preview`}
+                  className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+                />
+              ) : isMounted && featuredStory.vimeoId ? (
                 <ConsentGate compact><iframe
-                  src={`https://player.vimeo.com/video/${featuredStory.id}?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479`}
+                  src={`https://player.vimeo.com/video/${featuredStory.vimeoId}?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479`}
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   className="absolute inset-0 h-full w-full object-cover pointer-events-none"
                   title={featuredStory.title}
                 /></ConsentGate>
-              )}
+              ) : null}
               <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent transition-opacity duration-500 group-hover:from-black/72 group-hover:via-black/20 group-hover:to-transparent" />
 
               <div className="relative z-20 min-h-[360px] lg:min-h-[420px]">
@@ -172,7 +214,7 @@ export default function VideosSection() {
           </AnimatedElement>
 
           {/* Premium Videos Grid */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
             {videos.map((video, index) => (
               <AnimatedElement
                 key={video.id}
@@ -185,6 +227,10 @@ export default function VideosSection() {
                   <div 
                     className="relative bg-black rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-4xl transition-all duration-700 transform group-hover:scale-[1.02] group-hover:-translate-y-2 cursor-pointer"
                     onClick={() => openModal(video.id)}
+                    onKeyDown={(event) => handleVideoKeyDown(event, video.id)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Play ${video.title} video`}
                   >
                     {/* Click to Expand Indicator */}
                     <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30">
@@ -199,13 +245,29 @@ export default function VideosSection() {
                     {/* Video Embed - Autoplay & No Controls */}
                     <div className="relative aspect-video">
                       {isMounted ? (
-                        <ConsentGate compact><iframe
-                          src={`https://player.vimeo.com/video/${video.id}?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479`}
-                          frameBorder="0"
-                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                          title={video.title}
-                        /></ConsentGate>
+                        video.videoSrc ? (
+                          <video
+                            src={video.videoSrc}
+                            poster={video.posterSrc}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="metadata"
+                            aria-label={`${video.title} video preview`}
+                            className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+                          />
+                        ) : video.vimeoId ? (
+                          <ConsentGate compact><iframe
+                            src={`https://player.vimeo.com/video/${video.vimeoId}?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479`}
+                            frameBorder="0"
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                            title={video.title}
+                          /></ConsentGate>
+                        ) : (
+                          <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+                        )
                       ) : (
                         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
                       )}
@@ -298,6 +360,7 @@ export default function VideosSection() {
             {/* Close Button */}
             <button
               onClick={closeModal}
+              aria-label="Close video"
               className="absolute top-4 right-4 z-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 text-white transition-all duration-200 hover:scale-110"
             >
               <X className="w-6 h-6" />
@@ -314,13 +377,26 @@ export default function VideosSection() {
             </div>
 
             {/* Full-size Video */}
-            <ConsentGate compact><iframe
-              src={`https://player.vimeo.com/video/${selectedVideo}?autoplay=1&loop=1&muted=0&controls=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              className="w-full h-full"
-              title="Video Player"
-            /></ConsentGate>
+            {selectedStory?.videoSrc ? (
+              <video
+                src={selectedStory.videoSrc}
+                poster={selectedStory.posterSrc}
+                autoPlay
+                controls
+                playsInline
+                preload="metadata"
+                aria-label={`${selectedStory.title} video player`}
+                className="h-full w-full object-contain"
+              />
+            ) : selectedStory?.vimeoId ? (
+              <ConsentGate compact><iframe
+                src={`https://player.vimeo.com/video/${selectedStory.vimeoId}?autoplay=1&loop=1&muted=0&controls=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                className="w-full h-full"
+                title={`${selectedStory.title} video player`}
+              /></ConsentGate>
+            ) : null}
           </div>
 
           {/* Instructions */}

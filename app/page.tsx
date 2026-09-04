@@ -12,7 +12,7 @@ import OneStopShopCta from "@/components/homepage/one-stop-shop-cta"
 
 export default function HomePage() {
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white text-gray-800 selection:bg-black selection:text-white">
+    <div className="overflow-x-hidden bg-gradient-to-b from-gray-50 to-white text-gray-800 selection:bg-black selection:text-white">
       <HeroSectionHomepage />
       <AboutUsSection />
       <OurWorkSection />

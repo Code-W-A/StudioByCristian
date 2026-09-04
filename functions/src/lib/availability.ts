@@ -9,6 +9,13 @@ export function slotKey(typeId: string, startsAtIso: string) {
   return Buffer.from(`${typeId}|${startsAtIso}`).toString("base64url")
 }
 
+export function getBookingWindow(settings: AvailabilitySettings, now: DateTime = DateTime.utc()) {
+  return {
+    earliestDate: now.plus({ hours: settings.minimumNoticeHours }).setZone(settings.timeZone).toISODate()!,
+    latestDate: now.plus({ days: settings.bookingWindowDays }).setZone(settings.timeZone).toISODate()!,
+  }
+}
+
 export function generateSlots(settings: AvailabilitySettings, fromIso: string, toIso: string, occupied: Set<string>, now: DateTime = DateTime.utc()) {
   const zone = settings.timeZone
   const earliest = now.plus({ hours: settings.minimumNoticeHours })

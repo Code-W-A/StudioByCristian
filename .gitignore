@@ -31,6 +31,9 @@ next-env.d.ts
 # Local source materials; optimized web assets live in /public/duplex-transformation-amsterdam
 /public/Douplex Transformation Amsterdam-Renovate/
 
+# Local Satkara source materials; optimized web assets live in /public/satkara-restaurant-turn-key-renovation
+/public/Satkara_Restaurant_Turn_Key_Renovation/
+
 # Firebase local state and secrets
 firebase-debug.log
 firestore-debug.log

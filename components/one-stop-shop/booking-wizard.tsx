@@ -1,15 +1,27 @@
 "use client"
 
 import Link from "next/link"
-import { useMemo, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { signInAnonymously } from "firebase/auth"
 import { ref, uploadBytesResumable } from "firebase/storage"
 import { ArrowLeft, ArrowRight, Check, FileUp, Loader2 } from "lucide-react"
 import { callFirebase } from "@/lib/firebase/callables"
 import { firebaseAuth, firebaseStorage, isFirebaseConfigured } from "@/lib/firebase/client"
-import { ALLOWED_UPLOAD_EXTENSIONS, LEGAL_VERSIONS, MAX_UPLOAD_FILES, MAX_UPLOAD_FILE_BYTES, MAX_UPLOAD_TOTAL_BYTES, ORGANIZATION_ID, PROJECT_SERVICES } from "@/lib/one-stop-shop/constants"
+import { BookingCalendar } from "@/components/one-stop-shop/booking-calendar"
+import {
+  calendarDateFromIsoDate,
+  dateKeyInTimeZone,
+  fallbackBookingWindow,
+  formatSlotTime,
+  groupSlotsByDate,
+  monthKeyFromIsoDate,
+  monthRange,
+  startOfCalendarMonth,
+  type AvailabilityResponse,
+  type AvailabilitySlot,
+} from "@/lib/one-stop-shop/availability-calendar"
+import { ALLOWED_UPLOAD_EXTENSIONS, BOOKING_TIME_ZONE, DEFAULT_BOOKING_SETTINGS, LEGAL_VERSIONS, MAX_UPLOAD_FILES, MAX_UPLOAD_FILE_BYTES, MAX_UPLOAD_TOTAL_BYTES, ORGANIZATION_ID, PROJECT_SERVICES } from "@/lib/one-stop-shop/constants"
 
-type Slot = { startsAt: string; endsAt: string; localLabel: string }
 type UploadedFile = { name: string; path: string; size: number; contentType: string }
 type AvailabilityStatus = "idle" | "loading" | "ready" | "empty" | "error"
 type FormState = {
@@ -25,11 +37,16 @@ const initialState: FormState = {
 
 const fieldClass = "w-full border border-black/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-black focus:ring-2 focus:ring-black/10"
 const stepLabels = ["Project", "Details", "Consultation", "Materials"] as const
+const initialDate = dateKeyInTimeZone(new Date().toISOString(), BOOKING_TIME_ZONE)
+const initialMonth = startOfCalendarMonth(calendarDateFromIsoDate(initialDate))
 
 export default function BookingWizard() {
   const [step, setStep] = useState(1)
   const [form, setForm] = useState(initialState)
-  const [slots, setSlots] = useState<Slot[]>([])
+  const [displayedMonth, setDisplayedMonth] = useState(initialMonth)
+  const [calendarSlots, setCalendarSlots] = useState<AvailabilitySlot[]>([])
+  const [loadedMonthKey, setLoadedMonthKey] = useState("")
+  const [bookingWindow, setBookingWindow] = useState(() => fallbackBookingWindow(BOOKING_TIME_ZONE, DEFAULT_BOOKING_SETTINGS.bookingWindowDays))
   const [availabilityStatus, setAvailabilityStatus] = useState<AvailabilityStatus>("idle")
   const [uploads, setUploads] = useState<UploadedFile[]>([])
   const [draftId] = useState(() => crypto.randomUUID())
@@ -39,39 +56,47 @@ export default function BookingWizard() {
   const [success, setSuccess] = useState<{ appointmentId: string; holdExpiresAt: string } | null>(null)
   const [draftRegistered, setDraftRegistered] = useState(false)
   const availabilityRequest = useRef(0)
+  const availabilityCache = useRef(new Map<string, AvailabilityResponse>())
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) => setForm((current) => ({ ...current, [key]: value }))
   const totalUploadSize = useMemo(() => uploads.reduce((sum, file) => sum + file.size, 0), [uploads])
 
-  async function loadSlots(date: string) {
-    const requestId = availabilityRequest.current + 1
-    const startedAt = performance.now()
-    availabilityRequest.current = requestId
-    update("date", date)
-    update("startsAt", "")
-    setError("")
-    setSlots([])
-
-    if (!date) {
-      setAvailabilityStatus("idle")
+  const loadAvailabilityMonth = useCallback(async (month: Date, force = false) => {
+    const range = monthRange(month)
+    const cached = availabilityCache.current.get(range.key)
+    if (cached && !force) {
+      setCalendarSlots(cached.slots)
+      setLoadedMonthKey(range.key)
+      if (cached.bookingWindow) setBookingWindow(cached.bookingWindow)
+      setAvailabilityStatus(cached.slots.length ? "ready" : "empty")
       return
     }
 
+    const requestId = availabilityRequest.current + 1
+    const startedAt = performance.now()
+    availabilityRequest.current = requestId
+    setError("")
+    setCalendarSlots([])
+    setLoadedMonthKey("")
     setAvailabilityStatus("loading")
     console.info("[booking.availability] request", {
       requestId,
-      date,
+      from: range.from,
+      to: range.to,
       region: "europe-west1",
       projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ?? "missing",
     })
     try {
-      const result = await callFirebase<{ from: string; to: string; appointmentTypeId: string }, { slots: Slot[] }>("getPublicAvailability", { from: date, to: date, appointmentTypeId: "project-consultation" })
+      const result = await callFirebase<{ from: string; to: string; appointmentTypeId: string }, AvailabilityResponse>("getPublicAvailability", { from: range.from, to: range.to, appointmentTypeId: "project-consultation" })
+      availabilityCache.current.set(range.key, result)
       if (requestId !== availabilityRequest.current) return
-      setSlots(result.slots)
+      setCalendarSlots(result.slots)
+      setLoadedMonthKey(range.key)
+      if (result.bookingWindow) setBookingWindow(result.bookingWindow)
       setAvailabilityStatus(result.slots.length ? "ready" : "empty")
       console.info("[booking.availability] success", {
         requestId,
-        date,
+        month: range.key,
         slotCount: result.slots.length,
         durationMs: Math.round(performance.now() - startedAt),
       })
@@ -80,7 +105,7 @@ export default function BookingWizard() {
       const firebaseError = reason as { name?: unknown; message?: unknown; code?: unknown; details?: unknown }
       console.error("[booking.availability] failed", {
         requestId,
-        date,
+        month: range.key,
         durationMs: Math.round(performance.now() - startedAt),
         name: typeof firebaseError?.name === "string" ? firebaseError.name : "unknown",
         code: typeof firebaseError?.code === "string" ? firebaseError.code : "unknown",
@@ -89,6 +114,28 @@ export default function BookingWizard() {
       })
       setAvailabilityStatus("error")
     }
+  }, [])
+
+  useEffect(() => {
+    if (step === 3) void loadAvailabilityMonth(displayedMonth)
+  }, [displayedMonth, loadAvailabilityMonth, step])
+
+  const displayedRange = monthRange(displayedMonth)
+  const isDisplayedMonthLoaded = loadedMonthKey === displayedRange.key
+  const displayedSlotsByDate = useMemo(
+    () => groupSlotsByDate(calendarSlots, BOOKING_TIME_ZONE),
+    [calendarSlots],
+  )
+  const availableDates = useMemo(() => new Set(Object.keys(displayedSlotsByDate)), [displayedSlotsByDate])
+  const selectedMonth = form.date ? availabilityCache.current.get(monthKeyFromIsoDate(form.date)) : undefined
+  const selectedSlots = form.date && selectedMonth
+    ? groupSlotsByDate(selectedMonth.slots, selectedMonth.timeZone ?? BOOKING_TIME_ZONE)[form.date] ?? []
+    : []
+
+  function selectConsultationDate(date: string) {
+    update("date", date)
+    update("startsAt", "")
+    setError("")
   }
 
   async function uploadFiles(files: FileList | null) {
@@ -211,20 +258,36 @@ export default function BookingWizard() {
       {step === 3 && <div className="mt-4">
         <h3 className="text-2xl">Choose a preferred time</h3>
         <p className="mt-2 text-sm text-black/60">Times are shown in Europe/Amsterdam. A request holds the slot for 24 hours.</p>
-        <label className="mt-6 block text-[10px] uppercase tracking-[0.2em] text-black/50">
-          Preferred date
-          <input className={`${fieldClass} mt-3 min-h-14 text-base`} type="date" value={form.date} min={new Date().toISOString().slice(0, 10)} onChange={(event) => void loadSlots(event.target.value)} />
-        </label>
+        <div className="mt-7 grid gap-5 lg:grid-cols-[minmax(22rem,1.08fr)_minmax(17rem,.92fr)] lg:items-start">
+          <div>
+            <p className="mb-3 text-[10px] uppercase tracking-[0.2em] text-black/50">Preferred date</p>
+            <BookingCalendar
+              month={displayedMonth}
+              selectedDate={form.date}
+              availableDates={availableDates}
+              bookingWindow={bookingWindow}
+              isLoaded={isDisplayedMonthLoaded}
+              isLoading={availabilityStatus === "loading"}
+              onMonthChange={(month) => setDisplayedMonth(startOfCalendarMonth(month))}
+              onSelectDate={selectConsultationDate}
+            />
+            <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-[10px] uppercase tracking-[0.14em] text-black/50" aria-label="Calendar legend">
+              <span className="inline-flex items-center gap-2"><span className="h-3 w-3 rounded-full bg-[#DDE5D8] ring-1 ring-[#56624F]/30" />Available</span>
+              <span className="inline-flex items-center gap-2"><span className="h-3 w-3 rounded-full bg-[#E6E2DA]" />Unavailable</span>
+            </div>
+          </div>
 
-        <div className="mt-5 min-h-20" aria-live="polite">
-          {availabilityStatus === "idle" && <p className="border border-black/12 bg-white/45 p-4 text-sm text-black/55">Choose a date to see the available consultation times.</p>}
-          {availabilityStatus === "loading" && <p className="flex items-center gap-3 border border-black/12 bg-white/55 p-4 text-sm text-black/65"><Loader2 size={16} className="animate-spin" /> Checking availability…</p>}
-          {availabilityStatus === "empty" && <p className="border border-black/15 bg-[#e4dfd6] p-4 text-sm leading-6 text-black/65">No consultation times are available on this date. Please choose another day.</p>}
-          {availabilityStatus === "error" && <p className="border border-black/15 bg-[#e4dfd6] p-4 text-sm leading-6 text-black/65">Availability could not be checked right now. Please choose another date or try again shortly.</p>}
-          {availabilityStatus === "ready" && <div>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-black/50">Available times</p>
-            <div className="mt-3 grid gap-2 sm:grid-cols-2">{slots.map((slot) => <button type="button" key={slot.startsAt} aria-pressed={form.startsAt === slot.startsAt} onClick={() => update("startsAt", slot.startsAt)} className={`border p-3 text-left text-sm transition-colors ${form.startsAt === slot.startsAt ? "border-black bg-black text-white" : "border-black/15 bg-white hover:border-black/50"}`}>{slot.localLabel}</button>)}</div>
-          </div>}
+          <div className="min-h-56 border border-black/12 bg-white/45 p-5 sm:p-6" aria-live="polite">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-black/50">Consultation times</p>
+            {(availabilityStatus === "idle" || availabilityStatus === "loading") && <div className="mt-5 space-y-3" role="status"><p className="flex items-center gap-3 text-sm text-black/60"><Loader2 size={15} className="animate-spin" />Checking this month…</p>{Array.from({ length: 3 }, (_, index) => <div key={index} className="h-11 animate-pulse rounded-full bg-[#E6E2DA]" />)}</div>}
+            {availabilityStatus === "error" && <div className="mt-5"><p className="text-sm leading-6 text-black/60">Availability could not be checked right now. No dates have been marked unavailable.</p><button type="button" onClick={() => void loadAvailabilityMonth(displayedMonth, true)} className="mt-5 rounded-full border border-[#56624F] px-5 py-2.5 text-xs text-[#34402F] transition hover:bg-[#DDE5D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#56624F] focus-visible:ring-offset-2">Try again</button></div>}
+            {availabilityStatus === "empty" && <p className="mt-5 bg-[#E6E2DA] p-4 text-sm leading-6 text-black/60">There are no consultation times available in this month. Please choose another month.</p>}
+            {availabilityStatus === "ready" && !form.date && <p className="mt-5 text-sm leading-6 text-black/60">Choose one of the sage dates to see its available consultation times.</p>}
+            {availabilityStatus === "ready" && form.date && <div className="mt-4">
+              <p className="text-sm text-[#34402F]">{new Intl.DateTimeFormat("en-GB", { weekday: "long", day: "numeric", month: "long" }).format(calendarDateFromIsoDate(form.date))}</p>
+              {selectedSlots.length ? <div className="mt-4 flex flex-wrap gap-2">{selectedSlots.map((slot) => <button type="button" key={slot.startsAt} aria-pressed={form.startsAt === slot.startsAt} onClick={() => update("startsAt", slot.startsAt)} className={`min-w-24 rounded-full border px-4 py-2.5 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#56624F] focus-visible:ring-offset-2 ${form.startsAt === slot.startsAt ? "border-[#56624F] bg-[#56624F] text-white" : "border-[#B9C5B3] bg-[#DDE5D8] text-[#34402F] hover:border-[#56624F]"}`}>{formatSlotTime(slot.startsAt, BOOKING_TIME_ZONE)}</button>)}</div> : <p className="mt-4 bg-[#E6E2DA] p-4 text-sm leading-6 text-black/60">This date no longer has an available time. Please select another day.</p>}
+            </div>}
+          </div>
         </div>
       </div>}
 

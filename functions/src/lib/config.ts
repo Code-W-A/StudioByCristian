@@ -12,6 +12,10 @@ export const org = db.collection("organizations").doc(ORG_ID)
 export const callableOptions = {
   region: REGION,
   cors: ["https://www.studiobycristian.com", "https://studiobycristian.com", /localhost:\d+$/],
+  // Domain Restricted Sharing prevents Firebase from granting allUsers the
+  // Cloud Run Invoker role. Deploy callables without an IAM binding; their
+  // Cloud Run services have the invoker IAM check disabled after deployment.
+  invoker: "private" as const,
 }
 
 export const defaultSettings = {

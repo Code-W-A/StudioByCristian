@@ -213,6 +213,17 @@ export const seoEntries = {
     "Ravi Roy Spa Retreat Hotel presents a wellness and hospitality concept by Studio ByCristian, shaped through calm atmospheres, premium interiors, and guest-focused design.",
     projectKeywords("Ravi Roy Spa Retreat Hotel", [...designTerms, ...hospitalityTerms, "wellness retreat"]),
   ),
+  "/satkara-restaurant-turn-key-renovation": project(
+    "Satkara Restaurant Amsterdam | Turn-Key Renovation | Studio ByCristian",
+    "Satkara is an Indian-Nepalese fine-dining restaurant in Amsterdam delivered by Studio ByCristian through complete turn-key renovation, general contracting, bespoke elements, and custom furniture.",
+    projectKeywords("Satkara Restaurant", [
+      ...renovationTerms,
+      ...hospitalityTerms,
+      "Amsterdam restaurant renovation",
+      "general contractor",
+      "turn-key restaurant renovation",
+    ]),
+  ),
   "/shapes": page(
     "SHAPES Collection | Designer Furniture | Studio ByCristian",
     "Explore SHAPES, the Studio ByCristian collection of sculptural designer furniture created with expressive form, refined woodworking, and collectible character.",

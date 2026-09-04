@@ -9,6 +9,12 @@ import { WASSENAAR_HERO_IMAGE } from "@/lib/wassenaar-public-assets"
 
 const turnKeyProjects = [
   {
+    name: "Satkara Restaurant",
+    description: "An Indian-Nepalese fine-dining restaurant in Amsterdam delivered through complete turn-key renovation, general contracting, bespoke elements and custom furniture.",
+    imageUrl: "/satkara-restaurant-turn-key-renovation/final/final-05.webp",
+    link: "/satkara-restaurant-turn-key-renovation",
+  },
+  {
     name: "Duplex Transformation Amsterdam",
     description: "An ageing Amsterdam duplex transformed into two independent, all-electric apartments with custom kitchens, new technical systems and a rooftop extension.",
     imageUrl: "/duplex-transformation-amsterdam/design-vision/render-04.webp",

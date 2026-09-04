@@ -1,12 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import type { KeyboardEvent as ReactKeyboardEvent } from "react"
 import { X, Play } from "lucide-react"
 import AnimatedElement from "@/components/animated-element"
 import ConsentGate from "@/components/consent-gate"
 
-interface ProjectVideoShowcaseProps {
-  videoId: string
+interface ProjectVideoShowcaseBaseProps {
   title: string
   description: string
   aspectRatio?: "16:9" | "4:3"
@@ -15,17 +15,34 @@ interface ProjectVideoShowcaseProps {
   cardDescription?: string
 }
 
-export default function ProjectVideoShowcase({
-  videoId,
-  title,
-  description,
-  aspectRatio = "16:9",
-  variant = "showcase",
-  category = "Interior Renovation",
-  cardDescription,
-}: ProjectVideoShowcaseProps) {
+type ProjectVideoShowcaseProps = ProjectVideoShowcaseBaseProps & (
+  | {
+      videoId: string
+      videoSrc?: never
+      posterSrc?: never
+    }
+  | {
+      videoId?: never
+      videoSrc: string
+      posterSrc: string
+    }
+)
+
+export default function ProjectVideoShowcase(props: ProjectVideoShowcaseProps) {
+  const {
+    title,
+    description,
+    aspectRatio = "16:9",
+    variant = "showcase",
+    category = "Interior Renovation",
+    cardDescription,
+  } = props
   const [showModal, setShowModal] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
+  const localVideoSrc = props.videoSrc
+  const posterSrc = props.posterSrc
+  const vimeoVideoId = props.videoId
+  const isLocalVideo = typeof localVideoSrc === "string"
   const aspectRatioClassName = aspectRatio === "4:3" ? "aspect-[4/3]" : "aspect-video"
   const modalStyle = aspectRatio === "4:3"
     ? { width: "min(100%, 80rem, calc(133.333vh - 2.667rem))" }
@@ -65,6 +82,12 @@ export default function ProjectVideoShowcase({
     setShowModal(false)
   }
 
+  const handlePreviewKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== "Enter" && event.key !== " ") return
+    event.preventDefault()
+    openModal()
+  }
+
   return (
     <>
       {/* Video Showcase Section */}
@@ -89,6 +112,10 @@ export default function ProjectVideoShowcase({
             <div
               className={isWalkthrough ? "group relative mx-auto max-w-4xl cursor-pointer" : "group relative cursor-pointer"}
               onClick={openModal}
+              onKeyDown={handlePreviewKeyDown}
+              role="button"
+              tabIndex={0}
+              aria-label={`Play ${title} video`}
             >
               {/* Video Container */}
               <div className={isWalkthrough
@@ -117,9 +144,21 @@ export default function ProjectVideoShowcase({
 
                 {/* Video Embed */}
                 <div className={`relative ${aspectRatioClassName}`}>
-                  {isMounted ? (
+                  {isLocalVideo ? (
+                    <video
+                      src={localVideoSrc}
+                      poster={posterSrc}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      aria-label={`${title} video preview`}
+                      className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+                    />
+                  ) : isMounted ? (
                     <ConsentGate compact><iframe
-                      src={`https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479`}
+                      src={`https://player.vimeo.com/video/${vimeoVideoId}?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&background=1&player_id=0&app_id=58479`}
                       frameBorder="0"
                       allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                       referrerPolicy="strict-origin-when-cross-origin"
@@ -205,14 +244,27 @@ export default function ProjectVideoShowcase({
             </div>
 
             {/* Full-size Video with Controls */}
-            <ConsentGate compact><iframe
-              src={`https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&muted=0&controls=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              className="w-full h-full"
-              title="Video Player"
-            /></ConsentGate>
+            {isLocalVideo ? (
+              <video
+                src={localVideoSrc}
+                poster={posterSrc}
+                autoPlay
+                controls
+                playsInline
+                preload="metadata"
+                aria-label={`${title} video player`}
+                className="h-full w-full object-contain"
+              />
+            ) : (
+              <ConsentGate compact><iframe
+                src={`https://player.vimeo.com/video/${vimeoVideoId}?autoplay=1&loop=1&muted=0&controls=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                className="w-full h-full"
+                title="Video Player"
+              /></ConsentGate>
+            )}
           </div>
 
           {/* Instructions */}

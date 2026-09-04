@@ -22,7 +22,7 @@ const ourWorkItems = [
   },
   {
     title: "Interior Renovation",
-    imageUrl: "/turn-key-management-page/Turn-Key-Management-Header-scaled.jpg.jpeg",
+    imageUrl: "/satkara-restaurant-turn-key-renovation/final/final-05.webp",
     link: "/interior-renovation",
     description: "Well-managed, end-to-end renovation services — from the first sketch to the final detail.",
   },

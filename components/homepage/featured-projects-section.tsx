@@ -5,6 +5,11 @@ import { motion, type Variants } from "framer-motion"
 
 const featuredProjectItems = [
   {
+    name: "Satkara Restaurant",
+    imageUrl: "/satkara-restaurant-turn-key-renovation/final/final-19.webp",
+    link: "/satkara-restaurant-turn-key-renovation",
+  },
+  {
     name: "BizzStay Delft Project",
     imageUrl: "/featured-projects-extra/BizzSaty_Delft-Project.png",
     link: "/bizzstay-delft",
@@ -77,6 +82,41 @@ export default function FeaturedProjectsSection() {
           </div>
         </AnimatedElement>
 
+        {/* New flagship project */}
+        <AnimatedElement animationType="fadeInUp" className="mb-8">
+          <motion.div
+            variants={cardVariants}
+            initial="initial"
+            whileInView="animate"
+            whileHover="hover"
+            viewport={{ once: true, amount: 0.25 }}
+            className="group"
+          >
+            <Link href={featuredProjectItems[0].link} className="block">
+              <div className="relative h-[500px] overflow-hidden rounded-2xl bg-gray-100 shadow-xl transition-all duration-700 hover:shadow-2xl lg:h-[620px]">
+                <Image
+                  src={featuredProjectItems[0].imageUrl}
+                  alt={featuredProjectItems[0].name}
+                  fill
+                  className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+                  sizes="100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/10" />
+                <div className="absolute bottom-5 left-5 right-5 lg:bottom-10 lg:left-10 lg:right-10">
+                  <div className="max-w-3xl rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur-xl transition-all duration-500 group-hover:bg-white/15 lg:p-8">
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/70">New Featured Project</p>
+                    <h3 className="mt-3 text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-5xl">{featuredProjectItems[0].name}</h3>
+                    <div className="mt-5 inline-flex items-center gap-3 text-sm font-medium text-white/90 lg:text-base">
+                      Explore Project
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/40 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+        </AnimatedElement>
+
         {/* Sophisticated Asymmetric Layout */}
         <div className="space-y-8">
           {/* First Row - Two Items */}
@@ -91,11 +131,11 @@ export default function FeaturedProjectsSection() {
                 viewport={{ once: true, amount: 0.3 }}
                 className="group h-full"
               >
-                <Link href={featuredProjectItems[0].link} className="block h-full">
+                <Link href={featuredProjectItems[1].link} className="block h-full">
                   <div className="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-700 h-[500px] bg-gray-100">
                     <Image
-                      src={featuredProjectItems[0].imageUrl}
-                      alt={featuredProjectItems[0].name}
+                      src={featuredProjectItems[1].imageUrl}
+                      alt={featuredProjectItems[1].name}
                       fill
                       className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                       sizes="(max-width: 1024px) 100vw, 66vw"
@@ -113,7 +153,7 @@ export default function FeaturedProjectsSection() {
                         className="backdrop-blur-xl bg-white/10 rounded-xl p-4 lg:p-8 border border-white/20 group-hover:bg-white/15 group-hover:border-white/30 transition-all duration-500"
                       >
                         <h3 className="text-xl lg:text-3xl font-bold text-white mb-2 lg:mb-4 leading-tight">
-                          {featuredProjectItems[0].name}
+                          {featuredProjectItems[1].name}
                         </h3>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-3">
@@ -153,55 +193,8 @@ export default function FeaturedProjectsSection() {
                 viewport={{ once: true, amount: 0.3 }}
                 className="group h-full"
               >
-                <Link href={featuredProjectItems[1].link} className="block h-full">
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 h-[500px] bg-gray-100">
-                    <Image
-                      src={featuredProjectItems[1].imageUrl}
-                      alt={featuredProjectItems[1].name}
-                      fill
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                      sizes="(max-width: 1024px) 100vw, 33vw"
-                    />
-                    
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/60 group-hover:to-black/70 transition-all duration-500" />
-                    
-                    <div className="absolute bottom-4 left-4 right-4 lg:bottom-6 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:w-auto lg:max-w-lg lg:min-w-80">
-                      <div className="backdrop-blur-sm bg-white/5 rounded-lg p-4 lg:p-6 border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-500">
-                        <h3 className="text-lg lg:text-xl font-semibold text-white mb-2 lg:mb-3 leading-tight text-left">
-                          {featuredProjectItems[1].name}
-                        </h3>
-                        <div className="flex items-center text-white/70 group-hover:text-white/90 transition-colors duration-300">
-                          <span className="text-sm font-medium">View Project</span>
-                          <motion.span
-                            className="ml-2 hidden lg:inline"
-                            whileHover={{ x: 4 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                          >
-                            →
-                          </motion.span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            </AnimatedElement>
-          </div>
-
-          {/* Second Row - Two Items Reversed */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Smaller Project */}
-            <AnimatedElement animationType="fadeInLeft" delay={0.2}>
-              <motion.div
-                variants={cardVariants}
-                initial="initial"
-                whileInView="animate"
-                whileHover="hover"
-                viewport={{ once: true, amount: 0.3 }}
-                className="group h-full"
-              >
                 <Link href={featuredProjectItems[2].link} className="block h-full">
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 h-[400px] bg-gray-100">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 h-[500px] bg-gray-100">
                     <Image
                       src={featuredProjectItems[2].imageUrl}
                       alt={featuredProjectItems[2].name}
@@ -233,6 +226,53 @@ export default function FeaturedProjectsSection() {
                 </Link>
               </motion.div>
             </AnimatedElement>
+          </div>
+
+          {/* Second Row - Two Items Reversed */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Smaller Project */}
+            <AnimatedElement animationType="fadeInLeft" delay={0.2}>
+              <motion.div
+                variants={cardVariants}
+                initial="initial"
+                whileInView="animate"
+                whileHover="hover"
+                viewport={{ once: true, amount: 0.3 }}
+                className="group h-full"
+              >
+                <Link href={featuredProjectItems[3].link} className="block h-full">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 h-[400px] bg-gray-100">
+                    <Image
+                      src={featuredProjectItems[3].imageUrl}
+                      alt={featuredProjectItems[3].name}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                    />
+                    
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/60 group-hover:to-black/70 transition-all duration-500" />
+                    
+                    <div className="absolute bottom-4 left-4 right-4 lg:bottom-6 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:w-auto lg:max-w-lg lg:min-w-80">
+                      <div className="backdrop-blur-sm bg-white/5 rounded-lg p-4 lg:p-6 border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-500">
+                        <h3 className="text-lg lg:text-xl font-semibold text-white mb-2 lg:mb-3 leading-tight text-left">
+                          {featuredProjectItems[3].name}
+                        </h3>
+                        <div className="flex items-center text-white/70 group-hover:text-white/90 transition-colors duration-300">
+                          <span className="text-sm font-medium">View Project</span>
+                          <motion.span
+                            className="ml-2 hidden lg:inline"
+                            whileHover={{ x: 4 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                          >
+                            →
+                          </motion.span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            </AnimatedElement>
 
             {/* Large Featured Project */}
             <AnimatedElement animationType="fadeInRight" delay={0.3} className="lg:col-span-2">
@@ -244,11 +284,11 @@ export default function FeaturedProjectsSection() {
                 viewport={{ once: true, amount: 0.3 }}
                 className="group h-full"
               >
-                <Link href={featuredProjectItems[3].link} className="block h-full">
+                <Link href={featuredProjectItems[4].link} className="block h-full">
                   <div className="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-700 h-[400px] bg-gray-100">
                     <Image
-                      src={featuredProjectItems[3].imageUrl}
-                      alt={featuredProjectItems[3].name}
+                      src={featuredProjectItems[4].imageUrl}
+                      alt={featuredProjectItems[4].name}
                       fill
                       className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                       sizes="(max-width: 1024px) 100vw, 66vw"
@@ -264,7 +304,7 @@ export default function FeaturedProjectsSection() {
                         className="backdrop-blur-xl bg-white/10 rounded-xl p-4 lg:p-8 border border-white/20 group-hover:bg-white/15 group-hover:border-white/30 transition-all duration-500"
                       >
                         <h3 className="text-xl lg:text-3xl font-bold text-white mb-2 lg:mb-4 leading-tight">
-                          {featuredProjectItems[3].name}
+                          {featuredProjectItems[4].name}
                         </h3>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-3">

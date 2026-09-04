@@ -12,7 +12,7 @@ import { z } from "zod"
 import { callableOptions, db, defaultSettings, ORG_ID, org, REGION, bucket } from "./lib/config.js"
 import { requireRole, requireUser, createActionToken, verifyActionToken } from "./lib/auth.js"
 import { bookingSchema, settingsSchema, statuses, transitionSchema, type BookingStatus } from "./lib/schemas.js"
-import { generateSlots, isSlotWithinSchedule, slotKey, type AvailabilitySettings } from "./lib/availability.js"
+import { generateSlots, getBookingWindow, isSlotWithinSchedule, slotKey, type AvailabilitySettings } from "./lib/availability.js"
 import { queueEmail } from "./lib/email-queue.js"
 import { renderEmail, type EmailTemplate } from "./lib/email.js"
 
@@ -60,6 +60,7 @@ export const getPublicAvailability = onCall(callableOptions, async (request) => 
   try {
     const input = z.object({ from: z.string().date(), to: z.string().date(), appointmentTypeId: z.string().default("project-consultation") }).parse(request.data)
     const settings = await loadSettings()
+    const availabilityNow = DateTime.utc()
     const from = DateTime.fromISO(input.from, { zone: settings.timeZone }).startOf("day").toUTC().toJSDate()
     const to = DateTime.fromISO(input.to, { zone: settings.timeZone }).endOf("day").toUTC().toJSDate()
     const appointments = await org.collection("appointments").where("startsAt", ">=", Timestamp.fromDate(from)).where("startsAt", "<=", Timestamp.fromDate(to)).get()
@@ -70,7 +71,7 @@ export const getPublicAvailability = onCall(callableOptions, async (request) => 
       const holding = data.status === "confirmed" || data.status === "proposed" || (data.status === "pending" && data.holdExpiresAt?.toDate() > now)
       if (holding) occupied.add(data.startsAt.toDate().toISOString())
     }
-    const slots = generateSlots(settings as AvailabilitySettings, input.from, input.to, occupied)
+    const slots = generateSlots(settings as AvailabilitySettings, input.from, input.to, occupied, availabilityNow)
     logger.info("availability.request.completed", {
       traceId,
       from: input.from,
@@ -83,6 +84,7 @@ export const getPublicAvailability = onCall(callableOptions, async (request) => 
     return {
       timeZone: settings.timeZone,
       durationMinutes: settings.durationMinutes,
+      bookingWindow: getBookingWindow(settings as AvailabilitySettings, availabilityNow),
       slots,
     }
   } catch (error) {

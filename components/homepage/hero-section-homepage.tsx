@@ -32,6 +32,14 @@ const heroNavItems = [
     link: "/interior-renovation",
     cta: "Learn About Turn Key",
   },
+  {
+    id: "satkara",
+    title: "Satkara Restaurant",
+    subtitle: "Turn-key renovation and general contracting shaped by heritage, craftsmanship and natural materials.",
+    imageUrl: "/satkara-restaurant-turn-key-renovation/final/final-05.webp",
+    link: "/satkara-restaurant-turn-key-renovation",
+    cta: "Explore Satkara",
+  },
   // {
   //   id: "archive",
   //   title: "Work Archive",
@@ -257,6 +265,8 @@ export default function HeroSectionHomepage() {
               <motion.button
                 key={item.id}
                 onClick={() => !isTransitioning && handleHeroChange(item)}
+                aria-label={`Show ${item.title}`}
+                aria-pressed={activeHero.id === item.id}
                 className="group focus:outline-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -347,4 +357,4 @@ export default function HeroSectionHomepage() {
       )}
     </section>
   )
-} 
+}
