@@ -28,17 +28,9 @@ const heroNavItems = [
     id: "turnkey",
     title: "Interior Renovation",
     subtitle: "Turn-key transformations, managed with precision.",
-    imageUrl: "/home-page/Turn-Key-Management-2-scaled.jpg.jpeg",
+    imageUrl: "/satkara-restaurant-turn-key-renovation/final/final-05.webp",
     link: "/interior-renovation",
     cta: "Learn About Turn Key",
-  },
-  {
-    id: "satkara",
-    title: "Satkara Restaurant",
-    subtitle: "Turn-key renovation and general contracting shaped by heritage, craftsmanship and natural materials.",
-    imageUrl: "/satkara-restaurant-turn-key-renovation/final/final-05.webp",
-    link: "/satkara-restaurant-turn-key-renovation",
-    cta: "Explore Satkara",
   },
   // {
   //   id: "archive",
