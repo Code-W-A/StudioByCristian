@@ -28,26 +28,23 @@ const scopeItems = [
 ] as const
 
 const portraitFinalImages = new Set([14, 15, 22, 24, 27, 28, 31, 32, 33, 34, 35, 36])
-const finalImages = Array.from({ length: 36 }, (_, index) => {
-  const number = index + 1
-  return {
+const finalsWithPeople = new Set([4, 8, 10])
+const finalImages = Array.from({ length: 36 }, (_, index) => index + 1)
+  .filter((number) => !finalsWithPeople.has(number))
+  .map((number) => ({
     src: `${assetRoot}/final/final-${String(number).padStart(2, "0")}.webp`,
     alt: `Satkara Restaurant completed interior ${number}`,
     portrait: portraitFinalImages.has(number),
-  }
-})
+  }))
 
 const portraitProgressImages = new Set([8, 11])
 // The source HEIC files for 01–06 decode as fully black frames in the build.
-// Keep only the supplied work-in-progress images that contain visible content.
-const progressImages = Array.from({ length: 5 }, (_, index) => {
-  const number = index + 7
-  return {
-    src: `${assetRoot}/work-in-progress/progress-${String(number).padStart(2, "0")}.webp`,
-    alt: `Satkara Restaurant renovation in progress ${number}`,
-    portrait: portraitProgressImages.has(number),
-  }
-})
+// Keep only the supplied work-in-progress images that contain visible content and no people.
+const progressImages = [7, 8, 9, 11].map((number) => ({
+  src: `${assetRoot}/work-in-progress/progress-${String(number).padStart(2, "0")}.webp`,
+  alt: `Satkara Restaurant renovation in progress ${number}`,
+  portrait: portraitProgressImages.has(number),
+}))
 
 const editorialGalleryPattern = [
   "lg:col-span-8 lg:row-span-2",
@@ -199,8 +196,8 @@ export default function SatkaraRestaurantTurnKeyRenovationPage() {
               <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">During &amp; Completed</h3>
             </div>
             <BeforeAfterComparison
-              beforeSrc={`${assetRoot}/work-in-progress/progress-10.webp`}
-              afterSrc={`${assetRoot}/final/final-05.webp`}
+              beforeSrc={`${assetRoot}/work-in-progress/progress-09.webp`}
+              afterSrc={`${assetRoot}/final/final-07.webp`}
               alt="Satkara Restaurant transformation in Amsterdam"
               beforeLabel="During"
               afterLabel="Completed"
@@ -288,7 +285,7 @@ export default function SatkaraRestaurantTurnKeyRenovationPage() {
             </AnimatedElement>
             <AnimatedElement animationType="fadeInRight" delay={0.12} className="lg:col-span-7">
               <figure className="relative aspect-[4/3] overflow-hidden bg-black/5">
-                <Image src={`${assetRoot}/final/final-10.webp`} alt="Satkara lighting and textured dining interior" fill className="object-cover" sizes="(max-width: 1023px) 100vw, 60vw" />
+                <Image src={`${assetRoot}/final/final-11.webp`} alt="Satkara lighting and textured dining interior" fill className="object-cover" sizes="(max-width: 1023px) 100vw, 60vw" />
               </figure>
             </AnimatedElement>
           </div>

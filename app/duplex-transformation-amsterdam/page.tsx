@@ -79,16 +79,12 @@ const scopeGroups = [
   },
 ] as const
 
-const workInProgressImages = Array.from({ length: 26 }, (_, index) => {
-  const number = index + 1
-  const portrait = [4, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24, 25, 26].includes(number)
-
-  return {
-    src: `${assetRoot}/work-in-progress/ongoing-${String(number).padStart(2, "0")}.webp`,
-    alt: `Duplex Transformation Amsterdam — work in progress ${number}`,
-    portrait,
-  }
-})
+const portraitWorkInProgressImages = new Set([12, 13, 14, 22, 23, 25, 26])
+const workInProgressImages = [2, 3, 6, 8, 10, 12, 13, 14, 17, 22, 23, 25, 26].map((number) => ({
+  src: `${assetRoot}/work-in-progress/ongoing-${String(number).padStart(2, "0")}.webp`,
+  alt: `Duplex Transformation Amsterdam — work in progress ${number}`,
+  portrait: portraitWorkInProgressImages.has(number),
+}))
 
 const designVisionImages = Array.from({ length: 8 }, (_, index) => {
   const number = index + 1
@@ -291,7 +287,7 @@ export default function DuplexTransformationAmsterdamPage() {
               <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">Real Picture Before &amp; After</h3>
             </div>
             <BeforeAfterComparison
-              beforeSrc={`${assetRoot}/work-in-progress/ongoing-16.webp`}
+              beforeSrc={`${assetRoot}/work-in-progress/ongoing-02.webp`}
               afterSrc={`${assetRoot}/design-vision/render-04.webp`}
               alt="living–dining area transformation in Amsterdam"
               beforeLabel="Before"
@@ -469,8 +465,8 @@ export default function DuplexTransformationAmsterdamPage() {
             <AnimatedElement animationType="fadeInRight" delay={0.12} className="lg:col-span-7">
               <figure className="relative aspect-[3/4] overflow-hidden bg-black/5 sm:aspect-[4/3] sm:min-h-[28rem] lg:min-h-[clamp(36rem,44vw,40rem)]">
                 <Image
-                  src={`${assetRoot}/work-in-progress/ongoing-01.webp`}
-                  alt="Exposed structure and construction team during the Amsterdam duplex transformation"
+                  src={`${assetRoot}/work-in-progress/ongoing-08.webp`}
+                  alt="Exposed structure and construction materials during the Amsterdam duplex transformation"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1023px) 100vw, 60vw"
