@@ -104,7 +104,7 @@ export default function AnimatedElement({
   const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
   
   if (prefersReducedMotion) {
-    return <div ref={ref} className={className}>{children}</div>
+    return <div ref={ref} className={`animated-element ${className ?? ""}`}>{children}</div>
   }
 
   return (
@@ -113,7 +113,7 @@ export default function AnimatedElement({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={variantsWithDelay}
-      className={className}
+      className={`animated-element ${className ?? ""}`}
       // Add will-change for better mobile performance
       style={{ willChange: inView ? 'transform, opacity' : 'auto' }}
     >

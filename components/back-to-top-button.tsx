@@ -1,8 +1,10 @@
 "use client"
 
+import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
 
 export default function BackToTopButton() {
+  const pathname = usePathname()
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -25,6 +27,8 @@ export default function BackToTopButton() {
       behavior: "smooth",
     })
   }
+
+  if (pathname.startsWith("/admin")) return null
 
   return (
     <button

@@ -11,6 +11,7 @@ export function useAdminCollection(path: string, orderField?: string) {
   const [data, setData] = useState<AdminDocument[]>([]); const [loading, setLoading] = useState(true); const [error, setError] = useState("")
   useEffect(() => {
     if (!firestore) { setLoading(false); return }
+    setData([]); setLoading(true); setError("")
     const reference = collection(firestore, `organizations/${ORGANIZATION_ID}/${path}`)
     const target = orderField ? query(reference, orderBy(orderField, "desc")) : query(reference)
     const unsubscribe = onSnapshot(target, snapshot => { setData(snapshot.docs.map(document => ({ id: document.id, ...document.data() }))); setLoading(false) }, reason => { setError(reason.message); setLoading(false) })
@@ -21,7 +22,8 @@ export function useAdminCollection(path: string, orderField?: string) {
 
 export function dateValue(value: unknown) {
   if (value && typeof value === "object" && "toDate" in value && typeof value.toDate === "function") return value.toDate() as Date
-  return value ? new Date(String(value)) : null
+  const date = value ? new Date(String(value)) : null
+  return date && Number.isFinite(date.getTime()) ? date : null
 }
 
 export function formatAppointment(value: unknown) {

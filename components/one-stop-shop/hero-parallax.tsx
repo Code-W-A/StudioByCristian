@@ -27,7 +27,7 @@ export default function HeroParallax({
   return (
     <div ref={ref} className="absolute inset-0 overflow-hidden">
       <motion.div className="absolute -top-[10%] left-0 h-[120%] w-full" style={{ y }}>
-        <Image src={src} alt={alt} fill priority sizes="100vw" className="object-cover object-center" />
+        <Image quality={95} src={src} alt={alt} fill priority sizes="100vw" className="object-cover object-center" />
       </motion.div>
     </div>
   )

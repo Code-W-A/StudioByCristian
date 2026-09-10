@@ -40,10 +40,10 @@ export default function ServiceNavigator({ services }: { services: OneStopShopSe
                     active ? "scale-y-100" : "scale-y-0"
                   }`}
                 />
-                <span className={`text-[11px] tracking-[0.2em] transition-colors duration-500 ${active ? "text-black" : "text-black/35 group-hover:text-black/55 group-focus-visible:text-white/60"}`}>
+                <span className={`text-[11px] tracking-[0.2em] transition-colors duration-500 ${active ? "text-black group-focus-visible:text-white/60" : "text-black/35 group-hover:text-black/55 group-focus-visible:text-white/60"}`}>
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className={`text-[clamp(1.45rem,2.1vw,2.25rem)] leading-none transition-colors duration-500 ${active ? "text-black" : "text-black/40 group-hover:text-black/70 group-focus-visible:text-white"}`}>
+                <span className={`text-[clamp(1.45rem,2.1vw,2.25rem)] leading-none transition-colors duration-500 ${active ? "text-black group-focus-visible:text-white" : "text-black/40 group-hover:text-black/70 group-focus-visible:text-white"}`}>
                   {service.title}
                 </span>
               </button>
@@ -55,7 +55,7 @@ export default function ServiceNavigator({ services }: { services: OneStopShopSe
           {services.map((service, index) => {
             const active = activeIndex === index
             return (
-              <Image
+              <Image quality={95}
                 key={service.title}
                 src={service.image}
                 alt={active ? service.imageAlt : ""}
@@ -105,7 +105,7 @@ export default function ServiceNavigator({ services }: { services: OneStopShopSe
               <div id={panelId} hidden={!active}>
                 {active && (
                   <div className="relative aspect-[4/3] overflow-hidden bg-[#d8d3c9]">
-                    <Image
+                    <Image quality={95}
                       src={service.image}
                       alt={service.imageAlt}
                       fill

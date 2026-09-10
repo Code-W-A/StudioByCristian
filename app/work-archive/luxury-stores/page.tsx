@@ -16,7 +16,7 @@ const galleryDetails = {
   images: [
     { src: "/STUDIO BY CRISTIAN PAGINI RAMASE/work-archive-luxury-stores/Luxury-Stores-02.jpg.jpeg", alt: "Luxury Store Design 1" },
     { src: "/STUDIO BY CRISTIAN PAGINI RAMASE/work-archive-luxury-stores/Luxury-Stores-03.jpg.jpeg", alt: "Luxury Store Design 2" },
-    { src: "/STUDIO BY CRISTIAN PAGINI RAMASE/work-archive-luxury-stores/Luxury-Stores-04.jpg.jpeg", alt: "Luxury Store Design 3" },
+    { src: "/STUDIO BY CRISTIAN PAGINI RAMASE/work-archive-luxury-stores/Luxury-Stores-04-1024x768.jpg.jpeg", alt: "Luxury Store Design 3" },
     { src: "/STUDIO BY CRISTIAN PAGINI RAMASE/work-archive-luxury-stores/Luxury-Stores-05.jpg.jpeg", alt: "Luxury Store Design 4" },
     { src: "/STUDIO BY CRISTIAN PAGINI RAMASE/work-archive-luxury-stores/Luxury-Stores-06.jpg.jpeg", alt: "Luxury Store Design 5" },
     { src: "/STUDIO BY CRISTIAN PAGINI RAMASE/work-archive-luxury-stores/Luxury-Stores-07.jpg.jpeg", alt: "Luxury Store Design 6" },

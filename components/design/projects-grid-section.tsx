@@ -13,7 +13,7 @@ const designProjects = [
   },
   {
     name: "Private Residential Holiday House",
-    imageUrl: "/extra design/Horezu Holiday House/2_Conceptul 3D/02.Sabina&Viorel Leganaru _ Living u2.jpg",
+    imageUrl: "/extra%20design/Horezu%20Holiday%20House/2_Conceptul%203D/02.Sabina%26Viorel%20Leganaru%20_%20Living%20u2.jpg",
     link: "/private-residential-holiday-house",
   },
   {

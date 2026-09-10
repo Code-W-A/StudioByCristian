@@ -16,11 +16,11 @@ export default function HomePage() {
       <HeroSectionHomepage />
       <AboutUsSection />
       <OurWorkSection />
+      <OneStopShopCta />
       <FeaturedProjectsSection />
       <VideosSection />
       <TestimonialsSection />
       <ShapesCollectionSection />
-      <OneStopShopCta />
       <ContactSection />
     </div>
   )

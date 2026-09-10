@@ -45,3 +45,6 @@ functions/.env*
 functions/.secret.local
 test-results/
 playwright-report/
+
+# Local browser QA evidence
+/artifacts/qa-*/

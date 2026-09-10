@@ -12,13 +12,13 @@ import { motion } from "framer-motion"
 const projectDetails = {
   title: "Private Residential Holiday House",
   category: "Interior Design",
-  heroImage: "/extra design/Horezu Holiday House/2_Conceptul 3D/02.Sabina&Viorel Leganaru _ Living u2.jpg",
+  heroImage: "/extra%20design/Horezu%20Holiday%20House/2_Conceptul%203D/02.Sabina%26Viorel%20Leganaru%20_%20Living%20u2.jpg",
   description: "We want to share with you how we address an interior design project presenting you the main steps:",
   processSteps: {
     moodboard: {
       title: "1. Moodboard & Survey",
       description: "Firstly, after meeting and speaking to our clients, we compose a Mood board in order to start a vision based on the meeting feedback. We measure the space, create a plan solution and propose a mood for the spaces using relevant suggestive images, colours and textures.",
-      image: "/extra design/Horezu Holiday House/1_Moodboard si releveu/Sabina & Viorel Leganaru _ Moodboard_page-0001.jpg"
+      image: "/extra%20design/Horezu%20Holiday%20House/1_Moodboard%20si%20releveu/Sabina%20%26%20Viorel%20Leganaru%20_%20Moodboard_page-0001.jpg"
     },
     concept3D: {
       title: "2. 3D Concept", 
@@ -27,26 +27,26 @@ const projectDetails = {
         living: {
           title: "Living Room",
           images: [
-            "/extra design/Horezu Holiday House/2_Conceptul 3D/02.Sabina&Viorel Leganaru _ Living u2.jpg",
-            "/extra design/Horezu Holiday House/2_Conceptul 3D/04.Sabina&Viorel Leganaru _ Bucatarie u1.jpg",
-            "/extra design/Horezu Holiday House/2_Conceptul 3D/06.Sabina&Viorel Leganaru _ Bucatarie u3.jpg"
+            "/extra%20design/Horezu%20Holiday%20House/2_Conceptul%203D/02.Sabina%26Viorel%20Leganaru%20_%20Living%20u2.jpg",
+            "/extra%20design/Horezu%20Holiday%20House/2_Conceptul%203D/04.Sabina%26Viorel%20Leganaru%20_%20Bucatarie%20u1.jpg",
+            "/extra%20design/Horezu%20Holiday%20House/2_Conceptul%203D/06.Sabina%26Viorel%20Leganaru%20_%20Bucatarie%20u3.jpg"
           ]
         },
         masterBedroom: {
           title: "Master Bedroom & Bathroom",
           images: [
-            "/extra design/Horezu Holiday House/2_Conceptul 3D/07.Sabina&Viorel Leganaru _ Dormitor Matrimonial u1.jpg",
-            "/extra design/Horezu Holiday House/2_Conceptul 3D/08.Sabina&Viorel Leganaru _ Dormitor Matrimonial u2.jpg",
+            "/extra%20design/Horezu%20Holiday%20House/2_Conceptul%203D/07.Sabina%26Viorel%20Leganaru%20_%20Dormitor%20Matrimonial%20u1.jpg",
+            "/extra%20design/Horezu%20Holiday%20House/2_Conceptul%203D/08.Sabina%26Viorel%20Leganaru%20_%20Dormitor%20Matrimonial%20u2.jpg",
             "/extra design/Horezu Holiday House/2_Conceptul 3D/10.Baie Matrimoniala u1 v1.jpg"
           ]
         },
         otherRooms: {
           title: "Daughter's Bedroom & Grandmother's Bedroom",
           images: [
-            "/extra design/Horezu Holiday House/2_Conceptul 3D/18.Sabina&Viorel Leganaru _ Dormitor Daria u1.jpg",
-            "/extra design/Horezu Holiday House/2_Conceptul 3D/20.Sabina&Viorel Leganaru _ Dormitor Daria u3.jpg",
-            "/extra design/Horezu Holiday House/2_Conceptul 3D/16.Sabina&Viorel Leganaru _ Dormitor Bunica u2.jpg",
-            "/extra design/Horezu Holiday House/2_Conceptul 3D/17.Sabina&Viorel Leganaru _ Dormitor Bunica u1.jpg"
+            "/extra%20design/Horezu%20Holiday%20House/2_Conceptul%203D/18.Sabina%26Viorel%20Leganaru%20_%20Dormitor%20Daria%20u1.jpg",
+            "/extra%20design/Horezu%20Holiday%20House/2_Conceptul%203D/20.Sabina%26Viorel%20Leganaru%20_%20Dormitor%20Daria%20u3.jpg",
+            "/extra%20design/Horezu%20Holiday%20House/2_Conceptul%203D/16.Sabina%26Viorel%20Leganaru%20_%20Dormitor%20Bunica%20u2.jpg",
+            "/extra%20design/Horezu%20Holiday%20House/2_Conceptul%203D/17.Sabina%26Viorel%20Leganaru%20_%20Dormitor%20Bunica%20u1.jpg"
           ]
         },
         bathroom: {

@@ -43,7 +43,7 @@ export default function ImageReveal({ src, alt, sizes, className, parallax = fal
           whileHover={reduced ? undefined : { scale: 1.02 }}
           transition={{ duration: 0.7, ease: ossEase }}
         >
-          <Image src={src} alt={alt} fill sizes={sizes} className="object-cover" />
+          <Image quality={95} src={src} alt={alt} fill sizes={sizes} className="object-cover" />
         </motion.div>
       </motion.div>
     </div>

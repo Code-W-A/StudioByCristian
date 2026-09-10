@@ -6,7 +6,7 @@ import { readFileSync } from "node:fs"
 import { resolve } from "node:path"
 
 let environment: RulesTestEnvironment
-const projectId = "studio-bycristian-oss"
+const projectId = "demo-studio-rules"
 const appointmentPath = "organizations/studio-bycristian/appointments/test-appointment"
 
 beforeAll(async () => {

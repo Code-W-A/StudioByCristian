@@ -25,11 +25,11 @@ interface HeroSectionProps {
 
 // Cropped and slider images from extra-from-wapp folders
 const technicalImages = [
-  "/extra-from-wapp/Lage&Roy Institute Presentation 2022 Nov/lage-roy-cropped.jpg",
-  "/extra-from-wapp/Lage&Roy Institute_Phase2_Technical Detailing/institute-phase-slider-cropp.jpg",
-  "/extra-from-wapp/A1. 01 Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 1/A1. 01 Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 1_page-0001-cropp-slide.jpg",
-  "/extra-from-wapp/A1. 00 Lage&Roy Institute_Plan Mobilare cu cote_ Parter/A1. 00 Lage&Roy Institute_Plan Mobilare cu cote_ Parter_page-0001-cropp-slider.jpg",
-  "/extra-from-wapp/A1. 02  Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 2/A1. 02  Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 2_page-0001.jpg"
+  "/extra-from-wapp/Lage%26Roy%20Institute%20Presentation%202022%20Nov/lage-roy-cropped.jpg",
+  "/extra-from-wapp/Lage%26Roy%20Institute_Phase2_Technical%20Detailing/institute-phase-slider-cropp.jpg",
+  "/extra-from-wapp/A1.%2001%20Lage%26Roy%20Institute_Plan%20Mobilare%20cu%20cote_%20Etaj%201/A1.%2001%20Lage%26Roy%20Institute_Plan%20Mobilare%20cu%20cote_%20Etaj%201_page-0001-cropp-slide.jpg",
+  "/extra-from-wapp/A1.%2000%20Lage%26Roy%20Institute_Plan%20Mobilare%20cu%20cote_%20Parter/A1.%2000%20Lage%26Roy%20Institute_Plan%20Mobilare%20cu%20cote_%20Parter_page-0001-cropp-slider.jpg",
+  "/extra-from-wapp/A1.%2002%20%20Lage%26Roy%20Institute_Plan%20Mobilare%20cu%20cote_%20Etaj%202/A1.%2002%20%20Lage%26Roy%20Institute_Plan%20Mobilare%20cu%20cote_%20Etaj%202_page-0001.jpg"
 ]
 
 // Natural image configurations without zoom or transform effects

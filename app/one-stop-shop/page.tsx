@@ -13,12 +13,12 @@ import SplitHeadline from "@/components/one-stop-shop/split-headline"
 import StickyBenefits from "@/components/one-stop-shop/sticky-benefits"
 
 const services: OneStopShopService[] = [
-  { title: "Small Renovation", description: "Refresh or repair a specific part of your home or commercial space.", image: "/STUDIO BY CRISTIAN/private-house-wassenaar/Private-House-Wassenaar-Cover-2048x800.jpg.jpeg", imageAlt: "Renovated interior opening onto a garden" },
-  { title: "Bathroom Renovation", description: "From demolition and plumbing to tiling, sanitary installation and finishing.", image: "/Susan Pyke/Master Bathroom 01.jpg", imageAlt: "Studio ByCristian bathroom interior" },
-  { title: "Painting & Finishing", description: "Walls, ceilings, woodwork, repair work and complete decorative finishing.", image: "/Susan Pyke/Living 02.jpg", imageAlt: "Finished living room interior" },
-  { title: "Custom Furniture", description: "Wardrobes, kitchens, vanities, shelving, wall units and bespoke furniture pieces.", image: "/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-4-1536x1536.jpg.jpeg", imageAlt: "Bespoke joinery and furniture in a private interior" },
-  { title: "Interior Design", description: "Concept, layouts, materials, colours, technical coordination and design guidance.", image: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-10-1026x1536.jpg.jpeg", imageAlt: "Studio ByCristian interior design project" },
-  { title: "Turn-Key Renovation", description: "One managed solution from concept and construction to furnishing and final handover.", image: "/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-Banner-scaled.jpg.jpeg", imageAlt: "Completed turn-key kitchen interior" },
+  { title: "Small Renovation", description: "Refresh or repair a specific part of your home or commercial space.", image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/New House/optimized/QY0A9389.webp", imageAlt: "Renovated interior opening onto a garden" },
+  { title: "Bathroom Renovation", description: "From demolition and plumbing to tiling, sanitary installation and finishing.", image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/New House/optimized/QY0A9495.webp", imageAlt: "Studio ByCristian bathroom interior" },
+  { title: "Painting & Finishing", description: "Walls, ceilings, woodwork, repair work and complete decorative finishing.", image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/New House/optimized/QY0A9402.webp", imageAlt: "Finished living room interior" },
+  { title: "Custom Furniture", description: "Wardrobes, kitchens, vanities, shelving, wall units and bespoke furniture pieces.", image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/New House/optimized/QY0A9452.webp", imageAlt: "Bespoke joinery and furniture in a private interior" },
+  { title: "Interior Design", description: "Concept, layouts, materials, colours, technical coordination and design guidance.", image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/New House/optimized/HERO.webp", imageAlt: "Studio ByCristian interior design project" },
+  { title: "Turn-Key Renovation", description: "One managed solution from concept and construction to furnishing and final handover.", image: "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/New House/optimized/QY0A9459.webp", imageAlt: "Completed turn-key kitchen interior" },
 ]
 
 const scopeGroups = [
@@ -68,7 +68,7 @@ export default function OneStopShopPage() {
 
       <section className="relative min-h-[calc(100svh-5rem)] overflow-hidden bg-black text-white lg:min-h-[86svh]">
         <HeroParallax
-          src="/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-Banner-scaled.jpg.jpeg"
+          src="/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/New House/optimized/QY0A9459.webp"
           alt="Complete Studio ByCristian interior project"
         />
         <div className="absolute inset-0 bg-black/30" />
@@ -124,9 +124,9 @@ export default function OneStopShopPage() {
               </ScrollReveal>
             </div>
             <ImageReveal
-              src="/susan-and-cyril-apartment/Susan-and-Cyril-Apartment-10-1026x1536.jpg.jpeg"
-              alt="View through the completed apartment towards the kitchen"
-              sizes="(min-width: 1024px) 32vw, 100vw"
+              src="/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/New House/QY0A9452.jpg"
+              alt="Wassenaar kitchen with bespoke dark cabinetry and marble worktops"
+              sizes="(min-width: 1600px) 1296px, (min-width: 1024px) 86vw, (min-width: 640px) 1152px, 225vw"
               parallax
               className="mt-2 aspect-[4/5] w-full max-w-[30rem] sm:aspect-[3/4] lg:col-start-1 lg:row-start-2 lg:mt-4 lg:aspect-[2/3]"
             />
@@ -146,7 +146,7 @@ export default function OneStopShopPage() {
 
       <section className="relative overflow-hidden bg-black text-white">
         <HeroParallax
-          src="/STUDIO BY CRISTIAN/private-penthouse/Private-Penthouse-4-1536x1536.jpg.jpeg"
+          src="/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/New House/optimized/QY0A9452.webp"
           alt="Bespoke Studio ByCristian interior"
         />
         <div className="absolute inset-0 bg-black/58" />
@@ -184,7 +184,7 @@ export default function OneStopShopPage() {
           ))}
         </div>
         <ImageReveal
-          src="/STUDIO BY CRISTIAN/private-house-wassenaar/Private-House-Wassenaar-Cover-2048x800.jpg.jpeg"
+          src="/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/New House/optimized/QY0A9389.webp"
           alt="Studio ByCristian renovation and interior project"
           sizes="(min-width: 1440px) 1344px, 100vw"
           parallax

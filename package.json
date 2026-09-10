@@ -14,7 +14,8 @@
     "test:functions": "npm --prefix functions test",
     "test:e2e": "playwright test",
     "firebase:emulators": "firebase emulators:start",
-    "firebase:deploy": "firebase deploy --project studio-bycristian-oss"
+    "firebase:deploy": "firebase deploy --project studio-bycristian-oss",
+    "test:public": "playwright test --config playwright.public.config.ts"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -88,6 +89,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "firebase-admin": "^14.3.0",
+    "firebase-tools": "^15.29.0",
     "postcss": "8.5.24",
     "tailwindcss": "^4.2.2",
     "typescript": "^5",

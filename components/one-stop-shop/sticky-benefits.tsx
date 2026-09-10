@@ -5,8 +5,8 @@ type Benefit = [string, string]
 const eyebrowClass = "text-[10px] uppercase tracking-[0.32em]"
 const bodyCopy = "text-[clamp(1rem,1.05vw,1.125rem)] leading-[1.65]"
 const container = "mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12"
-const imageSrc = "/Susan Pyke/Living 02.jpg"
-const imageAlt = "Finished Studio ByCristian living interior"
+const imageSrc = "/STUDIO BY CRISTIAN/turn-key-management-private-villa-wassenaar/New House/QY0A9570.jpg"
+const imageAlt = "Completed Wassenaar bathroom with twin basins and bespoke floating cabinets"
 
 function BenefitsIndex({ benefits }: { benefits: Benefit[] }) {
   return (
@@ -52,7 +52,8 @@ export default function StickyBenefits({ benefits }: { benefits: Benefit[] }) {
                 src={imageSrc}
                 alt={imageAlt}
                 fill
-                sizes="(min-width: 1024px) 36vw, 100vw"
+                quality={95}
+                sizes="(min-width: 1440px) 843px, (min-width: 1024px) 65vw, 115vw"
                 className="object-cover object-center transition-transform duration-[1200ms] ease-out hover:scale-[1.025] motion-reduce:transition-none"
               />
               <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/5" />

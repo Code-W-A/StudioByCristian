@@ -49,31 +49,31 @@ import { allTestimonials } from "@/lib/testimonials-data"
 // About page specific image configurations - Using cropped and slider images
 const aboutImageConfigs = [
   { 
-    src: "/extra-from-wapp/Lage&Roy Institute Presentation 2022 Nov/lage-roy-cropped.jpg", 
+    src: "/extra-from-wapp/Lage%26Roy%20Institute%20Presentation%202022%20Nov/lage-roy-cropped.jpg",
     zoom: 1,       // No zoom - natural size
     offsetX: 0,    // No offset for equal containers
     offsetY: 0     // No offset for equal containers
   },
   { 
-    src: "/extra-from-wapp/Lage&Roy Institute_Phase2_Technical Detailing/institute-phase-slider-cropp.jpg", 
+    src: "/extra-from-wapp/Lage%26Roy%20Institute_Phase2_Technical%20Detailing/institute-phase-slider-cropp.jpg",
     zoom: 1,       // No zoom - natural size
     offsetX: 0,    // No offset for equal containers
     offsetY: 0     // No offset for equal containers
   },
   { 
-    src: "/extra-from-wapp/A1. 01 Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 1/A1. 01 Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 1_page-0001-cropp-slide.jpg", 
+    src: "/extra-from-wapp/A1.%2001%20Lage%26Roy%20Institute_Plan%20Mobilare%20cu%20cote_%20Etaj%201/A1.%2001%20Lage%26Roy%20Institute_Plan%20Mobilare%20cu%20cote_%20Etaj%201_page-0001-cropp-slide.jpg",
     zoom: 1,       // No zoom - natural size
     offsetX: 0,    // No offset for equal containers
     offsetY: 0     // No offset for equal containers
   },
   { 
-    src: "/extra-from-wapp/A1. 00 Lage&Roy Institute_Plan Mobilare cu cote_ Parter/A1. 00 Lage&Roy Institute_Plan Mobilare cu cote_ Parter_page-0001-cropp-slider.jpg", 
+    src: "/extra-from-wapp/A1.%2000%20Lage%26Roy%20Institute_Plan%20Mobilare%20cu%20cote_%20Parter/A1.%2000%20Lage%26Roy%20Institute_Plan%20Mobilare%20cu%20cote_%20Parter_page-0001-cropp-slider.jpg",
     zoom: 1,       // No zoom - natural size
     offsetX: 0,    // No offset for equal containers
     offsetY: 0     // No offset for equal containers
   },
   { 
-    src: "/extra-from-wapp/A1. 02  Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 2/A1. 02  Lage&Roy Institute_Plan Mobilare cu cote_ Etaj 2_page-0001-cropp-slider.jpg", 
+    src: "/extra-from-wapp/A1.%2002%20%20Lage%26Roy%20Institute_Plan%20Mobilare%20cu%20cote_%20Etaj%202/A1.%2002%20%20Lage%26Roy%20Institute_Plan%20Mobilare%20cu%20cote_%20Etaj%202_page-0001-cropp-slider.jpg",
     zoom: 1,       // No zoom - natural size
     offsetX: 0,    // No offset for equal containers
     offsetY: 0     // No offset for equal containers
@@ -253,7 +253,7 @@ export default function AboutUsPage() {
                     className="object-cover transform transition-transform duration-500 hover:scale-105"
                     style={{ objectPosition: 'center center' }}
                     priority={false}
-                    quality={100}
+                    quality={95}
                     sizes="(max-width: 768px) 100vw, 600px"
                   />
                 </motion.div>

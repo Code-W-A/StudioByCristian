@@ -93,9 +93,9 @@ const projectDetails = {
       title: "Bathrooms",
       description: "A floral concept in pinks and brass, both playful and elegant.\nA forest-themed design with deep greens, organic contours, and earthy materials.\nSpecially designed accessibility bathrooms ensure comfort for all guests.",
       images: [
-        { src: "/ravy-roy-new-pics/Bathrooms/Women's Bathroom _ 01.jpg", alt: "Women's bathroom floral design" },
-        // { src: "/ravy-roy-new-pics/Bathrooms/Women's Bathroom _ 02.jpg", alt: "Women's bathroom elegant details" }, // COMMENTED OUT
-        { src: "/ravy-roy-new-pics/Bathrooms/Men's Bathroom _ 01.jpg", alt: "Men's bathroom forest theme" },
+        { src: "/ravy-roy-new-pics/Bathrooms/womens-bathroom-01.jpg", alt: "Women's bathroom floral design" },
+        // { src: "/ravy-roy-new-pics/Bathrooms/Women%27s%20Bathroom%20_%2002.jpg", alt: "Women's bathroom elegant details" }, // COMMENTED OUT
+        { src: "/ravy-roy-new-pics/Bathrooms/mens-bathroom-01.jpg", alt: "Men's bathroom forest theme" },
         { src: "/ravy-roy-new-pics/Bathrooms/Disability Bathroom _ 01.jpg", alt: "Accessible bathroom design" }
       ]
     },
